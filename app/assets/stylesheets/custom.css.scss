@@ -9,7 +9,6 @@
   .divider {
     margin: 0 auto;
     font-weight: bold;
-    padding: 5px 0;
     line-height: 2em;
     text-align: center;
   }
@@ -26,7 +25,7 @@
   .post {
     float: left;
     width: 210px;
-	padding: 5px;
+	padding: 0 5px;
 	border-right: 1px dotted #000;
   }
 }

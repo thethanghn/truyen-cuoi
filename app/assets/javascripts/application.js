@@ -26,7 +26,8 @@ $(function(){
   
   $container = $('#masonry-container');
   $container.masonry({
-    itemSelector: '.post'
+    itemSelector: '.post',
+    gutter: 5
   });
   
   $container.infinitescroll({

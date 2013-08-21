@@ -13,3 +13,41 @@
 <%= will_paginate $posts %>
 
 <%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>
+
+<script type="text/javascript">
+$(function(){
+  $('.post').dblclick(function(){
+    var $this = $(this);
+    var top = $this.position().top;
+    var left = $this.position().left;
+    var height = $this.height();
+    var startH = top;
+    $(this).fadeOut(400, function(){ 
+      $this.remove();
+      findNearestDown(top, left, height, startH);
+    });
+  })
+});
+
+function findNearestDown(currentTop, currentLeft, height, startH) {
+  $('.post').each(function(i, v){
+    var $this = $(v);
+    var top = $this.position().top;
+    var left = $this.position().left;
+    var h = $this.height();
+    if (left == currentLeft && top == currentTop + height) {
+      $this.animate({
+        top: startH
+      }, {
+        complete: function(){
+          //alert(top + ' vs ' + h);
+          startH += h;
+          findNearestDown(top , left, h, startH);
+        } 
+      });  
+    }
+  });
+}
+
+
+</script>
