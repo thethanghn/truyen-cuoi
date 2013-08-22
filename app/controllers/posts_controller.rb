@@ -2,11 +2,27 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.paginate(page: params[:page])
+    if params[:read].present?
+      read = ActiveSupport::JSON.decode(cookies[:ids] || '[]') || []
+      @posts = Post.in_group(read).paginate(page: params[:page])
+    else
+      @posts = Post.paginate(page: params[:page])
+    end
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
+    end
+  end
+  
+  # GET /posts/read
+  def read
+    @post = Post.find(params[:id])
+    read = ActiveSupport::JSON.decode(cookies[:ids] || '[]') || []
+    read << @post.id unless read.include? @post.id
+    cookies[:ids] = ActiveSupport::JSON.encode(read)
+    respond_to do |format|
+      format.json { render json: {status: 'done', data: read} }
     end
   end
 

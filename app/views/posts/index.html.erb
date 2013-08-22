@@ -1,6 +1,6 @@
 <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
 <% @posts.each do |post| %>
-<div class="post" >
+<div class="post" id='<%= post.id %>' >
   <%= raw post.body %>
   <div class="divider">
     ***
@@ -17,17 +17,29 @@
 <script type="text/javascript">
 $(function(){
   $('.post').dblclick(function(){
-    var $this = $(this);
-    var top = $this.position().top;
-    var left = $this.position().left;
-    var height = $this.height();
+    handlePostSelect($(this));
+  });
+  $('.post').on('hold', function(){
+    handlePostSelect($(this));
+  });
+});
+
+function handlePostSelect(post) {
+  $.get('<%= read_posts_url %>',{id: post.attr('id') }, function(response){
+      fadeOutPost(post);
+    });
+}
+
+function fadeOutPost(post) {
+    var top = post.position().top;
+    var left = post.position().left;
+    var height = post.height();
     var startH = top;
-    $(this).fadeOut(400, function(){ 
-      $this.remove();
+    post.fadeOut(400, function(){ 
+      post.remove();
       findNearestDown(top, left, height, startH);
     });
-  })
-});
+}
 
 function findNearestDown(currentTop, currentLeft, height, startH) {
   $('.post').each(function(i, v){

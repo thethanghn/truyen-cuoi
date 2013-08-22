@@ -1,4 +1,9 @@
 TruyenCuoi::Application.routes.draw do
+  resources :posts do
+    collection do
+      get 'read'
+    end
+  end
   resources :posts
   
   root to: 'posts#index'

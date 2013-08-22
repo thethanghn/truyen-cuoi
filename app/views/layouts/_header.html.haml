@@ -1,7 +1,9 @@
-%header.navbar.navbar-default(role="navigation")
-  .navbar-inner
-    .container
-      = link_to "Truyen cuoi", '#', id: 'logo', class: 'pull-left'
-      %nav
-        %ul.nav.pull-right
-          %li= link_to "Home", root_path
+%header
+  .navbar.navbar-default(role="navigation")
+    .navbar-inner
+      .container
+        = link_to "Truyen cuoi", '#', id: 'logo', class: 'pull-left brand'
+        %nav
+          %ul.nav.pull-right.nav-pills
+            %li{class: (params[:read].nil? ? 'active' :'') }= link_to "All", root_path
+            %li{class: (params[:read].present? ? 'active' :'') }= link_to "Read", posts_path(read: true)
