@@ -21,7 +21,8 @@ $(function(){
   $('.post').dblclick(function(){
     handlePostSelect($(this));
   });
-  $('.post').on('taptwo', function(){
+  $('.post').bind('taptwo', function(){
+    alert(1);
     handlePostSelect($(this));
   });
 });
