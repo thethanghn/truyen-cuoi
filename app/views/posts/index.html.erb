@@ -14,17 +14,16 @@
 
 <%= will_paginate $posts %>
 
-<%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>
-
 <script type="text/javascript">
 $(function(){
-  $('.post').dblclick(function(){
-    handlePostSelect($(this));
-  });
-  $('.post').doubleTap('taptwo', function(){
-    alert(1);
-    handlePostSelect($(this));
-  });
+  <% if params[:read].nil? %>
+    $('.post').dblclick(function(){
+      handlePostSelect($(this));
+    });
+    $('.post').doubleTap(function(){
+      handlePostSelect($(this));
+    });
+  <% end %>
 });
 
 (function($) {
