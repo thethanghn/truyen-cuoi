@@ -26,8 +26,8 @@ $(function(){
 
 function handlePostSelect(post) {
   $.get('<%= read_posts_url %>',{id: post.attr('id') }, function(response){
-      fadeOutPost(post);
     });
+        fadeOutPost(post);
 }
 
 function fadeOutPost(post) {
