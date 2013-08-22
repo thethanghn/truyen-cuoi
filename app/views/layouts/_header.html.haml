@@ -3,7 +3,7 @@
     .navbar-inner
       .container
         = link_to "Truyen cuoi", '#', id: 'logo', class: 'pull-left brand'
-        %span.topnote.muted.pull-left {double click on story to hide it}
+        %span.topnote.muted.pull-left {double click it}
         %nav
           %ul.nav.pull-right.nav-pills
             %li{class: (params[:read].nil? ? 'active' :'') }= link_to "All", root_path
