@@ -42,6 +42,7 @@ function fadeOutPost(post) {
 }
 
 function findNearestDown(currentTop, currentLeft, height, startH) {
+  var count = 0;
   $('.post').each(function(i, v){
     var $this = $(v);
     var top = $this.position().top;
@@ -58,7 +59,26 @@ function findNearestDown(currentTop, currentLeft, height, startH) {
         } 
       });  
     }
+    
+    //count the left equalities
+    if (left == currentLeft) {
+      count++;
+    }
+    
   });
+  
+  if (count == 0) {
+    $('#masonry-container').masonry({
+      itemSelector: '.post',
+      gutter: 5,
+      isAnimated: true,
+      animationOptions: {
+        duration: 750,
+        easing: 'linear',
+        queue: false
+      }
+    });
+  }
 }
 
 

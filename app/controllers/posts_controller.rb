@@ -2,11 +2,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    read = ActiveSupport::JSON.decode(cookies[:ids] || '[]') || []
     if params[:read].present?
-      read = ActiveSupport::JSON.decode(cookies[:ids] || '[]') || []
       @posts = Post.in_group(read).paginate(page: params[:page])
     else
-      @posts = Post.paginate(page: params[:page])
+      @posts = Post.not_in_group(read).paginate(page: params[:page])
     end
 
     respond_to do |format|
