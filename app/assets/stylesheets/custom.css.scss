@@ -8,16 +8,6 @@
   font-size: 1.2em;
 }
 
-.post {
-  float: left;
-  .divider {
-    margin: 0 auto;
-    font-weight: bold;
-    line-height: 2em;
-    text-align: center;
-  }
-}
-
 #masonry-container {
   background: #FFF;
   margin-bottom: 20px;
@@ -28,9 +18,23 @@
           border-radius: 5px;
   .post {
     float: left;
-    width: 210px;
-	padding: 0 5px;
-	border-right: 1px dotted #000;
+    width: 200px;
+    @media screen and (orientation: landscape) {
+      width: 20%;
+    }
+    @media screen and (orientation: portrait) {
+      width: 49%;
+    }
+    .post-inner {
+    	padding: 0 5px;
+    	border-right: 1px dotted #000;
+    }
+    .divider {
+      margin: 0 auto;
+      font-weight: bold;
+      line-height: 2em;
+      text-align: center;
+    }
   }
 }
 
