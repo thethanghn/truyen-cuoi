@@ -19,8 +19,8 @@ var data = [
         wait: true, 
         callbacks:[function(){
           var parser = new Parser();
-          var storyData = [[2, 'Hèm, chuyện là thế này...']];
-          var temp = parser.parse('.post-inner');
+          var storyData = [[1, 'Hèm, chuyện là thế này...']];
+          var temp = parser.parse('.post-body');
           for (var i = 0; i < temp.length; i++) {
               storyData.push(temp[i]);
           }
@@ -138,9 +138,6 @@ $(function(){
     temp.play();
   });
 
-//  var parser = new Parser();
-  //alert(parser.parse('.post-inner'));
-
 });
 
 var Parser = function() {
@@ -150,21 +147,29 @@ var Parser = function() {
     var n =  parseInt( (Math.random() * 1000) % (posts.length));
     var content = $(posts[n]);
     var html = content.html().replace('<div>', '<p>').replace('</div>','</p>');
-//alert(html);
+
     var ele = $('<div>'+html+'</div>');
     var data = [];
-    var divs = ele.contents().filter(function(){
-      return this.nodeType == 3;
-    }).wrap('<p></p>').end();
-    for (var i = 0; i < divs.length; i++) {
-      //if ($(divs[i]).attr('class').indexOf('divider') != -1) continue;
-      data.push($(divs[i]).text());
+    var ps = ele.find('p');
+
+    if (ps.length > 0) {
+      for (var i = 0; i < ps.length; i++) {
+        //if ($(divs[i]).attr('class').indexOf('divider') != -1) continue;
+        data.push($(ps[i]).text());
+      }
+    } else {
+      var txt = content.html().split('<br>');
+      for (var i = 0; i < txt.length; i++) {
+        //if ($(divs[i]).attr('class').indexOf('divider') != -1) continue;
+        data.push(txt[i]);
+      }
     }
 
     var output = [];
+    wordcount = 2;
     for (var i =0; i< data.length; i++) {
-      var wordcount = data[i].split(' ').length;
       output.push([parseInt((wordcount * 200)/1000), data[i]]);
+      wordcount = data[i].split(' ').length;
     }
     return output;
   };
