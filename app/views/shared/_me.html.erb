@@ -6,21 +6,113 @@
     <%= image_tag 'narrator2.png', class: 'img-circle nar-img-2'%>
   </div>
 </div>
+<div class="musicplayer" style="position:fixed; left:30px;bottom: 200px;">
+   &nbsp;
+</div>
 
 <script type="text/javascript">
 var data = [
-  [0, 'Let here me out...'],
-  [1, 'I want to tell you something.'],
-  [1, 'That is really important...'],
-  [2, 'Hm...'],
-  [1, 'Suddenly I forgot...'],
-  [1, 'Unfortunately but I cannot remember it...'],
-  [1, 'I am absent minded, you know...'],
-  [2, 'See you then.'],
-  [4, 'Oh I remembered now...'],
-  [2, "I'd like to say..."],
-  [2, "That is..."],
-  [3, 'I miss you...'],
+  [0, 'Good morning...'],
+  [2, "Today I will do something new for you..."],
+  [3, ['Read a <a href="javascript:executenextCallbacks(1)">Love Poet</a> or tell a <a href="javascript:executenextCallbacks(0)">Funny Story</a> or sing you a <a href="javascript:executenextCallbacks(2)">Good song</a> will do...', 
+      {
+        wait: true, 
+        callbacks:[function(){
+          var subplayer = new Player([
+            [2, 'Một khách du lịch dừng chân hỏi giờ một nông dân. Bác nông dân bảo ông ta đợi tí rồi bước tới cạnh con bò sữa, đỡ nhẹ vú bò lên, sau đó nói với ông khách:'],
+            [2, '- 9 giờ 25 phút.'],
+            [2, 'Khách du lịch hết sức kinh ngạc'],
+            [2, '- Sao ông chỉ sờ vào vú bò mà biết được giờ giấc?'],
+            [2, '- Đơn giản lắm. Này nhé, nếu ông quì xuống và nâng vú bò lên thì ông có thể thấy chuông đồng hồ của giáo đường ở núi đối diện!'],
+            [3, '... er... funny?']
+          ],{finished: function(){
+            main.wait = false;
+            main.play();
+          }});
+          subplayer.play();
+        },function(){
+          var subplayer = new Player([
+            [2, 'So, please listen to this beautiful poem:'],
+            [2, 'Quê hương tôi đẹp tuyệt vời'],
+            [2, 'Ở dưới có nước trên trời có mây.'],
+            [2, 'Xin mời các bạn về đây'],
+            [2, 'Để thăm quê tớ mỗi ngày một sang.'],
+            [2, 'Con đò dịch đít sang ngang'],
+            [2, 'Xa xa có một cái làng thò ra.'],
+            [2, 'Đằng kia là một vườn na'],
+            [2, 'Đằng này thì có mấy bà chổng mông.'],
+            [2, 'Cây lúa cao sản ngoài đồng'],
+            [2, 'Đến mùa thu hoạch nhà nông vui cười.'],
+            [2, 'Quê tôi thế đấy bạn ơi'],
+            [2, 'Nhờ có đổi mới nên đời thêm xuân.'],
+            [2, 'Con gái giờ chẳng mặc quần'],
+            [2, 'Mà mặc váy ngắn hở chân hở đùi !']
+          ],{finished: function(){
+            main.wait = false;
+            main.play();
+          }});
+          subplayer.play();
+        }, function(){
+          var musicPlayer = new MusicPlayer();
+          musicPlayer.play();
+          var subplayer = new Player([
+            [0, 'Music....on'],
+            [11, 'Ten` ten ten...'],
+            [22, 'Bao đêm trôi qua chỉ thêm buốt giá con tim.'],
+            [5, 'Nhớ hoài dù là trong giấc mơ.'],
+            [5, 'Bao năm qua đi dường như chẳng thể yêu ai.'],
+            [5, 'Vẫn yêu em nên chẳng yêu được ai.'],
+            
+            [5, 'Người tôi yêu tỉnh giấc vào lúc trưa hay ban chiều.'],
+            [5, 'Và thường có thói quen thích nuông chiều.'],
+            [5, 'Mong người kia sẽ hiểu, không hay giận hờn vu vơ.'],
+            [5, 'Vì em tôi nay vẫn còn ngây thơ.'],
+            [5, 'Nếu một ngày em lỡ khóc sướt mướt chẳng thể dỗ dành.'],
+            [5, 'Thì xin ai kia hãy khóc với những cảm thông của chính mình.'],
+            [5, 'Em sẽ ngừng khóc, em sẽ cười thôi.'],
+            [5, 'Vì người tôi yêu giận dỗi nên mít ướt như vậy thôi !'],
+            
+            [5, 'Nếu hai người lỡ có những cãi vã chẳng thể giải hòa.'],
+            [5, 'Thì xin ai kia nhận lỗi, dẫu lỗi ấy chẳng phải do mình.'],
+            [5, 'Em thôi giận dỗi, em sẽ cười thôi.'],
+            [5, 'Vì người tôi yêu duy nhất chỉ có em mà thôi.'],
+            [5, 'Yêu em lâu rồi.'],
+            [5, 'Nhờ có đổi mới nên đời thêm xuân.'],
+            [5, 'Mà mặc váy ngắn hở chân hở đùi !']
+            
+            [5, 'Người tôi yêu tỉnh giấc vào lúc trưa hay ban chiều.'],
+            [5, 'Và thường có thói quen thích nuông chiều.'],
+            [5, 'Mong người kia sẽ hiểu, không hay giận hờn vu vơ.'],
+            [5, 'Vì em tôi vẫn chưa hết ngây thơ.'],
+            
+            [5, 'Nếu một ngày em lỡ khóc sướt mướt chẳng thể dỗ dành.'],
+            [5, 'Thì xin ai kia hãy khóc với những cảm thông của chính mình.'],
+            [5, 'Em sẽ ngừng khóc, em sẽ cười thôi.'],
+            [5, 'Vì người tôi yêu giận dỗi nên mít ướt như vậy thôi !'],
+            
+            [5, 'Nếu hai người lỡ có những cãi vã chẳng thể giải hòa.'],
+            [5, 'Thì xin ai kia nhận lỗi, dẫu lỗi ấy chẳng phải do mình.'],
+            [5, 'Em thôi giận dỗi, em sẽ cười thôi.'],
+            [5, 'Vì người tôi yêu duy nhất chỉ có em mà thôi.'],
+            
+            [5, 'Nếu một ngày em lỡ khóc sướt mướt chẳng thể dỗ dành.'],
+            [5, 'Thì xin ai kia hãy khóc, khóc cùng em.'],
+            [5, 'Giận dỗi nên mít ướt như vậy thôi !!!'],
+            
+            [5, 'Nếu hai người lỡ có những cãi vã chẳng thể giải hòa.'],
+            [5, 'Thì xin ai kia nhận lỗi, dẫu lỗi ấy chẳng phải do mình.'],
+            [5, 'Em thôi giận dỗi, em sẽ cười thôi.'],
+            [5, 'Vì người tôi yêu duy nhất chỉ có em mà thôi.'],
+            [5, 'Yêu em lâu rồi.']
+            
+          ],{finished: function(){
+            main.wait = false;
+            main.play();
+          }});
+          subplayer.play();
+        }]
+        
+      }]],
   [2, ":'("],
 ];
 
@@ -30,33 +122,98 @@ var speed = 500;
 var cur = 0;
 var curW = 0;
 var wordSpeakingId = 0;
+var wait = false;
+var nextCallbacks = [];
+var main = new Player(data);
 $(function(){
-  setInterval(run, 2000);
+  run();
 });
 
-function run() {
-  if (cur < data.length) {
-    var settings = data[cur];
-    setTimeout(function(){
-      speak(settings[1]);
-    }, settings[0]* 1000);
-    cur++;
+function executenextCallbacks(index) {
+  if (nextCallbacks.length > index) {
+    var c = nextCallbacks[index];
+    c();
   }
 }
 
-function speak(paragraph) {
-  $('.narrator').popover('destroy');
-  $('.narrator').popover({
-    animation: false,
-    placement: 'top',
-    trigger: 'manual',
-    content: paragraph
-  }).popover('show');
-  //split to word
-  var words = paragraph.split(' ');
-  //try to read each
-  curW = 0;
-  readWord(words);
+function delayRun(time) {
+  setTimeout(run, time);
+}
+
+function Player(data, options) {
+    this.data = data;
+    this.cursor = 0;
+    this.finished = options ? options.finished : false;
+    this.getCurrentActionSettings = function() {
+      if (this.data && this.cursor < this.data.length) {
+        return this.data[this.cursor];
+      }
+      return false;
+    };
+    this.speak =  function(paragraph, callback) {
+      $this = this;
+      $('.narrator').popover('destroy');
+      $('.narrator').popover({
+        animation: false,
+        placement: 'top',
+        trigger: 'manual',
+        html: true,
+        content: function(){
+          if (paragraph instanceof Array) {
+            var config = paragraph[1];
+            $this.wait = config.wait;
+            nextCallbacks = config.callbacks;
+            //eval(config.callback);
+            return paragraph[0];
+          }
+          return paragraph;
+        }
+      }).popover('show');
+      //split to word
+      var words = paragraph.split(' ');
+      //try to read each
+      curW = 0;
+      readWord(words);
+      
+      if(callback)
+        callback();
+      else
+      {
+        this.play();
+      }
+    };
+    this.delayRun = function(time) {
+      var $this = this;
+      setTimeout(function(){$this.play();}, time);
+    },
+    this.play = function() {
+      if (this.wait) {
+        delayRun(3000);
+        return;
+      }
+      var settings = this.getCurrentActionSettings();
+      var $this = this;
+      if (!settings) {
+        if (this.cursor == this.data.length) {
+          if (this.finished)
+            this.finished();
+            this.cursor = 0;
+        }
+        return;
+      }
+      setTimeout(function(){
+        $this.speak(settings[1]);
+      }, settings[0]* 1000);
+      $this.cursor++;
+    };
+  };
+
+function run() {
+  if (wait) {
+    delayRun(3000);
+    return;
+  }
+  main.play();
 }
 
 function readWord(words) {
@@ -67,7 +224,6 @@ function readWord(words) {
     var firstChar = w[0];
     if (alphabet.indexOf(firstChar) != -1) {
       var tile = tiles[alphabet.indexOf(firstChar)];
-//      alert(tile);
       swapTile(tile);
     }
   }
@@ -78,23 +234,17 @@ function swapTile(tile) {
   $('.nar-inner img').attr('src', '/assets/narrator' + tile +'.png').show();
 }
 
-function xxx(){
-    $n1 = $('.narrator1');
-    $n2 = $('.narrator2');
-    if ($n2.is(':visible')) {
-      $n1.fadeIn(500, function(){
-        $('.nar-img-1').popover({
-          animation: false,
-          placement: 'top',
-          trigger: 'manual',
-          content: 'ahahahah'
-        }).popover('show');
-      });
-      $n2.fadeOut();
-    } else {
-      $n2.fadeIn();
-      $n1.fadeOut();      
-    }
+
+var MusicPlayer=  function() {
+  this.player = $('.musicplayer').popover({
+placement: 'top',
+        trigger: 'manual',
+    html: true,
+    content: '<object width="300" height="308">  <param name="movie" value="http://www.nhaccuatui.com/m/3YJ7l07DG7JI" />  <param name="quality" value="high" />  <param name="wmode" value="transparent" />  <param name="allowscriptaccess" value="always" />  <param name="flashvars" value="autostart=true" />  <embed src="http://www.nhaccuatui.com/m/3YJ7l07DG7JI" flashvars="target=blank&autostart=true" allowscriptaccess="always" quality="high" wmode="transparent" type="application/x-shockwave-flash" width="300" height="308"></embed></object>'
+  });
+  this.play= function(){
+    this.player.popover('show');
   }
+};
 
 </script>
