@@ -30,6 +30,7 @@ var data = [
             main.play();
           }});
           subplayer.play();
+          players.push(subplayer);
         },function(){
           var subplayer = new Player([
             [2, 'So, please listen to this beautiful poem:'],
@@ -52,6 +53,7 @@ var data = [
             main.play();
           }});
           subplayer.play();
+          players.push(subplayer);
         }, function(){
           var musicPlayer = new MusicPlayer();
           musicPlayer.play();
@@ -110,6 +112,7 @@ var data = [
             main.play();
           }});
           subplayer.play();
+          players.push(subplayer);
         }]
         
       }]],
@@ -125,20 +128,38 @@ var wordSpeakingId = 0;
 var wait = false;
 var nextCallbacks = [];
 var main = new Player(data);
+var players = [];
+var firstTouchDone = false;
 $(function(){
   run();
   $('.narrator').click(function(){
     main.stop();
+    if( !firstTouchDone) {
     var temp = new Player([[0, 'Ouch!...You touched me >"<...'],[2,'....'],[3,'Ok...here are the options...']],{
       finished: function(){
+        stopAllSubPlayers();
         main = new Player(data);
         main.play(2);
         }
       });
-    temp.play();
+      temp.play();
+      players.push(temp);
+      firstTouchDone = true;
+    } else {
+        stopAllSubPlayers();
+        main = new Player(data);
+        main.play(2);
+    }
   });
 
 });
+
+function stopAllSubPlayers() {
+  for (var i = 0; i < players.length;i++) {
+    players[i].stop();
+  }
+  players = [];
+}
 
 var Parser = function() {
   this.parse = function(selector) {
@@ -259,7 +280,7 @@ function Player(data, options) {
       var $this = this;
       setTimeout(function(){
         $this.speak(settings[1]);
-      }, settings[0]* 1000);
+      }, (cursor ? 0 : settings[0])* 1000);
       $this.cursor++;
     };
   };
