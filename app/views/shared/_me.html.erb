@@ -1,4 +1,4 @@
-<div class="narrator" style="position:fixed; left: 30px; bottom: 30px;">
+<div class="narrator" style="position:fixed; left: 60px; bottom: 30px;">
   <div class="nar-inner">
     <%= image_tag 'narrator1.png', class: 'img-circle nar-img-1' %>
   </div>
@@ -12,8 +12,8 @@
 
 <script type="text/javascript">
 var data = [
-  [0, 'Good morning...'],
-  [2, "Today I will do something new for you..."],
+  [0, 'Hello'],
+  [2, "I will do something new for you..."],
   [3, ['Read a <a href="javascript:executenextCallbacks(1)">Love Poet</a> or tell a <a href="javascript:executenextCallbacks(0)">Funny Story</a> or sing you a <a href="javascript:executenextCallbacks(2)">Good song</a> will do...', 
       {
         wait: true, 
@@ -168,7 +168,7 @@ var Parser = function() {
     var output = [];
     wordcount = 2;
     for (var i =0; i< data.length; i++) {
-      output.push([parseInt((wordcount * 200)/1000), data[i]]);
+      output.push([parseInt((wordcount * 150)/1000), data[i]]);
       wordcount = data[i].split(' ').length;
     }
     return output;
