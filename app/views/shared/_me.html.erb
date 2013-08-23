@@ -116,7 +116,7 @@ var data = [
         }]
         
       }]],
-  [2, ":'("],
+  [2, "Thank for chatting with me :'("],
 ];
 
 var alphabet = 'abcdefghijklmnopqrstvuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ';
@@ -176,12 +176,15 @@ var Parser = function() {
     if (ps.length > 0) {
       for (var i = 0; i < ps.length; i++) {
         //if ($(divs[i]).attr('class').indexOf('divider') != -1) continue;
-        data.push($(ps[i]).text());
+        var t = $.trim($(ps[i]).text());
+        if (!t) continue;
+        data.push(t);
       }
     } else {
       var txt = content.html().split('<br>');
       for (var i = 0; i < txt.length; i++) {
-        //if ($(divs[i]).attr('class').indexOf('divider') != -1) continue;
+        var t = $.trim(txt[i]);
+        if (!t) continue;
         data.push(txt[i]);
       }
     }
@@ -189,7 +192,8 @@ var Parser = function() {
     var output = [];
     wordcount = 2;
     for (var i =0; i< data.length; i++) {
-      output.push([parseInt((wordcount * 150)/1000), data[i]]);
+      var duration = Math.max(1.5, parseInt((wordcount * 150)/1000));
+      output.push([duration, data[i]]);
       wordcount = data[i].split(' ').length;
     }
     return output;
