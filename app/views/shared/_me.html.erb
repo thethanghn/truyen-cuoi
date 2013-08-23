@@ -138,8 +138,8 @@ $(function(){
     temp.play();
   });
 
-  var parser = new Parser();
-  alert(parser.parse('.post-inner'));
+//  var parser = new Parser();
+  //alert(parser.parse('.post-inner'));
 
 });
 
@@ -150,7 +150,7 @@ var Parser = function() {
     var n =  parseInt( (Math.random() * 1000) % (posts.length));
     var content = $(posts[n]);
     var html = content.html().replace('<div>', '<p>').replace('</div>','</p>');
-alert(html);
+//alert(html);
     var ele = $('<div>'+html+'</div>');
     var data = [];
     var divs = ele.contents().filter(function(){
