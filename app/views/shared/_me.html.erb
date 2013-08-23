@@ -127,6 +127,16 @@ var nextCallbacks = [];
 var main = new Player(data);
 $(function(){
   run();
+  $('.narrator').click(function(){
+    main.stop();
+    var temp = new Player([[0, 'Ouch!...You touched me >"<...'],[2,'....'],[3,'I will tell you again one more time...'],[3,'...']],{
+      finished: function(){
+        main = new Player(data);
+        main.play();
+        }
+      });
+    temp.play();
+  });
 });
 
 function executenextCallbacks(index) {
@@ -142,6 +152,7 @@ function delayRun(time) {
 
 function Player(data, options) {
     this.data = data;
+    this.stopFlag = false;
     this.cursor = 0;
     this.finished = options ? options.finished : false;
     this.getCurrentActionSettings = function() {
@@ -151,6 +162,11 @@ function Player(data, options) {
       return false;
     };
     this.speak =  function(paragraph, callback) {
+      if (this.stopFlag) {
+        this.stopFlag = false;
+        this.cursor = this.data.length;
+        return;
+      }
       $this = this;
       $('.narrator').popover('destroy');
       $('.narrator').popover({
@@ -186,13 +202,15 @@ function Player(data, options) {
       var $this = this;
       setTimeout(function(){$this.play();}, time);
     },
+    this.stop = function() {
+      this.stopFlag = true;
+    },
     this.play = function() {
       if (this.wait) {
         delayRun(3000);
         return;
       }
       var settings = this.getCurrentActionSettings();
-      var $this = this;
       if (!settings) {
         if (this.cursor == this.data.length) {
           if (this.finished)
@@ -201,6 +219,7 @@ function Player(data, options) {
         }
         return;
       }
+      var $this = this;
       setTimeout(function(){
         $this.speak(settings[1]);
       }, settings[0]* 1000);
@@ -240,7 +259,7 @@ var MusicPlayer=  function() {
 placement: 'top',
         trigger: 'manual',
     html: true,
-    content: '<iframe width="560" height="315" src="//www.youtube.com/embed/wjRgrezfccA?autoplay=1" frameborder="0" allowfullscreen></iframe>'
+    content: '<iframe width="240" height="150" src="//www.youtube.com/embed/wjRgrezfccA?autoplay=1" frameborder="0" allowfullscreen></iframe>'
   });
   this.play= function(){
     this.player.popover('show');
