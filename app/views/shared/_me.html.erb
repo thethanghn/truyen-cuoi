@@ -18,14 +18,14 @@ var data = [
       {
         wait: true, 
         callbacks:[function(){
-          var subplayer = new Player([
-            [2, 'Một khách du lịch dừng chân hỏi giờ một nông dân. Bác nông dân bảo ông ta đợi tí rồi bước tới cạnh con bò sữa, đỡ nhẹ vú bò lên, sau đó nói với ông khách:'],
-            [2, '- 9 giờ 25 phút.'],
-            [2, 'Khách du lịch hết sức kinh ngạc'],
-            [2, '- Sao ông chỉ sờ vào vú bò mà biết được giờ giấc?'],
-            [2, '- Đơn giản lắm. Này nhé, nếu ông quì xuống và nâng vú bò lên thì ông có thể thấy chuông đồng hồ của giáo đường ở núi đối diện!'],
-            [3, '... er... funny?']
-          ],{finished: function(){
+          var parser = new Parser();
+          var storyData = [[2, 'Hèm, chuyện là thế này...']];
+          var temp = parser.parse('.post-inner');
+          for (var i = 0; i < temp.length; i++) {
+              storyData.push(temp[i]);
+          }
+
+          var subplayer = new Player(storyData,{finished: function(){
             main.wait = false;
             main.play();
           }});
@@ -129,15 +129,43 @@ $(function(){
   run();
   $('.narrator').click(function(){
     main.stop();
-    var temp = new Player([[0, 'Ouch!...You touched me >"<...'],[2,'....'],[3,'I will tell you again one more time...'],[3,'...']],{
+    var temp = new Player([[0, 'Ouch!...You touched me >"<...'],[2,'....'],[3,'Ok...here are the options...']],{
       finished: function(){
         main = new Player(data);
-        main.play();
+        main.play(2);
         }
       });
     temp.play();
   });
+
 });
+
+var Parser = function() {
+  this.parse = function(selector) {
+    var posts = $(selector);
+    //alert(posts.length);
+    var n =  parseInt( (Math.random() * 1000) % (posts.length));
+    var content = $(posts[n]);
+    var data = [];
+    var divs = content.find('div');
+    for (var i = 0; i < divs.length; i++) {
+      if ($(divs[i]).attr('class').indexOf('divider') != -1) continue;
+      data.push($(divs[i]).text());
+    }
+
+    var divs = content.find('p');
+    for (var i = 0; i < divs.length; i++) {
+      data.push($(divs[i]).text());
+    }
+
+    var output = [];
+    for (var i =0; i< data.length; i++) {
+      var wordcount = data[i].split(' ').length;
+      output.push([parseInt((wordcount * 200)/1000), data[i]]);
+    }
+    return output;
+  };
+}
 
 function executenextCallbacks(index) {
   if (nextCallbacks.length > index) {
@@ -155,7 +183,8 @@ function Player(data, options) {
     this.stopFlag = false;
     this.cursor = 0;
     this.finished = options ? options.finished : false;
-    this.getCurrentActionSettings = function() {
+    this.getCurrentActionSettings = function(cursor) {
+      if (cursor) this.cursor = cursor;
       if (this.data && this.cursor < this.data.length) {
         return this.data[this.cursor];
       }
@@ -205,12 +234,12 @@ function Player(data, options) {
     this.stop = function() {
       this.stopFlag = true;
     },
-    this.play = function() {
+    this.play = function(cursor) {
       if (this.wait) {
         delayRun(3000);
         return;
       }
-      var settings = this.getCurrentActionSettings();
+      var settings = this.getCurrentActionSettings(cursor);
       if (!settings) {
         if (this.cursor == this.data.length) {
           if (this.finished)
