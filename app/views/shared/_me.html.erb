@@ -138,6 +138,9 @@ $(function(){
     temp.play();
   });
 
+  var parser = new Parser();
+  alert(parser.parse('.post-inner'));
+
 });
 
 var Parser = function() {
@@ -146,15 +149,15 @@ var Parser = function() {
     //alert(posts.length);
     var n =  parseInt( (Math.random() * 1000) % (posts.length));
     var content = $(posts[n]);
+    var html = content.html().replace('<div>', '<p>').replace('</div>','</p>');
+alert(html);
+    var ele = $('<div>'+html+'</div>');
     var data = [];
-    var divs = content.find('div');
+    var divs = ele.contents().filter(function(){
+      return this.nodeType == 3;
+    }).wrap('<p></p>').end();
     for (var i = 0; i < divs.length; i++) {
-      if ($(divs[i]).attr('class').indexOf('divider') != -1) continue;
-      data.push($(divs[i]).text());
-    }
-
-    var divs = content.find('p');
-    for (var i = 0; i < divs.length; i++) {
+      //if ($(divs[i]).attr('class').indexOf('divider') != -1) continue;
       data.push($(divs[i]).text());
     }
 
