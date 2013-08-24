@@ -41,6 +41,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    @post.post_type = PostType.find(params[:post_type]) || :story
 
     respond_to do |format|
       format.html # new.html.erb
@@ -57,7 +58,8 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
-
+    @post.post_type = PostType.find(params[:post][:post_type]) || :story
+    
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }

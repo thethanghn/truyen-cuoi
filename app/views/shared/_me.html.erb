@@ -17,7 +17,7 @@ var data = [
       {
         wait: true, 
         callbacks:[function(){
-          var content = provider.getRandomPost('.post-body');
+          var content = provider.getRandomPost('.story .post-body');
           var parser = new Parser();
           var storyData = [[1, 'Hèm, chuyện là thế này...']];
           var temp = parser.parse(content);
@@ -32,23 +32,15 @@ var data = [
           subplayer.play();
           players.push(subplayer);
         },function(){
-          var subplayer = new Player([
-            [2, 'So, please listen to this beautiful poem:'],
-            [2, 'Quê hương tôi đẹp tuyệt vời'],
-            [2, 'Ở dưới có nước trên trời có mây.'],
-            [2, 'Xin mời các bạn về đây'],
-            [2, 'Để thăm quê tớ mỗi ngày một sang.'],
-            [2, 'Con đò dịch đít sang ngang'],
-            [2, 'Xa xa có một cái làng thò ra.'],
-            [2, 'Đằng kia là một vườn na'],
-            [2, 'Đằng này thì có mấy bà chổng mông.'],
-            [2, 'Cây lúa cao sản ngoài đồng'],
-            [2, 'Đến mùa thu hoạch nhà nông vui cười.'],
-            [2, 'Quê tôi thế đấy bạn ơi'],
-            [2, 'Nhờ có đổi mới nên đời thêm xuân.'],
-            [2, 'Con gái giờ chẳng mặc quần'],
-            [2, 'Mà mặc váy ngắn hở chân hở đùi !']
-          ],{finished: function(){
+          var content = provider.getRandomPost('.poem .post-body');
+          var parser = new Parser();
+          var storyData = [[1, 'Hèm, tôi xin phép đọc câu thơ như sau...']];
+          var temp = parser.parse(content);
+          for (var i = 0; i < temp.length; i++) {
+              storyData.push(temp[i]);
+          }
+
+          var subplayer = new Player(storyData,{finished: function(){
             main.wait = false;
             main.play();
           }});

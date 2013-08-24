@@ -1,5 +1,8 @@
 <div class="span12">
-<h1>New post</h1>
+<h1>New post: <%= params[:post_type] unless params[:post_type].nil? %> </h1>
+
+<%= link_to "Story", new_post_path(params: params.merge(post_type: 'story')) %>
+<%= link_to "Poem", new_post_path(params: params.merge(post_type: 'poem')) %>
 
 <%= render 'form' %>
 

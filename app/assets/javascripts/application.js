@@ -21,11 +21,11 @@ $(function(){
   
   $('.topnote').mouseover(function(){
     var news = [
-      'Double click on story after reading to hide',
+      'Double click on story after reading to hide (desktop)',
       'Scroll down is infinite',
       'Switch between read/unread stories',
       'Columns are reorganized after finished',
-      'You can drag my avatar to where you want',
+      'You can drag my avatar to where you want (desktop)',
       'Post now has number at the right bottom',
       'I will not tell you the same story again'
     ];
