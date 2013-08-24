@@ -18,9 +18,10 @@ var data = [
       {
         wait: true, 
         callbacks:[function(){
+          var content = provider.getRandomPost('.post-body');
           var parser = new Parser();
           var storyData = [[1, 'Hèm, chuyện là thế này...']];
-          var temp = parser.parse('.post-body');
+          var temp = parser.parse(content);
           for (var i = 0; i < temp.length; i++) {
               storyData.push(temp[i]);
           }
@@ -130,7 +131,9 @@ var nextCallbacks = [];
 var main = new Player(data);
 var players = [];
 var firstTouchDone = false;
+var provider = false;
 $(function(){
+  provider = new PostProvider();
   run();
   $('.narrator').click(function(){
     main.stop();
@@ -150,7 +153,7 @@ $(function(){
         main = new Player(data);
         main.play(2);
     }
-  });
+  }).draggable();
 
 });
 
@@ -161,12 +164,34 @@ function stopAllSubPlayers() {
   players = [];
 }
 
-var Parser = function() {
-  this.parse = function(selector) {
+var PostProvider = function() {
+  this.read = [];
+  this.getRandomPost = function(selector) {
     var posts = $(selector);
-    //alert(posts.length);
-    var n =  parseInt( (Math.random() * 1000) % (posts.length));
-    var content = $(posts[n]);
+    if (this.read.length == posts.length) //no more story
+      return false;
+    var attempt = 0;
+    while(attempt < 100000) {
+      var n =  parseInt( (Math.random() * 1000) % (posts.length));
+      if ($.inArray(n, this.read) == -1) {
+        this.read.push(n);
+        return $(posts[n]);
+      }
+      attempt++; 
+    }
+    
+    return false;
+  }
+}
+
+var Parser = function() {
+  this.parse = function(content) {
+    //if all post read
+    if (!content) {
+      return [[1, 'Sorry, no more story...']];
+    }
+    
+    //otherwise try to produce one
     var html = content.html().replace('<div>', '<p>').replace('</div>','</p>');
 
     var ele = $('<div>'+html+'</div>');

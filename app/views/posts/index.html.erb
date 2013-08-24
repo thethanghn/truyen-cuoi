@@ -2,7 +2,7 @@
 <% @posts.each do |post| %>
 <div class="post" id='<%= post.id %>' >
   <div class="post-inner">
-    <div class="post-body">
+    <div class="post-body" id='<%= post.id %>'>
       <%= raw post.body %>
     </div>
   <div class="divider">
