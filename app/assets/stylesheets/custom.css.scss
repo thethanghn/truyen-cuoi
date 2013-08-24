@@ -1,10 +1,22 @@
 @import "bootstrap";
-
+$myfont: "Arial Black", Gadget, sans-serif;
 #logo {
+  line-height: 20px;
 }
+.topimg {
+  width: 45px;
+  img {
+  width: 28px;
+  height: 28px;
+  &:hover {
+    border: 1px #000 dotted;
+  }
+}
+}
+
 .topnote {
   line-height: 42px;
-  font-family: "Arial Black", Gadget, sans-serif;
+  font-family: $myfont;
   font-size: 1.2em;
 }
 
@@ -37,6 +49,13 @@
       font-weight: bold;
       line-height: 2em;
       text-align: center;
+      border-right: 1px dotted #000;
+    }
+    .note-id {
+      text-align: right;
+      font-family: $myfont;
+      font-size: 0.8em;
+      margin-top: 15px;
     }
   }
 }

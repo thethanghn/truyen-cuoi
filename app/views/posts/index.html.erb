@@ -1,13 +1,14 @@
 <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
 <% @posts.each do |post| %>
 <div class="post" id='<%= post.id %>' >
+  <div class="divider">
+    ****
+  </div>
   <div class="post-inner">
     <div class="post-body" id='<%= post.id %>'>
       <%= raw post.body %>
     </div>
-  <div class="divider">
-    ***
-  </div>
+    <div class="note-id"><%=post.id%></div>
 </div>
 </div>
 <% end %>

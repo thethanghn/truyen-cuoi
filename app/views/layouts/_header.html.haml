@@ -2,8 +2,10 @@
   .navbar.navbar-default(role="navigation")
     .navbar-inner
       .container
-        = link_to "Truyen cuoi", '#', id: 'logo', class: 'pull-left brand'
-        %span.topnote.muted.pull-left {double click it}
+        .pull-left.topimg= image_tag 'topimg.jpg', class: 'img-polaroid'
+        %a.pull-left.brand#logo
+          = "Nguyen The Thang"
+        %a.topnote.muted.pull-left {double click it}
         %nav
           %ul.nav.pull-right.nav-pills
             %li{class: (params[:read].nil? ? 'active' :'') }= link_to "All", root_path

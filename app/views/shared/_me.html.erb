@@ -12,9 +12,8 @@
 
 <script type="text/javascript">
 var data = [
-  [0, 'Hello'],
-  [2, "I will do something new for you..."],
-  [3, ['Read a <a href="javascript:executenextCallbacks(1)">Love Poet</a> or tell a <a href="javascript:executenextCallbacks(0)">Funny Story</a> or sing you a <a href="javascript:executenextCallbacks(2)">Good song</a> will do...', 
+  [0, 'Hello, how are you today?'],
+  [3, ['Choose one:<ul><li>Read <a href="javascript:executenextCallbacks(1)">Love Poet</a></li><li>Tell a <a href="javascript:executenextCallbacks(0)">Funny Story</a></li><li>Sing you a <a href="javascript:executenextCallbacks(2)">Good song</a> </li></ul>If you do not want to see me, press the avatar on the top.', 
       {
         wait: true, 
         callbacks:[function(){
@@ -121,7 +120,7 @@ var data = [
 ];
 
 var alphabet = 'abcdefghijklmnopqrstvuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ';
-var tiles = [2,1,3,4,2,1,3,2,1,3,4,2,3,2,4,1,1,2,3,1,4,1,1,2,1,2,2,4,1,1,2,1,2,2,4,1,2,3,4,2,3,1,4,2,1,4,1,3,1,4,1,2];
+var tiles =    '213421521342324112314512122411215241234251421413141';
 var speed = 500;
 var cur = 0;
 var curW = 0;
@@ -142,7 +141,7 @@ $(function(){
       finished: function(){
         stopAllSubPlayers();
         main = new Player(data);
-        main.play(2);
+        main.play(1);
         }
       });
       temp.play();
@@ -151,7 +150,7 @@ $(function(){
     } else {
         stopAllSubPlayers();
         main = new Player(data);
-        main.play(2);
+        main.play(1);
     }
   }).draggable();
 
@@ -329,7 +328,7 @@ function readWord(words) {
     if (w.length == 0) return;
     var firstChar = w[0];
     if (alphabet.indexOf(firstChar) != -1) {
-      var tile = tiles[alphabet.indexOf(firstChar)];
+      var tile = parseInt(tiles[alphabet.indexOf(firstChar)]);
       swapTile(tile);
     }
   }
