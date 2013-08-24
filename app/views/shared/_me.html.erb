@@ -116,7 +116,7 @@ var data = [
         }]
         
       }]],
-  [2, "Thank for chatting with me :'("],
+  [2, "=]]"],
 ];
 
 var alphabet = 'abcdefghijklmnopqrstvuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ';
@@ -192,7 +192,7 @@ var Parser = function() {
     var output = [];
     wordcount = 2;
     for (var i =0; i< data.length; i++) {
-      var duration = Math.max(1.5, parseInt((wordcount * 150)/1000));
+      var duration = Math.max(1.5, parseInt((wordcount * 200)/1000));
       output.push([duration, data[i]]);
       wordcount = data[i].split(' ').length;
     }
@@ -321,7 +321,7 @@ var MusicPlayer=  function() {
 placement: 'top',
         trigger: 'manual',
     html: true,
-    content: '<iframe width="240" height="150" src="//www.youtube.com/embed/wjRgrezfccA?autoplay=1" frameborder="0" allowfullscreen></iframe>'
+    content: '<object width="300" height="308">  <param name="movie" value="http://www.nhaccuatui.com/m/3YJ7l07DG7JI" />  <param name="quality" value="high" />  <param name="wmode" value="transparent" />  <param name="allowscriptaccess" value="always" />  <param name="flashvars" value="autostart=true" />  <embed src="http://www.nhaccuatui.com/m/3YJ7l07DG7JI" flashvars="target=blank&autostart=true" allowscriptaccess="always" quality="high" wmode="transparent" type="application/x-shockwave-flash" width="300" height="308"></embed></object>'
   });
   this.play= function(){
     this.player.popover('show');
