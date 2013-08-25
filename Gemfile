@@ -15,6 +15,7 @@ gem 'squeel'
 gem 'haml'
 gem 'masonry-rails'
 gem 'bootstrap-wysihtml5-rails'
+gem 'devise'
 
 group :development, :test do
   gem 'sqlite3'
