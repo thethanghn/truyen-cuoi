@@ -1,10 +1,15 @@
 <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
 <% @posts.each do |post| %>
-<div class="post" >
-  <%= raw post.body %>
+<div class="post" id='<%= post.id %>' >
   <div class="divider">
-    ***
+    ****
   </div>
+  <div class="post-inner <%= post.post_type.to_s %>">
+    <div class="post-body" id='<%= post.id %>'>
+      <%= raw post.body %>
+    </div>
+    <div class="note-id"><%=post.id%></div>
+</div>
 </div>
 <% end %>
 <div class="clearfix"></div>
@@ -12,24 +17,58 @@
 
 <%= will_paginate $posts %>
 
-<%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>
-
 <script type="text/javascript">
 $(function(){
-  $('.post').dblclick(function(){
-    var $this = $(this);
-    var top = $this.position().top;
-    var left = $this.position().left;
-    var height = $this.height();
-    var startH = top;
-    $(this).fadeOut(400, function(){ 
-      $this.remove();
-      findNearestDown(top, left, height, startH);
+  <% if params[:read].nil? %>
+    $('.post').dblclick(function(){
+      handlePostSelect($(this));
     });
-  })
+    $('.post').doubleTap(function(){
+      handlePostSelect($(this));
+    });
+  <% end %>
 });
 
+(function($) {
+     $.fn.doubleTap = function(doubleTapCallback) {
+         return this.each(function(){
+			var elm = this;
+			var lastTap = 0;
+			$(elm).bind('vmousedown', function (e) {
+                                var now = (new Date()).valueOf();
+				var diff = (now - lastTap);
+                                lastTap = now ;
+                                if (diff < 250) {
+		                    if($.isFunction( doubleTapCallback ))
+		                    {
+		                       doubleTapCallback.call(elm);
+		                    }
+                                }      
+			});
+         });
+    }
+})(jQuery);
+
+
+function handlePostSelect(post) {
+  $.get('<%= read_posts_url %>',{id: post.attr('id') }, function(response){
+    });
+        fadeOutPost(post);
+}
+
+function fadeOutPost(post) {
+    var top = post.position().top;
+    var left = post.position().left;
+    var height = post.height();
+    var startH = top;
+    post.fadeOut(400, function(){ 
+      post.remove();
+      findNearestDown(top, left, height, startH);
+    });
+}
+
 function findNearestDown(currentTop, currentLeft, height, startH) {
+  var count = 0;
   $('.post').each(function(i, v){
     var $this = $(v);
     var top = $this.position().top;
@@ -46,7 +85,26 @@ function findNearestDown(currentTop, currentLeft, height, startH) {
         } 
       });  
     }
+    
+    //count the left equalities
+    if (left == currentLeft) {
+      count++;
+    }
+    
   });
+  
+  if (count == 0) {
+    $('#masonry-container').masonry({
+      itemSelector: '.post',
+      gutter: 5,
+      isAnimated: true,
+      animationOptions: {
+        duration: 750,
+        easing: 'linear',
+        queue: false
+      }
+    });
+  }
 }
 
 

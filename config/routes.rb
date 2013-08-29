@@ -1,4 +1,12 @@
 TruyenCuoi::Application.routes.draw do
+  devise_for :users
+  devise_for :admins
+
+  resources :posts do
+    collection do
+      get 'read'
+    end
+  end
   resources :posts
   
   root to: 'posts#index'

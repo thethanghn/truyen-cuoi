@@ -1,12 +1,30 @@
 class PostsController < ApplicationController
+  #before_filter :authenticate_user!, except: [:index]
+  before_filter :authenticate_admin!, only: [:new, :create, :edit, :update]
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.paginate(page: params[:page])
+    read = ActiveSupport::JSON.decode(cookies[:ids] || '[]') || []
+    if params[:read].present?
+      @posts = Post.in_group(read).paginate(page: params[:page])
+    else
+      @posts = Post.not_in_group(read).paginate(page: params[:page])
+    end
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
+    end
+  end
+  
+  # GET /posts/read
+  def read
+    @post = Post.find(params[:id])
+    read = ActiveSupport::JSON.decode(cookies[:ids] || '[]') || []
+    read << @post.id unless read.include? @post.id
+    cookies[:ids] = ActiveSupport::JSON.encode(read)
+    respond_to do |format|
+      format.json { render json: {status: 'done', data: read} }
     end
   end
 
@@ -25,6 +43,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    @post.post_type = PostType.find(params[:post_type]) || :story
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +60,8 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
-
+    @post.post_type = PostType.find(params[:post][:post_type]) || :story
+    
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
