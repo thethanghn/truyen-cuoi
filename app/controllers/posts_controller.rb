@@ -16,6 +16,17 @@ class PostsController < ApplicationController
       format.json { render json: @posts }
     end
   end
+  
+  # GET /posts/read
+  def read
+    @post = Post.find(params[:id])
+    read = ActiveSupport::JSON.decode(cookies[:ids] || '[]') || []
+    read << @post.id unless read.include? @post.id
+    cookies[:ids] = ActiveSupport::JSON.encode(read)
+    respond_to do |format|
+      format.json { render json: {status: 'done', data: read} }
+    end
+  end
 
   def canvas
     read = ActiveSupport::JSON.decode(cookies[:ids] || '[]') || []
