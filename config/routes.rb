@@ -5,6 +5,7 @@ TruyenCuoi::Application.routes.draw do
   resources :posts do
     collection do
       get 'read'
+      get 'canvas'
     end
   end
   resources :posts

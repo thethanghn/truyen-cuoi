@@ -16,6 +16,18 @@ class PostsController < ApplicationController
       format.json { render json: @posts }
     end
   end
+
+  def canvas
+    read = ActiveSupport::JSON.decode(cookies[:ids] || '[]') || []
+    if params[:read].present?
+      @posts = Post.in_group(read).paginate(page: params[:page])
+    else
+      @posts = Post.not_in_group(read).paginate(page: params[:page])
+    end
+
+    render :index, layout: 'canvas'
+  end
+
   
   # GET /posts/read
   def read
