@@ -1,0 +1,347 @@
+<div class="narrator" style="position:fixed; left: 60px; bottom: 30px;">
+  <div class="nar-inner">
+    <%= image_tag 'narrator1.png', class: 'img-circle nar-img-1' %>
+  </div>
+  <div class="nar-inner2" style="display: none;">
+    <%= image_tag 'narrator2.png', class: 'img-circle nar-img-2'%>
+  </div>
+</div>
+<div class="musicplayer" style="position:fixed; left:30px;bottom: 200px;">
+   &nbsp;
+</div>
+
+<script type="text/javascript">
+var data = [
+  [0, 'Hello, how are you today?'],
+  [3, ['Choose one:<ul><li>Read <a href="javascript:executenextCallbacks(1)">Love Poet</a></li><li>Tell a <a href="javascript:executenextCallbacks(0)">Funny Story</a></li><li>Sing you a <a href="javascript:executenextCallbacks(2)">Good song</a> </li></ul>If you do not want to see me, press the avatar on the top.', 
+      {
+        wait: true, 
+        callbacks:[function(){
+          var content = provider.getRandomPost('.story .post-body');
+          var parser = new Parser();
+          var storyData = [[1, 'Hèm, chuyện là thế này...']];
+          var temp = parser.parse(content);
+          for (var i = 0; i < temp.length; i++) {
+              storyData.push(temp[i]);
+          }
+
+          var subplayer = new Player(storyData,{finished: function(){
+            main.wait = false;
+            main.play();
+          }});
+          subplayer.play();
+          players.push(subplayer);
+        },function(){
+          var content = provider.getRandomPost('.poem .post-body');
+          var parser = new Parser();
+          var storyData = [[1, 'Hèm, tôi xin phép đọc câu thơ như sau...']];
+          var temp = parser.parse(content);
+          for (var i = 0; i < temp.length; i++) {
+              storyData.push(temp[i]);
+          }
+
+          var subplayer = new Player(storyData,{finished: function(){
+            main.wait = false;
+            main.play();
+          }});
+          subplayer.play();
+          players.push(subplayer);
+        }, function(){
+          var musicPlayer = new MusicPlayer();
+          musicPlayer.play();
+          var subplayer = new Player([
+            [0, 'Music....on'],
+            [11, 'Ten` ten ten...'],
+            [22, 'Bao đêm trôi qua chỉ thêm buốt giá con tim.'],
+            [5, 'Nhớ hoài dù là trong giấc mơ.'],
+            [5, 'Bao năm qua đi dường như chẳng thể yêu ai.'],
+            [5, 'Vẫn yêu em nên chẳng yêu được ai.'],
+            
+            [5, 'Người tôi yêu tỉnh giấc vào lúc trưa hay ban chiều.'],
+            [5, 'Và thường có thói quen thích nuông chiều.'],
+            [5, 'Mong người kia sẽ hiểu, không hay giận hờn vu vơ.'],
+            [5, 'Vì em tôi nay vẫn còn ngây thơ.'],
+            [5, 'Nếu một ngày em lỡ khóc sướt mướt chẳng thể dỗ dành.'],
+            [5, 'Thì xin ai kia hãy khóc với những cảm thông của chính mình.'],
+            [5, 'Em sẽ ngừng khóc, em sẽ cười thôi.'],
+            [5, 'Vì người tôi yêu giận dỗi nên mít ướt như vậy thôi !'],
+            
+            [5, 'Nếu hai người lỡ có những cãi vã chẳng thể giải hòa.'],
+            [5, 'Thì xin ai kia nhận lỗi, dẫu lỗi ấy chẳng phải do mình.'],
+            [5, 'Em thôi giận dỗi, em sẽ cười thôi.'],
+            [5, 'Vì người tôi yêu duy nhất chỉ có em mà thôi.'],
+            [5, 'Yêu em lâu rồi.'],
+            [5, 'Nhờ có đổi mới nên đời thêm xuân.'],
+            [5, 'Mà mặc váy ngắn hở chân hở đùi !']
+            
+            [5, 'Người tôi yêu tỉnh giấc vào lúc trưa hay ban chiều.'],
+            [5, 'Và thường có thói quen thích nuông chiều.'],
+            [5, 'Mong người kia sẽ hiểu, không hay giận hờn vu vơ.'],
+            [5, 'Vì em tôi vẫn chưa hết ngây thơ.'],
+            
+            [5, 'Nếu một ngày em lỡ khóc sướt mướt chẳng thể dỗ dành.'],
+            [5, 'Thì xin ai kia hãy khóc với những cảm thông của chính mình.'],
+            [5, 'Em sẽ ngừng khóc, em sẽ cười thôi.'],
+            [5, 'Vì người tôi yêu giận dỗi nên mít ướt như vậy thôi !'],
+            
+            [5, 'Nếu hai người lỡ có những cãi vã chẳng thể giải hòa.'],
+            [5, 'Thì xin ai kia nhận lỗi, dẫu lỗi ấy chẳng phải do mình.'],
+            [5, 'Em thôi giận dỗi, em sẽ cười thôi.'],
+            [5, 'Vì người tôi yêu duy nhất chỉ có em mà thôi.'],
+            
+            [5, 'Nếu một ngày em lỡ khóc sướt mướt chẳng thể dỗ dành.'],
+            [5, 'Thì xin ai kia hãy khóc, khóc cùng em.'],
+            [5, 'Giận dỗi nên mít ướt như vậy thôi !!!'],
+            
+            [5, 'Nếu hai người lỡ có những cãi vã chẳng thể giải hòa.'],
+            [5, 'Thì xin ai kia nhận lỗi, dẫu lỗi ấy chẳng phải do mình.'],
+            [5, 'Em thôi giận dỗi, em sẽ cười thôi.'],
+            [5, 'Vì người tôi yêu duy nhất chỉ có em mà thôi.'],
+            [5, 'Yêu em lâu rồi.']
+            
+          ],{finished: function(){
+            main.wait = false;
+            main.play();
+          }});
+          subplayer.play();
+          players.push(subplayer);
+        }]
+        
+      }]],
+  [2, "=]]"],
+];
+
+var alphabet = 'abcdefghijklmnopqrstvuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ';
+var tiles =    '213421521342324112314512122411215241234251421413141';
+var speed = 500;
+var cur = 0;
+var curW = 0;
+var wordSpeakingId = 0;
+var wait = false;
+var nextCallbacks = [];
+var main = new Player(data);
+var players = [];
+var firstTouchDone = false;
+var provider = false;
+$(function(){
+  provider = new PostProvider();
+  run();
+  $('.narrator').click(function(){
+    main.stop();
+    if( !firstTouchDone) {
+    var temp = new Player([[0, 'Ouch!...You touched me >"<...'],[2,'....'],[3,'Ok...here are the options...']],{
+      finished: function(){
+        stopAllSubPlayers();
+        main = new Player(data);
+        main.play(1);
+        }
+      });
+      temp.play();
+      players.push(temp);
+      firstTouchDone = true;
+    } else {
+        stopAllSubPlayers();
+        main = new Player(data);
+        main.play(1);
+    }
+  }).draggable();
+
+});
+
+function stopAllSubPlayers() {
+  for (var i = 0; i < players.length;i++) {
+    players[i].stop();
+  }
+  players = [];
+}
+
+var PostProvider = function() {
+  this.read = [];
+  this.getRandomPost = function(selector) {
+    var posts = $(selector);
+    if (this.read.length == posts.length) //no more story
+      return false;
+    var attempt = 0;
+    while(attempt < 100000) {
+      var n =  parseInt( (Math.random() * 1000) % (posts.length));
+      if ($.inArray(n, this.read) == -1) {
+        this.read.push(n);
+        return $(posts[n]);
+      }
+      attempt++; 
+    }
+    
+    return false;
+  }
+}
+
+var Parser = function() {
+  this.parse = function(content) {
+    //if all post read
+    if (!content) {
+      return [[1, 'Sorry, no more story...']];
+    }
+    
+    //otherwise try to produce one
+    var html = content.html().replace('<div>', '<p>').replace('</div>','</p>');
+
+    var ele = $('<div>'+html+'</div>');
+    var data = [];
+    var ps = ele.find('p');
+
+    if (ps.length > 0) {
+      for (var i = 0; i < ps.length; i++) {
+        //if ($(divs[i]).attr('class').indexOf('divider') != -1) continue;
+        var t = $.trim($(ps[i]).text());
+        if (!t) continue;
+        data.push(t);
+      }
+    } else {
+      var txt = content.html().split('<br>');
+      for (var i = 0; i < txt.length; i++) {
+        var t = $.trim(txt[i]);
+        if (!t) continue;
+        data.push(txt[i]);
+      }
+    }
+
+    var output = [];
+    wordcount = 2;
+    for (var i =0; i< data.length; i++) {
+      var duration = Math.max(1.5, parseInt((wordcount * 200)/1000));
+      output.push([duration, data[i]]);
+      wordcount = data[i].split(' ').length;
+    }
+    return output;
+  };
+}
+
+function executenextCallbacks(index) {
+  if (nextCallbacks.length > index) {
+    var c = nextCallbacks[index];
+    c();
+  }
+}
+
+function delayRun(time) {
+  setTimeout(run, time);
+}
+
+function Player(data, options) {
+    this.data = data;
+    this.stopFlag = false;
+    this.cursor = 0;
+    this.finished = options ? options.finished : false;
+    this.getCurrentActionSettings = function(cursor) {
+      if (cursor) this.cursor = cursor;
+      if (this.data && this.cursor < this.data.length) {
+        return this.data[this.cursor];
+      }
+      return false;
+    };
+    this.speak =  function(paragraph, callback) {
+      if (this.stopFlag) {
+        this.stopFlag = false;
+        this.cursor = this.data.length;
+        return;
+      }
+      $this = this;
+      $('.narrator').popover('destroy');
+      $('.narrator').popover({
+        animation: false,
+        placement: 'top',
+        trigger: 'manual',
+        html: true,
+        content: function(){
+          if (paragraph instanceof Array) {
+            var config = paragraph[1];
+            $this.wait = config.wait;
+            nextCallbacks = config.callbacks;
+            //eval(config.callback);
+            return paragraph[0];
+          }
+          return paragraph;
+        }
+      }).popover('show');
+      //split to word
+      var words = paragraph.split(' ');
+      //try to read each
+      curW = 0;
+      readWord(words);
+      
+      if(callback)
+        callback();
+      else
+      {
+        this.play();
+      }
+    };
+    this.delayRun = function(time) {
+      var $this = this;
+      setTimeout(function(){$this.play();}, time);
+    },
+    this.stop = function() {
+      this.stopFlag = true;
+    },
+    this.play = function(cursor) {
+      if (this.wait) {
+        delayRun(3000);
+        return;
+      }
+      var settings = this.getCurrentActionSettings(cursor);
+      if (!settings) {
+        if (this.cursor == this.data.length) {
+          if (this.finished)
+            this.finished();
+            this.cursor = 0;
+        }
+        return;
+      }
+      var $this = this;
+      setTimeout(function(){
+        $this.speak(settings[1]);
+      }, (cursor ? 0 : settings[0])* 1000);
+      $this.cursor++;
+    };
+  };
+
+function run() {
+  if (wait) {
+    delayRun(3000);
+    return;
+  }
+  main.play();
+}
+
+function readWord(words) {
+  if (curW < words.length) {
+    var w = words[curW];
+    curW++;
+    if (w.length == 0) return;
+    var firstChar = w[0];
+    if (alphabet.indexOf(firstChar) != -1) {
+      var tile = parseInt(tiles[alphabet.indexOf(firstChar)]);
+      swapTile(tile);
+    }
+  }
+}
+
+function swapTile(tile) {
+  $('.img-circle').hide();
+  $('.nar-inner img').attr('src', '/assets/narrator' + tile +'.png').show();
+}
+
+
+var MusicPlayer=  function() {
+  this.player = $('.musicplayer').popover({
+placement: 'top',
+        trigger: 'manual',
+    html: true,
+    content: '<object width="300" height="308">  <param name="movie" value="http://www.nhaccuatui.com/m/3YJ7l07DG7JI" />  <param name="quality" value="high" />  <param name="wmode" value="transparent" />  <param name="allowscriptaccess" value="always" />  <param name="flashvars" value="autostart=true" />  <embed src="http://www.nhaccuatui.com/m/3YJ7l07DG7JI" flashvars="target=blank&autostart=true" allowscriptaccess="always" quality="high" wmode="transparent" type="application/x-shockwave-flash" width="300" height="308"></embed></object>'
+  });
+  this.play= function(){
+    this.player.popover('show');
+  }
+};
+
+</script>
