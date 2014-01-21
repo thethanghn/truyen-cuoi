@@ -4,11 +4,7 @@
   <div class="divider">
     ****
   </div>
-  <div class="post-inner <%= post.post_type.to_s %>">
-    <div class="post-body" id='<%= post.id %>'>
-      <%= raw post.body %>
-    </div>
-    <div class="note-id"><%=post.id%></div>
+  <%= render partial: 'posts/post', locals: { post: post }
 </div>
 </div>
 <% end %>

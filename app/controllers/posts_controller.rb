@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   #before_filter :authenticate_user!, except: [:index]
   before_filter :authenticate_admin!, only: [:new, :create, :edit, :update]
+
+  def random
+    @post = Post.first(order: 'RANDOM()')
+  end
   # GET /posts
   # GET /posts.json
   def index
