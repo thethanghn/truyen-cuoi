@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   before_filter :authenticate_admin!, only: [:new, :create, :edit, :update]
 
   def random
-    @post = Post.first(order: 'RANDOM()')
+    offset = rand(Post.count)
+    @post = Post.first(offset: offset)
     render layout: 'mobile'
   end
   # GET /posts
