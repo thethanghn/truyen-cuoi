@@ -17,13 +17,7 @@ gem 'masonry-rails'
 gem 'bootstrap-wysihtml5-rails'
 gem 'devise'
 
-group :development, :test do
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'pg'
-end  	
+gem 'pg'
 
 
 # Gems used only for assets and not required
