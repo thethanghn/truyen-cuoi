@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def random
     @post = Post.first(order: 'RANDOM()')
+    render layout: 'mobile'
   end
   # GET /posts
   # GET /posts.json
