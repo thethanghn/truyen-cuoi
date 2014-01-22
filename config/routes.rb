@@ -1,6 +1,8 @@
 TruyenCuoi::Application.routes.draw do
   
   
+  resources :mangas
+
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 

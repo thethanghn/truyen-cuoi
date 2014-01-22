@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140122083913) do
+ActiveRecord::Schema.define(version: 20140122090227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,25 @@ ActiveRecord::Schema.define(version: 20140122083913) do
   add_index "manga_sources", ["name"], name: "index_manga_sources_on_name", using: :btree
   add_index "manga_sources", ["title"], name: "index_manga_sources_on_title", using: :btree
   add_index "manga_sources", ["website"], name: "index_manga_sources_on_website", using: :btree
+
+  create_table "manga_sources_mangas", force: true do |t|
+    t.integer "manga_source_id"
+    t.integer "manga_id"
+  end
+
+  add_index "manga_sources_mangas", ["manga_id"], name: "index_manga_sources_mangas_on_manga_id", using: :btree
+  add_index "manga_sources_mangas", ["manga_source_id"], name: "index_manga_sources_mangas_on_manga_source_id", using: :btree
+
+  create_table "mangas", force: true do |t|
+    t.string   "title"
+    t.string   "name"
+    t.string   "cover"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "mangas", ["name"], name: "index_mangas_on_name", using: :btree
+  add_index "mangas", ["title"], name: "index_mangas_on_title", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"
