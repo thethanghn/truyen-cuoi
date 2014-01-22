@@ -1,0 +1,5 @@
+<% if @post.present? %>
+  <%= render partial: 'posts/post', locals: { post: @post } %>
+<% else %>
+  No post available
+<% end %>

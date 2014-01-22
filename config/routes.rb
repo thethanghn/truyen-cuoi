@@ -1,6 +1,11 @@
 TruyenCuoi::Application.routes.draw do
-  devise_for :users
+  
+  
   devise_for :admins
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  devise_for :users
+  get '/random' => 'posts#random'
 
   resources :posts do
     collection do
@@ -8,7 +13,7 @@ TruyenCuoi::Application.routes.draw do
       get 'canvas'
     end
   end
-  resources :posts
+  #resources :posts
   
   root to: 'posts#index'
 

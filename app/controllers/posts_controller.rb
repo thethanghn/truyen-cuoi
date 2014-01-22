@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
   #before_filter :authenticate_user!, except: [:index]
   before_filter :authenticate_admin!, only: [:new, :create, :edit, :update]
+
+  def random
+    offset = rand(Post.count)
+    @post = Post.first(offset: offset)
+    render layout: 'mobile'
+  end
   # GET /posts
   # GET /posts.json
   def index
