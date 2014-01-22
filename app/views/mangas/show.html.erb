@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @manga.title %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @manga.name %>
+</p>
+
+<p>
+  <strong>Cover:</strong>
+  <%= @manga.cover %>
+</p>
+
+<%= link_to 'Edit', edit_manga_path(@manga) %> |
+<%= link_to 'Back', mangas_path %>
