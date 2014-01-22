@@ -16,6 +16,12 @@ TruyenCuoi::Application.routes.draw do
     end
   end
   #resources :posts
+
+  resources :manga_sources, only: [:index, :show] do
+    member do
+      post 'crawl'
+    end
+  end
   
   root to: 'posts#index'
 
