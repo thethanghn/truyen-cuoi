@@ -16,6 +16,8 @@ TruyenCuoi::Application.routes.draw do
     end
   end
   #resources :posts
+
+  resources :manga_sources, only: [:index]
   
   root to: 'posts#index'
 
