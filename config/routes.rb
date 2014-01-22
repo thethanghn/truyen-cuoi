@@ -2,7 +2,7 @@ TruyenCuoi::Application.routes.draw do
   devise_for :users
   devise_for :admins
 
-  match '/random' => 'posts#random'
+  get '/random' => 'posts#random'
 
   resources :posts do
     collection do
@@ -10,7 +10,7 @@ TruyenCuoi::Application.routes.draw do
       get 'canvas'
     end
   end
-  resources :posts
+  #resources :posts
   
   root to: 'posts#index'
 
