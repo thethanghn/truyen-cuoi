@@ -1,9 +1,12 @@
 require 'open-uri'
 class BaseCrawler
-  def self.get(name)
-    case name
+  def initialize(hostname)
+    @hostname = hostname
+  end
+  def self.get(manga_source)
+    case manga_source.name
     when 'manga-reader'
-      MangaReaderCrawler.new
+      MangaReaderCrawler.new(manga_source.website)
     else
       puts 'no crawler found'
       nil

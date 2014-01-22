@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140122090227) do
+ActiveRecord::Schema.define(version: 20140122101800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,9 +50,11 @@ ActiveRecord::Schema.define(version: 20140122090227) do
     t.string   "cover"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "path"
   end
 
   add_index "mangas", ["name"], name: "index_mangas_on_name", using: :btree
+  add_index "mangas", ["path"], name: "index_mangas_on_path", using: :btree
   add_index "mangas", ["title"], name: "index_mangas_on_title", using: :btree
 
   create_table "posts", force: true do |t|

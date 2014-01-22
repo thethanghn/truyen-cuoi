@@ -8,7 +8,11 @@ class MangaSourcesController < ApplicationController
   end
 
   def crawl
-    @doc = BaseCrawler.get(@manga_source.name).categorize
+    @mangas = BaseCrawler.get(@manga_source).categorize
+    @mangas.each do |manga|
+      @manga_source.mangas << Manga.new(manga)
+    end
+    @manga_source.save
   end
 
   private
