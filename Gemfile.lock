@@ -178,6 +178,7 @@ DEPENDENCIES
   haml
   jquery-rails
   masonry-rails
+  nokogiri
   pg
   rails (= 4.0.0)
   rails_admin
