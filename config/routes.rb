@@ -25,6 +25,10 @@ TruyenCuoi::Application.routes.draw do
   
   root to: 'posts#index'
 
+  namespace 'mobile' do
+    resources :mangas, only: [:index]
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
