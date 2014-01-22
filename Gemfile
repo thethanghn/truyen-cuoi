@@ -49,3 +49,4 @@ gem 'slim-rails'
 
 # To use debugger
 # gem 'debugger'
+gem 'nokogiri'

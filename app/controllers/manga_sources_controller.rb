@@ -8,7 +8,7 @@ class MangaSourcesController < ApplicationController
   end
 
   def crawl
-
+    @doc = BaseCrawler.get(@manga_source.name).categorize
   end
 
   private
