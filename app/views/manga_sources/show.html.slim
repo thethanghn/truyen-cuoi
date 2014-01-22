@@ -1,0 +1,7 @@
+.row
+  .col-lg-12
+    = render partial: 'item', locals: { manga_source: @manga_source }
+.row
+  .col-lg-12
+    = form_for @manga_source, url: crawl_manga_source_path(@manga_source) do |f|
+      = f.submit "Crawl"
