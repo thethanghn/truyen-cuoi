@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130825122823) do
+ActiveRecord::Schema.define(:version => 20140122080338) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(:version => 20130825122823) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
+
+  create_table "manga_sources", :force => true do |t|
+    t.string   "title"
+    t.string   "name"
+    t.string   "website"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "manga_sources", ["name"], :name => "index_manga_sources_on_name"
+  add_index "manga_sources", ["title"], :name => "index_manga_sources_on_title"
+  add_index "manga_sources", ["website"], :name => "index_manga_sources_on_website"
 
   create_table "posts", :force => true do |t|
     t.string   "title"
