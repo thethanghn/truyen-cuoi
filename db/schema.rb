@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140122101800) do
+ActiveRecord::Schema.define(version: 20140123122727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,22 @@ ActiveRecord::Schema.define(version: 20140122101800) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
+
+  create_table "chapters", force: true do |t|
+    t.string   "code"
+    t.string   "title"
+    t.string   "path"
+    t.integer  "seq"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "manga_id"
+  end
+
+  add_index "chapters", ["code"], name: "index_chapters_on_code", using: :btree
+  add_index "chapters", ["manga_id"], name: "index_chapters_on_manga_id", using: :btree
+  add_index "chapters", ["path"], name: "index_chapters_on_path", using: :btree
+  add_index "chapters", ["seq"], name: "index_chapters_on_seq", using: :btree
+  add_index "chapters", ["title"], name: "index_chapters_on_title", using: :btree
 
   create_table "manga_sources", force: true do |t|
     t.string   "title"

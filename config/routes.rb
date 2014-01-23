@@ -26,7 +26,9 @@ TruyenCuoi::Application.routes.draw do
   root to: 'posts#index'
 
   namespace 'mobile' do
-    resources :mangas, only: [:index]
+    resources :mangas, only: [:index] do
+      resources :chapters, only: [:index]
+    end
   end
 
 
