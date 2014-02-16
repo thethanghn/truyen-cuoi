@@ -88,7 +88,8 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new
+    @post.body = params[:post][:body]
     @post.post_type = PostType.find(params[:post][:post_type]) || :story
     
     respond_to do |format|
