@@ -3,7 +3,7 @@
     .navbar-inner
       .container
         .pull-left.topimg= image_tag 'topimg.jpg', class: 'img-polaroid'
-        %a.pull-left.brand#logo
+        %a.pull-left.brand#logo{href: "#{root_path}"}
           = "Nguyen The Thang"
         %a.topnote.muted.pull-left {double click it}
         %nav
