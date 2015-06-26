@@ -1,17 +1,18 @@
 $myfont: "Arial Black", Gadget, sans-serif;
 $blue: rgb(76, 102, 164);
 #logo {
-  line-height: 20px;
+  line-height: 42px;
 }
 .topimg {
   width: 45px;
+  line-height: 42px;
   img {
-  width: 28px;
-  height: 28px;
-  &:hover {
-    border: 1px #000 dotted;
+    width: 28px;
+    height: 28px;
+    &:hover {
+      border: 1px #000 dotted;
+    }
   }
-}
 }
 
 .topnote {
