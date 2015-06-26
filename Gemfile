@@ -1,13 +1,15 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-gem 'rails', '4.0.0'
+gem 'rails', '4.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sass-rails', '>= 3.2' # sass-rails needs to be higher than 3.2
+gem 'sass-rails'
 gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'sprockets'
+gem 'sprockets-es6', require: 'sprockets/es6'
 
 gem 'faker'
 gem 'will_paginate'
