@@ -15,6 +15,9 @@ TruyenCuoi::Application.routes.draw do
       get 'canvas'
     end
   end
+
+  get '/news' => 'news#index'
+
   #resources :posts
 
   resources :manga_sources, only: [:index, :show] do

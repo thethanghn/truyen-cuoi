@@ -1,17 +1,19 @@
-<div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
-<% @posts.each do |post| %>
-<div class="post" id='<%= post.id %>' >
-  <div class="divider">
-    ****
+<div class="row-fluid clearfix">
+  <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
+  <% @posts.each do |post| %>
+  <div class="post" id='<%= post.id %>' >
+    <div class="divider">
+      ****
+    </div>
+    <%= render partial: 'posts/post', locals: { post: post } %>
   </div>
-  <%= render partial: 'posts/post', locals: { post: post } %>
-</div>
-</div>
-<% end %>
-<div class="clearfix"></div>
-</div>
+  </div>
+  <% end %>
+  <div class="clearfix"></div>
+  </div>
 
-<%= will_paginate $posts %>
+  <%= will_paginate $posts %>
+</div>
 
 <script type="text/javascript">
 $(function(){
