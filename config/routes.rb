@@ -16,7 +16,8 @@ TruyenCuoi::Application.routes.draw do
     end
   end
 
-  get '/news' => 'news#index'
+  resources :news
+
 
   #resources :posts
 

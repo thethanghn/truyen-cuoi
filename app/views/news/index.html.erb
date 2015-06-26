@@ -1,8 +1,32 @@
 <div class="row feed-reader">
   <div class="col-sm-4 left-pane">
-    left pane
+    <ul class="listing">
+    </ul>
   </div>
   <div class="col-sm-8 content-pane">
     content pane
   </div>
 </div>
+
+<script language="javascript">
+  $(function(){
+    var news = [
+      'http://vnexpress.net/rss/tin-moi-nhat.rss',
+      'http://dantri.com.vn/trangchu.rss',
+      'http://www.football365.com/premier-league/rss'
+    ]
+    $.each(news, function(key, value) {
+      var source = new Source('.left-pane .listing', value);
+      source.getRss().then(function(){
+        $('.feed-item').unbind('click').bind('click', function(){
+          var href = $(this).data('href');
+          $.get('/news/show', {url: href}, function(result){
+            // var html = $.decode(result.html);
+            $('.content-pane').html(result.html);
+          }, 'json');
+        });
+      });
+    });
+
+  });
+</script>

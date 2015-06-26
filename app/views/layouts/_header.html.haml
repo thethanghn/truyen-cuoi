@@ -8,6 +8,6 @@
         %a.topnote.muted.pull-left {double click it}
         %nav
           %ul.nav.pull-right.nav-pills
-            %li{class: ''}= link_to "News", news_path
+            %li{class: ''}= link_to "News", news_index_path
             %li{class: (params[:read].nil? ? 'active' :'') }= link_to "All", root_path
             %li{class: (params[:read].present? ? 'active' :'') }= link_to "Read", posts_path(read: true)

@@ -37,6 +37,11 @@ gem 'devise'
 gem 'rails_admin'
 gem 'slim-rails'
 
+group :development do
+  gem 'pry'
+  gem 'annotate'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -52,4 +57,4 @@ gem 'slim-rails'
 # To use debugger
 # gem 'debugger'
 gem 'nokogiri'
-gem 'annotate'
+gem 'faraday'
