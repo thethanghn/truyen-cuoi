@@ -21,12 +21,13 @@
         $('.feed-item').unbind('click').bind('click', function(){
           var href = $(this).data('href');
           $.get('/news/show', {url: href}, function(result){
-            // var html = $.decode(result.html);
             $('.content-pane').html(result.html);
           }, 'json');
         });
+        $('.listing .feed-item').eq(0).trigger('click');
       });
     });
 
+    ContentCleaner.clean();
   });
 </script>

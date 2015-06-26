@@ -31,3 +31,16 @@ var Source = function(container, url) {
     getRss: getRss
   };
 };
+
+var ContentCleaner = {
+  selectors: ['.v5-art-tools', '.skybet.rounded', '.base-art-tools', '#ob_iframe', '.OUTBRAIN', '.block_timer_share', '.block_share_icon', '.box26', '.emailprint', '.base-gallery-thumbs'],
+  clean: function() {
+    var self = this;
+    var container = $('.content-pane');
+    setInterval(function(){
+      $.each(self.selectors, function(key, value){
+        container.find(value).fadeOut('fast');
+      });
+    }, 1000);
+  }
+};
