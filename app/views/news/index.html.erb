@@ -9,25 +9,59 @@
 </div>
 
 <script language="javascript">
+  var feeds = new Map();
   $(function(){
+    // debugger;
+
     var news = [
       'http://vnexpress.net/rss/tin-moi-nhat.rss',
       'http://dantri.com.vn/trangchu.rss',
       'http://www.football365.com/premier-league/rss'
-    ]
-    $.each(news, function(key, value) {
-      var source = new Source('.left-pane .listing', value);
-      source.getRss().then(function(){
-        $('.feed-item').unbind('click').bind('click', function(){
-          var href = $(this).data('href');
-          $.get('/news/show', {url: href}, function(result){
-            $('.content-pane').html(result.html);
-          }, 'json');
-        });
-        $('.listing .feed-item').eq(0).trigger('click');
-      });
-    });
+    ];
 
+    Rx.Observable.timer(5000).startWith(-1).subscribe(function() {
+      return Rx.Observable.fromArray(news)
+              .flatMap(function(source) {
+                var source = new Source('.left-pane .listing', source);
+                return Rx.Observable.fromPromise(source.getRss());
+              }).subscribe(
+                function (x) {
+                  x.responseData.feed.entries.forEach(function(en) {
+                    en['source'] = x.responseData.feed.title;
+                    en['original'] = en.publishedDate;
+                    en['publishedDate'] = moment(en.publishedDate);
+                    // console.log(en);
+                    feeds.set(en.title, en);
+                  });
+                  handleFeeds(feeds);
+                },
+                function (e) { console.log('onError: ' + e.message); },
+                function () { console.log('onAjaxCompleted'); }
+              );
+      });
+    
     ContentCleaner.clean();
   });
+
+  function handleFeeds(feeds) {
+    var arr = [];
+    feeds.forEach(function(value){ arr.push(value);});
+    arr = arr.sort(function(x, y) {
+      return y.publishedDate.diff(x.publishedDate);
+    });
+    $('.listing').html('');
+    arr.forEach(function(x) {
+      Renderer.render('.left-pane .listing', x) 
+    });
+
+    var clicks = Rx.Observable.fromEvent($('.feed-item'), 'click')
+                  .debounce(1000)
+                  .distinctUntilChanged();
+    clicks.forEach(function(ev){
+      var href = $(ev.target).data('href');
+      $.get('/news/show', {url: href}, function(result){
+        $('.content-pane').html(result.html);
+      }, 'json');
+    });
+  }
 </script>

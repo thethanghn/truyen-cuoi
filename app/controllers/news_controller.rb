@@ -18,6 +18,9 @@ class NewsController < ApplicationController
 
     if url.include?('vnexpress.net')
       html = page.css('.block_col_480')
+      unless html.present?
+        html = page.css('.block_col_680')
+      end
     elsif url.include?('dantri.com')
       html = page.css('#ctl00_IDContent_Tin_Chi_Tiet')
     elsif url.include?('www.football365.com/')
