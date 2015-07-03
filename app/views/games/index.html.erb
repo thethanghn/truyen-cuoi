@@ -1,0 +1,200 @@
+<h1>RxJS Blackjack</h1>
+<h3>Dealer <span class="dealer-point"></span></h3>
+<div class="dealer">
+    
+</div>
+<h3>Player <span class="player-point"></span></h3>
+<div class="player">
+</div>
+<div style="clear: both"></div>
+<button class="deck">Hit</button>
+<button class="stand">Stand</button>
+<button class="replay">Replay</button>
+<div class="money">
+    Money: $<span class="remaining">10000</span>
+    <select class="bet">
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="300">300</option>
+        <option value="400">400</option>
+        <option value="500">500</option>
+    </select>
+</div>
+<script language="javascript">
+var cards = [];
+var values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
+var points = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10];
+var kinds = ['&hearts;', '&diams;', '&spades;', '&clubs;'];
+var dealer = [];
+var player = [];
+var money = 10000;
+var stand = false;
+var gameEnded = false;
+var dealerSubscriber, playerSubscriber, firstDealerDrawSubscriber, playerDrawSubscriber;
+function resetGame() {
+    cards = [];
+    for (var i = 1; i < values.length; i++) {
+        for (var j = 0; j < kinds.length; j++) {
+            cards.push([values[i], kinds[j], points[i]]);
+        }
+    }
+    cards = shuffle(cards);
+    
+    stand = false;
+    gameEnded = false;
+    
+    dealer = [];
+    player = [];
+    $('.dealer, .player, .dealer-point, .player-point').html('');
+       $('.deck, .stand').show();
+   $('.replay').hide();
+}
+
+function shuffle(o){
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+}
+
+function hitCard() {
+    return cards[Math.floor(Math.random()*cards.length)];
+}
+
+function makeCard(c, close) {
+    return close ? [ '<div class="card close"></div>'].join('') :
+        ['<div class="card">',
+            c[0],
+            '<br/>',
+            c[1],
+            '</div>'
+            ].join('');
+}
+
+function getPoint(hand) {
+    return hand.map(function(x) { return x[2];}).reduce(function(a, c){return a + c;});
+}
+
+function showResult() {    
+    $('.dealer').html('');
+    dealer.forEach(function(c) {
+        $('.dealer').append(makeCard(c));
+    });
+    
+    $('.dealer-point').html(getPoint(dealer));
+    $('.player-point').html(getPoint(player));
+    
+    if (!checkGameResult()) {
+        Rx.Observable.interval(1000)
+        .takeWhile(function() { return dealerMustHit(); })
+        .select(function() { return hitCard();})
+        .subscribe(function(x) {
+            dealer.push(x);
+        });
+    }
+}
+
+function checkGameResult() {
+    if (playerBursted(player)) {
+        $('.player-point').html('Bursted!');
+        endGame();
+        return true;
+    }
+    if (stand) {
+        $('.dealer-point').html(getPoint(dealer));
+        if (!dealerMustHit()) {
+            declareResult();
+            endGame();
+            return true;
+        }
+    }
+    
+    return false;
+}
+
+function declareResult() {
+    var playerPoint = getPoint(player);
+    var dealerPoint = getPoint(dealer);
+    if (dealerPoint > playerPoint && !playerBursted(dealer)) {
+        $('.dealer-point').append('- winner');
+        money -= parseInt($('.bet').val());
+    } else if (dealerPoint == playerPoint) {
+        $('.dealer-point').append('- deuce');
+        $('.player-point').append('- deuce');
+    } else {
+        $('.player-point').append('- winner');
+        money += parseInt($('.bet').val());
+    }
+    $('.remaining').html(money);
+}
+
+function dealerMustHit() {
+    var point = getPoint(dealer);
+    return point <= 16;
+}
+
+function playerBursted(hand) {
+    return hand.length > 0 && getPoint(hand) > 21;
+}
+
+function endGame() {
+   gameEnded = true;
+   $('.deck, .stand').hide();
+   $('.replay').show();
+   playerSubscriber.dispose();
+   dealerSubscriber.dispose();
+   firstDealerDrawSubscriber.dispose();
+   playerDrawSubscriber.dispose();
+}
+
+function initGame() {
+    //dealer
+    dealerSubscriber = Rx.Observable.ofArrayChanges(dealer).
+    filter(function(x) { console.log(x);return x.addedCount > 0; }).
+    takeWhile(function(x) { return !gameEnded; })
+    .subscribe(function(x) {
+        var c = dealer[x.index];
+        $('.dealer').append(makeCard(c, x.index == 0));
+        checkGameResult();
+    });
+    
+    //player
+    playerSubscriber = Rx.Observable.ofArrayChanges(player).
+    filter(function(x) { console.log(x);return x.addedCount > 0; }).
+    takeWhile(function(x) { return !gameEnded; }).
+    map(function(x) { return player[x.index]; }).
+    subscribe(function(x) {
+        $('.player').append(makeCard(x));
+        $('.player-point').html(getPoint(player));
+        checkGameResult();
+    });
+    
+    firstDealerDrawSubscriber = Rx.Observable.interval(1000).startWith(-1).
+    map(function() {return hitCard();}).
+    takeWhile(function() { return dealer.length < 2;}).
+    subscribe(function(x) {
+        dealer.push(x);
+    });
+    
+    playerDrawSubscriber = Rx.Observable.fromEvent($('.deck'), 'click')
+    .filter(function(x) { return !playerBursted(player);})
+    .select(function(x) { return hitCard();})
+    .takeWhile(function(x) { return !stand;})
+    .subscribe(function(x) {
+        player.push(x);
+    });
+}
+
+$(function() {
+    resetGame();
+    
+    initGame();
+    
+    $('.stand').click(function(x) {
+        stand = true;
+        showResult();
+    });
+    $('.replay').click(function(x) {
+        resetGame();
+        initGame();
+    });
+});
+</script>

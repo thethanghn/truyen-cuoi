@@ -9,7 +9,10 @@
 </div>
 
 <script language="javascript">
+  var read = new Map();
   var feeds = new Map();
+  var contentTop = 0;
+  var scrollingSpeed = 100;
   $(function(){
     // debugger;
 
@@ -19,31 +22,35 @@
       'http://www.football365.com/premier-league/rss'
     ];
 
-    Rx.Observable.timer(5000).startWith(-1).subscribe(function() {
-      return Rx.Observable.fromArray(news)
+    Rx.Observable.fromArray(news)
               .flatMap(function(source) {
                 var source = new Source('.left-pane .listing', source);
                 return Rx.Observable.fromPromise(source.getRss());
-              }).subscribe(
-                function (x) {
-                  x.responseData.feed.entries.forEach(function(en) {
-                    en['source'] = x.responseData.feed.title;
-                    en['original'] = en.publishedDate;
-                    en['publishedDate'] = moment(en.publishedDate);
-                    // console.log(en);
-                    feeds.set(en.title, en);
-                  });
-                  handleFeeds(feeds);
-                },
-                function (e) { console.log('onError: ' + e.message); },
-                function () { console.log('onAjaxCompleted'); }
-              );
-      });
-    
+              }).map(function (x) {
+                return Rx.Observable.fromArray(x.responseData.feed.entries.map(function(en){
+                  en['source'] = x.responseData.feed.title;
+                  en['publishedDate'] = moment(en.publishedDate);
+                  return en;
+                }));
+              }).mergeAll().subscribe(
+                function(x){ feeds.set(x.title, x); },
+                function(e){ console.log(e);},
+                function(){
+                  handleFeeds(feeds)
+                  $('.feed-item').eq(0).trigger('click');
+              });
+
     ContentCleaner.clean();
   });
 
+  function setupScrolling() {
+    console.log('setupScrolling');
+    $('.content-pane').css('scrollTop', 0);
+    $('.content-pane').animate({scrollTop: $('.content-pane').height()}, 'slow');
+  }
+
   function handleFeeds(feeds) {
+    console.log('handleFeeds');
     var arr = [];
     feeds.forEach(function(value){ arr.push(value);});
     arr = arr.sort(function(x, y) {
@@ -53,15 +60,23 @@
     arr.forEach(function(x) {
       Renderer.render('.left-pane .listing', x) 
     });
+    var h = $(window).height() - 50;
+    console.log(h);
+    $('.content-pane').height(h).css('overflow-y', 'scroll');
 
-    var clicks = Rx.Observable.fromEvent($('.feed-item'), 'click')
-                  .debounce(1000)
-                  .distinctUntilChanged();
-    clicks.forEach(function(ev){
-      var href = $(ev.target).data('href');
-      $.get('/news/show', {url: href}, function(result){
-        $('.content-pane').html(result.html);
-      }, 'json');
-    });
+    Rx.Observable.fromEvent($('.feed-item'), 'click')
+      .debounce(1000)
+      .distinctUntilChanged()
+      .subscribe(function(ev){
+        var href = $(ev.target).data('href');
+        $.get('/news/show', {url: href}, function(result){
+          $(ev.target).parent().parent().fadeOut();
+          try {
+            $('.content-pane').html(result.html);
+          } catch(e){}
+
+          // setupScrolling();
+        }, 'json');
+      });
   }
 </script>

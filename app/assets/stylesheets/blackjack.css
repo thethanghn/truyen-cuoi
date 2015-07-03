@@ -1,0 +1,22 @@
+.dealer, .player {
+    height: 70px;
+    border: 1px solid blue;
+}
+.deck {
+    margin: 20px;
+}
+.card {
+    display: inline-block;
+    font-size: 0.8;
+  height: 60px;
+  width: 40px;
+  background-color: #efefef;
+    border: 1px solid darkblue;
+  color: blue;
+  text-align: center;
+    margin: 5px;
+    float: left;
+}
+.replay {
+    display: none;
+}

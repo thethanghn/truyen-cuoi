@@ -17,6 +17,7 @@ TruyenCuoi::Application.routes.draw do
   end
 
   resources :news
+  resources :games
 
 
   #resources :posts
