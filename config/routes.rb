@@ -17,7 +17,9 @@ TruyenCuoi::Application.routes.draw do
   end
 
   resources :news
-  resources :games
+  namespace :games do
+    resources :blackjack
+  end
 
 
   #resources :posts
