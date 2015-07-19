@@ -238,7 +238,7 @@ $(function(){
             console.log('spot clicked');
             var spotData = d3.select(x.target).data()[0];
             console.log(spotData);
-            if (onMovePiece) {
+            if (onMovePiece && MoveChecker.canMove(onMovePiece, spotData)) {
                 Game.movePiece(onMovePiece, spotData);
                 Game.resetPiece();
             }
@@ -262,43 +262,116 @@ var MoveChecker = (function(){
         return occupied.length > 0;
     }
 
+    this._isOutOfBound = function(spot) {
+        return spot[0] < 0 || spot[0] > 8 || spot[1] < 0 || spot[1] > 9;
+    }
+
+    //some pieces have restriction
+    this._isBlocked = function(spot, piece) {
+        var result = false;
+        switch(piece.code) {
+            case 'h':
+                //check each direction for blocking
+                var toFind = null;
+                //right
+                if (spot[0] == piece.coords[0] + 1 || spot[0] == piece.coords[0] - 1) { //left
+                    //top
+                    if (spot[1] == piece.coords[1] - 2) {
+                        toFind = [piece.coords[0], piece.coords[1] - 1];
+                    } else { //bottom
+                        toFind = [piece.coords[0], piece.coords[1] + 1];
+                    }
+                } else if (spot[1] == piece.coords[1] - 1 || spot[1] == piece.coords[1] + 1) {
+                    if (spot[0] == piece.coords[0] + 2) {
+                        toFind = [piece.coords[0] + 1, piece.coords[1]];
+                    } else {
+                        toFind = [piece.coords[0] - 1, piece.coords[1]];
+                    }
+                }
+
+                if (toFind) {
+                    var b = data.filter(function(p) {
+                        return p.coords[0] == toFind[0] && p.coords[1] == toFind[1];
+                    });
+                    result = b.length > 0;
+                }
+            break;
+
+            case 'c':
+                
+            break;
+        }
+        return result;
+    }
+
     this.soldierMoves = function(piece) {
         console.log('soldierMoves');
         var coords = piece.coords;
         var spots = [];
-        if (piece.code == 's') {
-            //only go down 1 step
-            var y = coords[1];
-            if (piece.set == 1) {
-                if (y < 9) {
-                    spots.push([coords[0], y + 1]);
-                }
-                if (y > 4) {
-                    var x = coords[0];
-                    if (x > 0) {
-                        spots.push([x - 1, y]);    
-                    }
-                    
-                    if (x < 8) {
-                        spots.push([coords[0] + 1, y]);
-                    }
-                }
-            } else {
-                if (y > 0) {
-                    spots.push([coords[0], y - 1]);
-                }
-                if (y < 5) {
-                    var x = coords[0];
-                    if (x > 0) {
-                        spots.push([x - 1, y]);    
-                    }
-                    
-                    if (x < 8) {
-                        spots.push([coords[0] + 1, y]);
-                    }
-                }
+        
+        //only go down 1 step
+        var y = coords[1];
+        if (piece.set == 1) {
+            if (y < 9) {
+                spots.push([coords[0], y + 1]);
+            }
+            if (y > 4) {
+                var x = coords[0];
+                
+                spots.push([x - 1, y]);
+                spots.push([coords[0] + 1, y]);
+            }
+        } else {
+            if (y > 0) {
+                spots.push([coords[0], y - 1]);
+            }
+            if (y < 5) {
+                var x = coords[0];
+                spots.push([x - 1, y]);
+                spots.push([coords[0] + 1, y]);
             }
         }
+        return spots;
+    }
+
+    this.horseMoves = function(piece){
+        var coords = piece.coords;
+        var spots = [];
+        
+        //horse can move 8 ways
+        //top
+        spots.push([coords[0] - 1, coords[1] - 2]);
+        spots.push([coords[0] + 1, coords[1] - 2]);
+        //right
+        spots.push([coords[0] + 2, coords[1] - 1]);
+        spots.push([coords[0] + 2, coords[1] + 1]);
+        //down
+        spots.push([coords[0] - 1, coords[1] + 2]);
+        spots.push([coords[0] + 1, coords[1] + 2]);
+        //left
+        spots.push([coords[0] - 2, coords[1] - 1]);
+        spots.push([coords[0] - 2, coords[1] + 1]);
+        
+        return spots;
+    }
+
+    this.cannonMoves = function(piece) {
+        var coords = piece.coords;
+        var spots = [];
+        
+        //cannon can move left and right
+        for (var i = 0; i < 9; i++) {
+            if (i != coords[0]) {
+                spots.push([i, coords[1]]);
+            }
+        }
+        //cannon can move up and down
+        for (var i = 0; i < 10; i++) {
+            if (i != coords[1]) {
+                spots.push([coords[0], i]);
+            }
+        }
+        
         return spots;
     }
 
@@ -309,11 +382,19 @@ var MoveChecker = (function(){
             case 's':
                 spots = self.soldierMoves(piece);
                 break;
+            case 'h':
+                spots = self.horseMoves(piece);
+                break;
+            case 'c':
+                spots = self.cannonMoves(piece);
+                break;
         }
 
         console.log(spots);
 
+        spots = spots.filter(function(spot) { return !self._isOutOfBound(spot);});
         spots = spots.filter(function(spot) { return !self._isOccupiedSpot(spot, piece.set);});
+        spots = spots.filter(function(spot) { return !self._isBlocked(spot, piece)});
         return spots;
     }
 
@@ -327,8 +408,14 @@ var MoveChecker = (function(){
         }
     }
 
+    this.canMove = function(piece, spot) {
+        var spots = self.possibleMoves(piece);
+        return spots.filter(function(d){ return d[0] == spot[0] && d[1] == spot[1]; }).length > 0;
+    }
+
     return {
-        highlightMoves: highlightMoves
+        highlightMoves: highlightMoves,
+        canMove: canMove
     }
 })();
 
