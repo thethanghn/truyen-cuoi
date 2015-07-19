@@ -1,6 +1,6 @@
 <h1>Xiangqi</h1>
 <div class="row-fluid">
-    <div class="col-md-8">
+    <div class="col-md-8 left-col">
         <div class="canvas">
             <svg id="svg"></svg>
         </div>
@@ -10,15 +10,7 @@
     </div>
 </div>
 <script language="javascript">
-const W = 650,
-      H = 650,
-      ROWS = 10,
-      COLUMNS = 9,
-      PIECE_SIZE = 40;
-
-const COL_HEIGHT = Math.floor(W/COLUMNS),
-        ROW_HEIGHT = Math.floor(H/ROWS);
-
+var W, H, ROWS, COLUMNS, PIECE_SIZE, COL_HEIGHT, ROW_HEIGHT;
 var data = [
     { coords: [0, 0], code: 'r', set: 1, id: 'r-1-1' },
     { coords: [1, 0], code: 'h', set: 1, id: 'h-1-2' },
@@ -202,6 +194,15 @@ function clearSpotStyle() {
 }
 
 $(function(){
+
+    W = $('.left-col').width();
+    H = W;
+    ROWS = 10;
+    COLUMNS = 9;
+    PIECE_SIZE = 40;
+
+    COL_HEIGHT = Math.floor(W/COLUMNS);
+    ROW_HEIGHT = Math.floor(H/ROWS);
     
     var svg = d3.select('#svg').attr({width: W, height: H});
 
