@@ -1,0 +1,277 @@
+<h1>Xiangqi</h1>
+<div class="row-fluid">
+    <div class="col-md-8">
+        <div class="canvas">
+            <svg id="svg"></svg>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <button id="btnResetGame">Reset</button>
+    </div>
+</div>
+<script language="javascript">
+const W = 650,
+      H = 650,
+      ROWS = 10,
+      COLUMNS = 9,
+      PIECE_SIZE = 40;
+
+const COL_HEIGHT = Math.floor(W/COLUMNS),
+        ROW_HEIGHT = Math.floor(H/ROWS);
+
+var data = [
+    { coords: [0, 0], value: 'r1' },
+    { coords: [1, 0], value: 'h1' },
+    { coords: [2, 0], value: 'e1' },
+    { coords: [3, 0], value: 'a1' },
+    { coords: [4, 0], value: 'g1' },
+    { coords: [5, 0], value: 'a1' },
+    { coords: [6, 0], value: 'e1' },
+    { coords: [7, 0], value: 'h1' },
+    { coords: [8, 0], value: 'r1' },
+    { coords: [1, 2], value: 'c1' },
+    { coords: [7, 2], value: 'c1' },
+    { coords: [0, 3], value: 's1' },
+    { coords: [2, 3], value: 's1' },
+    { coords: [4, 3], value: 's1' },
+    { coords: [6, 3], value: 's1' },
+    { coords: [8, 3], value: 's1' },
+    { coords: [0, 9], value: 'r2' },
+    { coords: [1, 9], value: 'h2' },
+    { coords: [2, 9], value: 'e2' },
+    { coords: [3, 9], value: 'a2' },
+    { coords: [4, 9], value: 'g2' },
+    { coords: [5, 9], value: 'a2' },
+    { coords: [6, 9], value: 'e2' },
+    { coords: [7, 9], value: 'h2' },
+    { coords: [8, 9], value: 'r2' },
+    { coords: [1, 7], value: 'c2' },
+    { coords: [7, 7], value: 'c2' },
+    { coords: [0, 6], value: 's2' },
+    { coords: [2, 6], value: 's2' },
+    { coords: [4, 6], value: 's2' },
+    { coords: [6, 6], value: 's2' },
+    { coords: [8, 6], value: 's2' }
+];
+
+var pieceCodes = ['a', 'c', 'r', 'e', 'g', 'h', 's'];
+var linePositions = [
+        //rows
+        [[0, 0], [8, 0]],
+        [[0, 1], [8, 1]],
+        [[0, 2], [8, 2]],
+        [[0, 3], [8, 3]],
+        [[0, 4], [8, 4]],
+        [[0, 5], [8, 5] ],
+        [[0, 6], [8, 6]],
+        [[0, 7], [8, 7]],
+        [[0, 8], [8, 8]],
+        [[0, 9], [8, 9]],
+        //cols
+        [[0, 0], [0, 9]],
+        [[8, 0], [8, 9]],
+        [[1, 0], [1, 4]],
+        [[1, 5], [1, 9]],
+        [[2, 0], [2, 4]],
+        [[2, 5], [2, 9]],
+        [[3, 0], [3, 4]],
+        [[3, 5], [3, 9]],
+        [[4, 0], [4, 4]],
+        [[4, 5], [4, 9]],
+        [[5, 0], [5, 4]],
+        [[5, 5], [5, 9]],
+        [[6, 0], [6, 4]],
+        [[6, 5], [6, 9]],
+        [[7, 0], [7, 4]],
+        [[7, 5], [7, 9]],
+        //advisor crossing
+        [[3, 0], [5, 2]],
+        [[3, 2], [5, 0]],
+        [[3, 7], [5, 9]],
+        [[3, 9], [5, 7]],
+    ];
+
+function initResources(svg) {
+    var defs = svg.append("defs");
+    for(var j = 1; j <= 2; j++) {
+        for(var i = 0; i < pieceCodes.length; i++) {
+            var code = pieceCodes[i];
+            var path = ['/xiangqi/', code, j, '.png'].join('');
+            var pattern = defs.append("pattern")
+                    .attr({ id: ["img", code, j].join(''), width: PIECE_SIZE, height: PIECE_SIZE, patternUnits:"userSpaceOnUse"})
+                    .append("svg:image")
+                    .attr("xlink:href", path)
+                    .attr("width", PIECE_SIZE)
+                    .attr("height", PIECE_SIZE)
+                    .attr("x", 0)
+                    .attr("y", 0);
+        }
+    }
+}
+
+function drawSpots(svg) {
+    var blankSpots = svg.append('g').attr({width: W, height: H});
+    var spots = [];
+    for(var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
+            spots.push([i, j]);
+        }
+    }
+    blankSpots.selectAll('.spot')
+                .data(spots)
+                .enter()
+                .append('rect')
+                .attr('class', 'rect-spot')
+                .attr('transform', function(d) { return ['translate(', COL_HEIGHT *d[0] , ',', ROW_HEIGHT *d[1], ')'].join('');})
+                .attr('width', PIECE_SIZE)
+                .attr('height', PIECE_SIZE)
+                .attr('fill', '#fff')
+                .attr('fill-opacity', 0)
+                .on('mouseover', function() {
+                    d3.select(this).attr('style', 'stroke-width: 1px; stroke: yellow;');
+                })
+                .on('mouseout', function() {
+                    d3.select(this).attr('style', 'stroke-width: 0;');  
+                })
+                .on('click', function() {
+                    console.log('blankspot clicked');
+                });
+}
+
+function drawLines(svg) {
+    var lines = svg.append('g').attr({width: W, height: H});
+    for(var i = 0; i < linePositions.length; i++) {
+        var pair = linePositions[i];
+        var point1 = pair[0];
+        var point2 = pair[1];
+        lines.append('line')
+            .attr('x1', COL_HEIGHT * point1[0] + PIECE_SIZE / 2)
+            .attr('y1', 2 + ROW_HEIGHT * point1[1] + PIECE_SIZE / 2)
+            .attr('x2', COL_HEIGHT * point2[0] + PIECE_SIZE / 2)
+            .attr('y2', 2 + ROW_HEIGHT * point2[1] + PIECE_SIZE / 2)
+            .attr('style', 'stroke: #000; stroke-width: 1');
+    }
+}
+
+function drawPieces(svg) {
+    var pieces = svg.append('g')
+        .attr('class', 'pieces')
+        .attr('background-color', 'red')
+        .attr('width', W)
+        .attr('height', H);
+    
+    pieces.selectAll('.piece')
+        .data(data)
+        .enter()
+        .append('rect')
+        .attr('class', function(d) { return 'rect-piece ' + getPieceCls(d.coords) })
+        .attr('transform', function(d) { return translateFromPosition(d.coords)})
+        .attr('width', PIECE_SIZE)
+        .attr('height', PIECE_SIZE)
+        .attr('fill', function(d) { return 'url(#img' + d.value + ')';});
+
+}
+
+function getPieceCls(coords) {
+    return ['piece', coords[0], coords[1]].join('-');
+}
+
+function xyFromPosition(coords) {
+    x = COL_HEIGHT * coords[0];
+    y = ROW_HEIGHT * coords[1];
+    return [x, y];
+}
+
+function translateFromPosition(coords) {
+    var xy = xyFromPosition(coords);
+    var result = ['translate(', xy[0], ',', xy[1] , ')'].join('');
+    console.log(result);
+    return result;
+}
+
+function resetGame() {
+    $('.pieces').remove();
+    var svg = d3.select('#svg');
+    drawPieces(svg);
+}
+
+$(function(){
+    
+    var svg = d3.select('#svg').attr({width: W, height: H});
+
+    initResources(svg);
+
+    //blank spot
+
+    drawLines(svg);
+
+    drawSpots(svg);
+
+    drawPieces(svg);
+
+    //moving logic
+    
+    var pieceClickSource = Rx.Observable.fromEvent($('.rect-piece'), 'click');
+    pieceClickSource.subscribe(
+        function(x) {
+            console.log('piece clicked');
+            var ele = d3.select(x.target);
+            var pieceData = ele.data()[0];
+            if (!onMovePiece) {
+                ele.attr('style', 'stroke:darkblue;stroke-width:1');
+                onMovePiece = pieceData;
+            } else {
+                Game.resetPiece();
+            }
+        },
+        function(e) { console.log('error on piece click');},
+        function() { console.log('comleted');}
+    );
+
+    var spotClickSource = Rx.Observable.fromEvent($('.rect-spot'), 'click');
+    spotClickSource.subscribe(
+        function(x) {
+            console.log('spot clicked');
+            var spotData = d3.select(x.target).data()[0];
+            console.log(spotData);
+            if (onMovePiece) {
+                Game.movePiece(onMovePiece, spotData);
+                Game.resetPiece();
+            }
+        },
+        function(e) { console.log('error on piece click');},
+        function() { console.log('comleted');}
+    );
+
+    $('#btnResetGame').click(function() { resetGame(); });
+});
+var onMovePiece = null;
+var Game = (function(){
+    var self = this;
+    
+    this.findD3Piece = function(coords) {
+        var cls = getPieceCls(coords);
+        return d3.select('.' + cls);
+        
+    };
+
+    this.resetPiece = function() {
+        if (onMovePiece) {
+            var ele = self.findD3Piece(onMovePiece.coords);
+            ele.attr('style', 'stroke:0;');
+            onMovePiece = null;
+        }
+    };
+
+    this.movePiece = function(piece, spot) {
+        var ele = self.findD3Piece(piece.coords);
+        ele.transition().attr('transform', translateFromPosition(spot));
+    };
+
+    return {
+        resetPiece: resetPiece,
+        movePiece: movePiece
+    }
+})();
+
+</script>

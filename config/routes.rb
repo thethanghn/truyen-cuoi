@@ -19,6 +19,7 @@ TruyenCuoi::Application.routes.draw do
   resources :news
   namespace :games do
     resources :blackjack
+    resources :xiangqi
   end
 
 

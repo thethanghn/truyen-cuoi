@@ -8,6 +8,7 @@
         %a.topnote.muted.pull-left {double click it}
         %nav
           %ul.nav.pull-right.nav-pills
+            %li{class: ''}= link_to "Xiangqi", games_xiangqi_index_path
             %li{class: ''}= link_to "Blackjack", games_blackjack_index_path
             %li{class: ''}= link_to "News", news_index_path
             %li{class: (params[:read].nil? ? 'active' :'') }= link_to "All", root_path
