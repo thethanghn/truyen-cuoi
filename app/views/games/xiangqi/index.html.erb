@@ -254,6 +254,13 @@ var MoveChecker = (function(){
 
     var self = this;
 
+    this._hasPieceAt = function(spot) {
+        var b = data.filter(function(p) {
+            return p.coords[0] == spot[0] && p.coords[1] == spot[1];
+        });
+        return b.length > 0;
+    }
+
     this._isOccupiedSpot = function(spot, set) {
         var occupied = data.filter(function(piece) {
             return piece.coords[0] == spot[0] && piece.coords[1] == spot[1] && piece.set == set;
@@ -290,15 +297,42 @@ var MoveChecker = (function(){
                 }
 
                 if (toFind) {
-                    var b = data.filter(function(p) {
-                        return p.coords[0] == toFind[0] && p.coords[1] == toFind[1];
-                    });
-                    result = b.length > 0;
+                    result = self._hasPieceAt(toFind);
                 }
             break;
 
             case 'c':
-                
+                //find the pieces in the middle
+                var hasPiece = self._hasPieceAt(spot);
+                var length = 0;
+                //top
+                if (spot[1] < piece.coords[1]) {
+                    var res = data.filter(function(p) {
+                        return p.coords[0] == piece.coords[0] &&  p.coords[1] > spot[1] && p.coords[1] < piece.coords[1];
+                    });
+
+                    length = res.length;
+                } else if (spot[1] > piece.coords[1]) {
+                    var res = data.filter(function(p) {
+                        return p.coords[0] == piece.coords[0] &&  p.coords[1] > piece.coords[1] && p.coords[1] < spot[1];
+                    });
+
+                    length = res.length;
+                } else if (spot[0] < piece.coords[0]) {
+                    var res = data.filter(function(p) {
+                        return p.coords[1] == piece.coords[1] &&  p.coords[0] > spot[0] && p.coords[0] < piece.coords[0];
+                    });
+
+                    length = res.length;
+                } else if (spot[0] > piece.coords[0]) {
+                    var res = data.filter(function(p) {
+                        return p.coords[1] == piece.coords[1] &&  p.coords[0] > piece.coords[0] && p.coords[0] < spot[0];
+                    });
+
+                    length = res.length;
+                }
+
+                result =  (!hasPiece && res.length > 0) || (hasPiece && res.length != 1);
             break;
         }
         return result;
