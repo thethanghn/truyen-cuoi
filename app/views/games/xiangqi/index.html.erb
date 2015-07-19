@@ -366,6 +366,26 @@ var MoveChecker = (function(){
 
                 result =  length > 0;
             break;
+
+            case 'e':
+                var toFind = null;
+                //top
+                if (spot[0] < piece.coords[0]) {
+                    if (spot[1] < piece.coords[1]) {
+                        toFind = [piece.coords[0] - 1, piece.coords[1] - 1];
+                    } else {
+                        toFind = [piece.coords[0] - 1, piece.coords[1] + 1];
+                    }
+                } else {
+                    if (spot[1] < piece.coords[1]) {
+                        toFind = [piece.coords[0] + 1, piece.coords[1] - 1];
+                    } else {
+                        toFind = [piece.coords[0] + 1, piece.coords[1] + 1];
+                    }
+                }
+
+                result =  self._hasPieceAt(toFind);
+            break;
         }
         return result;
     }
@@ -445,6 +465,19 @@ var MoveChecker = (function(){
         return self.cannonMoves(piece);
     }
 
+    this.elephantMoves = function(piece) {
+        var coords = piece.coords;
+        var spots = [];
+        
+        //elephant can move 4 ways
+        spots.push([coords[0] - 2, coords[1] - 2]);
+        spots.push([coords[0] - 2, coords[1] + 2]);
+        spots.push([coords[0] + 2, coords[1] - 2]);
+        spots.push([coords[0] + 2, coords[1] + 2]);
+        
+        return spots;
+    }
+
     this.possibleMoves = function(piece) {
         console.log('possibleMoves');
         var spots = [];
@@ -460,6 +493,9 @@ var MoveChecker = (function(){
                 break;
             case 'r':
                 spots = self.rookMoves(piece);
+                break;
+            case 'e':
+                spots = self.elephantMoves(piece);
                 break;
         }
 
