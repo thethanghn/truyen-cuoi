@@ -199,7 +199,8 @@ $(function(){
     H = W;
     ROWS = 10;
     COLUMNS = 9;
-    PIECE_SIZE = 40;
+
+    PIECE_SIZE = Math.floor(40 * W / 800);
 
     COL_HEIGHT = Math.floor(W/COLUMNS);
     ROW_HEIGHT = Math.floor(H/ROWS);
