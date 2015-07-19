@@ -478,6 +478,19 @@ var MoveChecker = (function(){
         return spots;
     }
 
+    this.advisorMoves = function(piece) {
+        var coords = piece.coords;
+        var spots = [];
+        
+        //elephant can move 4 ways
+        spots.push([coords[0] - 1, coords[1] - 1]);
+        spots.push([coords[0] - 1, coords[1] + 1]);
+        spots.push([coords[0] + 1, coords[1] - 1]);
+        spots.push([coords[0] + 1, coords[1] + 1]);
+        
+        return spots;
+    }
+
     this.possibleMoves = function(piece) {
         console.log('possibleMoves');
         var spots = [];
@@ -496,6 +509,9 @@ var MoveChecker = (function(){
                 break;
             case 'e':
                 spots = self.elephantMoves(piece);
+                break;
+            case 'a':
+                spots = self.advisorMoves(piece);
                 break;
         }
 
