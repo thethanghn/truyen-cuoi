@@ -334,12 +334,43 @@ var MoveChecker = (function(){
 
                 result =  (!hasPiece && res.length > 0) || (hasPiece && res.length != 1);
             break;
+
+            case 'r':
+                var length = 0;
+                //top
+                if (spot[1] < piece.coords[1]) {
+                    var res = data.filter(function(p) {
+                        return p.coords[0] == piece.coords[0] &&  p.coords[1] > spot[1] && p.coords[1] < piece.coords[1];
+                    });
+
+                    length = res.length;
+                } else if (spot[1] > piece.coords[1]) {
+                    var res = data.filter(function(p) {
+                        return p.coords[0] == piece.coords[0] &&  p.coords[1] > piece.coords[1] && p.coords[1] < spot[1];
+                    });
+
+                    length = res.length;
+                } else if (spot[0] < piece.coords[0]) {
+                    var res = data.filter(function(p) {
+                        return p.coords[1] == piece.coords[1] &&  p.coords[0] > spot[0] && p.coords[0] < piece.coords[0];
+                    });
+
+                    length = res.length;
+                } else if (spot[0] > piece.coords[0]) {
+                    var res = data.filter(function(p) {
+                        return p.coords[1] == piece.coords[1] &&  p.coords[0] > piece.coords[0] && p.coords[0] < spot[0];
+                    });
+
+                    length = res.length;
+                }
+
+                result =  length > 0;
+            break;
         }
         return result;
     }
 
     this.soldierMoves = function(piece) {
-        console.log('soldierMoves');
         var coords = piece.coords;
         var spots = [];
         
@@ -409,6 +440,11 @@ var MoveChecker = (function(){
         return spots;
     }
 
+    this.rookMoves = function(piece) {
+        //rook moves almost the same
+        return self.cannonMoves(piece);
+    }
+
     this.possibleMoves = function(piece) {
         console.log('possibleMoves');
         var spots = [];
@@ -421,6 +457,9 @@ var MoveChecker = (function(){
                 break;
             case 'c':
                 spots = self.cannonMoves(piece);
+                break;
+            case 'r':
+                spots = self.rookMoves(piece);
                 break;
         }
 
