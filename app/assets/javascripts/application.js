@@ -15,7 +15,15 @@
 //= require bootstrap
 //= require bootstrap-wysihtml5
 //= require masonry/jquery.masonry
-//= require_tree .
+//= require jquery-ui-1.9.2.custom.min
+//= require jquery.infinitescroll.min
+//= require d3.min
+//= require rx.all
+//= require zepto.min
+//= require moment
+//= require posts
+//= require news
+//= require_self
 
 $(function(){
   
@@ -56,39 +64,7 @@ $(function(){
     }
   });
   
-  $('.wysihtml5').each(function(i, elem) {
-    $(elem).wysihtml5();
-  });
   
-  $container = $('#masonry-container');
-  $container.masonry({
-    itemSelector: '.post',
-    gutter: 5
-  });
-  
-  
-  $container.infinitescroll({
-    debug: true,
-    navSelector  : '.pagination',    // selector for the paged navigation 
-    nextSelector : '.pagination ul li a[rel="next"]',  // selector for the NEXT link (to page 2)
-    itemSelector : '#masonry-container .post',     // selector for all items you'll retrieve
-    loading: {
-        finishedMsg: 'No more pages to load.',
-        img: 'http://i.imgur.com/6RMhx.gif'
-      }
-    },
-    // trigger Masonry as a callback
-    function( newElements ) {
-      // hide new items while they are loading
-      var $newElems = $( newElements ).css({ opacity: 0 });
-      // ensure that images load before adding to masonry layout
-      $newElems.imagesLoaded(function(){
-        // show elems now they're ready
-        $newElems.animate({ opacity: 1 });
-        $container.masonry( 'appended', $newElems, true ); 
-      });
-    }
-  );
   
 
 });

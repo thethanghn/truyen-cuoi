@@ -2,7 +2,7 @@ class Games::BlackjackController < ApplicationController
   def index
   end
 
-  def show
+  def test
   end
 
 end
