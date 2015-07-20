@@ -1,37 +1,31 @@
 <h1>Xiangqi</h1>
 <div class="row-fluid">
     <div class="col-md-8 left-col">
-        <div class="canvas">
-            <svg id="svg"></svg>
-        </div>
+        <ul class="rooms">
+        </ul>
     </div>
     <div class="col-md-4">
-        <div>
-            <button id="btnResetGame">Reset</button>
-            <button id="btnConnect">Connect</button>
+        <div id="statetxt">
+            undef
         </div>
-
+        <%= form_tag play_games_xiangqi_index_path, method: :get, class: 'form-new-game horizontal-form' do |f| %>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Room Name</label>
+                <input type="text" name="gameId" id="newgamename" class="form-control" placeholder="Enter game name" />
+                <input type="hidden" name="ope" class="ope" value="init"/>
+            </div>
+            <div class="form-group">
+                <input type="submit" id="newgamebtn" class="btn btn-primary" value="New Game"/>
+            </div>
+        <% end %>
         <div>
-            <div>
-                <div id="statetxt">
-                    undef
-                </div>
-                <select id="gamelist">
-                </select>
-                <button id="joingamebtn">Join Game</button>
-                <button id="joinrandomgamebtn">Join Random Game</button>
-                <button id="newgamebtn">New Game</button>
-                <input type="text" id="newgamename" />
-            </div>
-            <div>
-                <div id="theDialogue"></div>
-                <form class="photon" id="mainfrm">
-                    <input type="text" id="input" />
-                    <input type="submit" value="Send" />
-                </form>
-                <button id="colorbtn">Change Color</button>
-                <button id="leavebtn">Leave</button>
-            </div>
+            <div id="theDialogue"></div>
+            <form class="photon" id="mainfrm">
+                <input type="text" id="input" />
+                <input type="submit" value="Send" />
+            </form>
+            <button id="colorbtn">Change Color</button>
+            <button id="leavebtn">Leave</button>
         </div>
     </div>
 </div>
@@ -39,7 +33,7 @@
 <script type="text/javascript" src="/Photon/3rdparty/swfobject.js"></script>
 <script type="text/javascript" src="/Photon/3rdparty/web_socket.js"></script>
 <script type="text/javascript" src="/Photon/Photon-Javascript_SDK.js"></script>
-<%= javascript_include_tag "photon" %>
+
 <script type="text/javascript">
 
 var AppInfo = {
@@ -49,622 +43,75 @@ var AppInfo = {
 //    FbAppId: "you fb app id", 
 }
 
+console.log(AppInfo);
 
 </script>
-<script language="javascript">
-var W, H, ROWS, COLUMNS, PIECE_SIZE, COL_HEIGHT, ROW_HEIGHT;
-const MESSAGE_EVENT = 1,
-    GAME_EVENT = 2
-;
+<%= javascript_include_tag "photon_rooms" %>
+<script type="text/jsx">
+var roomManager;
+var ConnectOnStart = true;
 
-var data = [
-    { coords: [0, 0], code: 'r', set: 1, id: 'r-1-1' },
-    { coords: [1, 0], code: 'h', set: 1, id: 'h-1-2' },
-    { coords: [2, 0], code: 'e', set: 1, id: 'e-1-3' },
-    { coords: [3, 0], code: 'a', set: 1, id: 'a-1-4' },
-    { coords: [4, 0], code: 'g', set: 1, id: 'g-1-5' },
-    { coords: [5, 0], code: 'a', set: 1, id: 'a-1-6' },
-    { coords: [6, 0], code: 'e', set: 1, id: 'e-1-7' },
-    { coords: [7, 0], code: 'h', set: 1, id: 'h-1-8' },
-    { coords: [8, 0], code: 'r', set: 1, id: 'r-1-9' },
-    { coords: [1, 2], code: 'c', set: 1, id: 'c-1-10' },
-    { coords: [7, 2], code: 'c', set: 1, id: 'c-1-11' },
-    { coords: [0, 3], code: 's', set: 1, id: 's-1-12' },
-    { coords: [2, 3], code: 's', set: 1, id: 's-1-13' },
-    { coords: [4, 3], code: 's', set: 1, id: 's-1-14' },
-    { coords: [6, 3], code: 's', set: 1, id: 's-1-15' },
-    { coords: [8, 3], code: 's', set: 1, id: 's-1-16' },
-    { coords: [0, 9], code: 'r', set: 2, id: 'r-2-17' },
-    { coords: [1, 9], code: 'h', set: 2, id: 'h-2-18' },
-    { coords: [2, 9], code: 'e', set: 2, id: 'e-2-19' },
-    { coords: [3, 9], code: 'a', set: 2, id: 'a-2-20' },
-    { coords: [4, 9], code: 'g', set: 2, id: 'g-2-21' },
-    { coords: [5, 9], code: 'a', set: 2, id: 'a-2-22' },
-    { coords: [6, 9], code: 'e', set: 2, id: 'e-2-23' },
-    { coords: [7, 9], code: 'h', set: 2, id: 'h-2-24' },
-    { coords: [8, 9], code: 'r', set: 2, id: 'r-2-25' },
-    { coords: [1, 7], code: 'c', set: 2, id: 'c-2-26' },
-    { coords: [7, 7], code: 'c', set: 2, id: 'c-2-27' },
-    { coords: [0, 6], code: 's', set: 2, id: 's-2-28' },
-    { coords: [2, 6], code: 's', set: 2, id: 's-2-29' },
-    { coords: [4, 6], code: 's', set: 2, id: 's-2-30' },
-    { coords: [6, 6], code: 's', set: 2, id: 's-2-31' },
-    { coords: [8, 6], code: 's', set: 2, id: 's-2-32' }
-];
-
-var pieceCodes = ['a', 'c', 'r', 'e', 'g', 'h', 's'];
-var linePositions = [
-        //rows
-        [[0, 0], [8, 0]],
-        [[0, 1], [8, 1]],
-        [[0, 2], [8, 2]],
-        [[0, 3], [8, 3]],
-        [[0, 4], [8, 4]],
-        [[0, 5], [8, 5] ],
-        [[0, 6], [8, 6]],
-        [[0, 7], [8, 7]],
-        [[0, 8], [8, 8]],
-        [[0, 9], [8, 9]],
-        //cols
-        [[0, 0], [0, 9]],
-        [[8, 0], [8, 9]],
-        [[1, 0], [1, 4]],
-        [[1, 5], [1, 9]],
-        [[2, 0], [2, 4]],
-        [[2, 5], [2, 9]],
-        [[3, 0], [3, 4]],
-        [[3, 5], [3, 9]],
-        [[4, 0], [4, 4]],
-        [[4, 5], [4, 9]],
-        [[5, 0], [5, 4]],
-        [[5, 5], [5, 9]],
-        [[6, 0], [6, 4]],
-        [[6, 5], [6, 9]],
-        [[7, 0], [7, 4]],
-        [[7, 5], [7, 9]],
-        //advisor crossing
-        [[3, 0], [5, 2]],
-        [[3, 2], [5, 0]],
-        [[3, 7], [5, 9]],
-        [[3, 9], [5, 7]],
-    ];
-
-function initResources(svg) {
-    var defs = svg.append("defs");
-    for(var j = 1; j <= 2; j++) {
-        for(var i = 0; i < pieceCodes.length; i++) {
-            var code = pieceCodes[i];
-            var path = ['/xiangqi/', code, j, '.png'].join('');
-            var pattern = defs.append("pattern")
-                    .attr({ id: ["img", code, j].join(''), width: PIECE_SIZE, height: PIECE_SIZE, patternUnits:"userSpaceOnUse"})
-                    .append("svg:image")
-                    .attr("xlink:href", path)
-                    .attr("width", PIECE_SIZE)
-                    .attr("height", PIECE_SIZE)
-                    .attr("x", 0)
-                    .attr("y", 0);
+var RoomList = React.createClass({
+    joinGameHandler: function(ev) {
+        var gameId = $(ev.target).data('room');
+        console.log(gameId);
+        if (this.props.joinGameHandler) {
+            console.log('innn');
+            this.props.joinGameHandler.call(null, gameId);
         }
+    },
+    renderRooms: function(){
+        var rooms = this.props.rooms;
+        var self = this;
+        return rooms.map(function(room) {
+            return <li>{room.name} - <a href="#" data-room={room.name} onClick={self.joinGameHandler}>Join</a></li>;
+        });
+    },
+    render: function() {
+        return <ul>
+            {this.renderRooms()}
+        </ul>;
     }
-}
-
-function drawSpots(svg) {
-    var blankSpots = svg.append('g').attr({width: W, height: H});
-    var spots = [];
-    for(var i = 0; i < 10; i++) {
-        for (var j = 0; j < 10; j++) {
-            spots.push([i, j]);
-        }
-    }
-    blankSpots.selectAll('.spot')
-                .data(spots)
-                .enter()
-                .append('rect')
-                .attr('class', function(d) { return 'rect-spot ' + getSpotCls(d)})
-                .attr('transform', function(d) { return ['translate(', COL_HEIGHT *d[0] , ',', ROW_HEIGHT *d[1], ')'].join('');})
-                .attr('width', PIECE_SIZE)
-                .attr('height', PIECE_SIZE)
-                .attr('fill', '#fff')
-                .attr('fill-opacity', 0)
-                .on('mouseover', function() {
-                    d3.select(this).attr('style', 'stroke-width: 1px; stroke: yellow;');
-                })
-                .on('mouseout', function() {
-                    d3.select(this).attr('style', 'stroke-width: 0;');  
-                })
-                .on('click', function() {
-                    console.log('blankspot clicked');
-                });
-}
-
-function drawLines(svg) {
-    var lines = svg.append('g').attr({width: W, height: H});
-    for(var i = 0; i < linePositions.length; i++) {
-        var pair = linePositions[i];
-        var point1 = pair[0];
-        var point2 = pair[1];
-        lines.append('line')
-            .attr('x1', COL_HEIGHT * point1[0] + PIECE_SIZE / 2)
-            .attr('y1', 2 + ROW_HEIGHT * point1[1] + PIECE_SIZE / 2)
-            .attr('x2', COL_HEIGHT * point2[0] + PIECE_SIZE / 2)
-            .attr('y2', 2 + ROW_HEIGHT * point2[1] + PIECE_SIZE / 2)
-            .attr('style', 'stroke: #000; stroke-width: 1');
-    }
-}
-
-function drawPieces(svg) {
-    var pieces = svg.append('g')
-        .attr('class', 'pieces')
-        .attr('background-color', 'red')
-        .attr('width', W)
-        .attr('height', H);
-    
-    pieces.selectAll('.piece')
-        .data(data)
-        .enter()
-        .append('rect')
-        .attr('class', function(d) { return 'rect-piece ' + d.id })
-        .attr('transform', function(d) { return translateFromPosition(d.coords)})
-        .attr('width', PIECE_SIZE)
-        .attr('height', PIECE_SIZE)
-        .attr('fill', function(d) { return 'url(#img' + [d.code, d.set].join('') + ')';});
-
-}
-
-function getPieceCls(coords) {
-    return ['piece', coords[0], coords[1]].join('-');
-}
-
-function getSpotCls(spot) {
-    return ['spot', spot[0], spot[1]].join('-');
-}
-
-function xyFromPosition(coords) {
-    x = COL_HEIGHT * coords[0];
-    y = ROW_HEIGHT * coords[1];
-    return [x, y];
-}
-
-function translateFromPosition(coords) {
-    var xy = xyFromPosition(coords);
-    return ['translate(', xy[0], ',', xy[1] , ')'].join('');
-}
-
-function resetGame() {
-    $('.pieces').remove();
-    var svg = d3.select('#svg');
-    drawPieces(svg);
-}
-
-function clearSpotStyle() {
-    d3.selectAll('.rect-spot').attr('style', 'stroke-width: 0');
-}
-
-$(function(){
-
-    W = $('.left-col').width();
-    H = W;
-    ROWS = 10;
-    COLUMNS = 9;
-
-    PIECE_SIZE = Math.floor(60 * W / 800);
-
-    COL_HEIGHT = Math.floor(W/COLUMNS);
-    ROW_HEIGHT = Math.floor(H/ROWS);
-    
-    var svg = d3.select('#svg').attr({width: W, height: H});
-
-    initResources(svg);
-
-    //blank spot
-
-    drawLines(svg);
-
-    drawSpots(svg);
-
-    drawPieces(svg);
-
-    //moving logic
-    
-    var pieceClickSource = Rx.Observable.fromEvent($('.rect-piece'), 'click');
-    pieceClickSource.subscribe(
-        function(x) {
-            console.log('piece clicked');
-            clearSpotStyle();
-            var ele = d3.select(x.target);
-            var pieceData = ele.data()[0];
-            ele.attr('style', 'stroke:darkblue;stroke-width:1');
-            onMovePiece = pieceData;
-            MoveChecker.highlightMoves(pieceData);
-        },
-        function(e) { console.log('error on piece click');},
-        function() { console.log('comleted');}
-    );
-
-    var spotClickSource = Rx.Observable.fromEvent($('.rect-spot'), 'click');
-    spotClickSource.subscribe(
-        function(x) {
-            console.log('spot clicked');
-            var spotData = d3.select(x.target).data()[0];
-            console.log(spotData);
-            if (onMovePiece && MoveChecker.canMove(onMovePiece, spotData)) {
-                Game.movePiece(onMovePiece, spotData);
-                //send it to client
-                demo.raiseEvent(GAME_EVENT, {piece: onMovePiece, spot: spotData });
-                Game.resetPiece();
-            }
-        },
-        function(e) { console.log('error on piece click');},
-        function() { console.log('comleted');}
-    );
-
-    $('#btnResetGame').click(function() { resetGame(); });
-    $('#btnConnect').click(function(){
-        demo = new DemoLoadBalancing();
-        demo.start();
-    });
 });
 
-var MoveChecker = (function(){
+function joinGameHandler(gameId) {
+    console.log('abc');
+    roomManager.joinGameHandler(gameId);
+}
 
-    var self = this;
+function renderRooms(rooms) {
+    var menu = $(".rooms");
+    React.render(<RoomList rooms={rooms} joinGameHandler={joinGameHandler}/>, menu.get(0));
+}
 
-    this._hasPieceAt = function(spot) {
-        var b = data.filter(function(p) {
-            return p.coords[0] == spot[0] && p.coords[1] == spot[1];
-        });
-        return b.length > 0;
-    }
+RoomManager.prototype.onRoomList = function(rooms) {
+    console.log('redefined roomlist');
+    renderRooms(rooms);
 
-    this._isOccupiedSpot = function(spot, set) {
-        var occupied = data.filter(function(piece) {
-            return piece.coords[0] == spot[0] && piece.coords[1] == spot[1] && piece.set == set;
-        });
+    this.output("Demo: Rooms total: " + rooms.length);
+    // this.updateRoomButtons();
+}
 
-        return occupied.length > 0;
-    }
 
-    this._isOutOfBound = function(spot) {
-        return spot[0] < 0 || spot[0] > 8 || spot[1] < 0 || spot[1] > 9;
-    }
+RoomManager.prototype.joinGameHandler = function(gameId) {
+    var url = [this.options.gameUrl, [['gameId', gameId].join('='), ['ope', 'join'].join('=')].join('&')].join('?');
+    console.log(url);
+    window.location.href = url;
+}
 
-    //some pieces have restriction
-    this._isBlocked = function(spot, piece) {
-        var result = false;
-        switch(piece.code) {
-            case 'h':
-                //check each direction for blocking
-                var toFind = null;
-                //right
-                if (spot[0] == piece.coords[0] + 1 || spot[0] == piece.coords[0] - 1) { //left
-                    //top
-                    if (spot[1] == piece.coords[1] - 2) {
-                        toFind = [piece.coords[0], piece.coords[1] - 1];
-                    } else { //bottom
-                        toFind = [piece.coords[0], piece.coords[1] + 1];
-                    }
-                } else if (spot[1] == piece.coords[1] - 1 || spot[1] == piece.coords[1] + 1) {
-                    if (spot[0] == piece.coords[0] + 2) {
-                        toFind = [piece.coords[0] + 1, piece.coords[1]];
-                    } else {
-                        toFind = [piece.coords[0] - 1, piece.coords[1]];
-                    }
-                }
-
-                if (toFind) {
-                    result = self._hasPieceAt(toFind);
-                }
-            break;
-
-            case 'c':
-                //find the pieces in the middle
-                var hasPiece = self._hasPieceAt(spot);
-                var length = 0;
-                //top
-                if (spot[1] < piece.coords[1]) {
-                    var res = data.filter(function(p) {
-                        return p.coords[0] == piece.coords[0] &&  p.coords[1] > spot[1] && p.coords[1] < piece.coords[1];
-                    });
-
-                    length = res.length;
-                } else if (spot[1] > piece.coords[1]) {
-                    var res = data.filter(function(p) {
-                        return p.coords[0] == piece.coords[0] &&  p.coords[1] > piece.coords[1] && p.coords[1] < spot[1];
-                    });
-
-                    length = res.length;
-                } else if (spot[0] < piece.coords[0]) {
-                    var res = data.filter(function(p) {
-                        return p.coords[1] == piece.coords[1] &&  p.coords[0] > spot[0] && p.coords[0] < piece.coords[0];
-                    });
-
-                    length = res.length;
-                } else if (spot[0] > piece.coords[0]) {
-                    var res = data.filter(function(p) {
-                        return p.coords[1] == piece.coords[1] &&  p.coords[0] > piece.coords[0] && p.coords[0] < spot[0];
-                    });
-
-                    length = res.length;
-                }
-
-                result =  (!hasPiece && res.length > 0) || (hasPiece && res.length != 1);
-            break;
-
-            case 'r':
-                var length = 0;
-                //top
-                if (spot[1] < piece.coords[1]) {
-                    var res = data.filter(function(p) {
-                        return p.coords[0] == piece.coords[0] &&  p.coords[1] > spot[1] && p.coords[1] < piece.coords[1];
-                    });
-
-                    length = res.length;
-                } else if (spot[1] > piece.coords[1]) {
-                    var res = data.filter(function(p) {
-                        return p.coords[0] == piece.coords[0] &&  p.coords[1] > piece.coords[1] && p.coords[1] < spot[1];
-                    });
-
-                    length = res.length;
-                } else if (spot[0] < piece.coords[0]) {
-                    var res = data.filter(function(p) {
-                        return p.coords[1] == piece.coords[1] &&  p.coords[0] > spot[0] && p.coords[0] < piece.coords[0];
-                    });
-
-                    length = res.length;
-                } else if (spot[0] > piece.coords[0]) {
-                    var res = data.filter(function(p) {
-                        return p.coords[1] == piece.coords[1] &&  p.coords[0] > piece.coords[0] && p.coords[0] < spot[0];
-                    });
-
-                    length = res.length;
-                }
-
-                result =  length > 0;
-            break;
-
-            case 'e':
-                var toFind = null;
-                //top
-                if (spot[0] < piece.coords[0]) {
-                    if (spot[1] < piece.coords[1]) {
-                        toFind = [piece.coords[0] - 1, piece.coords[1] - 1];
-                    } else {
-                        toFind = [piece.coords[0] - 1, piece.coords[1] + 1];
-                    }
-                } else {
-                    if (spot[1] < piece.coords[1]) {
-                        toFind = [piece.coords[0] + 1, piece.coords[1] - 1];
-                    } else {
-                        toFind = [piece.coords[0] + 1, piece.coords[1] + 1];
-                    }
-                }
-
-                result =  self._hasPieceAt(toFind);
-            break;
-
-            case 'g':
-                if (piece.set == 1) {
-                    result = spot[0] < 3 || spot[0] > 5 || spot[1] < 0 || spot[1] > 2;
-                } else {
-                    result = spot[0] < 3 || spot[0] > 5 || spot[1] < 7 || spot[1] > 9;
-                }
-            break;
+$(function () {
+    $('.form-new-game').submit(function(){
+        var name = $("#newgamename").val();
+        if (!name) {
+            $("#newgamename").focus().parent().addClass('has-error');
+            return false;
         }
-        return result;
-    }
+        return true;
+    });
 
-    this.soldierMoves = function(piece) {
-        var coords = piece.coords;
-        var spots = [];
-        
-        //only go down 1 step
-        var y = coords[1];
-        if (piece.set == 1) {
-            if (y < 9) {
-                spots.push([coords[0], y + 1]);
-            }
-            if (y > 4) {
-                var x = coords[0];
-                
-                spots.push([x - 1, y]);
-                spots.push([coords[0] + 1, y]);
-            }
-        } else {
-            if (y > 0) {
-                spots.push([coords[0], y - 1]);
-            }
-            if (y < 5) {
-                var x = coords[0];
-                spots.push([x - 1, y]);
-                spots.push([coords[0] + 1, y]);
-            }
-        }
-        return spots;
-    }
-
-    this.horseMoves = function(piece){
-        var coords = piece.coords;
-        var spots = [];
-        
-        //horse can move 8 ways
-        //top
-        spots.push([coords[0] - 1, coords[1] - 2]);
-        spots.push([coords[0] + 1, coords[1] - 2]);
-        //right
-        spots.push([coords[0] + 2, coords[1] - 1]);
-        spots.push([coords[0] + 2, coords[1] + 1]);
-        //down
-        spots.push([coords[0] - 1, coords[1] + 2]);
-        spots.push([coords[0] + 1, coords[1] + 2]);
-        //left
-        spots.push([coords[0] - 2, coords[1] - 1]);
-        spots.push([coords[0] - 2, coords[1] + 1]);
-        
-        return spots;
-    }
-
-    this.cannonMoves = function(piece) {
-        var coords = piece.coords;
-        var spots = [];
-        
-        //cannon can move left and right
-        for (var i = 0; i < 9; i++) {
-            if (i != coords[0]) {
-                spots.push([i, coords[1]]);
-            }
-        }
-        //cannon can move up and down
-        for (var i = 0; i < 10; i++) {
-            if (i != coords[1]) {
-                spots.push([coords[0], i]);
-            }
-        }
-        
-        return spots;
-    }
-
-    this.rookMoves = function(piece) {
-        //rook moves almost the same
-        return self.cannonMoves(piece);
-    }
-
-    this.elephantMoves = function(piece) {
-        var coords = piece.coords;
-        var spots = [];
-        
-        //elephant can move 4 ways
-        spots.push([coords[0] - 2, coords[1] - 2]);
-        spots.push([coords[0] - 2, coords[1] + 2]);
-        spots.push([coords[0] + 2, coords[1] - 2]);
-        spots.push([coords[0] + 2, coords[1] + 2]);
-        
-        return spots;
-    }
-
-    this.advisorMoves = function(piece) {
-        var coords = piece.coords;
-        var spots = [];
-        
-        //elephant can move 4 ways
-        spots.push([coords[0] - 1, coords[1] - 1]);
-        spots.push([coords[0] - 1, coords[1] + 1]);
-        spots.push([coords[0] + 1, coords[1] - 1]);
-        spots.push([coords[0] + 1, coords[1] + 1]);
-        
-        return spots;
-    }
-
-    this.generalMoves = function(piece) {
-        var coords = piece.coords;
-        var spots = [];
-        
-        //elephant can move 4 ways
-        spots.push([coords[0] - 1, coords[1]]);
-        spots.push([coords[0] + 1, coords[1]]);
-        spots.push([coords[0], coords[1] - 1]);
-        spots.push([coords[0], coords[1] + 1]);
-        
-        return spots;
-    }
-
-    this.possibleMoves = function(piece) {
-        console.log('possibleMoves');
-        var spots = [];
-        switch(piece.code) {
-            case 's':
-                spots = self.soldierMoves(piece);
-                break;
-            case 'h':
-                spots = self.horseMoves(piece);
-                break;
-            case 'c':
-                spots = self.cannonMoves(piece);
-                break;
-            case 'r':
-                spots = self.rookMoves(piece);
-                break;
-            case 'e':
-                spots = self.elephantMoves(piece);
-                break;
-            case 'a':
-                spots = self.advisorMoves(piece);
-                break;
-            case 'g':
-                spots = self.generalMoves(piece);
-                break;
-        }
-
-        console.log(spots);
-
-        spots = spots.filter(function(spot) { return !self._isOutOfBound(spot);});
-        spots = spots.filter(function(spot) { return !self._isOccupiedSpot(spot, piece.set);});
-        spots = spots.filter(function(spot) { return !self._isBlocked(spot, piece)});
-        return spots;
-    }
-
-    this.highlightMoves = function(piece) {
-        console.log('highlightMoves');
-        var moves = self.possibleMoves(piece);
-        for(var i = 0; i < moves.length; i++) {
-            var m = moves[i];
-            var ele = d3.select('.' + getSpotCls(m));
-            ele.attr('style', 'stroke:green;stroke-width:1');
-        }
-    }
-
-    this.canMove = function(piece, spot) {
-        var spots = self.possibleMoves(piece);
-        return spots.filter(function(d){ return d[0] == spot[0] && d[1] == spot[1]; }).length > 0;
-    }
-
-    return {
-        highlightMoves: highlightMoves,
-        canMove: canMove
-    }
-})();
-
-var onMovePiece = null;
-var Game = (function(){
-    var self = this;
-    
-    this.findD3Piece = function(id) {
-        return d3.select('.' + id);
-        
-    };
-
-    this.resetPiece = function() {
-        if (onMovePiece) {
-            var ele = self.findD3Piece(onMovePiece.id);
-            ele.attr('style', 'stroke:0;');
-            onMovePiece = null;
-        }
-    };
-
-    this.movePiece = function(piece, spot) {
-        var ele = self.findD3Piece(piece.id);
-        //update the coords
-        piece.coords = spot;
-        ele.transition().attr('transform', translateFromPosition(spot));
-        clearSpotStyle();
-    };
-
-    this.opponentMoveHandler = function(content) {
-        Game.movePiece(content.piece, content.spot)
-    }
-
-    return {
-        resetPiece: resetPiece,
-        movePiece: movePiece,
-        opponentMoveHandler: opponentMoveHandler
-    }
-})();
-
-var demo;
-var ConnectOnStart = true;
-window.onload = function () {
-    demo = new DemoLoadBalancing();
-    demo.setGameController(Game);
-    demo.start();
-};
+    roomManager = new RoomManager({gameUrl: '<%= play_games_xiangqi_index_path %>'});
+    roomManager.start();
+});
 
 </script>
 <script language="javascript">

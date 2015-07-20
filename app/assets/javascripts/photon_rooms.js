@@ -19,11 +19,10 @@ var DemoFbAppId = this["AppInfo"] && this["AppInfo"]["FbAppId"];
 
 var ConnectOnStart = false;
 
-var MysteryXiangqiClient = (function (_super) {
-    __extends(MysteryXiangqiClient, _super);
-    function MysteryXiangqiClient(Game, options) {
+var RoomManager = (function (_super) {
+    __extends(RoomManager, _super);
+    function RoomManager(options) {
         _super.call(this, DemoWss ? Photon.ConnectionProtocol.Wss : Photon.ConnectionProtocol.Ws, DemoAppId, DemoAppVersion);
-        this.gameController = Game;
         this.options = options;
         this.logger = new Exitgames.Common.Logger("Demo: ");
         this.USERCOLORS = ["#FF0000", "#00AA00", "#0000FF", "#FFFF00", "#00FFFF", "#FF00FF"];
@@ -36,14 +35,18 @@ var MysteryXiangqiClient = (function (_super) {
 
         this.myActor().setCustomProperty("color", this.USERCOLORS[0]);
     }
-    MysteryXiangqiClient.prototype.start = function (gameId) {
+    RoomManager.prototype.start = function () {
         this.setupUI();
-        this.connectToRegionMaster("asia");
+
+        // connect if no fb auth required
+        if (ConnectOnStart) {
+            this.connectToRegionMaster("asia");
+        }
     };
-    MysteryXiangqiClient.prototype.onError = function (errorCode, errorMsg) {
+    RoomManager.prototype.onError = function (errorCode, errorMsg) {
         this.output("Error " + errorCode + ": " + errorMsg);
     };
-    MysteryXiangqiClient.prototype.onEvent = function (code, content, actorNr) {
+    RoomManager.prototype.onEvent = function (code, content, actorNr) {
         switch (code) {
             case 1:
                 var mess = content.message;
@@ -61,34 +64,7 @@ var MysteryXiangqiClient = (function (_super) {
         this.logger.debug("onEvent", code, "content:", content, "actor:", actorNr);
     };
 
-    MysteryXiangqiClient.prototype.onOperationResponse = function(errorCode, errorMsg, code, content) {
-        console.log('onOperationResponse');
-        console.log(content);
-        switch(code) {
-            case 229: //Constants.CreateGame:
-                this.afterJoinLobby(code, content);
-                break;
-        }
-    };
-
-    MysteryXiangqiClient.prototype.afterJoinLobby = function(code, content) {
-        var name = this.options.gameId;
-        switch(this.options.ope) {
-            case 'init':
-                this.output('Init Game');
-                this.createRoom(name, {maxPlayers: 2, emptyRoomLiveTime: 30000, 
-                                suspendedPlayerLiveTime: 30000, 
-                                customGameProperties: { type: 'Co up', name: name }, 
-                                propsListedInLobby: ['type', 'name']}); //placeholder to add more properties
-                break;
-            case 'join':
-                this.output('Joining game');
-                this.joinRoom(name);
-                break;
-        }
-    }
-
-    MysteryXiangqiClient.prototype.onStateChange = function (state) {
+    RoomManager.prototype.onStateChange = function (state) {
         // "namespace" import for static members shorter acceess
         var LBC = Photon.LoadBalancing.LoadBalancingClient;
 
@@ -97,28 +73,25 @@ var MysteryXiangqiClient = (function (_super) {
         this.updateRoomButtons();
     };
 
-    MysteryXiangqiClient.prototype.onRoomListUpdate = function (rooms, roomsUpdated, roomsAdded, roomsRemoved) {
+    RoomManager.prototype.onRoomListUpdate = function (rooms, roomsUpdated, roomsAdded, roomsRemoved) {
         this.logger.info("Demo: onRoomListUpdate", rooms, roomsUpdated, roomsAdded, roomsRemoved);
         this.output("Demo: Rooms update: " + roomsUpdated.length + " updated, " + roomsAdded.length + " added, " + roomsRemoved.length + " removed");
         this.onRoomList(rooms);
         this.updateRoomButtons(); // join btn state can be changed
     };
-    MysteryXiangqiClient.prototype.onRoomList = function (rooms) {
-
+    RoomManager.prototype.onRoomList = function (rooms) {
+        throw "onRoomList not defined yet";
     };
-    MysteryXiangqiClient.prototype.onJoinRoom = function (createdByMe) {
+    RoomManager.prototype.onJoinRoom = function () {
         this.output("Game " + this.myRoom().name + " joined");
-        if (this.options.onJoinRoomHandler) {
-            this.options.onJoinRoomHandler.call(this, createdByMe);
-        }
     };
-    MysteryXiangqiClient.prototype.onActorJoin = function (actor) {
+    RoomManager.prototype.onActorJoin = function (actor) {
         this.output("actor " + actor.actorNr + " joined");
     };
-    MysteryXiangqiClient.prototype.onActorLeave = function (actor) {
+    RoomManager.prototype.onActorLeave = function (actor) {
         this.output("actor " + actor.actorNr + " left");
     };
-    MysteryXiangqiClient.prototype.sendMessage = function (message) {
+    RoomManager.prototype.sendMessage = function (message) {
         try  {
             this.raiseEvent(1, { message: message, senderName: "user" + this.myActor().actorNr });
             this.output('me[' + this.myActor().actorNr + ']: ' + message, this.myActor().getCustomProperty("color"));
@@ -127,12 +100,62 @@ var MysteryXiangqiClient = (function (_super) {
         }
     };
 
-    MysteryXiangqiClient.prototype.setupUI = function () {
+    RoomManager.prototype.setupUI = function () {
         var _this = this;
         this.logger.info("Setting up UI.");
 
+        // var input = document.getElementById("input");
+        // input.value = 'hello';
+        // input.focus();
+
+        // var btnJoin = document.getElementById("joingamebtn");
+        // btnJoin.onclick = function (ev) {
+        //     if (_this.isInLobby()) {
+        //         var menu = document.getElementById("gamelist");
+        //         var gameId = menu.children[menu.selectedIndex].textContent;
+        //         _this.output(gameId);
+        //         _this.joinRoom(gameId);
+        //     } else {
+        //         _this.output("Reload page to connect to Master");
+        //     }
+        //     return false;
+        // };
+        // var btnJoin = document.getElementById("joinrandomgamebtn");
+        // btnJoin.onclick = function (ev) {
+        //     if (_this.isInLobby()) {
+        //         _this.output("Random Game...");
+        //         _this.joinRandomRoom();
+        //     } else {
+        //         _this.output("Reload page to connect to Master");
+        //     }
+        //     return false;
+        // // };
+        // var btnNew = document.getElementById("newgamebtn");
+        // btnNew.onclick = function (ev) {
+        //     if (_this.isInLobby()) {
+        //         var name = $("#newgamename").val();
+        //         if (!name) {
+        //             _this.output("Please enter name for new game");
+        //             $("#newgamename").focus();
+        //             return false;
+        //         } else {
+        //             _this.output("New Game");
+        //             _this.createRoom(name, {maxPlayers: 2, emptyRoomLiveTime: 30000, 
+        //                         suspendedPlayerLiveTime: 30000, 
+        //                         customGameProperties: { type: 'Co up', name: name }, 
+        //                         propsListedInLobby: ['type', 'name']}); //placeholder to add more properties
+        //         }
+        //     } else {
+        //         _this.output("Reload page to connect to Master");
+        //     }
+        //     return false;
+        // };
+
         var form = document.getElementById("mainfrm");
         form.onsubmit = function () {
+            console.log('is joined to room');
+            console.log(_this.isJoinedToRoom());
+            return false;
             if (_this.isJoinedToRoom()) {
                 var input = document.getElementById("input");
 
@@ -168,7 +191,17 @@ var MysteryXiangqiClient = (function (_super) {
         this.updateRoomButtons();
     };
 
-    MysteryXiangqiClient.prototype.output = function (str, color) {
+    // RoomManager.prototype.joinGameHandler = function(gameId) {
+    //     if (this.isInLobby()) {
+    //         this.output(gameId);
+    //         this.joinRoom(gameId);
+    //     } else {
+    //         this.output("Reload page to connect to Master");
+    //     }
+    //     return false;
+    // }
+
+    RoomManager.prototype.output = function (str, color) {
         var log = document.getElementById("theDialogue");
         var escaped = str.replace(/&/, "&amp;").replace(/</, "&lt;").replace(/>/, "&gt;").replace(/"/, "&quot;");
         if (color) {
@@ -178,11 +211,19 @@ var MysteryXiangqiClient = (function (_super) {
         log.scrollTop = log.scrollHeight;
     };
 
-    MysteryXiangqiClient.prototype.updateRoomButtons = function () {
-        var btn;
+    RoomManager.prototype.updateRoomButtons = function () {
+        // var btn;
+        // btn = document.getElementById("newgamebtn");
+        // btn.disabled = !(this.isInLobby() && !this.isJoinedToRoom());
 
-        btn = document.getElementById("leavebtn");
-        btn.disabled = !(this.isJoinedToRoom());
+        // var canJoin = this.isInLobby() && !this.isJoinedToRoom() && this.availableRooms().length > 0;
+        // btn = document.getElementById("joingamebtn");
+        // btn.disabled = !canJoin;
+        // btn = document.getElementById("joinrandomgamebtn");
+        // btn.disabled = !canJoin;
+
+        // btn = document.getElementById("leavebtn");
+        // btn.disabled = !(this.isJoinedToRoom());
     };
-    return MysteryXiangqiClient;
+    return RoomManager;
 })(Photon.LoadBalancing.LoadBalancingClient);
