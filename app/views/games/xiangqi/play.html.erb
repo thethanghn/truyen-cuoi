@@ -21,6 +21,7 @@
             <button id="leavebtn">Leave</button>
         </div>
         <button id="reset">Reset Game</button>
+        <button id="switch">Switch</button>
     </div>
 </div>
 
@@ -150,7 +151,7 @@ function drawSpots(svg) {
                 .enter()
                 .append('rect')
                 .attr('class', function(d) { return 'rect-spot ' + getSpotCls(d)})
-                .attr('transform', function(d) { return ['translate(', COL_HEIGHT *d[0] , ',', ROW_HEIGHT *d[1], ')'].join('');})
+                .attr('transform', function(d) { return translateFromPosition(d);})
                 .attr('width', PIECE_SIZE)
                 .attr('height', PIECE_SIZE)
                 .attr('fill', '#fff')
@@ -211,6 +212,8 @@ function getSpotCls(spot) {
 function xyFromPosition(coords) {
     c0 = Player.host ? coords[0] : COLUMNS - coords[0] - 1;
     c1 = Player.host ? coords[1] : ROWS - coords[1] - 1;
+    // c0 = coords[0];
+    // c1 = coords[1];
     x = COL_HEIGHT * c0;
     y = ROW_HEIGHT * c1;
     return [x, y];
@@ -576,7 +579,7 @@ var Game = (function(){
 
     this.opponentMoveHandler = function(content) {
         var piece = content.piece;
-        piece.coords = [COLUMNS - piece.coords[0] - 1, ROWS - piece.coords[1] - 1];
+        // piece.coords = [COLUMNS - piece.coords[0] - 1, ROWS - piece.coords[1] - 1];
         var spot = content.spot;
         // spot = [COLUMNS - spot[0] - 1, ROWS - spot[1] - 1];
         Game.movePiece(piece, spot);
@@ -603,6 +606,15 @@ var Player = {
     name: '<%= @ope %>' == 'init' ? 'Player A' : 'Player B',
     host: '<%= @ope %>' == 'init' ? true : false
 };
+
+function reset() {
+    pieceClickSourceSubscriber.dispose();
+    spotClickSourceSubscriber.dispose();
+    data = getInitialPiece();
+    $('.rect-piece').remove();
+    drawPieces(svg);
+    attachHandlers();
+}
 
 function attachHandlers() {
     var pieceClickSource = Rx.Observable.fromEvent($('.rect-piece'), 'click');
@@ -656,33 +668,31 @@ $(function(){
 
     drawSpots(svg);
 
-    drawPieces(svg);
-
-    attachHandlers();
-
     demo = new MysteryXiangqiClient(Game, { 
         gameId: '<%= @gameId %>',
         ope: '<%= @ope %>',
         onJoinRoomHandler: function(createdByMe) {
             var mySet = createdByMe ? 1 : 2;
             var actorNr = this.myActor().actorNr
-            data.forEach(function(piece) {
-                if (piece.set == mySet) {
-                    piece.actor = actorNr;
-                }
-            });
+            // data.forEach(function(piece) {
+            //     if (piece.coords[1] < 5) {
+            //         piece.set = createdByMe ? 2 : 1;
+            //     } else {
+            //         piece.set = createdByMe ? 1 : 2;
+            //     }
+            // });
+            drawPieces(svg);
+            attachHandlers();
         }
     });
     demo.start();
 
     $('#reset').click(function() {
         console.log('resetting game');
-        pieceClickSourceSubscriber.dispose();
-        spotClickSourceSubscriber.dispose();
-        data = getInitialPiece();
-        $('.rect-piece').remove();
-        drawPieces(svg);
-        attachHandlers();
+        reset();
+    });
+    $('#switch').click(function(){
+        Player.host = false;
     });
 });
 </script>
