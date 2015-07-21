@@ -582,6 +582,7 @@ var Game = (function(){
         // piece.coords = [COLUMNS - piece.coords[0] - 1, ROWS - piece.coords[1] - 1];
         var spot = content.spot;
         // spot = [COLUMNS - spot[0] - 1, ROWS - spot[1] - 1];
+        var piece = data.filter(function(d){ return d.id == piece.id})[0];
         Game.movePiece(piece, spot);
     }
 
