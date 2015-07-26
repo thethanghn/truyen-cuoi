@@ -1,6 +1,5 @@
 TruyenCuoi::Application.routes.draw do
-  
-  
+
   resources :mangas
 
   devise_for :admins

@@ -40,9 +40,8 @@ gem 'slim-rails'
 group :development do
   gem 'pry'
   gem 'annotate'
+  gem 'dotenv-rails'
 end
-
-gem 'dotenv-rails', :groups => [:development, :test]
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

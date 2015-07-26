@@ -570,26 +570,38 @@ var Game = (function(){
     };
 
     this.movePiece = function(piece, spot) {
-        var ele = self.findD3Piece(piece.id);
+        // var ele = self.findD3Piece(piece.id);
         //update the coords
         piece.coords = spot;
-        ele.transition().attr('transform', translateFromPosition(spot));
+        // ele.transition().attr('transform', translateFromPosition(spot));
+        self.refresh();
         clearSpotStyle();
     };
 
+    this.refresh = function() {
+        data.forEach(function(piece) {
+            var ele = self.findD3Piece(piece.id);
+            ele.transition().attr('transform', translateFromPosition(piece.coords));
+        });
+    }
+
+    this.loadState = function(state) {
+        data = state;
+        self.refresh();
+    }
+
     this.opponentMoveHandler = function(content) {
-        var piece = content.piece;
-        // piece.coords = [COLUMNS - piece.coords[0] - 1, ROWS - piece.coords[1] - 1];
-        var spot = content.spot;
-        // spot = [COLUMNS - spot[0] - 1, ROWS - spot[1] - 1];
-        var piece = data.filter(function(d){ return d.id == piece.id})[0];
-        Game.movePiece(piece, spot);
+        console.log('opponentMoveHandler');
+        var gameState = content.gameState;
+        console.log(gameState);
+        self.loadState(gameState);
     }
 
     return {
         resetPiece: resetPiece,
         movePiece: movePiece,
-        opponentMoveHandler: opponentMoveHandler
+        opponentMoveHandler: opponentMoveHandler,
+        loadState: loadState
     }
 })();
 
@@ -641,7 +653,7 @@ function attachHandlers() {
             if (onMovePiece && MoveChecker.canMove(onMovePiece, spotData)) {
                 Game.movePiece(onMovePiece, spotData);
                 //send it to client
-                demo.raiseEvent(GAME_EVENT, {piece: onMovePiece, spot: spotData });
+                demo.raiseEvent(GAME_EVENT, {gameState: data }, { cache: Photon.LoadBalancing.Constants.EventCaching.ReplaceCache });
                 Game.resetPiece();
             }
         },
@@ -669,21 +681,25 @@ $(function(){
 
     drawSpots(svg);
 
+    drawPieces(svg);
+
+    attachHandlers();
+
     demo = new MysteryXiangqiClient(Game, { 
         gameId: '<%= @gameId %>',
         ope: '<%= @ope %>',
         onJoinRoomHandler: function(createdByMe) {
-            var mySet = createdByMe ? 1 : 2;
-            var actorNr = this.myActor().actorNr
-            // data.forEach(function(piece) {
-            //     if (piece.coords[1] < 5) {
-            //         piece.set = createdByMe ? 2 : 1;
-            //     } else {
-            //         piece.set = createdByMe ? 1 : 2;
-            //     }
-            // });
-            drawPieces(svg);
-            attachHandlers();
+            // var mySet = createdByMe ? 1 : 2;
+            // var actorNr = this.myActor().actorNr
+            // // data.forEach(function(piece) {
+            // //     if (piece.coords[1] < 5) {
+            // //         piece.set = createdByMe ? 2 : 1;
+            // //     } else {
+            // //         piece.set = createdByMe ? 1 : 2;
+            // //     }
+            // // });
+            // drawPieces(svg);
+            // attachHandlers();
         }
     });
     demo.start();

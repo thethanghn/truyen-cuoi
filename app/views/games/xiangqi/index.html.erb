@@ -38,12 +38,10 @@
 
 var AppInfo = {
 //  Wss: true,
-    AppId: "df820f70-5177-4e33-846b-3c3870f175b0",
+    AppId: "<%= ENV['PHOTON_APP_ID'] %>",
     AppVersion: "1.0",
 //    FbAppId: "you fb app id", 
 }
-
-console.log(AppInfo);
 
 </script>
 <%= javascript_include_tag "photon_rooms" %>
@@ -56,7 +54,6 @@ var RoomList = React.createClass({
         var gameId = $(ev.target).data('room');
         console.log(gameId);
         if (this.props.joinGameHandler) {
-            console.log('innn');
             this.props.joinGameHandler.call(null, gameId);
         }
     },

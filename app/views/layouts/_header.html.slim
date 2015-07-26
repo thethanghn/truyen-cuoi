@@ -1,0 +1,29 @@
+header
+  .navbar.navbar-default role="navigation"
+    .navbar-inner
+      .container
+        .pull-left.topimg
+          = image_tag 'topimg.jpg', class: 'img-polaroid'
+        a.pull-left.brand#logo href="#{root_path}"
+          = "Nguyen The Thang"
+        a.topnote.muted.pull-left {double click it}
+        nav
+          ul.nav.nav-pills.navbar-right
+            li = link_to "Xiangqi", games_xiangqi_index_path
+            li = link_to "Blackjack", games_blackjack_index_path
+            li = link_to "News", news_index_path
+            li = link_to "Fun", root_path
+            - unless user_signed_in?
+              li = link_to "Sign In", new_user_session_path
+              li = link_to "Sign Up", new_user_registration_path
+            - else
+              li.dropdown
+                a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
+                  = current_user.email
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a href="#"  Profile
+                  li.divider role="separator" 
+                  li
+                    = link_to "Sign Out", destroy_user_session_path, method: :delete
