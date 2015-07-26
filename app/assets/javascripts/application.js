@@ -23,6 +23,7 @@
 //= require reactjs/JSXTransformer
 //= require zepto.min
 //= require moment
+//= require growlyflash
 //= require posts
 //= require news
 //= require_self

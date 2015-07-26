@@ -5,13 +5,9 @@
         </ul>
     </div>
     <div class="col-md-4">
-        <div id="statetxt">
-            undef
-        </div>
         <%= form_tag play_games_xiangqi_index_path, method: :get, class: 'form-new-game horizontal-form' do |f| %>
             <div class="form-group">
-                <label for="exampleInputEmail1">Room Name</label>
-                <input type="text" name="gameId" id="newgamename" class="form-control" placeholder="Enter game name" />
+                <input type="text" name="gameId" id="newgamename" class="form-control" placeholder="Welcome to my room" />
                 <input type="hidden" name="ope" class="ope" value="init"/>
             </div>
             <div class="form-group">
@@ -26,6 +22,9 @@
             </form>
             <button id="colorbtn">Change Color</button>
             <button id="leavebtn">Leave</button>
+        </div>
+        <div id="statetxt">
+            undef
         </div>
     </div>
 </div>
