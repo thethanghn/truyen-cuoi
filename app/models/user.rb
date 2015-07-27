@@ -15,6 +15,10 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  confirmed_at           :datetime
+#  confirmation_token     :string
+#  confirmation_sent_at   :datetime
+#  unconfirmed_email      :string
 #
 
 class User < ActiveRecord::Base
@@ -27,4 +31,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   # attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
+  # 
+  
+  has_many :room_users
 end

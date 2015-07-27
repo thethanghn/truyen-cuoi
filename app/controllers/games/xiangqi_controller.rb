@@ -3,8 +3,10 @@ class Games::XiangqiController < ApplicationController
   end
 
   def play
+    @room = Room.new title: params[:title]
     @gameId = params[:gameId]
     @ope = params[:ope] || 'init'
+
   end
 
 end
