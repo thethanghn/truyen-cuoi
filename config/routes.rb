@@ -1,5 +1,9 @@
 TruyenCuoi::Application.routes.draw do
 
+  resources :photon, only: [] do
+    post 'PathCreate'
+  end
+
   resources :mangas
 
   devise_for :admins
