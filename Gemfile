@@ -6,10 +6,9 @@ gem 'rails', '4.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sass-rails'
-gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'sprockets'
-gem 'sprockets-es6', require: 'sprockets/es6'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'sass-rails', '>= 3.2'
 
 gem 'faker'
 gem 'will_paginate'
@@ -32,7 +31,7 @@ gem 'coffee-rails'
   # gem 'therubyracer', :platforms => :ruby
 gem 'uglifier'
 
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.0.4'
 gem 'devise'
 gem 'rails_admin'
 gem 'slim-rails'

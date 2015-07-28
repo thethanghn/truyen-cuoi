@@ -19,7 +19,11 @@ TruyenCuoi::Application.routes.draw do
   namespace :games do
     resources :blackjack
     resources :xiangqi do
-      get :play, on: :collection
+      get :play, on: :collection 
+    end
+    resources :rooms do
+      post :init
+      get :join
     end
   end
 

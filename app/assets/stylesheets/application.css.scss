@@ -9,13 +9,19 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  
- *= require bootstrap
- *= require bootstrap-wysihtml5
  *= require_self
  *= require custom
  *= require blackjack
+ *= require xiangqi
  *= require news
  *= require posts
  */
 
- @import "growlyflash";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$growlyflash-top:     100px !default;
+$growlyflash-side:    20px !default;
+$growlyflash-width:   auto !default;
+$growlyflash-zindex:  9999 !default;
+@import "growlyflash";

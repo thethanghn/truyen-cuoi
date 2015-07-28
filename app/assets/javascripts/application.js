@@ -10,7 +10,7 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
+//= require jquery2
 //= require jquery_ujs
 //= require bootstrap
 //= require bootstrap-wysihtml5
@@ -24,6 +24,7 @@
 //= require zepto.min
 //= require moment
 //= require growlyflash
+//= require override
 //= require posts
 //= require news
 //= require_self

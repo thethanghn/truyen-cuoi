@@ -8,6 +8,7 @@
 #  position   :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  join_token :integer          default(0)
 #
 
 require 'test_helper'

@@ -1,4 +1,4 @@
-<h1>Xiangqi</h1>
+<h1>Xiangqi - <%= @title %></h1>
 <div class="row-fluid">
     <div class="col-md-8 left-col">
         <div class="canvas">
@@ -6,22 +6,28 @@
         </div>
     </div>
     <div class="col-md-4">
+        <div class="actors">NO actor</div>
         <div>
             <div id="statetxt">
                 undef
             </div>
         </div>
-        <div>
+        <div class="bg-success" style="padding: 20px;">
+            <h4>Chat windows</h4>
             <div id="theDialogue"></div>
-            <form class="photon" id="mainfrm">
-                <input type="text" id="input" />
-                <input type="submit" value="Send" />
+            <h4>Your message:</h4>
+            <form class="form-message horizontal-form" id="mainfrm">
+                
+                <div class="form-group">
+                    <textarea class="form-control" type="text" id="input" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Send" class="btn btn-primary"
+                     />
+                     <button id="leavebtn" class="btn btn-default">Leave</button>
+                </div>
             </form>
-            <button id="colorbtn">Change Color</button>
-            <button id="leavebtn">Leave</button>
         </div>
-        <button id="reset">Reset Game</button>
-        <button id="switch">Switch</button>
     </div>
 </div>
 
@@ -32,7 +38,7 @@
 
 var AppInfo = {
 //  Wss: true,
-    AppId: "df820f70-5177-4e33-846b-3c3870f175b0",
+    AppId: "<%= ENV['PHOTON_APP_ID'] %>",
     AppVersion: "1.0",
 //    FbAppId: "you fb app id", 
 }
@@ -611,6 +617,26 @@ var Game = (function(){
     // Set this to dump debug message from Flash to console.log:
     WEB_SOCKET_DEBUG = false;
 </script>
+<script type="text/jsx">
+var RoomActors = React.createClass({
+    renderActors: function() {
+        var actors = this.props.actors;
+        return actors.map(function(actor){
+            return <li>{actor.name}({actor.actorNr})</li>;
+        });
+    },
+    render: function() {
+        return <ul>
+            {this.renderActors()}
+        </ul>;
+    }
+});
+
+
+function renderMyRoomActors(actors) {
+    React.render(<RoomActors actors={actors}/>, $('.actors')[0]);
+}
+</script>
 <script language="javascript">
 var demo;
 var pieceClickSourceSubscriber, spotClickSourceSubscriber;
@@ -681,35 +707,50 @@ $(function(){
 
     drawSpots(svg);
 
-    drawPieces(svg);
+    drawPieces(svg);    
 
     attachHandlers();
 
     demo = new MysteryXiangqiClient(Game, { 
-        gameId: '<%= @gameId %>',
+        title: '<%= @title %>',
+        name: '<%= @room.game_name %>',
+        actorName: '<%= current_user.email %>',
+        joinToken: <%= @room_user.join_token %>,
         ope: '<%= @ope %>',
-        onJoinRoomHandler: function(createdByMe) {
-            // var mySet = createdByMe ? 1 : 2;
-            // var actorNr = this.myActor().actorNr
-            // // data.forEach(function(piece) {
-            // //     if (piece.coords[1] < 5) {
-            // //         piece.set = createdByMe ? 2 : 1;
-            // //     } else {
-            // //         piece.set = createdByMe ? 1 : 2;
-            // //     }
-            // // });
-            // drawPieces(svg);
-            // attachHandlers();
+        onJoinRoomHandler: function(createdByMe, name, joinToken) {
+            console.log('onJoinRoomHandler');
+            if (createdByMe) {
+                var promise = $.post('<%= games_room_init_path(@room.id) %>', { game_name: name, join_token: joinToken}).
+                    done(function(result){
+                        alert('Game inited done');
+                    }).
+                    error(function(XMLHttpRequest, textStatus, errorThrown){
+                        debugger;
+                        alert('Unable to create room due to server error');
+                        //window.location.href = '<%= games_xiangqi_index_path %>';
+                    });
+            }
+
+            var objects = this.myRoomActors();
+            var actors = [];
+            for(var key in objects) {
+                actors.push(objects[key]);
+            }
+            console.log('myRoomActors');
+            console.log(actors);
+            renderMyRoomActors(actors);
         }
     });
+    MysteryXiangqiClient.prototype.onActorJoin = function(actor) {
+        var objects = this.myRoomActors();
+        var actors = [];
+        for(var key in objects) {
+            actors.push(objects[key]);
+        }
+        console.log('myRoomActors');
+        console.log(actors);
+        renderMyRoomActors(actors);
+    }
     demo.start();
-
-    $('#reset').click(function() {
-        console.log('resetting game');
-        reset();
-    });
-    $('#switch').click(function(){
-        Player.host = false;
-    });
 });
 </script>

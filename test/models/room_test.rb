@@ -7,6 +7,8 @@
 #  password   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  game_type  :string           not null
+#  game_name  :string
 #
 
 require 'test_helper'

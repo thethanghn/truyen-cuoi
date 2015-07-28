@@ -35,6 +35,7 @@ var MysteryXiangqiClient = (function (_super) {
         this.setLogLevel(Exitgames.Common.Logger.Level.DEBUG);
 
         this.myActor().setCustomProperty("color", this.USERCOLORS[0]);
+        this.myActor().setName(this.options.actorName);
     }
     MysteryXiangqiClient.prototype.start = function (gameId) {
         this.setupUI();
@@ -72,20 +73,23 @@ var MysteryXiangqiClient = (function (_super) {
     };
 
     MysteryXiangqiClient.prototype.afterJoinLobby = function(code, content) {
-        var name = this.options.gameId;
+        var title = this.options.title;
+        console.log('afterJoinLobby');
+        console.log(this.myActor().getJoinToken());
         switch(this.options.ope) {
             case 'init':
                 this.output('Init Game');
-                this.createRoom(name, {
+                this.createRoom(this.options.name, {
                                 //maxPlayers: 2,
                                 emptyRoomLiveTime: 30000, 
                                 suspendedPlayerLiveTime: 30000, 
-                                customGameProperties: { type: 'Co up', name: name }, 
-                                propsListedInLobby: ['type', 'name']}); //placeholder to add more properties
+                                customGameProperties: { type: 'Co up', title: title }, 
+                                propsListedInLobby: ['type', 'title']}); //placeholder to add more properties
                 break;
             case 'join':
+            case 'rejoin':
                 this.output('Joining game');
-                this.joinRoom(name);
+                this.joinRoom(this.options.name, { joinToken: this.options.joinToken });
                 break;
         }
     }
@@ -109,9 +113,12 @@ var MysteryXiangqiClient = (function (_super) {
 
     };
     MysteryXiangqiClient.prototype.onJoinRoom = function (createdByMe) {
-        this.output("Game " + this.myRoom().name + " joined");
+        console.log('onJoinRoom');
+        var joinToken = this.myActor().getJoinToken();
+        var name = this.myRoom().name;
+        this.output("Game " + name + " joined");
         if (this.options.onJoinRoomHandler) {
-            this.options.onJoinRoomHandler.call(this, createdByMe);
+            this.options.onJoinRoomHandler.call(this, createdByMe, name, joinToken);
         }
     };
     MysteryXiangqiClient.prototype.onActorJoin = function (actor) {
@@ -155,16 +162,6 @@ var MysteryXiangqiClient = (function (_super) {
         btn.onclick = function (ev) {
             _this.leaveRoom();
             return false;
-        };
-
-        btn = document.getElementById("colorbtn");
-        btn.onclick = function (ev) {
-            var ind = Math.floor(Math.random() * _this.USERCOLORS.length);
-            var color = _this.USERCOLORS[ind];
-
-            _this.myActor().setCustomProperty("color", color);
-
-            _this.sendMessage("... changed his / her color!");
         };
 
         this.updateRoomButtons();

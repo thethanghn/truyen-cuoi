@@ -33,5 +33,10 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   # 
   
-  has_many :room_users
+  has_many :room_users, dependent: :destroy
+  has_and_belongs_to_many :rooms, join_table: 'room_users'
+
+  def open_rooms
+    rooms.where(status: 'open')
+  end
 end
