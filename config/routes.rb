@@ -2,6 +2,7 @@ TruyenCuoi::Application.routes.draw do
 
   resources :photon, only: [] do
     post 'PathCreate'
+    post 'PathClose'
   end
 
   resources :mangas

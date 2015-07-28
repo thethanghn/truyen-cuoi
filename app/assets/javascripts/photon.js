@@ -81,7 +81,7 @@ var MysteryXiangqiClient = (function (_super) {
                 this.output('Init Game');
                 this.createRoom(this.options.name, {
                                 //maxPlayers: 2,
-                                emptyRoomLiveTime: 30000, 
+                                emptyRoomLiveTime: 0, 
                                 suspendedPlayerLiveTime: 30000, 
                                 customGameProperties: { type: 'Co up', title: title }, 
                                 propsListedInLobby: ['type', 'title']}); //placeholder to add more properties

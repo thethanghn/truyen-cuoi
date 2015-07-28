@@ -9,6 +9,7 @@
 #  updated_at :datetime         not null
 #  game_type  :string           not null
 #  game_name  :string
+#  status     :string           default("open"), not null
 #
 
 class Room < ActiveRecord::Base

@@ -9,6 +9,7 @@
 #  updated_at :datetime         not null
 #  game_type  :string           not null
 #  game_name  :string
+#  status     :string           default("open"), not null
 #
 
 require 'test_helper'
