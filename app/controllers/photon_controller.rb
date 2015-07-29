@@ -171,7 +171,7 @@ class PhotonController < ApplicationController
   private
 
   def log_params
-    Rails.logger.info params
+    puts params
   end
 
   def find_room
