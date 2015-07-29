@@ -1,7 +1,12 @@
 class Games::XiangqiController < GamesController
   before_action :authenticate_user!, only: [:play]
   def index
-    @rooms = Room.where(game_type: 'mystery_xianqqi').to_a
+    @rooms = Room.where(status: 'open').where(game_type: 'mystery_xianqqi').to_a
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @rooms.to_json }
+    end
   end
 
   def play

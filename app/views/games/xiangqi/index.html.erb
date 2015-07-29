@@ -1,15 +1,17 @@
 <h1>Xiangqi</h1>
 <div class="row-fluid">
     <div class="col-md-8 left-col">
-        <% if @rooms.any? %>
-            <ul class="rooms">
-                <% @rooms.each do |item| %>
-                    <li><%= item.title %></li>
-                <% end %>
-            </ul>
-        <% else %>
-            No active room
-        <% end %>
+        <div class="rooms">
+            <% if @rooms.any? %>
+                <ul>
+                    <% @rooms.each do |item| %>
+                        <li><%= item.title %></li>
+                    <% end %>
+                </ul>
+            <% else %>
+                No active room
+            <% end %>
+        </div>
     </div>
     <div class="col-md-4">
         <%= form_tag games_rooms_path, method: :post, class: 'form-new-game horizontal-form bg-info' do |f| %>
@@ -41,10 +43,18 @@ var RoomList = React.createClass({
             return <li>{room.title} - <a href="#" data-room={room.id} onClick={self.joinGameHandler}>Join</a></li>;
         });
     },
-    render: function() {
+    renderList: function(){
         return <ul>
             {this.renderRooms()}
         </ul>;
+    },
+    renderEmpty: function() {
+        return <div>No Active Room</div>;
+    },
+    render: function() {
+        return (
+            this.props.rooms.length > 0 ? this.renderList() : this.renderEmpty()
+            );
     }
 });
 
@@ -69,6 +79,15 @@ $(function () {
         return true;
     });
 
-    renderRooms(rooms);
+    Rx.Observable.interval(5000).startWith(-1).subscribe(
+        function() { 
+            $.ajax({
+                url: '<%= games_xiangqi_index_path %>',
+                dataType: 'json'
+            }).done(function(result){
+                renderRooms(result);
+            });
+        }
+    );
 });
 </script>
