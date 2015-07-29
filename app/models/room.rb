@@ -10,14 +10,28 @@
 #  game_type  :string           not null
 #  game_name  :string
 #  status     :string           default("init"), not null
+#  winner_id  :integer
 #
 
 class Room < ActiveRecord::Base
   has_many :room_users, dependent: :destroy
+  belongs_to :winner, class_name: 'User'
 
   scope :outdated, -> { where{created_at < DateTime.now - 30.minutes } }
 
   def self.cleanup_rooms
     self.where{((status == 'init') | (status == 'open')) & (created_at < DateTime.now - 30.minutes)}.all.destroy_all
+  end
+
+  def decide(params)
+    #the loser
+    room_user = self.room_users.where(join_token: actor_nr).last
+    room_user.update status: 'quit'
+    #the winner
+    room_user = self.room_users.where.not(join_token: actor_nr).last
+    room_user.update status: 'won'
+    self.update status: 'closed', winner_id: room_user.user_id
+    #store performance report
+    # we will see
   end
 end

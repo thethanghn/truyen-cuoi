@@ -9,6 +9,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  join_token :integer          default(0)
+#  status     :string           default("active"), not null
 #
 
 class RoomUser < ActiveRecord::Base

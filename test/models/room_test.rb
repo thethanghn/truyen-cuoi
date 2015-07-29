@@ -10,6 +10,7 @@
 #  game_type  :string           not null
 #  game_name  :string
 #  status     :string           default("init"), not null
+#  winner_id  :integer
 #
 
 require 'test_helper'
