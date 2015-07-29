@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #  game_type  :string           not null
 #  game_name  :string
-#  status     :string           default("open"), not null
+#  status     :string           default("init"), not null
 #
 
 class Room < ActiveRecord::Base
@@ -18,6 +18,6 @@ class Room < ActiveRecord::Base
   scope :outdated, -> { where{created_at < DateTime.now - 30.minutes } }
 
   def self.cleanup_rooms
-    self.where(game_name: nil).destroy_all
+    self.where{((status == 'init') | (status == 'open')) & (created_at < DateTime.now - 30.minutes)}.all.destroy_all
   end
 end

@@ -1,7 +1,7 @@
 class PhotonController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :log_params
-  before_action :find_room, only: [:PathClose, :PathJoin, :PathLeave]
+  before_action :find_room
 
   class PhotonError < StandardError
     attr_accessor :code, :message
@@ -17,10 +17,33 @@ class PhotonController < ApplicationController
 
   rescue_from PhotonError, with: :photon_argument_errors
 
+
+  # {
+  #   "ActorNr": 1,
+  #   "AppVersion": "client-x.y.z",
+  #   "AppId": "00000000-0000-0000-0000-000000000000",
+  #   "CreateOptions": {
+  #       "MaxPlayers": 4,
+  #       "LobbyId": null,
+  #       "LobbyType": 0,
+  #       "CustomProperties": {
+  #           "lobby3Key": "lobby3Val",
+  #           "lobby4Key": "lobby4Val"
+  #       },
+  #       "EmptyRoomTTL": 0,
+  #       "PlayerTTL": 2147483647,
+  #       "CheckUserOnJoin": true,
+  #       "DeleteCacheOnLeave": false,
+  #       "SuppressRoomEvents": false
+  #   },
+  #   "GameId": "MyRoom",
+  #   "Region": "EU",
+  #   "Type": "Create",
+  #   "UserId": "MyUserId1",
+  #   "Username": "MyPlayer1"
+  # }
   def PathCreate
-    if params[:error].present?
-      raise PhotonError.new( params[:error], "invalid argument error")
-    end
+    @room.update status: 'open'
     render success
   end
 

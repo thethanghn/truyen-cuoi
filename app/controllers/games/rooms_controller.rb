@@ -32,7 +32,7 @@ class Games::RoomsController < GamesController
   end
 
   def cleanup_rooms
-    Room.where(status: 'open').outdated.destroy_all
+    Room.cleanup_rooms
   end
 
 end
