@@ -78,21 +78,26 @@ class PhotonController < ApplicationController
     type = params["Type"]
     actor_nr = params["ActorNr"].to_i
     case type
-    when "ClientDisconnect" #Indicates that the client called Disconnect().
-    when "ClientTimeoutDisconnect" #Indicates that client has timed-out server. This is valid only when using UDP/ENET.
-    when "ManagedDisconnect" #Indicates client is too slow to handle data sent.
-    when "ServerDisconnect" #Indicates low level protocol error which can be caused by data corruption.
-    when "TimeoutDisconnect" #Indicates that the server has timed-out client. Find additional info in the client connection handling page or the doc on analyzing disconnects .
-    when "LeaveRequest" #Indicates that the client called OpLeave().
+      # ClientDisconnect: Indicates that the client called Disconnect().
+      # ClientTimeoutDisconnect: Indicates that client has timed-out server. This is valid only when using UDP/ENET.
+      # ManagedDisconnect: Indicates client is too slow to handle data sent.
+      # ServerDisconnect: Indicates low level protocol error which can be caused by data corruption.
+      # TimeoutDisconnect: Indicates that the server has timed-out client. Find additional info in the client connection handling page or the doc on analyzing disconnects .
+      # LeaveRequest: Indicates that the client called OpLeave().
+      # PlayerTtlTimedOut: Indicate that the inactive actor timed-out, meaning the PlayerTtL of the room expired for that actor. See the API doc for your SDK for additional info.
+      # PeerLastTouchTimedOut: Indicates a very unusual scenario where the actor did not send anything to Photon Servers for 5 minutes. Normally peers timeout long before that but Photon does a check for every connected peer's timestamp of the last exchange with the servers (called LastTouch) every 5 minutes.
+      # PluginFailedJoin: Indicates an internal error in Photon Cloud webhooks implementation.
+    when "ClientDisconnect", "ClientTimeoutDisconnect", "ManagedDisconnect", "TimeoutDisconnect", "LeaveRequest", "PlayerTtlTimedOut"
       # when user leaves, it means he forfait the game, thus he accepts to lose
-      @room.decide(join_token: actor_nr, reason: 'quit')
-    when "PlayerTtlTimedOut" #Indicate that the inactive actor timed-out, meaning the PlayerTtL of the room expired for that actor. See the API doc for your SDK for additional info.
-    when "PeerLastTouchTimedOut" #Indicates a very unusual scenario where the actor did not send anything to Photon Servers for 5 minutes. Normally peers timeout long before that but Photon does a check for every connected peer's timestamp of the last exchange with the servers (called LastTouch) every 5 minutes.
-    when "PluginFailedJoin" #Indicates an internal error in Photon Cloud webhooks implementation."
+      if @room.is_not_finished?
+        @room.decide(join_token: actor_nr, reason: 'quit')
+      end
+    when "PeerLastTouchTimedOut", "PluginFailedJoin", "ServerDisconnect"
       @room.destroy
     else
-      "Un-handled PathLeave #{type}"
+      raise PhotonError.new(1, "Un-handled PathLeave #{type}")
     end
+    render success
   end
 
 

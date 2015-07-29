@@ -13,6 +13,8 @@
 #  winner_id  :integer
 #
 
+# status: init, open, closed
+
 class Room < ActiveRecord::Base
   has_many :room_users, dependent: :destroy
   belongs_to :winner, class_name: 'User'
@@ -24,14 +26,26 @@ class Room < ActiveRecord::Base
   end
 
   def decide(params)
-    #the loser
-    room_user = self.room_users.where(join_token: actor_nr).last
-    room_user.update status: 'quit'
-    #the winner
-    room_user = self.room_users.where.not(join_token: actor_nr).last
-    room_user.update status: 'won'
-    self.update status: 'closed', winner_id: room_user.user_id
-    #store performance report
-    # we will see
+    #check room validity
+    if room_users.count < 2
+      #invalid room and should be removed
+      self.destroy!
+    else
+      actor_nr = params[:join_token]
+      reason = params[:reason]
+      #the loser
+      room_user = self.room_users.where(join_token: actor_nr).last
+      room_user.update status: reason
+      #the winner
+      room_user = self.room_users.where.not(join_token: actor_nr).last
+      room_user.update status: 'won'
+      self.update status: 'closed', winner_id: room_user.user_id
+      #store performance report
+      # we will see
+    end
+  end
+
+  def is_not_finished?
+    status != 'closed'
   end
 end
