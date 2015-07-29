@@ -18,7 +18,6 @@ class PhotonController < ApplicationController
   rescue_from PhotonError, with: :photon_argument_errors
 
   def PathCreate
-    Rails.logger.info params
     if params[:error].present?
       raise PhotonError.new( params[:error], "invalid argument error")
     end
@@ -164,7 +163,11 @@ class PhotonController < ApplicationController
 # }
 
   def PathClose
-    @room.update status: 'closed'
+    if @room.status == 'open'
+      @room.destroy
+    else
+      @room.update status: 'closed'
+    end
     render success
   end
 
