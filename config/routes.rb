@@ -3,6 +3,7 @@ TruyenCuoi::Application.routes.draw do
   resources :photon, only: [] do
     post 'PathCreate'
     post 'PathClose'
+    post 'PathJoin'
   end
 
   resources :mangas

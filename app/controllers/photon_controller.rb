@@ -1,5 +1,7 @@
 class PhotonController < ApplicationController
   skip_before_action :verify_authenticity_token
+  before_action :log_params
+  before_action :find_room, only: [:PathClose, :PathJoin]
 
   class PhotonError < StandardError
     attr_accessor :code, :message
@@ -20,6 +22,21 @@ class PhotonController < ApplicationController
     if params[:error].present?
       raise PhotonError.new( params[:error], "invalid argument error")
     end
+    render success
+  end
+
+  # {
+  #   "ActorNr": 2,
+  #   "AppVersion": "client-x.y.z",
+  #   "AppId": "00000000-0000-0000-0000-000000000000",
+  #   "GameId": "MyRoom",
+  #   "Region": "EU",
+  #   "Type": "Join",
+  #   "UserId": "MyUserId0",
+  #   "Username": "MyPlayer0"
+  # }
+  def PathJoin
+    room.update status: 'filled'
     render success
   end
 
@@ -117,18 +134,22 @@ class PhotonController < ApplicationController
 # }
 
   def PathClose
-    game_id = params["GameId"]
-
-    raise PhotonError.new(1, "Invalid GameId") unless game_id.present?
-
-    room = Room.find_by_game_name(game_id)
-
-    raise "Unable to find room with GameId: #{game_id}" unless room.present?
-    room.update status: 'closed'
+    @room.update status: 'closed'
     render success
   end
 
   private
+
+  def log_params
+    Rails.logger.info params
+  end
+
+  def find_room
+    game_id = params["GameId"]
+    raise PhotonError.new(1, "Invalid GameId") unless game_id.present?
+    @room = Room.find_by_game_name(game_id)
+    raise "Unable to find room with GameId: #{game_id}" unless room.present?
+  end
 
   def photon_argument_errors(e)
     render json: e.to_json
