@@ -1,6 +1,5 @@
 class Games::RoomsController < GamesController
-
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:create, :join, :init]
   before_action :check_open_rooms, only: [:create, :join]
 
   def init
