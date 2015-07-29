@@ -205,7 +205,7 @@ class PhotonController < ApplicationController
     game_id = params["GameId"]
     raise PhotonError.new(1, "Invalid GameId") unless game_id.present?
     @room = Room.find_by_game_name(game_id)
-    raise "Unable to find room with GameId: #{game_id}" unless room.present?
+    raise "Unable to find room with GameId: #{game_id}" unless @room.present?
   end
 
   def photon_argument_errors(e)
