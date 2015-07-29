@@ -1,5 +1,6 @@
 class Games::RoomsController < GamesController
   before_action :authenticate_user!, only: [:create, :join, :init]
+  before_action :cleanup_rooms, only: [:create, :join]
   before_action :check_open_rooms, only: [:create, :join]
 
   def init
@@ -28,6 +29,10 @@ class Games::RoomsController < GamesController
       room = current_user.open_rooms.last
       redirect_to play_games_xiangqi_index_path(room_id: room.id, ope: 'join')
     end
+  end
+
+  def cleanup_rooms
+    Room.where(status: 'open').outdated.destroy_all
   end
 
 end

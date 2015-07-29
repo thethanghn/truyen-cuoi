@@ -15,7 +15,7 @@
 class Room < ActiveRecord::Base
   has_many :room_users, dependent: :destroy
 
-  scope :outdated, -> { where{created_at < DateTime.now - 1.day } }
+  scope :outdated, -> { where{created_at < DateTime.now - 1.hour } }
 
   def self.cleanup_rooms
     self.where(game_name: nil).destroy_all

@@ -4,6 +4,7 @@ TruyenCuoi::Application.routes.draw do
     post 'PathCreate'
     post 'PathClose'
     post 'PathJoin'
+    post 'PathLeave'
   end
 
   resources :mangas
