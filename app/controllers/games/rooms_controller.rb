@@ -13,7 +13,7 @@ class Games::RoomsController < GamesController
 
   def error
     room = Room.find(params[:room_id])
-    room.update photon_error: params[:error]
+    room.update photon_error: params[:error], status: 'closed'
     render json: { status: 'ok' }
   end
 
