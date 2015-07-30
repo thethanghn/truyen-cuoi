@@ -40,6 +40,7 @@ var MysteryXiangqiClient = (function (_super) {
     MysteryXiangqiClient.prototype.start = function (gameId) {
         this.setupUI();
         this.connectToRegionMaster("asia");
+        this.updateProgress(20);
     };
     MysteryXiangqiClient.prototype.onError = function (errorCode, errorMsg) {
         this.output("Error " + errorCode + ": " + errorMsg);
@@ -63,12 +64,16 @@ var MysteryXiangqiClient = (function (_super) {
     };
 
     MysteryXiangqiClient.prototype.onOperationResponse = function(errorCode, errorMsg, code, content) {
-        console.log('onOperationResponse');
-        console.log(content);
+        console.log('errorCode');
+        console.log(errorCode);
         switch(code) {
             case 229: //Constants.CreateGame:
                 this.afterJoinLobby(code, content);
                 break;
+        }
+
+        if (errorCode != 0 && this.options.onOperationError) {
+            this.options.onOperationError(errorCode, errorMsg);
         }
     };
 
@@ -81,7 +86,7 @@ var MysteryXiangqiClient = (function (_super) {
                 this.output('Init Game');
                 this.createRoom(this.options.name, {
                                 //maxPlayers: 2,
-                                emptyRoomLiveTime: 0, 
+                                emptyRoomLiveTime: 10000, 
                                 suspendedPlayerLiveTime: 30000, 
                                 customGameProperties: { type: 'Co up', title: title }, 
                                 propsListedInLobby: ['type', 'title']}); //placeholder to add more properties
@@ -97,9 +102,25 @@ var MysteryXiangqiClient = (function (_super) {
     MysteryXiangqiClient.prototype.onStateChange = function (state) {
         // "namespace" import for static members shorter acceess
         var LBC = Photon.LoadBalancing.LoadBalancingClient;
-
-        var stateText = document.getElementById("statetxt");
-        stateText.textContent = LBC.StateToName(state);
+        console.log('Game state: ' + LBC.StateToName(state));
+        // Error  -1  number  Critical error occurred.
+        // Uninitialized 0   number  Client is created but not used yet.
+        // ConnectingToNameServer  number  Connecting to NameServer.
+        // ConnectedToNameServer   number  Connected to NameServer.
+        // ConnectingToMasterserver    number  Connecting to Master (includes connect, authenticate and joining the lobby).
+        // ConnectedToMaster   number  Connected to Master server.
+        // JoinedLobby number  Connected to Master and joined lobby. Display room list and join/create rooms at will.
+        // ConnectingToGameserver  number  Connecting to Game server(client will authenticate and join/create game).
+        // ConnectedToGameserver   number  Connected to Game server (going to auth and join game).
+        // Joined  number  The client joined room.
+        // Disconnected
+        if (state >= 0) {
+            var progress = state * 10;
+            if (state == 8) {
+                progress = 100;
+            }
+            this.updateProgress(progress);
+        }
         this.updateRoomButtons();
     };
 

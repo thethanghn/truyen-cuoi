@@ -12,3 +12,17 @@
 .form-message, #theDialogue {
   font-size: 0.8em;
 }
+
+.canvas {
+  height: 800px;
+  width: 100%;
+  text-align: center;
+  .progress {
+    margin-top: 25%;
+    display: inline-block;
+    width: 300px;
+  }
+  #svg {
+    display: none;
+  }
+}

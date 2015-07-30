@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729103249) do
+ActiveRecord::Schema.define(version: 20150730031630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",              limit: 255
@@ -99,12 +100,13 @@ ActiveRecord::Schema.define(version: 20150729103249) do
   create_table "rooms", force: :cascade do |t|
     t.string   "title"
     t.string   "password"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.string   "game_type",                   null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "game_type",                     null: false
     t.string   "game_name"
-    t.string   "status",     default: "init", null: false
+    t.string   "status",       default: "init", null: false
     t.integer  "winner_id"
+    t.hstore   "photon_error"
   end
 
   create_table "users", force: :cascade do |t|

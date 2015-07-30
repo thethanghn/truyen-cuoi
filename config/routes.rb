@@ -31,6 +31,7 @@ TruyenCuoi::Application.routes.draw do
     resources :rooms do
       post :init
       get :join
+      post :error
     end
   end
 

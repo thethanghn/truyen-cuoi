@@ -1,12 +1,19 @@
 class Games::RoomsController < GamesController
-  before_action :authenticate_user!, only: [:create, :join, :init]
-  before_action :cleanup_rooms, only: [:create, :join]
+  before_action :authenticate_user!
+  before_action :cleanup_rooms
   before_action :check_open_rooms, only: [:create, :join]
 
   def init
     room = Room.find(params[:room_id])
+    room.update status: 'open'
     room.room_users.where(user_id: current_user.id).last.update join_token: params[:join_token]
 
+    render json: { status: 'ok' }
+  end
+
+  def error
+    room = Room.find(params[:room_id])
+    room.update photon_error: params[:error]
     render json: { status: 'ok' }
   end
 

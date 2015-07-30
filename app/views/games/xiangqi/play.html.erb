@@ -1,19 +1,17 @@
 <h1>Xiangqi - <%= @title %></h1>
-<div class="loader" data-initialize="loader" id="myLoader"></div>
-
 <div class="row-fluid">
     <div class="col-md-8 left-col">
         <div class="canvas">
+            <div class="progress">
+                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0">
+                </div>
+            </div>
             <svg id="svg"></svg>
         </div>
     </div>
     <div class="col-md-4">
         <div class="actors">NO actor</div>
-        <div>
-            <div id="statetxt">
-                undef
-            </div>
-        </div>
+
         <div class="bg-success" style="padding: 20px;">
             <h4>Chat windows</h4>
             <div id="theDialogue"></div>
@@ -689,6 +687,13 @@ function attachHandlers() {
         function() { console.log('comleted');}
     );
 }
+
+function showGame() {
+    $('.progress').fadeOut(function() {
+        $('#svg').fadeIn();
+    });
+}
+
 $(function(){
 
     W = $('.left-col').width();
@@ -721,15 +726,16 @@ $(function(){
         ope: '<%= @ope %>',
         onJoinRoomHandler: function(createdByMe, name, joinToken) {
             console.log('onJoinRoomHandler');
+            console.log(createdByMe);
             if (createdByMe) {
                 var promise = $.post('<%= games_room_init_path(@room.id) %>', { game_name: name, join_token: joinToken}).
                     done(function(result){
-                        alert('Game inited done');
+                        console.log('Gaem init done');
                     }).
                     error(function(XMLHttpRequest, textStatus, errorThrown){
                         debugger;
                         alert('Unable to create room due to server error');
-                        //window.location.href = '<%= games_xiangqi_index_path %>';
+                        window.location.href = '<%= games_xiangqi_index_path %>';
                     });
             }
 
@@ -738,11 +744,25 @@ $(function(){
             for(var key in objects) {
                 actors.push(objects[key]);
             }
-            console.log('myRoomActors');
-            console.log(actors);
+            
             renderMyRoomActors(actors);
+            showGame();
+        },
+        onOperationError: function(errorCode, errorMsg) {
+            $.post('<%= games_room_error_path(@room.id) %>',
+                { error: { errorCode: errorCode, errorMsg: errorMsg } })
+            .always(function(){
+                alert('Game ended due to error: ' + errorMsg);
+                window.location.href = '<%= games_xiangqi_index_path %>';
+            });
         }
     });
+    MysteryXiangqiClient.prototype.updateProgress = function(pct) {
+        $('.progress .progress-bar').css('width', pct + '%');
+    }
+    // MysteryXiangqiClient.prototype.start = function(gameId) {
+
+    // }
     MysteryXiangqiClient.prototype.onActorJoin = function(actor) {
         var objects = this.myRoomActors();
         var actors = [];
