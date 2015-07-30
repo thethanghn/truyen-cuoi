@@ -26,23 +26,17 @@ class Room < ActiveRecord::Base
   end
 
   def decide(params)
-    #check room validity
-    if room_users.count < 2
-      #invalid room and should be removed
-      self.destroy!
-    else
-      actor_nr = params[:join_token]
-      reason = params[:reason]
-      #the loser
-      room_user = self.room_users.where(join_token: actor_nr).last
-      room_user.update status: reason
-      #the winner
-      room_user = self.room_users.where.not(join_token: actor_nr).last
-      room_user.update status: 'won'
-      self.update status: 'closed', winner_id: room_user.user_id
-      #store performance report
-      # we will see
-    end
+    actor_nr = params[:join_token]
+    reason = params[:reason]
+    #the loser
+    room_user = self.room_users.where(join_token: actor_nr).last
+    room_user.update status: reason
+    #the winner
+    room_user = self.room_users.where.not(join_token: actor_nr).last
+    room_user.update status: 'won'
+    self.update status: 'closed', winner_id: room_user.user_id
+    #store performance report
+    # we will see
   end
 
   def is_not_finished?

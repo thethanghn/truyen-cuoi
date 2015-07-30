@@ -24,6 +24,7 @@
 //= require zepto.min
 //= require moment
 //= require growlyflash
+//= require fuelux.min
 //= require override
 //= require posts
 //= require news
