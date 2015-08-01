@@ -19,8 +19,10 @@
 //= require jquery.infinitescroll.min
 //= require d3.min
 //= require rx.all
-//= require reactjs/react-with-addons
-//= require reactjs/JSXTransformer
+//= require react
+//= require react_ujs
+//= require components
+//= require immutable.min
 //= require zepto.min
 //= require moment
 //= require growlyflash

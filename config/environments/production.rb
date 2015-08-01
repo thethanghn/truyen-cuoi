@@ -90,4 +90,7 @@ TruyenCuoi::Application.configure do
     enable_starttls_auto: true 
   }
   config.action_mailer.default_url_options = { :host => ENV['HOST'] }
+
+  config.react.variant = :production
+  config.react.addons = true # defaults to false
 end

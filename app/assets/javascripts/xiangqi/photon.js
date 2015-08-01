@@ -21,26 +21,30 @@ var ConnectOnStart = false;
 
 var MysteryXiangqiClient = (function (_super) {
     __extends(MysteryXiangqiClient, _super);
-    function MysteryXiangqiClient(Game, options) {
+    function MysteryXiangqiClient(game, options) {
         _super.call(this, DemoWss ? Photon.ConnectionProtocol.Wss : Photon.ConnectionProtocol.Ws, DemoAppId, DemoAppVersion);
-        this.gameController = Game;
+        this.gameController = game;
         this.options = options;
+        console.log(this.options);
         this.logger = new Exitgames.Common.Logger("Demo: ");
         this.USERCOLORS = ["#FF0000", "#00AA00", "#0000FF", "#FFFF00", "#00FFFF", "#FF00FF"];
 
         // uncomment to use Custom Authentication
         // this.setCustomAuthentication("username=" + "yes" + "&token=" + "yes");
-        this.output(this.logger.format("Init", this.getNameServerAddress(), DemoAppId, DemoAppVersion));
+        // this.output(this.logger.format("Init", this.getNameServerAddress(), DemoAppId, DemoAppVersion));
         this.logger.info("Init", this.getNameServerAddress(), DemoAppId, DemoAppVersion);
         this.setLogLevel(Exitgames.Common.Logger.Level.DEBUG);
 
         this.myActor().setCustomProperty("color", this.USERCOLORS[0]);
+        this.myActor().setCustomProperty("status", 'not ready');
         this.myActor().setName(this.options.actorName);
+
+        this.gameController.state.actors = this.getActors();
     }
+    
     MysteryXiangqiClient.prototype.start = function (gameId) {
-        this.setupUI();
         this.connectToRegionMaster("asia");
-        this.updateProgress(20);
+        this.gameController.updateProgress(20);
     };
     MysteryXiangqiClient.prototype.onError = function (errorCode, errorMsg) {
         this.output("Error " + errorCode + ": " + errorMsg);
@@ -72,30 +76,31 @@ var MysteryXiangqiClient = (function (_super) {
                 break;
         }
 
-        if (errorCode != 0 && this.options.onOperationError) {
-            this.options.onOperationError(errorCode, errorMsg);
+        if (errorCode != 0) {
+            this.gameController.handlePhotonError(errorCode, errorMsg);
         }
     };
 
     MysteryXiangqiClient.prototype.afterJoinLobby = function(code, content) {
-        var title = this.options.title;
-        console.log('afterJoinLobby');
-        console.log(this.myActor().getJoinToken());
-        switch(this.options.ope) {
-            case 'init':
-                this.output('Init Game');
-                this.createRoom(this.options.name, {
-                                //maxPlayers: 2,
-                                emptyRoomLiveTime: 10000, 
-                                suspendedPlayerLiveTime: 30000, 
-                                customGameProperties: { type: 'Co up', title: title }, 
-                                propsListedInLobby: ['type', 'title']}); //placeholder to add more properties
-                break;
-            case 'join':
-            case 'rejoin':
-                this.output('Joining game');
-                this.joinRoom(this.options.name, { joinToken: this.options.joinToken });
-                break;
+        
+        if (this.isInLobby) {
+            switch(this.options.ope) {
+                case 'init':
+                    this.output('Init Game');
+                    var title = this.options.title;
+                    this.createRoom(this.options.name, {
+                                    //maxPlayers: 2,
+                                    emptyRoomLiveTime: 10000, 
+                                    suspendedPlayerLiveTime: 30000, 
+                                    customGameProperties: { type: 'Co up', title: title }, 
+                                    propsListedInLobby: ['type', 'title']}); //placeholder to add more properties
+                    break;
+                case 'join':
+                case 'rejoin':
+                    this.output('Joining game');
+                    this.joinRoom(this.options.name, { joinToken: this.options.joinToken });
+                    break;
+            }
         }
     }
 
@@ -119,90 +124,74 @@ var MysteryXiangqiClient = (function (_super) {
             if (state == 8) {
                 progress = 100;
             }
-            this.updateProgress(progress);
+            this.gameController.updateProgress(progress);
         }
-        this.updateRoomButtons();
     };
 
-    MysteryXiangqiClient.prototype.onRoomListUpdate = function (rooms, roomsUpdated, roomsAdded, roomsRemoved) {
-        this.logger.info("Demo: onRoomListUpdate", rooms, roomsUpdated, roomsAdded, roomsRemoved);
-        this.output("Demo: Rooms update: " + roomsUpdated.length + " updated, " + roomsAdded.length + " added, " + roomsRemoved.length + " removed");
-        this.onRoomList(rooms);
-        this.updateRoomButtons(); // join btn state can be changed
-    };
-    MysteryXiangqiClient.prototype.onRoomList = function (rooms) {
-
-    };
     MysteryXiangqiClient.prototype.onJoinRoom = function (createdByMe) {
         console.log('onJoinRoom');
         var joinToken = this.myActor().getJoinToken();
         var name = this.myRoom().name;
         this.output("Game " + name + " joined");
-        if (this.options.onJoinRoomHandler) {
-            this.options.onJoinRoomHandler.call(this, createdByMe, name, joinToken);
+        if (createdByMe) {
+            this.gameController.setPhase('waiting', {
+                actors: this.getActors(),
+                joinToken: this.myActor().getJoinToken()
+            });
+        } else {
+            this.gameController.setPhase('ready', {
+                actors: this.getActors()
+            });
         }
     };
     MysteryXiangqiClient.prototype.onActorJoin = function (actor) {
+        console.log('onActorJoin');
         this.output("actor " + actor.actorNr + " joined");
+        this.gameController.setPhase('ready', {
+            actors: this.getActors()
+        });
     };
     MysteryXiangqiClient.prototype.onActorLeave = function (actor) {
         this.output("actor " + actor.actorNr + " left");
     };
     MysteryXiangqiClient.prototype.sendMessage = function (message) {
-        try  {
-            this.raiseEvent(1, { message: message, senderName: "user" + this.myActor().actorNr });
-            this.output('me[' + this.myActor().actorNr + ']: ' + message, this.myActor().getCustomProperty("color"));
-        } catch (err) {
-            this.output("error: " + err.message);
+        console.log('sendMessage');
+        var _this = this;
+        if (_this.isJoinedToRoom()) {
+            try  {
+                this.raiseEvent(1, { message: message, senderName: "user" + this.myActor().actorNr });
+                this.output('me[' + this.myActor().actorNr + ']: ' + message, this.myActor().getCustomProperty("color"));
+            } catch (err) {
+                this.output("error: " + err.message);
+            }
+        } else {
+            if (_this.isInLobby()) {
+                _this.output("Press Join or New Game to connect to Game");
+            } else {
+                _this.output("Reload page to connect to Master");
+            }
         }
     };
 
-    MysteryXiangqiClient.prototype.setupUI = function () {
-        var _this = this;
-        this.logger.info("Setting up UI.");
-
-        var form = document.getElementById("mainfrm");
-        form.onsubmit = function () {
-            if (_this.isJoinedToRoom()) {
-                var input = document.getElementById("input");
-
-                _this.sendMessage(input.value);
-                input.value = '';
-                input.focus();
-            } else {
-                if (_this.isInLobby()) {
-                    _this.output("Press Join or New Game to connect to Game");
-                } else {
-                    _this.output("Reload page to connect to Master");
-                }
-            }
-            return false;
-        };
-
-        var btn = document.getElementById("leavebtn");
-        btn.onclick = function (ev) {
-            _this.leaveRoom();
-            return false;
-        };
-
-        this.updateRoomButtons();
-    };
-
     MysteryXiangqiClient.prototype.output = function (str, color) {
-        var log = document.getElementById("theDialogue");
         var escaped = str.replace(/&/, "&amp;").replace(/</, "&lt;").replace(/>/, "&gt;").replace(/"/, "&quot;");
         if (color) {
             escaped = "<FONT COLOR='" + color + "'>" + escaped + "</FONT>";
         }
-        log.innerHTML = log.innerHTML + escaped + "<br>";
-        log.scrollTop = log.scrollHeight;
+        this.gameController.pushMessage(this.myActor(), escaped);
+        // log.scrollTop = log.scrollHeight;
     };
 
-    MysteryXiangqiClient.prototype.updateRoomButtons = function () {
-        var btn;
-
-        btn = document.getElementById("leavebtn");
-        btn.disabled = !(this.isJoinedToRoom());
-    };
+    MysteryXiangqiClient.prototype.getActors = function() {
+        var objects = this.myRoomActors();
+        var actors = [];
+        for(var key in objects) {
+            actors.push(objects[key]);
+        }
+        return actors;
+    }
+    MysteryXiangqiClient.onError = function(errorCode, errorMsg) {
+        this.gameController.goToLobby(errorMsg);
+    }
     return MysteryXiangqiClient;
 })(Photon.LoadBalancing.LoadBalancingClient);

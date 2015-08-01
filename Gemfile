@@ -35,6 +35,7 @@ gem 'jquery-rails', '~> 4.0.4'
 gem 'devise'
 gem 'rails_admin'
 gem 'slim-rails'
+gem 'react-rails', '~> 1.0'
 
 group :development do
   gem 'pry'

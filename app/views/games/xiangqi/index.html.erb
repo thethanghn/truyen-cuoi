@@ -27,46 +27,18 @@
     </div>
 </div>
 
-<script type="text/jsx">
+<script language="javascript">
 var rooms = <%= raw @rooms.to_json %>;
-var RoomList = React.createClass({
-    joinGameHandler: function(ev) {
-        var roomId = $(ev.target).data('room');
-        if (this.props.joinGameHandler) {
-            this.props.joinGameHandler.call(null, roomId);
-        }
-    },
-    renderRooms: function(){
-        var rooms = this.props.rooms;
-        var self = this;
-        return rooms.map(function(room) {
-            return <li>{room.title} - <a href="#" data-room={room.id} onClick={self.joinGameHandler}>Join</a></li>;
-        });
-    },
-    renderList: function(){
-        return <ul>
-            {this.renderRooms()}
-        </ul>;
-    },
-    renderEmpty: function() {
-        return <div>No Active Room</div>;
-    },
-    render: function() {
-        return (
-            this.props.rooms.length > 0 ? this.renderList() : this.renderEmpty()
-            );
-    }
-});
 
 function joinGameHandler(roomId) {
     var url = ['/games/rooms', roomId, 'join'].join('/');
-    console.log(url);
     window.location.href = url;
 }
 
 function renderRooms(rooms) {
     var menu = $(".rooms");
-    React.render(<RoomList rooms={rooms} joinGameHandler={joinGameHandler}/>, menu.get(0));
+    var root = React.createFactory(RoomList)({ rooms: rooms, joinGameHandler: joinGameHandler});
+    React.render(root, menu.get(0));
 }
 
 $(function () {
