@@ -61,16 +61,22 @@ var GamePhase = {
 var GameState = {
     actors: [
         {
-            name: '',
-            nbr: 0,
-            host: false,
-            status: PlayerStatus.New
+            actorNr: 1,
+            customProperties: {
+                status: PlayerStatus.New
+            },
+            isLocal: true,
+            name: null,
+            suspended: false
         },
         {
-            name: '',
-            nbr: 0,
-            host: false,
-            status: PlayerStatus.New
+            actorNr: 1,
+            customProperties: {
+                status: PlayerStatus.New
+            },
+            isLocal: true,
+            name: null,
+            suspended: false
         }
     ],
     phase: GamePhase.StandBy,
@@ -111,6 +117,17 @@ var GameState = {
     ]
 };
 
+function isLocal() {
+    var myNbr = ClientState.myActorNbr;
+    var actors = GameState.actors.filter(function(x) {
+        return x.actorNr == myNbr;
+    });
+    if (actors.length > 0 && actors[0].isLocal) {
+        return true;
+    }
+    return false;
+}
+
 function reset() {
     pieceClickSourceSubscriber.dispose();
     spotClickSourceSubscriber.dispose();
@@ -122,8 +139,8 @@ function reset() {
 
 
 function renderScreen() {
+    console.log('renderScreen');
     var state = game.getState();
-    console.log(state);
     var Factory = React.createFactory(RightPanel);
     var root = Factory(state);
     React.render(root, $('.right-panel').get(0));

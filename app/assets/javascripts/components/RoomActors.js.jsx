@@ -6,9 +6,11 @@ var RoomActors = React.createClass({
     },
     renderActors: function() {
         var actors = this.props.actors;
+        console.log('renderActors');
+        console.log(actors);
         var _this = this;
-        return actors.map(function(actor){
-            return <li>{actor.name}({actor.nbr}) - {actor.status}</li>;
+        return actors.map(function(actor, index){
+            return <li key={index}>{actor.name}({actor.actorNr}) - {actor.customProperties.status}</li>;
         });
     },
     render: function() {

@@ -44,10 +44,7 @@ var MysteryXiangqiClient = (function (_super) {
         var myActor = this.myActor();
         myActor.setCustomProperty("color", this.USERCOLORS[0]);
         myActor.setCustomProperty("status", PlayerStatus.New);
-        myActor.setCustomProperty("name", options.myName);
-        myActor.setCustomProperty("nbr", options.myNbr);
-
-        this.myActor().setName(this.options.actorName);
+        myActor.setName(this.options.myName);
     }
     
     MysteryXiangqiClient.prototype.start = function (gameId) {
@@ -151,24 +148,19 @@ var MysteryXiangqiClient = (function (_super) {
 
         var actor = this.myActor();
         actor.setCustomProperty('status', PlayerStatus.JoinedRoom);
-        actor.setCustomProperty("nbr", joinToken);
+        actor.setCustomProperty('joinToken', joinToken);
         this.gameController.refresh();
 
         if (createdByMe) {
-            // this.gameController.openRoom(joinToken);
-            this.gameController.renderCanvas();
+            this.gameController.openRoom(joinToken);
         }
+        this.gameController.renderCanvas();
+        this.gameController.refresh();
     };
     MysteryXiangqiClient.prototype.onActorJoin = function (actor) {
         console.log('onActorJoin');
-        this.output("actor " + actor.actorNr + " joined");
-
-        this.gameController.renderCanvas();
-
-        actor.setCustomProperty('status', PlayerStatus.JOINED);
-        this.gameController.updatePhase({
-            actors: this.getActors()
-        });
+        console.log(this.getActors());
+        this.gameController.refresh();
     };
     MysteryXiangqiClient.prototype.onActorLeave = function (actor) {
         this.output("actor " + actor.actorNr + " left");
@@ -203,6 +195,16 @@ var MysteryXiangqiClient = (function (_super) {
         for(var key in objects) {
             actors.push(objects[key]);
         }
+
+        actors = actors.map(function(x) {
+            var obj = {};
+            obj.actorNr = x.actorNr;
+            obj.customProperties = x.customProperties;
+            obj.isLocal = x.isLocal;
+            obj.name = x.name;
+            obj.suspended = x.suspended;
+            return obj;
+        });
         return actors;
     }
     MysteryXiangqiClient.prototype.onError = function(errorCode, errorMsg) {

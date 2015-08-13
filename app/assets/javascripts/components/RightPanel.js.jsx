@@ -13,7 +13,7 @@ var RightPanel = React.createClass({
     var actors = state.actors;
     return (
       <div className="right-panel">
-        <RoomActors actors={this.props.actors}/>
+        <RoomActors actors={state.actors}/>
         <GameActions leaveHandler={this.props.leaveHandler} startHandler={this.props.startHandler} phase={phase} actors={actors} myActorNbr={client.myActorNbr} oppActorNbr={client.oppActorNbr}/>
         <Chat sendMessageHandler={this.props.sendMessageHandler} messages={this.props.messages}/>
       </div>

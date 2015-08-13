@@ -278,8 +278,9 @@ function getSpotCls(spot) {
 }
 
 Game.prototype.xyFromPosition = function(coords) {
-    c0 = Player.host ? coords[0] : COLUMNS - coords[0] - 1;
-    c1 = Player.host ? coords[1] : ROWS - coords[1] - 1;
+    var host = isLocal();
+    c0 = host ? coords[0] : this.settings.columns - coords[0] - 1;
+    c1 = host ? coords[1] : this.settings.rows - coords[1] - 1;
     // c0 = coords[0];
     // c1 = coords[1];
     x = this.settings.colHeight * c0;
@@ -667,7 +668,7 @@ Game.prototype.getState = function() {
 
 Game.prototype.openRoom = function(joinToken) {
     $.post(this.settings.initRoomUrl, {join_token: joinToken});
-    window.MyInfo.nbr = joinToken;
+    // window.MyInfo.nbr = joinToken;
 }
 
 Game.prototype.setPhase = function(phase, params) {
@@ -700,7 +701,7 @@ Game.prototype.setPhase = function(phase, params) {
 
 Game.prototype.refresh = function() {
     //
-    this.state.gameState.actors = $.extend(this.state.gameState.actors, this.photonClient.getActors());
+    this.state.gameState.actors = this.photonClient.getActors();
 
     renderScreen();
 }
