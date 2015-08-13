@@ -19,6 +19,13 @@ var DemoFbAppId = this["AppInfo"] && this["AppInfo"]["FbAppId"];
 
 var ConnectOnStart = false;
 
+var GameEvent = {
+    MESSAGE: 1,
+    MOVE: 2,
+    READY: 3,
+    RESIGN: 4
+};
+
 var MysteryXiangqiClient = (function (_super) {
     __extends(MysteryXiangqiClient, _super);
     function MysteryXiangqiClient(game, options) {
@@ -34,35 +41,43 @@ var MysteryXiangqiClient = (function (_super) {
         // this.output(this.logger.format("Init", this.getNameServerAddress(), DemoAppId, DemoAppVersion));
         this.logger.info("Init", this.getNameServerAddress(), DemoAppId, DemoAppVersion);
         this.setLogLevel(Exitgames.Common.Logger.Level.DEBUG);
+        var myActor = this.myActor();
+        myActor.setCustomProperty("color", this.USERCOLORS[0]);
+        myActor.setCustomProperty("status", PlayerStatus.New);
+        myActor.setCustomProperty("name", options.myName);
+        myActor.setCustomProperty("nbr", options.myNbr);
 
-        this.myActor().setCustomProperty("color", this.USERCOLORS[0]);
-        this.myActor().setCustomProperty("status", 'not ready');
         this.myActor().setName(this.options.actorName);
-
-        this.gameController.state.actors = this.getActors();
     }
     
     MysteryXiangqiClient.prototype.start = function (gameId) {
         this.connectToRegionMaster("asia");
         this.gameController.updateProgress(20);
-    };
-    MysteryXiangqiClient.prototype.onError = function (errorCode, errorMsg) {
-        this.output("Error " + errorCode + ": " + errorMsg);
+        this.gameController.refresh();
     };
     MysteryXiangqiClient.prototype.onEvent = function (code, content, actorNr) {
         switch (code) {
-            case 1:
+            case GameEvent.MESSAGE:
                 var mess = content.message;
                 var sender = content.senderName;
                 this.output(sender + ": " + mess, this.myRoomActors()[actorNr].getCustomProperty("color"));
                 break;
-            case 2:
+            case GameEvent.MOVE:
                 if (this.gameController) {
                     this.gameController.opponentMoveHandler(content);
                 }
                 this.output(sender + ": " + 'moved', this.myRoomActors()[actorNr].getCustomProperty("color"));
                 break;
+            case GameEvent.READY:
+                this.gameController.checkIfUsersReady();
+                break;
+            case GameEvent.RESIGN:
+                this.myActor().setCustomProperty('status', 'not ready');
+                this.gameController.checkIfUsersReady();
+                break;
             default:
+                console.log('unhandled event');
+                break;
         }
         this.logger.debug("onEvent", code, "content:", content, "actor:", actorNr);
     };
@@ -82,7 +97,7 @@ var MysteryXiangqiClient = (function (_super) {
     };
 
     MysteryXiangqiClient.prototype.afterJoinLobby = function(code, content) {
-        
+        this.myActor().setCustomProperty('status', PlayerStatus.JoinedLobby);
         if (this.isInLobby) {
             switch(this.options.ope) {
                 case 'init':
@@ -130,24 +145,28 @@ var MysteryXiangqiClient = (function (_super) {
 
     MysteryXiangqiClient.prototype.onJoinRoom = function (createdByMe) {
         console.log('onJoinRoom');
-        var joinToken = this.myActor().getJoinToken();
         var name = this.myRoom().name;
         this.output("Game " + name + " joined");
+        var joinToken = this.myActor().getJoinToken();
+
+        var actor = this.myActor();
+        actor.setCustomProperty('status', PlayerStatus.JoinedRoom);
+        actor.setCustomProperty("nbr", joinToken);
+        this.gameController.refresh();
+
         if (createdByMe) {
-            this.gameController.setPhase('waiting', {
-                actors: this.getActors(),
-                joinToken: this.myActor().getJoinToken()
-            });
-        } else {
-            this.gameController.setPhase('ready', {
-                actors: this.getActors()
-            });
+            // this.gameController.openRoom(joinToken);
+            this.gameController.renderCanvas();
         }
     };
     MysteryXiangqiClient.prototype.onActorJoin = function (actor) {
         console.log('onActorJoin');
         this.output("actor " + actor.actorNr + " joined");
-        this.gameController.setPhase('ready', {
+
+        this.gameController.renderCanvas();
+
+        actor.setCustomProperty('status', PlayerStatus.JOINED);
+        this.gameController.updatePhase({
             actors: this.getActors()
         });
     };
@@ -159,7 +178,7 @@ var MysteryXiangqiClient = (function (_super) {
         var _this = this;
         if (_this.isJoinedToRoom()) {
             try  {
-                this.raiseEvent(1, { message: message, senderName: "user" + this.myActor().actorNr });
+                this.raiseEvent(GameEvent.MESSAGE, { message: message, senderName: "user" + this.myActor().actorNr });
                 this.output('me[' + this.myActor().actorNr + ']: ' + message, this.myActor().getCustomProperty("color"));
             } catch (err) {
                 this.output("error: " + err.message);
@@ -175,11 +194,7 @@ var MysteryXiangqiClient = (function (_super) {
 
     MysteryXiangqiClient.prototype.output = function (str, color) {
         var escaped = str.replace(/&/, "&amp;").replace(/</, "&lt;").replace(/>/, "&gt;").replace(/"/, "&quot;");
-        if (color) {
-            escaped = "<FONT COLOR='" + color + "'>" + escaped + "</FONT>";
-        }
         this.gameController.pushMessage(this.myActor(), escaped);
-        // log.scrollTop = log.scrollHeight;
     };
 
     MysteryXiangqiClient.prototype.getActors = function() {
@@ -190,8 +205,18 @@ var MysteryXiangqiClient = (function (_super) {
         }
         return actors;
     }
-    MysteryXiangqiClient.onError = function(errorCode, errorMsg) {
+    MysteryXiangqiClient.prototype.onError = function(errorCode, errorMsg) {
         this.gameController.goToLobby(errorMsg);
+    }
+    MysteryXiangqiClient.prototype.myActorReady = function() {
+        this.myActor().setCustomProperty("status", 'ready');
+        this.raiseEvent(GameEvent.READY);
+        this.gameController.checkIfUsersReady();
+    }
+    MysteryXiangqiClient.prototype.myActorResign = function() {
+        this.myActor().setCustomProperty("status", 'not ready');
+        this.raiseEvent(GameEvent.RESIGN);
+        this.gameController.checkIfUsersReady();    
     }
     return MysteryXiangqiClient;
 })(Photon.LoadBalancing.LoadBalancingClient);

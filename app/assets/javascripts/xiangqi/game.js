@@ -34,11 +34,6 @@ const LINE_POSITIONS = [
         [[3, 7], [5, 9]],
         [[3, 9], [5, 7]],
     ];
-const MESSAGE_EVENT = 1,
-    GAME_EVENT = 2
-;
-
-
 
 var Game = function(container, settings) {
     var W = container.width();
@@ -59,13 +54,13 @@ var Game = function(container, settings) {
 
     var _this = this;
     this.state = {
-        phase: 'init',
-        hasEnoughPlayers: false,
-        ongoing: false,
-        actors: [],
-        messages: [],
+        clientState: settings.clientState,
+        gameState: settings.gameState,
         leaveHandler: function() {
             _this.leave();
+        },
+        startHandler: function() {
+            _this.photonClient.myActorReady();
         },
         sendMessageHandler: function(message) {
             console.log('sendMessageHandler');
@@ -79,7 +74,7 @@ var Game = function(container, settings) {
 };
 
 Game.prototype.pushMessage = function(actor, message) {
-    this.state.messages.push({actor: actor.name, text: message});
+    this.state.gameState.messages.push({actor: actor.name, text: message});
 
     renderScreen();
 }
@@ -105,10 +100,10 @@ Game.prototype.render = function() {
 Game.prototype.leave = function() {
     console.log('leave');
     // when a player want to leave, if the game is not finished yet, we should confirm that it means he loses the game, if he agrees then he can leave
-    if (this.state.ongoing) {
+    if (this.state.phase == 'ongoing') {
         var ok = confirm('The game is ongoing, if you leave, you will lose this game');
         if (ok) {
-            raiseEvent('he loses');
+            this.photonClient.myActorResign();
         } else {
             //nothing happens
         }
@@ -670,29 +665,57 @@ Game.prototype.getState = function() {
     return this.state;
 }
 
+Game.prototype.openRoom = function(joinToken) {
+    $.post(this.settings.initRoomUrl, {join_token: joinToken});
+    window.MyInfo.nbr = joinToken;
+}
+
 Game.prototype.setPhase = function(phase, params) {
+    console.log('setPhase: ' + phase);
     params = params || {};
-    params.phase = phase;
     switch(phase) {
         case 'init':
             break;
-        case 'waiting':
-            console.log('waiting');
-            this.state = $.extend(this.state, params);
+        case 'joined':
             var _this = this;
-            $.post(this.settings.initRoomUrl, {join_token: this.state.joinToken});
             $('.progress').fadeOut(function() {
                 $('#svg').fadeIn(function(){
                     _this.render();
                 });
             });
             break;
+        case 'not_ready':
+            break;
         case 'ready':
-            this.state = $.extend(this.state, params);
+            break;
+        case 'ongoing':
             break;
     }
 
+    this.state = $.extend(this.state, params);
+    this.state.phase = phase;
+
     renderScreen();
+}
+
+Game.prototype.refresh = function() {
+    //
+    this.state.gameState.actors = $.extend(this.state.gameState.actors, this.photonClient.getActors());
+
+    renderScreen();
+}
+
+Game.prototype.setMyActorNbr = function(joinToken) {
+    this.state.myActorNbr = joinToken;
+}
+
+Game.prototype.renderCanvas = function() {
+    var _this = this;
+    $('.progress').fadeOut(function() {
+        $('#svg').fadeIn(function(){
+            _this.render();
+        });
+    });
 }
 
 Game.prototype.updateProgress = function(pct) {
@@ -713,4 +736,14 @@ Game.prototype.handlePhotonError = function(errorCode, errorMsg) {
     .always(function(){
         _this.goToLobby('Game ended due to error: ' + errorMsg);
     });
+}
+
+Game.prototype.checkIfUsersReady = function() {
+    var actors = this.state.actors;
+    var readyActors = actors.filter(function(x) { return x.customProperties.status == 'ready' });
+    if (readyActors.length == actors.length) {
+        this.setPhase('ongoing');
+    } else {
+        this.setPhase('not_ready');
+    }
 }

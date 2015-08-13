@@ -8,7 +8,7 @@ var RoomActors = React.createClass({
         var actors = this.props.actors;
         var _this = this;
         return actors.map(function(actor){
-            return <li>{actor.name}({actor.actorNr}) - {actor.customProperties.status}</li>;
+            return <li>{actor.name}({actor.nbr}) - {actor.status}</li>;
         });
     },
     render: function() {
