@@ -278,7 +278,7 @@ function getSpotCls(spot) {
 }
 
 Game.prototype.xyFromPosition = function(coords) {
-    var host = isLocal();
+    var host = this.state.clientState.myActorNbr == this.state.gameState.hostJoinToken;
     c0 = host ? coords[0] : this.settings.columns - coords[0] - 1;
     c1 = host ? coords[1] : this.settings.rows - coords[1] - 1;
     // c0 = coords[0];
@@ -667,6 +667,7 @@ Game.prototype.getState = function() {
 }
 
 Game.prototype.openRoom = function(joinToken) {
+    this.state.gameState.hostJoinToken = joinToken;
     $.post(this.settings.initRoomUrl, {join_token: joinToken});
     // window.MyInfo.nbr = joinToken;
 }
@@ -706,8 +707,8 @@ Game.prototype.refresh = function() {
     renderScreen();
 }
 
-Game.prototype.setMyActorNbr = function(joinToken) {
-    this.state.myActorNbr = joinToken;
+Game.prototype.setJoinToken = function(joinToken) {
+    this.state.clientState.myActorNbr = joinToken;
 }
 
 Game.prototype.renderCanvas = function() {

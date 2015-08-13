@@ -148,7 +148,8 @@ var MysteryXiangqiClient = (function (_super) {
 
         var actor = this.myActor();
         actor.setCustomProperty('status', PlayerStatus.JoinedRoom);
-        actor.setCustomProperty('joinToken', joinToken);
+        
+        this.gameController.setJoinToken(joinToken);
         this.gameController.refresh();
 
         if (createdByMe) {

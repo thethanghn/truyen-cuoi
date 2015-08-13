@@ -59,6 +59,7 @@ var GamePhase = {
 };
 
 var GameState = {
+    hostJoinToken: 0,
     actors: [
         {
             actorNr: 1,
@@ -116,17 +117,6 @@ var GameState = {
         { coords: [8, 6], code: 's', set: 2, id: 's-2-32' }
     ]
 };
-
-function isLocal() {
-    var myNbr = ClientState.myActorNbr;
-    var actors = GameState.actors.filter(function(x) {
-        return x.actorNr == myNbr;
-    });
-    if (actors.length > 0 && actors[0].isLocal) {
-        return true;
-    }
-    return false;
-}
 
 function reset() {
     pieceClickSourceSubscriber.dispose();
