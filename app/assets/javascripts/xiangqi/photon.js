@@ -40,7 +40,7 @@ var MysteryXiangqiClient = (function (_super) {
         // this.setCustomAuthentication("username=" + "yes" + "&token=" + "yes");
         // this.output(this.logger.format("Init", this.getNameServerAddress(), DemoAppId, DemoAppVersion));
         this.logger.info("Init", this.getNameServerAddress(), DemoAppId, DemoAppVersion);
-        this.setLogLevel(Exitgames.Common.Logger.Level.DEBUG);
+        this.setLogLevel(Exitgames.Common.Logger.Level.INFO);
         var myActor = this.myActor();
         myActor.setCustomProperty("color", this.USERCOLORS[0]);
         myActor.setCustomProperty("status", PlayerStatus.New);
@@ -53,28 +53,33 @@ var MysteryXiangqiClient = (function (_super) {
         this.gameController.refresh();
     };
     MysteryXiangqiClient.prototype.onEvent = function (code, content, actorNr) {
-        switch (code) {
-            case GameEvent.MESSAGE:
-                var mess = content.message;
-                var sender = content.senderName;
-                this.output(sender + ": " + mess, this.myRoomActors()[actorNr].getCustomProperty("color"));
-                break;
-            case GameEvent.MOVE:
-                if (this.gameController) {
-                    this.gameController.opponentMoveHandler(content);
-                }
-                this.output(sender + ": " + 'moved', this.myRoomActors()[actorNr].getCustomProperty("color"));
-                break;
-            case GameEvent.READY:
-                this.gameController.checkIfUsersReady();
-                break;
-            case GameEvent.RESIGN:
-                this.myActor().setCustomProperty('status', 'not ready');
-                this.gameController.checkIfUsersReady();
-                break;
-            default:
-                console.log('unhandled event');
-                break;
+        // switch (code) {
+        //     case GameEvent.MESSAGE:
+        //         var mess = content.message;
+        //         var sender = content.senderName;
+        //         this.output(sender + ": " + mess, this.myRoomActors()[actorNr].getCustomProperty("color"));
+        //         break;
+        //     case GameEvent.MOVE:
+        //         if (this.gameController) {
+        //             this.gameController.opponentMoveHandler(content);
+        //         }
+        //         this.output(sender + ": " + 'moved', this.myRoomActors()[actorNr].getCustomProperty("color"));
+        //         break;
+        //     case GameEvent.READY:
+        //         this.gameController.checkIfUsersReady();
+        //         break;
+        //     case GameEvent.RESIGN:
+        //         this.myActor().setCustomProperty('status', 'not ready');
+        //         this.gameController.checkIfUsersReady();
+        //         break;
+        //     default:
+        //         console.log('unhandled event');
+        //         break;
+        // }
+        if (code == 1) {
+            //sync the state
+            this.gameController.state.gameState = content.gameState;
+            this.gameController.refresh();
         }
         this.logger.debug("onEvent", code, "content:", content, "actor:", actorNr);
     };
@@ -160,8 +165,10 @@ var MysteryXiangqiClient = (function (_super) {
     };
     MysteryXiangqiClient.prototype.onActorJoin = function (actor) {
         console.log('onActorJoin');
-        console.log(this.getActors());
+        actor.setCustomProperty('status', PlayerStatus.JoinedRoom);
         this.gameController.refresh();
+
+        this.syncState();
     };
     MysteryXiangqiClient.prototype.onActorLeave = function (actor) {
         this.output("actor " + actor.actorNr + " left");
@@ -220,6 +227,9 @@ var MysteryXiangqiClient = (function (_super) {
         this.myActor().setCustomProperty("status", 'not ready');
         this.raiseEvent(GameEvent.RESIGN);
         this.gameController.checkIfUsersReady();    
+    }
+    MysteryXiangqiClient.prototype.syncState = function() {
+        this.raiseEvent(1, { gameState: this.gameController.state.gameState }, { cache: Photon.LoadBalancing.Constants.EventCaching.ReplaceCache });
     }
     return MysteryXiangqiClient;
 })(Photon.LoadBalancing.LoadBalancingClient);

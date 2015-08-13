@@ -67,11 +67,15 @@ var Game = function(container, settings) {
             _this.photonClient.sendMessage(message);
         }
     };
-    this.data = this.getInitialPiece();
     this.svg = d3.select(this.settings.canvasElement).attr({width: this.settings.width, height: this.settings.height});
 
     this.photonClient = new MysteryXiangqiClient(this, this.settings);
+    this.moveChecker = new MoveChecker(this);
 };
+
+Game.prototype.data = function() {
+    return this.state.gameState.data;
+}
 
 Game.prototype.pushMessage = function(actor, message) {
     this.state.gameState.messages.push({actor: actor.name, text: message});
@@ -93,7 +97,7 @@ Game.prototype.render = function() {
 
     this.drawPieces();
 
-    this.attachHandlers();
+    // this.attachHandlers();
 }
 
 
@@ -211,7 +215,15 @@ Game.prototype.drawSpots = function() {
                     d3.select(this).attr('style', 'stroke-width: 0;');  
                 })
                 .on('click', function() {
-                    console.log('blankspot clicked');
+                    console.log('spot clicked');
+                    var spotData = d3.select(this).data()[0];
+                    console.log(spotData);
+                    if (onMovePiece && _this.moveChecker.canMove(onMovePiece, spotData)) {
+                        _this.movePiece(onMovePiece, spotData);
+                        //send it to client
+                        _this.synchState();
+                        _this.resetPiece();
+                    }
                 });
 }
 
@@ -222,50 +234,60 @@ Game.prototype.drawPieces = function() {
         .attr('background-color', 'red');
     var _this = this;
     pieces.selectAll('.piece')
-        .data(this.data)
+        .data(this.data())
         .enter()
         .append('rect')
         .attr('class', function(d) { return 'rect-piece ' + d.id })
         .attr('transform', function(d) { return _this.translateFromPosition(d.coords)})
         .attr('width', this.settings.pieceSize)
         .attr('height', this.settings.pieceSize)
-        .attr('fill', function(d) { return 'url(#img' + [d.code, d.set].join('') + ')';});
-
-}
-
-Game.prototype.attachHandlers = function() {
-    var self = this;
-    var pieceClickSource = Rx.Observable.fromEvent($('.rect-piece'), 'click');
-    pieceClickSourceSubscriber = pieceClickSource.subscribe(
-        function(x) {
+        .attr('fill', function(d) { return 'url(#img' + [d.code, d.set].join('') + ')';})
+        .on('click', function(x){
             clearSpotStyle();
-            var ele = d3.select(x.target);
+            var ele = d3.select(this);
             var pieceData = ele.data()[0];
             ele.attr('style', 'stroke:darkblue;stroke-width:1');
             onMovePiece = pieceData;
-            MoveChecker.highlightMoves(pieceData);
-        },
-        function(e) { console.log('error on piece click');},
-        function() { console.log('comleted');}
-    );
+            _this.moveChecker.highlightMoves(pieceData);
+        });
 
-    var spotClickSource = Rx.Observable.fromEvent($('.rect-spot'), 'click');
-    spotClickSourceSubscriber = spotClickSource.subscribe(
-        function(x) {
-            console.log('spot clicked');
-            var spotData = d3.select(x.target).data()[0];
-            console.log(spotData);
-            if (onMovePiece && MoveChecker.canMove(onMovePiece, spotData)) {
-                Game.movePiece(onMovePiece, spotData);
-                //send it to client
-                demo.raiseEvent(GAME_EVENT, {gameState: this.data }, { cache: Photon.LoadBalancing.Constants.EventCaching.ReplaceCache });
-                Game.resetPiece();
-            }
-        },
-        function(e) { console.log('error on piece click');},
-        function() { console.log('comleted');}
-    );
+
 }
+
+// Game.prototype.attachHandlers = function() {
+//     var self = this;
+
+//     var pieceClickSource = Rx.Observable.fromEvent($('.rect-piece'), 'click');
+//     pieceClickSourceSubscriber = pieceClickSource.subscribe(
+//         function(x) {
+//             clearSpotStyle();
+//             var ele = d3.select(x.target);
+//             var pieceData = ele.data()[0];
+//             ele.attr('style', 'stroke:darkblue;stroke-width:1');
+//             onMovePiece = pieceData;
+//             MoveChecker.highlightMoves(pieceData);
+//         },
+//         function(e) { console.log('error on piece click');},
+//         function() { console.log('comleted');}
+//     );
+
+//     var spotClickSource = Rx.Observable.fromEvent($('.rect-spot'), 'click');
+//     spotClickSourceSubscriber = spotClickSource.subscribe(
+//         function(x) {
+//             console.log('spot clicked');
+//             var spotData = d3.select(x.target).data()[0];
+//             console.log(spotData);
+//             if (onMovePiece && MoveChecker.canMove(onMovePiece, spotData)) {
+//                 Game.movePiece(onMovePiece, spotData);
+//                 //send it to client
+//                 demo.raiseEvent(GAME_EVENT, {gameState: this.state.gameState }, { cache: Photon.LoadBalancing.Constants.EventCaching.ReplaceCache });
+//                 Game.resetPiece();
+//             }
+//         },
+//         function(e) { console.log('error on piece click');},
+//         function() { console.log('comleted');}
+//     );
+// }
 
 
 
@@ -303,19 +325,23 @@ function clearSpotStyle() {
     d3.selectAll('.rect-spot').attr('style', 'stroke-width: 0');
 }
 
-var MoveChecker = (function(){
-
+var MoveChecker = function(game){
+    this.game = game;
     var self = this;
 
+    this.data = function() {
+        return self.game.state.gameState.data;
+    }
+
     this._hasPieceAt = function(spot) {
-        var b = this.data.filter(function(p) {
+        var b = this.data().filter(function(p) {
             return p.coords[0] == spot[0] && p.coords[1] == spot[1];
         });
         return b.length > 0;
     }
 
     this._isOccupiedSpot = function(spot, set) {
-        var occupied = this.data.filter(function(piece) {
+        var occupied = this.data().filter(function(piece) {
             return piece.coords[0] == spot[0] && piece.coords[1] == spot[1] && piece.set == set;
         });
 
@@ -360,25 +386,25 @@ var MoveChecker = (function(){
                 var length = 0;
                 //top
                 if (spot[1] < piece.coords[1]) {
-                    var res = this.data.filter(function(p) {
+                    var res = this.data().filter(function(p) {
                         return p.coords[0] == piece.coords[0] &&  p.coords[1] > spot[1] && p.coords[1] < piece.coords[1];
                     });
 
                     length = res.length;
                 } else if (spot[1] > piece.coords[1]) {
-                    var res = this.data.filter(function(p) {
+                    var res = this.data().filter(function(p) {
                         return p.coords[0] == piece.coords[0] &&  p.coords[1] > piece.coords[1] && p.coords[1] < spot[1];
                     });
 
                     length = res.length;
                 } else if (spot[0] < piece.coords[0]) {
-                    var res = this.data.filter(function(p) {
+                    var res = this.data().filter(function(p) {
                         return p.coords[1] == piece.coords[1] &&  p.coords[0] > spot[0] && p.coords[0] < piece.coords[0];
                     });
 
                     length = res.length;
                 } else if (spot[0] > piece.coords[0]) {
-                    var res = this.data.filter(function(p) {
+                    var res = this.data().filter(function(p) {
                         return p.coords[1] == piece.coords[1] &&  p.coords[0] > piece.coords[0] && p.coords[0] < spot[0];
                     });
 
@@ -392,25 +418,25 @@ var MoveChecker = (function(){
                 var length = 0;
                 //top
                 if (spot[1] < piece.coords[1]) {
-                    var res = this.data.filter(function(p) {
+                    var res = this.data().filter(function(p) {
                         return p.coords[0] == piece.coords[0] &&  p.coords[1] > spot[1] && p.coords[1] < piece.coords[1];
                     });
 
                     length = res.length;
                 } else if (spot[1] > piece.coords[1]) {
-                    var res = this.data.filter(function(p) {
+                    var res = this.data().filter(function(p) {
                         return p.coords[0] == piece.coords[0] &&  p.coords[1] > piece.coords[1] && p.coords[1] < spot[1];
                     });
 
                     length = res.length;
                 } else if (spot[0] < piece.coords[0]) {
-                    var res = this.data.filter(function(p) {
+                    var res = this.data().filter(function(p) {
                         return p.coords[1] == piece.coords[1] &&  p.coords[0] > spot[0] && p.coords[0] < piece.coords[0];
                     });
 
                     length = res.length;
                 } else if (spot[0] > piece.coords[0]) {
-                    var res = this.data.filter(function(p) {
+                    var res = this.data().filter(function(p) {
                         return p.coords[1] == piece.coords[1] &&  p.coords[0] > piece.coords[0] && p.coords[0] < spot[0];
                     });
 
@@ -614,12 +640,7 @@ var MoveChecker = (function(){
         var spots = self.possibleMoves(piece);
         return spots.filter(function(d){ return d[0] == spot[0] && d[1] == spot[1]; }).length > 0;
     }
-
-    return {
-        highlightMoves: highlightMoves,
-        canMove: canMove
-    }
-})();
+};
 
 Game.prototype.findD3Piece = function(id) {
     return d3.select('.' + id);
@@ -627,7 +648,7 @@ Game.prototype.findD3Piece = function(id) {
 
 Game.prototype.resetPiece = function() {
     if (onMovePiece) {
-        var ele = self.findD3Piece(onMovePiece.id);
+        var ele = this.findD3Piece(onMovePiece.id);
         ele.attr('style', 'stroke:0;');
         onMovePiece = null;
     }
@@ -638,20 +659,20 @@ Game.prototype.movePiece = function(piece, spot) {
     //update the coords
     piece.coords = spot;
     // ele.transition().attr('transform', translateFromPosition(spot));
-    self.refresh();
+    this.redraw();
     clearSpotStyle();
 };
 
-Game.prototype.refresh = function() {
+Game.prototype.redraw = function() {
     var _this = this;
-    this.data.forEach(function(piece) {
-        var ele = self.findD3Piece(piece.id);
+    this.data().forEach(function(piece) {
+        var ele = _this.findD3Piece(piece.id);
         ele.transition().attr('transform', _this.translateFromPosition(piece.coords));
     });
 }
 
 Game.prototype.loadState = function(state) {
-    this.data = state;
+    this.data() = state;
     self.refresh();
 }
 
@@ -701,9 +722,11 @@ Game.prototype.setPhase = function(phase, params) {
 }
 
 Game.prototype.refresh = function() {
-    //
-    this.state.gameState.actors = this.photonClient.getActors();
-
+    var state = this.state;
+    state.gameState.actors = this.photonClient.getActors().map(function(x) {
+        x.isHost = x.actorNr == state.gameState.hostJoinToken;
+        return x;
+    });
     renderScreen();
 }
 
@@ -748,4 +771,8 @@ Game.prototype.checkIfUsersReady = function() {
     } else {
         this.setPhase('not_ready');
     }
+}
+
+Game.prototype.synchState = function() {
+    this.photonClient.syncState();
 }

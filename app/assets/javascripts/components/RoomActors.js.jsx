@@ -4,13 +4,16 @@ var RoomActors = React.createClass({
             actors: []
         }
     },
+    renderRole: function(actor) {
+        return (<span>
+            {actor.isHost ? 'Host' : 'Guest'}
+        </span>);
+    },
     renderActors: function() {
         var actors = this.props.actors;
-        console.log('renderActors');
-        console.log(actors);
         var _this = this;
         return actors.map(function(actor, index){
-            return <li key={index}>{actor.name}({actor.actorNr}) - {actor.customProperties.status}</li>;
+            return <li key={index}>{_this.renderRole(actor)}: {actor.name}({actor.actorNr}) - {actor.customProperties.status}</li>;
         });
     },
     render: function() {
