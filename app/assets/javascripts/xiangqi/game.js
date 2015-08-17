@@ -54,7 +54,7 @@ var Game = function(container, settings) {
 
     var _this = this;
     this.state = {
-        clientState: settings.clientState,
+        // clientState: settings.clientState,
         gameState: settings.gameState,
         leaveHandler: function() {
             _this.leave();
@@ -299,8 +299,12 @@ function getSpotCls(spot) {
     return ['spot', spot[0], spot[1]].join('-');
 }
 
+Game.prototype.getMyActor = function() {
+    return this.state.gameState.actors[this.settings.myName];
+}
+
 Game.prototype.xyFromPosition = function(coords) {
-    var host = this.state.clientState.myActorNbr == this.state.gameState.hostJoinToken;
+    var host = this.getMyActor().actorNr == this.state.gameState.hostJoinToken;
     c0 = host ? coords[0] : this.settings.columns - coords[0] - 1;
     c1 = host ? coords[1] : this.settings.rows - coords[1] - 1;
     // c0 = coords[0];
@@ -722,17 +726,17 @@ Game.prototype.setPhase = function(phase, params) {
 }
 
 Game.prototype.refresh = function() {
-    var state = this.state;
-    state.gameState.actors = this.photonClient.getActors().map(function(x) {
-        x.isHost = x.actorNr == state.gameState.hostJoinToken;
-        return x;
-    });
+    // var state = this.state;
+    // state.gameState.actors = this.photonClient.getActors().map(function(x) {
+    //     x.isHost = x.actorNr == state.gameState.hostJoinToken;
+    //     return x;
+    // });
     renderScreen();
 }
 
-Game.prototype.setJoinToken = function(joinToken) {
-    this.state.clientState.myActorNbr = joinToken;
-}
+// Game.prototype.setJoinToken = function(joinToken) {
+//     this.state.clientState.myActorNbr = joinToken;
+// }
 
 Game.prototype.renderCanvas = function() {
     var _this = this;

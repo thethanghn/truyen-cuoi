@@ -13,7 +13,7 @@ var RoomActors = React.createClass({
         var actors = this.props.actors;
         var _this = this;
         return actors.map(function(actor, index){
-            return <li key={index}>{_this.renderRole(actor)}: {actor.name}({actor.actorNr}) - {actor.customProperties.status}</li>;
+            return <li key={index}>{_this.renderRole(actor)}: {actor.name}({actor.actorNr}) - {PlayerStatusText[actor.customProperties.status]}</li>;
         });
     },
     render: function() {

@@ -40,10 +40,10 @@ var photonClient;
 var game;
 var pieceClickSourceSubscriber, spotClickSourceSubscriber;
 
-var ClientState = {
-    myActorNbr: 0,
-    oppActorNbr: 0
-};
+// var ClientState = {
+//     myActorNbr: 0,
+//     oppActorNbr: 0
+// };
 
 var PlayerStatus = {
     New: 0,
@@ -53,6 +53,8 @@ var PlayerStatus = {
     NotReady: 2
 };
 
+var PlayerStatusText = ['New', 'In Lobby', 'In Room', 'Ready'];
+
 var GamePhase = {
     StandBy: 0,
     OnGoing: 1
@@ -60,26 +62,26 @@ var GamePhase = {
 
 var GameState = {
     hostJoinToken: 0,
-    actors: [
-        {
-            actorNr: 1,
-            customProperties: {
-                status: PlayerStatus.New
-            },
-            isLocal: true,
-            name: null,
-            suspended: false
-        },
-        {
-            actorNr: 1,
-            customProperties: {
-                status: PlayerStatus.New
-            },
-            isLocal: true,
-            name: null,
-            suspended: false
-        }
-    ],
+    actors: {},
+        // {
+        //     actorNr: 1,
+        //     customProperties: {
+        //         status: PlayerStatus.New
+        //     },
+        //     isLocal: true,
+        //     name: null,
+        //     suspended: false
+        // },
+        // {
+        //     actorNr: 1,
+        //     customProperties: {
+        //         status: PlayerStatus.New
+        //     },
+        //     isLocal: true,
+        //     name: null,
+        //     suspended: false
+        // }
+    // ],
     phase: GamePhase.StandBy,
     messages: [],
     data: [
@@ -148,8 +150,7 @@ $(function(){
         initRoomUrl: '<%= games_room_init_path(@room.id) %>',
         lobbyUrl: '<%= games_xiangqi_index_path %>',
         canvasElement: '#svg',
-        gameState: GameState,
-        clientState: ClientState
+        gameState: GameState
     };
     
 
@@ -162,5 +163,10 @@ $(function(){
     // }, 60000);
 
     renderScreen();
+
+    setInterval(function() {
+        console.log('ping');
+        game.photonClient.ping();
+    }, 5000);
 });
 </script>

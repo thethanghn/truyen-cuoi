@@ -10,11 +10,16 @@ var RightPanel = React.createClass({
     var state = this.props.gameState;
     var client = this.props.clientState;
     var phase = state.phase;
-    var actors = state.actors;
+    var actors = [];
+    for(var key in state.actors) {
+      actors.push(state.actors[key]);
+    }
+    console.log(state.actors);
+    console.log(actors);
     return (
       <div className="right-panel">
-        <RoomActors actors={state.actors}/>
-        <GameActions leaveHandler={this.props.leaveHandler} startHandler={this.props.startHandler} phase={phase} actors={actors} myActorNbr={client.myActorNbr} oppActorNbr={client.oppActorNbr}/>
+        <RoomActors actors={actors}/>
+        <GameActions leaveHandler={this.props.leaveHandler} startHandler={this.props.startHandler} phase={phase} actors={actors} />
         <Chat sendMessageHandler={this.props.sendMessageHandler} messages={this.props.messages}/>
       </div>
     );

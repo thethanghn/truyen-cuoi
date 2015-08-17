@@ -8,17 +8,17 @@ var GameActions = React.createClass({
     var actor = false;
     if (nbr > 0) {
       var actors = this.props.actors.filter(function(x) {
-        return x.nbr == nbr;
+        return x.isLocal == nbr;
       });
       actor = actors.length > 0 ? actors[0] : false;
     }
     return actor;
   },
   host: function() {
-    return this._getActor(this.props.myActorNbr);
+    return this._getActor(true);
   },
   guest: function() {
-    return this._getActor(this.props.oppActorNbr);
+    return this._getActor(false);
   },
   leaveHandler: function() {
     this.props.leaveHandler();
@@ -33,19 +33,10 @@ var GameActions = React.createClass({
       </div>
     );
   },
-  renderReadyPhase: function() {
-    console.log('renderReadyPhase');
-    return (
-        <div>
-          {this.renderStartBtn()}
-          {this.renderLeaveBtn()}
-        </div>
-      );
-  },
   renderNotReadyPhase: function() {
     return (
       <div>
-        {this.renderDisabledStartBtn()}
+        {this.renderStartBtn()}
         {this.renderLeaveBtn()}
       </div>
     );
@@ -75,14 +66,17 @@ var GameActions = React.createClass({
     return <button className="btn btn-info btn-resign">Resign</button>
   },
   renderPlayerStatus: function() {
+    console.log('renderPlayerStatus');
     var _this = this;
     var host = this.host();
     var guest = this.guest();
+    console.log(host);
+    console.log(guest);
     if (!host) {
       //actor join room event has not fired yet
       return _this.renderInitPhase();
     } else {
-      switch (host.status) {
+      switch (host.customProperties.status) {
         case PlayerStatus.New:
         case PlayerStatus.JoinedLobby:
           return _this.renderInitPhase();
@@ -90,13 +84,15 @@ var GameActions = React.createClass({
         case PlayerStatus.NotReady:
           return _this.renderNotReadyPhase();
         case PlayerStatus.Ready:
-          return _this.renderReadyPhase();
+          return _this.renderOngoingPhase();
         default:
           throw new Error('Unknown player status:' + host.status);
       }
     }
   },
   render: function() {
+    console.log('GameActions render');
+    console.log(this.props.actors);
     var _this = this;
     var phase = this.props.phase;
     return (
