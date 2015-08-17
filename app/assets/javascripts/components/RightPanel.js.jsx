@@ -14,8 +14,6 @@ var RightPanel = React.createClass({
     for(var key in state.actors) {
       actors.push(state.actors[key]);
     }
-    console.log(state.actors);
-    console.log(actors);
     return (
       <div className="right-panel">
         <RoomActors actors={actors}/>

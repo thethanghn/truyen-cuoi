@@ -66,12 +66,10 @@ var GameActions = React.createClass({
     return <button className="btn btn-info btn-resign">Resign</button>
   },
   renderPlayerStatus: function() {
-    console.log('renderPlayerStatus');
+    // console.log('renderPlayerStatus');
     var _this = this;
     var host = this.host();
     var guest = this.guest();
-    console.log(host);
-    console.log(guest);
     if (!host) {
       //actor join room event has not fired yet
       return _this.renderInitPhase();
@@ -91,8 +89,6 @@ var GameActions = React.createClass({
     }
   },
   render: function() {
-    console.log('GameActions render');
-    console.log(this.props.actors);
     var _this = this;
     var phase = this.props.phase;
     return (

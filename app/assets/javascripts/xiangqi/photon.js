@@ -32,7 +32,6 @@ var MysteryXiangqiClient = (function (_super) {
         _super.call(this, DemoWss ? Photon.ConnectionProtocol.Wss : Photon.ConnectionProtocol.Ws, DemoAppId, DemoAppVersion);
         this.gameController = game;
         this.options = options;
-        console.log(this.options);
         this.logger = new Exitgames.Common.Logger("Demo: ");
         this.USERCOLORS = ["#FF0000", "#00AA00", "#0000FF", "#FFFF00", "#00FFFF", "#FF00FF"];
 
@@ -81,15 +80,11 @@ var MysteryXiangqiClient = (function (_super) {
         //         break;
         // }
         if (code == 1) {
-            console.log('receiving event');
-            alert(1);
-            console.log(content);
             //sync the state
             if (this.gameController.state.gameState) {
                 content.gameState.actors = $.extend(content.gameState.actors, this.gameController.state.gameState.actors);
             }
-            this.gameController.state.gameState = $.extend(this.gameController.state, content.gameState);
-            console.log(this.gameController.state.gameState);
+            this.gameController.state.gameState = $.extend(this.gameController.state.gameState, content.gameState);
             this.gameController.refresh();
         }
         this.logger.debug("onEvent", code, "content:", content, "actor:", actorNr);
@@ -131,10 +126,10 @@ var MysteryXiangqiClient = (function (_super) {
     }
 
     MysteryXiangqiClient.prototype.onStateChange = function (state) {
-        console.log('onStateChange');
+        // console.log('onStateChange');
         // "namespace" import for static members shorter acceess
         var LBC = Photon.LoadBalancing.LoadBalancingClient;
-        console.log('Game state: ' + LBC.StateToName(state));
+        // console.log('Game state: ' + LBC.StateToName(state));
         // Error  -1  number  Critical error occurred.
         // Uninitialized 0   number  Client is created but not used yet.
         // ConnectingToNameServer  number  Connecting to NameServer.
@@ -156,7 +151,7 @@ var MysteryXiangqiClient = (function (_super) {
             //determine state
             switch(state) {
                 case Photon.LoadBalancing.LoadBalancingClient.State.JoinedLobby:
-                    console.log('JoinedLobby');
+                    // console.log('JoinedLobby');
                     this.myActor().setCustomProperty('status', PlayerStatus.JoinedLobby);
                     var actor = this.getMyActor(this.myActor());
                     this.gameController.state.gameState.actors[actor.name] = actor;
@@ -253,6 +248,7 @@ var MysteryXiangqiClient = (function (_super) {
         obj.actorNr = x.actorNr;
         obj.customProperties = $.extend({}, x.customProperties);
         obj.isLocal = x.isLocal;
+        obj.isHost = x.actorNr == this.gameController.state.gameState.hostJoinToken;
         obj.name = x.name;
         obj.suspended = x.suspended;
         return obj;
