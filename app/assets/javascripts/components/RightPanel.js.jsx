@@ -14,8 +14,14 @@ var RightPanel = React.createClass({
     for(var key in state.actors) {
       actors.push(state.actors[key]);
     }
+
+    var pieces = this.props.gameState.data.filter(function(x) {
+      return x.coords[1] < 0 || x.coords[1] > 9;
+    }).slice();
+
     return (
       <div className="right-panel">
+        <DeadPieces pieces={pieces}/>
         <RoomActors actors={actors}/>
         <GameActions leaveHandler={this.props.leaveHandler} startHandler={this.props.startHandler} phase={phase} actors={actors} />
         <Chat sendMessageHandler={this.props.sendMessageHandler} messages={this.props.messages}/>

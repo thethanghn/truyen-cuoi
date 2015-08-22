@@ -44,10 +44,10 @@ var MysteryXiangqiClient = (function (_super) {
         myActor.setCustomProperty("color", this.USERCOLORS[0]);
         myActor.setCustomProperty("status", PlayerStatus.New);
         myActor.setName(this.options.myName);
-        var self = this;
-        myActor.onPropertiesChange = function(prop, client) {
-            self.gameController.refresh();
-        }
+        // var self = this;
+        // myActor.onPropertiesChange = function(prop, client) {
+        //     self.gameController.refresh();
+        // }
     }
     
     MysteryXiangqiClient.prototype.start = function (gameId) {
@@ -84,7 +84,7 @@ var MysteryXiangqiClient = (function (_super) {
             if (this.gameController.state.gameState) {
                 content.gameState.actors = $.extend(content.gameState.actors, this.gameController.state.gameState.actors);
             }
-            this.gameController.state.gameState = $.extend(this.gameController.state.gameState, content.gameState);
+            this.gameController.state.gameState = content.gameState;
             this.gameController.refresh();
         }
         this.logger.debug("onEvent", code, "content:", content, "actor:", actorNr);
@@ -169,7 +169,7 @@ var MysteryXiangqiClient = (function (_super) {
     };
 
     MysteryXiangqiClient.prototype.onJoinRoom = function (createdByMe) {
-        console.log('onJoinRoom');
+        // console.log('onJoinRoom');
         var joinToken = this.myActor().getJoinToken();
 
         if (createdByMe) {
@@ -191,7 +191,7 @@ var MysteryXiangqiClient = (function (_super) {
         // actor.setCustomProperty('status', PlayerStatus.JoinedRoom);
     };
     MysteryXiangqiClient.prototype.onActorJoin = function (actor) {
-        console.log('onActorJoin');
+        // console.log('onActorJoin');
         
         // this.gameController.refresh();
 

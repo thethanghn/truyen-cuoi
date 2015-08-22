@@ -25,3 +25,15 @@
     width: 300px;
   }
 }
+
+.dead-pieces {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  .dead-piece {
+    height: 50px;
+    display: inline-block;
+    margin: 5px;
+  }  
+}
+
