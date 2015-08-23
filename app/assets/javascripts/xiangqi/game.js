@@ -289,13 +289,13 @@ Game.prototype.getMyActor = function() {
 }
 
 Game.prototype.isHost = function() {
-    return this.getMyActor().actorNr > 0 && this.getMyActor().actorNr == this.state.gameState.hostJoinToken ? true: false;
+    return this.settings.set == 1;
 }
 
 Game.prototype.xyFromPosition = function(coords) {
     var host = this.isHost();
-    c0 = host ? coords[0] : this.settings.columns - coords[0] - 1;
-    c1 = host ? coords[1] : this.settings.rows - coords[1] - 1;
+    c0 = !host ? coords[0] : this.settings.columns - coords[0] - 1;
+    c1 = !host ? coords[1] : this.settings.rows - coords[1] - 1;
     // c0 = coords[0];
     // c1 = coords[1];
     x = this.settings.colHeight * c0;
