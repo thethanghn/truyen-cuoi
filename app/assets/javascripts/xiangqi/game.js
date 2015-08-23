@@ -1,4 +1,4 @@
-const PIECE_CODES = ['a', 'c', 'r', 'e', 'g', 'h', 's'];
+const PIECE_CODES = ['a', 'c', 'r', 'e', 'g', 'h', 's', 'u'];
 const LINE_POSITIONS = [
         //rows
         [[0, 0], [8, 0]],
@@ -63,7 +63,6 @@ var Game = function(container, settings) {
             _this.photonClient.myActorReady();
         },
         sendMessageHandler: function(message) {
-            console.log('sendMessageHandler');
             _this.photonClient.sendMessage(message);
         }
     };
@@ -109,7 +108,6 @@ Game.prototype.render = function() {
 
 
 Game.prototype.leave = function() {
-    console.log('leave');
     // when a player want to leave, if the game is not finished yet, we should confirm that it means he loses the game, if he agrees then he can leave
     if (this.state.phase == 'ongoing') {
         var ok = confirm('The game is ongoing, if you leave, you will lose this game');
@@ -223,9 +221,7 @@ Game.prototype.drawSpots = function() {
                     d3.select(this).attr('style', 'stroke-width: 0;');  
                 })
                 .on('click', function() {
-                    console.log('spot clicked');
                     var spotData = d3.select(this).data()[0];
-                    console.log(spotData);
                     if (_this.onMovePiece && _this.moveChecker.canMove(_this.onMovePiece, spotData)) {
                         _this.movePiece(_this.onMovePiece, spotData);
                         //send it to client
@@ -371,8 +367,19 @@ Game.prototype.resetPiece = function() {
 };
 
 Game.prototype.movePiece = function(piece, spot) {
-    console.log('movePiece');
-    // var ele = self.findD3Piece(piece.id);
+    if (piece.code == 'u') {
+        var index = Math.floor(Math.random() * Pieces.length);
+        var newCode = Pieces.slice(index, 1);
+        var arr = [];
+        for(var i = 0; i < Pieces.length; i++) {
+            if (i != index) {
+                arr.push(Pieces[i]);
+            } else {
+                newCode = Pieces[i];
+            }
+        }
+        piece.code = newCode;
+    }
     //update the coords
     piece.coords = spot;
     // ele.transition().attr('transform', translateFromPosition(spot));
@@ -382,9 +389,10 @@ Game.prototype.movePiece = function(piece, spot) {
 
 Game.prototype.redraw = function() {
     var _this = this;
-    this.data().forEach(function(piece) {
-        var ele = _this.findD3Piece(piece.id);
-        ele.transition().attr('transform', _this.translateFromPosition(piece.coords));
+    this.data().forEach(function(d) {
+        var ele = _this.findD3Piece(d.id);
+        ele.attr('fill', 'url(#img' + [d.code, d.set].join('') + ')' ).transition().attr('transform', _this.translateFromPosition(d.coords));
+            
     });
 }
 
@@ -411,7 +419,6 @@ Game.prototype.openRoom = function(joinToken) {
 }
 
 Game.prototype.setPhase = function(phase, params) {
-    console.log('setPhase: ' + phase);
     params = params || {};
     switch(phase) {
         case 'init':

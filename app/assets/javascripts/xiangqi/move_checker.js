@@ -267,7 +267,8 @@ var MoveChecker = function(game){
     this.possibleMoves = function(piece) {
         console.log('possibleMoves');
         var spots = [];
-        switch(piece.code) {
+        var role = piece.code == 'u' ? piece.id.split('-')[0] : piece.code;
+        switch(role) {
             case 's':
                 spots = self.soldierMoves(piece);
                 break;
