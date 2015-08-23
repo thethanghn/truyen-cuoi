@@ -16,3 +16,17 @@ function resetGame() {
 function clearSpotStyle() {
     d3.selectAll('.rect-spot').attr('style', 'stroke-width: 0');
 }
+
+function generateNewPiece() {
+  var index = Math.floor(Math.random() * Pieces.length);
+  var newCode = Pieces.slice(index, 1);
+  var arr = [];
+  for(var i = 0; i < Pieces.length; i++) {
+      if (i != index) {
+          arr.push(Pieces[i]);
+      } else {
+          newCode = Pieces[i];
+      }
+  }
+  return newCode;
+}

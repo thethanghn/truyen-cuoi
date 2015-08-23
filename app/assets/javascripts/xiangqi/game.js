@@ -219,9 +219,10 @@ Game.prototype.drawPieces = function() {
                 if (_this.onMovePiece.set != pieceData.set) {
                     if (_this.moveChecker.canMove(_this.onMovePiece, pieceData.coords)) {
                         var temp = pieceData.coords.slice();
+                        _this.movePiece(_this.onMovePiece, temp);
                         var pieceToDelete = _this.data().filter(function(x) { return x.id == pieceData.id;})[0];
                         pieceToDelete.coords[1] = 10;
-                        _this.movePiece(_this.onMovePiece, temp);
+                        pieceToDelete.code = generateNewPiece();
                         ele.remove();
                         //send it to client
                         _this.synchState();
@@ -321,17 +322,7 @@ Game.prototype.resetPiece = function() {
 
 Game.prototype.movePiece = function(piece, spot) {
     if (piece.code == 'u') {
-        var index = Math.floor(Math.random() * Pieces.length);
-        var newCode = Pieces.slice(index, 1);
-        var arr = [];
-        for(var i = 0; i < Pieces.length; i++) {
-            if (i != index) {
-                arr.push(Pieces[i]);
-            } else {
-                newCode = Pieces[i];
-            }
-        }
-        piece.code = newCode;
+        piece.code = generateNewPiece();
     }
     //update the coords
     piece.coords = spot;
