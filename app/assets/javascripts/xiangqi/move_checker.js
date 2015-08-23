@@ -28,7 +28,8 @@ var MoveChecker = function(game){
     //some pieces have restriction
     this._isBlocked = function(spot, piece) {
         var result = false;
-        switch(piece.code) {
+        var role = piece.code == 'u' ? piece.id.split('-')[0] : piece.code;
+        switch(role) {
             case 'h':
                 //check each direction for blocking
                 var toFind = null;
