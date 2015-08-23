@@ -121,43 +121,6 @@ Game.prototype.leave = function() {
     }
 }
 
-Game.prototype.getInitialPiece = function() {
-    return [
-        { coords: [0, 0], code: 'r', set: 1, id: 'r-1-1' },
-        { coords: [1, 0], code: 'h', set: 1, id: 'h-1-2' },
-        { coords: [2, 0], code: 'e', set: 1, id: 'e-1-3' },
-        { coords: [3, 0], code: 'a', set: 1, id: 'a-1-4' },
-        { coords: [4, 0], code: 'g', set: 1, id: 'g-1-5' },
-        { coords: [5, 0], code: 'a', set: 1, id: 'a-1-6' },
-        { coords: [6, 0], code: 'e', set: 1, id: 'e-1-7' },
-        { coords: [7, 0], code: 'h', set: 1, id: 'h-1-8' },
-        { coords: [8, 0], code: 'r', set: 1, id: 'r-1-9' },
-        { coords: [1, 2], code: 'c', set: 1, id: 'c-1-10' },
-        { coords: [7, 2], code: 'c', set: 1, id: 'c-1-11' },
-        { coords: [0, 3], code: 's', set: 1, id: 's-1-12' },
-        { coords: [2, 3], code: 's', set: 1, id: 's-1-13' },
-        { coords: [4, 3], code: 's', set: 1, id: 's-1-14' },
-        { coords: [6, 3], code: 's', set: 1, id: 's-1-15' },
-        { coords: [8, 3], code: 's', set: 1, id: 's-1-16' },
-        { coords: [0, 9], code: 'r', set: 2, id: 'r-2-17' },
-        { coords: [1, 9], code: 'h', set: 2, id: 'h-2-18' },
-        { coords: [2, 9], code: 'e', set: 2, id: 'e-2-19' },
-        { coords: [3, 9], code: 'a', set: 2, id: 'a-2-20' },
-        { coords: [4, 9], code: 'g', set: 2, id: 'g-2-21' },
-        { coords: [5, 9], code: 'a', set: 2, id: 'a-2-22' },
-        { coords: [6, 9], code: 'e', set: 2, id: 'e-2-23' },
-        { coords: [7, 9], code: 'h', set: 2, id: 'h-2-24' },
-        { coords: [8, 9], code: 'r', set: 2, id: 'r-2-25' },
-        { coords: [1, 7], code: 'c', set: 2, id: 'c-2-26' },
-        { coords: [7, 7], code: 'c', set: 2, id: 'c-2-27' },
-        { coords: [0, 6], code: 's', set: 2, id: 's-2-28' },
-        { coords: [2, 6], code: 's', set: 2, id: 's-2-29' },
-        { coords: [4, 6], code: 's', set: 2, id: 's-2-30' },
-        { coords: [6, 6], code: 's', set: 2, id: 's-2-31' },
-        { coords: [8, 6], code: 's', set: 2, id: 's-2-32' }
-    ];
-}
-
 Game.prototype.initResources = function() {
     var svg = this.svg;
     var defs = svg.append("defs");
@@ -314,16 +277,6 @@ Game.prototype.updatePieces = function() {
 //     );
 // }
 
-
-
-function getPieceCls(coords) {
-    return ['piece', coords[0], coords[1]].join('-');
-}
-
-function getSpotCls(spot) {
-    return ['spot', spot[0], spot[1]].join('-');
-}
-
 Game.prototype.getMyActor = function() {
     return this.state.gameState.actors[this.settings.myName] || { actorNr: -1 };
 }
@@ -342,16 +295,6 @@ Game.prototype.xyFromPosition = function(coords) {
 Game.prototype.translateFromPosition = function(coords) {
     var xy = this.xyFromPosition(coords);
     return ['translate(', xy[0], ',', xy[1] , ')'].join('');
-}
-
-function resetGame() {
-    $('.pieces').remove();
-    var svg = d3.select('#svg');
-    drawPieces(svg);
-}
-
-function clearSpotStyle() {
-    d3.selectAll('.rect-spot').attr('style', 'stroke-width: 0');
 }
 
 Game.prototype.findD3Piece = function(id) {
