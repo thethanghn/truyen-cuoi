@@ -250,6 +250,7 @@ var MysteryXiangqiClient = (function (_super) {
         obj.isLocal = x.isLocal;
         obj.isHost = x.actorNr == this.gameController.state.gameState.hostJoinToken;
         obj.name = x.name;
+        obj.set = this.gameController.settings.set;
         obj.suspended = x.suspended;
         return obj;
     }

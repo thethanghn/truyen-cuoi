@@ -217,15 +217,21 @@ Game.prototype.drawPieces = function() {
             if (_this.onMovePiece) {
                 //check if it is different set
                 if (_this.onMovePiece.set != pieceData.set) {
-                    var temp = pieceData.coords.slice();
-                    var pieceToDelete = _this.data().filter(function(x) { return x.id == pieceData.id;})[0];
-                    pieceToDelete.coords[1] = 10;
-                    _this.movePiece(_this.onMovePiece, temp);
-                    ele.remove();
-                    //send it to client
-                    _this.synchState();
-                    _this.resetPiece();
-                    renderScreen();
+                    if (_this.moveChecker.canMove(_this.onMovePiece, pieceData.coords)) {
+                        var temp = pieceData.coords.slice();
+                        var pieceToDelete = _this.data().filter(function(x) { return x.id == pieceData.id;})[0];
+                        pieceToDelete.coords[1] = 10;
+                        _this.movePiece(_this.onMovePiece, temp);
+                        ele.remove();
+                        //send it to client
+                        _this.synchState();
+                        _this.resetPiece();
+                        renderScreen();
+                        return;
+                    }
+                }
+            } else {
+                if (_this.getMyActor().set != pieceData.set) {
                     return;
                 }
             }
@@ -281,8 +287,12 @@ Game.prototype.getMyActor = function() {
     return this.state.gameState.actors[this.settings.myName] || { actorNr: -1 };
 }
 
+Game.prototype.isHost = function() {
+    return this.getMyActor().actorNr > 0 && this.getMyActor().actorNr == this.state.gameState.hostJoinToken ? true: false;
+}
+
 Game.prototype.xyFromPosition = function(coords) {
-    var host = this.getMyActor().actorNr > 0 && this.getMyActor().actorNr == this.state.gameState.hostJoinToken ? true: false;
+    var host = this.isHost();
     c0 = host ? coords[0] : this.settings.columns - coords[0] - 1;
     c1 = host ? coords[1] : this.settings.rows - coords[1] - 1;
     // c0 = coords[0];

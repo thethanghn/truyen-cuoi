@@ -150,6 +150,7 @@ $(function(){
         myName: '<%= current_user.email %>',
         myNbr: <%= @room_user.join_token %>,
         ope: '<%= @ope %>',
+        set: <%= @ope == "join" ? 2 : 1 %>,
         roomErrorUrl: '<%= games_room_error_path(@room.id) %>',
         initRoomUrl: '<%= games_room_init_path(@room.id) %>',
         lobbyUrl: '<%= games_xiangqi_index_path %>',
