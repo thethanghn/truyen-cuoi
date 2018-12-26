@@ -264,11 +264,13 @@ function Player(data, options) {
           return paragraph;
         }
       }).popover('show');
-      //split to word
-      var words = paragraph.split(' ');
-      //try to read each
-      curW = 0;
-      readWord(words);
+      if (!(paragraph instanceof Array)) {
+        //split to word
+        var words = paragraph.split(' ');
+        //try to read each
+        curW = 0;
+        readWord(words);
+      }
       
       if(callback)
         callback();
