@@ -1,5 +1,6 @@
 <div class="post-inner <%= post.post_type.to_s %>">
-<div class="post-body" id='<%= post.id %>'>
-  <%= raw post.body %>
+  <div class="post-body" id='<%= post.id %>'>
+    <%= raw post.body %>
+  </div>
+  <div class="note-id"><%=post.id%></div>
 </div>
-<div class="note-id"><%=post.id%></div>

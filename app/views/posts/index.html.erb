@@ -1,15 +1,14 @@
 <div class="row-fluid clearfix">
   <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
-  <% @posts.each do |post| %>
-  <div class="post" id='<%= post.id %>' >
-    <div class="divider">
-      ****
-    </div>
-    <%= render partial: 'posts/post', locals: { post: post } %>
-  </div>
-  </div>
-  <% end %>
-  <div class="clearfix"></div>
+    <% @posts.each do |post| %>
+      <div class="post" id='<%= post.id %>' >
+        <div class="divider">
+          ****
+        </div>
+        <%= render partial: 'posts/post', locals: { post: post } %>
+      </div>
+    <% end %>
+    <div class="clearfix"></div>
   </div>
 
   <%= will_paginate $posts %>
@@ -40,8 +39,8 @@ $(function(){
   
   $container.infinitescroll({
     debug: true,
-    navSelector  : '.pagination',    // selector for the paged navigation 
-    nextSelector : '.pagination ul li a[rel="next"]',  // selector for the NEXT link (to page 2)
+    navSelector  : 'ul.pagination',    // selector for the paged navigation 
+    nextSelector : 'ul.pagination a[rel="next"]',  // selector for the NEXT link (to page 2)
     itemSelector : '#masonry-container .post',     // selector for all items you'll retrieve
     loading: {
         finishedMsg: 'No more pages to load.',
