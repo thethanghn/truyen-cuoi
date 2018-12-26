@@ -20,7 +20,7 @@ gem 'masonry-rails'
 gem 'bootstrap-wysihtml5-rails'
 gem 'growlyflash', '0.5.0'
 
-gem 'pg'
+ gem 'pg', '~> 0.20'
 
 
 # Gems used only for assets and not required

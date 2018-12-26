@@ -240,6 +240,7 @@ function Player(data, options) {
       return false;
     };
     this.speak =  function(paragraph, callback) {
+      if (!paragraph) return;
       if (this.stopFlag) {
         this.stopFlag = false;
         this.cursor = this.data.length;
