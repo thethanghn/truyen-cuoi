@@ -92,9 +92,9 @@ GEM
       railties (>= 3.2, < 6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    growlyflash (0.10.0)
+    growlyflash (0.5.0)
       coffee-rails (>= 3.2.1)
-      railties (>= 3.2, < 5.2)
+      railties (>= 3.2, < 5.0)
     haml (4.0.7)
       tilt
     i18n (0.9.5)
@@ -249,7 +249,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   faraday
-  growlyflash
+  growlyflash (= 0.5.0)
   haml
   jquery-rails (~> 4.0.4)
   masonry-rails

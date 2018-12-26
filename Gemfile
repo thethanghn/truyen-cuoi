@@ -18,7 +18,7 @@ gem 'squeel'
 gem 'haml'
 gem 'masonry-rails'
 gem 'bootstrap-wysihtml5-rails'
-gem 'growlyflash'
+gem 'growlyflash', '0.5.0'
 
 gem 'pg'
 
