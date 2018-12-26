@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  use_growlyflash
+  after_filter :flash_to_headers, if: :is_xhr_request?
+
 
 end
