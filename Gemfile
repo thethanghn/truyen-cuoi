@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.6.8'
 
 gem 'rails', '4.2'
 
@@ -7,7 +7,7 @@ gem 'rails', '4.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sprockets'
-gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-sass'
 gem 'sass-rails', '>= 3.2'
 
 gem 'faker'
