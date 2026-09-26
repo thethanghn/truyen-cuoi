@@ -12,7 +12,7 @@
 #  status     :string           default("active"), not null
 #
 
-class RoomUser < ActiveRecord::Base
+class RoomUser < ApplicationRecord
 
   belongs_to :room
   belongs_to :user

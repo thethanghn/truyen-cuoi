@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Truyện Cười</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="brand-wrap pull-left">
+        <a class="topimg" href="./"><img src="assets/images/topimg.jpg" alt=""></a>
+        <a id="logo" href="./">Nguyen The Thang</a>
+        <span class="topnote hidden-xs" title="Double click a story after reading to hide it. Scroll down for more.">{double click it}</span>
+      </div>
+      <ul class="nav nav-pills navbar-right">
+        <li data-view="unread"><a href="./">Fun</a></li>
+        <li data-view="read"><a href="./?read=1">Read</a></li>
+        <li><a href="random.html">Random</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container main">
+    <div id="masonry-container" class="clearfix"></div>
+    <div class="infinite-status text-center text-muted">Loading stories…</div>
+  </div>
+
+  <div class="container">
+    <footer class="row">
+      <div class="col-md-4">No Right Reserved</div>
+      <div class="col-md-4">Just For Fun</div>
+      <div class="col-md-4">Testing</div>
+    </footer>
+  </div>
+
+  <script src="assets/vendor/masonry.pkgd.min.js"></script>
+  <script src="assets/vendor/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/stories.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

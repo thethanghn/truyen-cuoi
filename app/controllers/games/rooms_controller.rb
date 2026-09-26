@@ -13,7 +13,7 @@ class Games::RoomsController < GamesController
 
   def error
     room = Room.find(params[:room_id])
-    room.update photon_error: params[:error], status: 'closed'
+    room.update photon_error: photon_error_params, status: 'closed'
     render json: { status: 'ok' }
   end
 
@@ -30,6 +30,14 @@ class Games::RoomsController < GamesController
   end
 
   private
+
+  # Free-form error payload from the Photon JS client, stored in an hstore column.
+  def photon_error_params
+    error = params[:error]
+    return {} unless error.respond_to?(:permit!)
+
+    error.permit!.to_h.transform_values(&:to_s)
+  end
 
   def check_open_rooms
     if current_user.open_rooms.any?

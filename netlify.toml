@@ -1,0 +1,5 @@
+# Netlify: deploy only the static site (the Rails app in the repo root is not used).
+[build]
+  base = "static-site"
+  publish = "."
+  command = ""

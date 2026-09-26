@@ -28,7 +28,7 @@
 </div>
 
 <script language="javascript">
-var rooms = <%= raw @rooms.to_json %>;
+var rooms = <%= json_escape(@rooms.to_json).html_safe %>;
 
 function joinGameHandler(roomId) {
     var url = ['/games/rooms', roomId, 'join'].join('/');
@@ -37,8 +37,7 @@ function joinGameHandler(roomId) {
 
 function renderRooms(rooms) {
     var menu = $(".rooms");
-    var root = React.createFactory(RoomList)({ rooms: rooms, joinGameHandler: joinGameHandler});
-    React.render(root, menu.get(0));
+    TruyenCuoi.mount('RoomList', menu.get(0), { rooms: rooms, joinGameHandler: joinGameHandler });
 }
 
 $(function () {

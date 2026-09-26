@@ -11,7 +11,7 @@
 </p>
 <p>
   <b>Type:</b>
-  <%= @post.post_type.text %>
+  <%= @post.post_type.to_s.humanize %>
 </p>
 <p>
   <b>Published:</b>

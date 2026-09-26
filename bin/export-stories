@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Exports all stories from Postgres into static-site/stories.txt.
+# Usage: bin/export-stories [database]   (default: truyencuoi)
+set -euo pipefail
+DB="${1:-truyencuoi}"
+OUT="$(cd "$(dirname "$0")/.." && pwd)/static-site/stories.txt"
+
+{
+  echo '# Truyen Cuoi stories, exported from the Rails database.'
+  echo '# Each story starts with a line "=== <id> <story|poem>" followed by its HTML body.'
+  echo '# Regenerate with: bin/export-stories [database]'
+  echo
+  psql -X -A -t -q -d "$DB" -c "
+    SELECT '=== ' || id || ' ' || coalesce(post_type, 'story') || E'\n'
+           || btrim(replace(body, E'\r\n', E'\n')) || E'\n'
+    FROM posts ORDER BY id"
+} > "$OUT"
+
+echo "Wrote $(grep -c '^=== ' "$OUT") stories to $OUT"

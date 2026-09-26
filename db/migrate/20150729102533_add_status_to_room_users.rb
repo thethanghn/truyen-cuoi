@@ -1,4 +1,4 @@
-class AddStatusToRoomUsers < ActiveRecord::Migration
+class AddStatusToRoomUsers < ActiveRecord::Migration[4.2]
   def change
     add_column :room_users, :status, :string, default: 'active', null: false
   end

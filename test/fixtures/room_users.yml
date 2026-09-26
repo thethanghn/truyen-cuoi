@@ -1,25 +1,11 @@
-# == Schema Information
-#
-# Table name: room_users
-#
-#  id         :integer          not null, primary key
-#  room_id    :integer          not null
-#  user_id    :integer          not null
-#  position   :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  join_token :integer          default(0)
-#  status     :string           default("active"), not null
-#
+alice_host:
+  room: open_room
+  user: alice
+  position: host
+  join_token: 1
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  room_id: 
-  user_id: 
-  position: MyString
-
-two:
-  room_id: 
-  user_id: 
-  position: MyString
+bob_guest:
+  room: open_room
+  user: bob
+  position: guest
+  join_token: 2

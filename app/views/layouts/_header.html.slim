@@ -9,9 +9,6 @@ header
         a.topnote.muted.pull-left {double click it}
         nav
           ul.nav.nav-pills.navbar-right
-            li = link_to "Xiangqi", games_xiangqi_index_path
-            li = link_to "Blackjack", games_blackjack_index_path
-            li = link_to "News", news_index_path
             li = link_to "Fun", root_path
             - unless user_signed_in?
               li = link_to "Sign In", new_user_session_path
@@ -26,4 +23,4 @@ header
                     a href="#"  Profile
                   li.divider role="separator" 
                   li
-                    = link_to "Sign Out", destroy_user_session_path, method: :delete
+                    = button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-link", form: { class: "navbar-form" }

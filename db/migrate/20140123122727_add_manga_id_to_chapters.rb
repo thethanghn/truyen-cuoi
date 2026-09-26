@@ -1,4 +1,4 @@
-class AddMangaIdToChapters < ActiveRecord::Migration
+class AddMangaIdToChapters < ActiveRecord::Migration[4.2]
   def change
     add_column :chapters, :manga_id, :integer
     add_index :chapters, :manga_id

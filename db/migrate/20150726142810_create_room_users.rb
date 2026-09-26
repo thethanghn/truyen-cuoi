@@ -1,4 +1,4 @@
-class CreateRoomUsers < ActiveRecord::Migration
+class CreateRoomUsers < ActiveRecord::Migration[4.2]
   def change
     create_table :room_users do |t|
       t.integer :room_id, null: false

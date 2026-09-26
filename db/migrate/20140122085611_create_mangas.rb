@@ -1,4 +1,4 @@
-class CreateMangas < ActiveRecord::Migration
+class CreateMangas < ActiveRecord::Migration[4.2]
   def change
     create_table :mangas do |t|
       t.string :title

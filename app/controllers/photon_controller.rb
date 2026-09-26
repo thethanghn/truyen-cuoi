@@ -10,8 +10,8 @@ class PhotonController < ApplicationController
       @message = message
     end
 
-    def to_json
-      {ResultCode: @code, Message: @message}
+    def to_h
+      { ResultCode: @code, Message: @message }
     end
   end
 
@@ -58,7 +58,7 @@ class PhotonController < ApplicationController
   #   "Username": "MyPlayer0"
   # }
   def PathJoin
-    room.update status: 'filled'
+    @room.update status: 'filled'
     render success
   end
 
@@ -205,19 +205,18 @@ class PhotonController < ApplicationController
   private
 
   def log_params
-    puts params
-    Rails.logger.info params
+    Rails.logger.info params.to_unsafe_h.inspect
   end
 
   def find_room
     game_id = params["GameId"]
     raise PhotonError.new(1, "Invalid GameId") unless game_id.present?
-    @room = Room.find_by_game_name(game_id)
+    @room = Room.find_by(game_name: game_id)
     raise "Unable to find room with GameId: #{game_id}" unless @room.present?
   end
 
   def photon_argument_errors(e)
-    render json: e.to_json
+    render json: e.to_h
   end
 
   def success

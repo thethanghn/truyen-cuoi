@@ -1,0 +1,1391 @@
+# Truyen Cuoi stories, exported from the Rails database.
+# Each story starts with a line "=== <id> <story|poem>" followed by its HTML body.
+# Regenerate with: bin/export-stories [database]
+
+=== 1 story
+<div>Một ông chồng trên giường hấp hối, gọi vợ đến bênmình và hỏi:</div>
+- Em ơi, anh không còn sống được nữa. Em hãy nóithật cho anh, trong 
+suốt thời gian chúng mình chung sống với nhau,em đã phản bội anh bao 
+nhiêu lần?
+<div>Chị vợ không nói gì, chỉ khóc nức nở.</div>
+<div>Ông chồng lại hỏi :</div>
+- Thôi, em đã không muốn nói thì hãy giải thích cho anh tại sao trong tủ của em có 3 quả trứng và 300 USD?
+<div>Chị vợ thút thít :</div>
+<div>- Mỗi lần em phản bội anh, em lại cho vào tủ mộtquả trứng.</div>
+<div>Ông chồng thở phào:</div>
+<div>- À, thế là chỉ có 3 lần thôi ư? Còn 300 USD thì sao?</div>
+<div>Lần này, chị vợ khóc rất to và giải thích:</div>
+- Mỗi lần trứng nhiều quá, em lại đem ra chợ bán và... em đã tiết kiệm được 300 USD.
+<div>Nghe đến đó, ông chồng kêu to lên một tiếng và trút hơi thở cuối cùng.</div><br>
+
+=== 2 story
+<div>Nàng: Anh có hút thuốc bao giờkhông?</div>
+<div>Chàng: Không bao giờ.</div>
+<div>Nàng: Vậy anh có uống rượu chứ?</div>
+<div>Chàng: Đời anh chưa từng uống một giọt rượu nào.</div>
+<div>Nàng: Thế còn cờ bạc? Chắc anh cũng cóchơi chứ?</div>
+<div>Chàng: Không khi nào, em biết đấy.</div>
+<div>Nàng: Vậy ngoài em ra, anh còn để ý đến cô nào không?</div>
+<div>Chàng: Em phải tin anh chứ. Anh chỉ có duy nhất em mà thôi!</div>
+<div>Nàng: Nhưng anh cũng phải có một thói xấu gì đó chứ?</div>
+<div>Chàng: À, đúng là thỉnh thoảng anh có hay nói dối.</div><br>
+
+=== 3 story
+Ba nhà thầu tham dự đấu thầu sửa lại hàng rào Nhà Trắng. Người đến từ Florida sau khi đo đạc, tính toán cẩn thận nói:
+<div>- Tôi cần 900 đôla, 400 mua vật liệu, 400 trảcông thợ, 100 cho tôi.</div>
+Người từ Texas sau khi đo đạc cũng nói luôn:
+<div>- 650 đôla, 600 cho vật liệu và nhân công, 50 chotôi.</div>
+Người New York chỉ đứng hút xì gà, buông thõng:
+<div>- 2.650 đôla!</div>
+<div>- Sao đắt thế! Thậm chí anh chưa đo đạc gì cả -Người giao thầu kêu lên.</div>
+<div>- Bé mồm thôi! Tôi 1.000, anh 1.000, còn 650 mướn ngã Texas làm trọn gói.</div><br>
+
+=== 4 story
+Trước cổng thiên đàng, Thánh Peter đang tra cuốnsổ lớn xem người vừa 
+đến có xứng đáng được chấp nhận không. Sau một hồi, Thánh nhíu mày nói:
+- Không có gì xấu xa trong cuộc đời của anh, nhưng anh cũng chưa làm 
+điều gì thực sự tốt đẹp. Nếu anh chỉ ra được một điều tốt đẹp mà anh đã 
+làm thì ta chấp nhận.
+<div>Anh chàng hào hứng kể ngay:</div>
+- Con đang lái xe trên đường bỗng thấy một nhóm côn đồ khoảng 50-tên 
+đang tấn công một cô gái tội nghiệp. Con dừnglại, dùng cờ-lê đập một 
+phát làm tên cầm đầu to lớn ngã xuống. Sau đó, con quay sang đồng bọn của
+ hắn, đang vây xung quanh và quát to:
+- Hãy để cho cô gái vô tội này được yên! Cút đi trước khi tao dạy cho tất cả bọn bay một bài học đau đớn!
+- Thật ư? Thế con đã dạy cho chúng bài học đóchưa? - Thánh Peter cảm động hỏi.
+<div>- Dạ rồi, chỉ mới cách đây... 2 phút thôi ạ!</div><br>
+
+=== 5 story
+Một người phạm nhiều tội lỗi khi chết phải xuốngđịa ngục. Diêm vương 
+bắt anh ta chọn một trong số 18 số hình phạt. Theo chân quỷ sứ, phạm 
+nhân được xem qua hết 17 tầng địa ngục, các hình phạt rất khủng khiếp như
+ bị nấu trong vạc dầu, cắt gân, mổ bụng... Đến mỗi tầng anh chàng đều 
+lắc đầu quầy quậy.
+Khi đến tầng thứ 18, trông thấy có một đám phạm nhân đang bị đứng 
+trong một căn hầm phân ngập đến ngang lưng, anh này mừng húm, nói với 
+quỷ sứ:
+<div>- Thôi được. Tôi chọn hình phạt này.</div>
+<div>Nói rồi bèn chạy tọt vào căn hầm.</div>
+<div>Vừa lúc đó, tên quỷ sứ phụ trách căn hầm đó quát:</div>
+<div>- Hết giờ giải lao. Tất cả hãy cắm đầu xuống!</div><br>
+
+=== 6 story
+Một người đàn ông bước vào siêu thị khăng khăng đòi mua ngọn của cây 
+rau diếp. Chú bé bán hàng nói rằng phải đi hỏi ý kiến của viên quản lý. 
+Chú ta bước vào phòng phía sau và nói:<br>&nbsp;- Có một thằng ngu ngoài kia đòi mua một nửa cây rau diếp...
+<br>Vừa mới nói tới đó, chú chợt phát hiện ra người đàn ông đã đi theo và đang đứng ngay phía sau lưng, nên nói tiếp luôn:<br>- ...Và quý ông đây muốn mua nửa còn lại.<br>Viên quản lý đồng ý bán và người đàn ông đi khỏi. Sau đó, viên quản lý gọi chú bé lại và nói:<br>- Nhanh trí đấy! Mày làm tao có ấn tượng tốt, thế mày từ đâu đến đây?<br>- Từ Canada, thưa ngài!<br>- Tại sao mày lại rời bỏ Canada?<br>- Ở đó chỉ toàn là gái điếm và dân chơi hockey thôi ạ!<br>- Vậy à? Vợ của tao cũng là người Canada đó.<br>- Ông không đùa đấy chứ? Vậy bà nhà chơi cho đội hockey nào ạ?<br>
+
+=== 7 story
+Trong công viên, một người phụ nữ trung niên ngồi nghỉ trên ghế đá. Một người đàn ông đứng tuổi ngồi xuống bên cạnh:
+<div>- Xin lỗi, chẳng hay bà có phải là nhân viên văn phòng?</div>
+<div>Người phụ nữ ngạc nhiên:</div>
+<div>- Đúng thế! Sao ông đoán được?</div>
+<div>- Nhìn cái mặt đần đần.</div>
+<div>Người phụ nữ tức giận:</div>
+<div>- Mặt ông đần thì có!</div>
+<div>Người đàn ông buồn rầu:</div>
+<div>- Thì tôi cũng là nhân viên văn phòng.</div><br>
+
+=== 8 story
+Giáo sư tuyên bố với sinh viên rằng kỳ thi sẽ phải hoãn lại, một chàng sinh viên mạnh dạn đứng lên thưa:
+<div>- Hoãn kỳ thi lại sẽ ảnh hưởng đến việc ôn tập các môn khác, thưa thầy!</div>
+<div>- Anh tên gì nhỉ? - Giác sư nghiêm giọng.</div>
+<div>- Thưa thầy, Peter ạ. - Chàng trai bình tĩnh trảlời.</div>
+<div>- Khá lắm Peter! Cậu được miễn thi vì tôi thích người trung thực dũng cảm.</div>
+<div>Chàng trai kia mau miệng:</div>
+<div>- Nếu thế thì thưa thầy, hãy miễn thi cho sinh viên tên là Robert ạ.</div><br>
+
+=== 9 story
+Tại trạm điện cao thế, chàng công nhân đang sửa chữa trên nóc nói với anh đứng dưới đất:
+<div>- Ê! Mày có thấy 4 sợi dây đang thòng xuốngkhông?</div>
+<div>- Thấy rồi!</div>
+<div>- Thấy rồi hả? Cầm lấy 2 sợi xem! Có thấy gìkhông?</div>
+<div>- Hai sợi này không có vấn đề gì.</div>
+- Không sao hả? Tốt! Đừng đụng vào 2 sợi dây kia nhé, điện cao thế sờ vào là cháy thành than đấy!<br>
+
+=== 10 story
+Một anh chàng từ thành phố lần đầu tiên về quê thăm chú. Khi vị khách 
+thành thị bắt đầu cảm thấy chán cảnh rừng rú, ông chú nảy ra một ý:
+<div>- Sao cháu không lấy súng và dẫn lũ chó đi săn bắn cho vui?</div>
+Thế là anh chàng xách cây súng và đưa đàn chó vào rừng. Vài tiếng sau, anh ta quay về một mình, chú hỏi:
+<div>- Đi săn vui chứ?</div>
+<div>- Rất tuyệt ạ! - Giọng anh ta đầy hứng thú - Chú còn con chó nào nữa không?</div><br>
+
+=== 11 story
+Hai gã cao bồi gặp một người Ấn Độ đang nằm sấp trên đường, áp tai xuống đất. Một gã nói:
+<div>- Thấy tên Ấn Độ kia không, trông hắn có vẻ làmột đạo sĩ?</div>
+- Ừ, chắc hắn đang nghe ngóng. Bọn đạo sĩ có thể phát hiện tiếng động ở cách xa hàng dặm.
+<div>Vừa lúc đó, người Ấn Độ hé mắt, nói rất khẽ:</div>
+- Một chiếc xe ngựa có mui, đi được khoảng 2 dặm với 2 con ngựa kéo, một nâu, một trắng. Trên có một người đàn ông,một phụ nữ...
+<div>Gã thứ nhất quay sang bạn thán phục:</div>
+- Ghê thật! Lão đạo sĩ này chỉ nghe thôi mà có thể đọc toàn bộ thông tin, thậm chí cả màu sắc.
+<div>Môi "đạo sĩ" lại mấp máy. Hai gã giỏng tai nghe lời phán:</div>
+<div>... cán qua người tôi cách đây khoảng nửatiếng.</div><br>
+
+=== 12 story
+Ba xác chết có bộ mặt mỉm cười được đặt tại Trung tâm điều tra hình sự
+ ở Arkansas (Mỹ). Ông quản lý đang trả lời thám tử về nguyên nhân của 
+những cái chết.
+- Đây là Celtus. Ông ta chết ngay sau khi biết tin mình trúng xổ số 20 triệu USD.
+<div>Ông ta bước đến xác thứ hai:</div>
+- Đây là Bo. Ông ta chết khi nghe tin toà án cho ly dị vợ mà không phải chia gia sản.
+<div>Đến cái xác thứ ba:</div>
+<div>- Đây là Tom. Ông ta chết vì bị sét đánh.</div>
+- Hai người trước thì có thể hiểu được nụ cười,còn ông này cười gì? - Thám tử hỏi.
+<div>- Ồ, ông ta cứ ngỡ mình đang được chụp hình!</div><br>
+
+=== 13 story
+<div>Bob say khướt. Anh ta về nhà, đập cửa:</div>
+<div>- Ồ, Bob! Anh đã về đấy ư?</div>
+<div>- Ừ, em yêu ạ, anh gặp bạn cũ.</div>
+<div>- !?</div>
+<div>- Anh nhậu hết lương tháng rồi.</div>
+<div>- À, em có thể hiểu.</div>
+<div>- Xe lại bị giữ...</div>
+<div>- Chuyện đương nhiên mà.</div>
+- Ôi, em đúng là người phụ nữ hiền dịu nhất trần đời. Ừm... Ờ... hình như cái dây chuyền em đưa hôm qua, anh tróttặng một cô gái.
+<div>- Lạy Chúa, em thật là may mắn!</div>
+<div>- Sao, em định nói là em rất hài lòng ư?</div>
+- Vâng, vì em chỉ là... hàng xóm của anh. Hãy can đảm lên, chỉ còn vài bước chân nữa thôi. Cầu Chúa phù hộ cho anh!<br>
+
+=== 14 story
+Một cô gái tóc vàng xinh đẹp dáo để đi về quê thăm bà con. Bên vệ 
+đường cô nhìn thấy một con vật rất kỳ lạ, nên thắc mắc hỏi một nông dân 
+đứng gần đó:
+<div>- Xin bác giải thích cho cháu biết vì sao con bò này không có sừng ạ?</div>
+<div>Ông ta ngước đầu lên nhìn sững vào cô ta một lúc rồi từ từ giải thích:</div>
+- Thưa bà, có những con vật có sức mạnh phi thường hay dùng cái sừng 
+của mình để gây tai hoạ. Do đó chúng tôi phải đối phó với chúng bằng 
+cách dùng cưa cắt cho ngắn bớt. Sau đó nhểu lên đó vài giọt axit cho cặp
+ sừng không bao giờ mọc được nữa. Còn trường hợp con bò này không có 
+sừng, bởi vì nó là… con ngựa ạ!<br>
+
+=== 15 story
+<div>Cha xứ bán con ngựa của mình cho một người khách. Nhận tiền xong, ông dặn dò:</div>
+- Tôi cần lưu ý ông, muốn thúc nó chạy thì nói"Tạ ơn Chúa", còn muốn nó đứng lại thì nói "Alléluia" (hãy hoan hỉ lên).
+<div>- Được thôi, tôi đã quen với ngựa cả đời rồi.</div>
+<div>Nhảy lên lưng con ngựa mới mua, ông khách thử nói khẽ:</div>
+<div>- Tạ ơn Chúa!</div>
+Chưa dứt lời, con ngựa đã vọt đi. Đến tiếng "Tạ ơn Chúa" thứ hai thì 
+nó phóng nước đại. Chợt nhìn thấy một vực sâu thăm thẳm ngay phía trước,
+ ông ta hoảng hốt hét lên :
+<div>- Alléluia!</div>
+Con ngựa kịp dừng lại sát mép vực. Lau mồ hôichảy ròng ròng trên trán, kỵ sĩ làm dấu thánh và thốt lên:
+<div>- Tạ ơn C...h...ú...a!</div><br>
+
+=== 16 story
+<span>Ráy tai nói: <br>
+- Thỉnh thoảng có một cái que bông lại chui vào tai để lôi tao ra, nhưng
+ tao chốn kỹ vào sâu bên trong nên nó không làm gì được. <br>
+Vi trùng sâu răng nói: <br>
+- Ngày hai lần có cái bàn chải muốn lấy tao ra, nhưng ta chui vào giữa kẽ răng nên nó cũng không làm gì được. <br>
+Vi trùng bệnh lậu nói: <br>
+- Ở chỗ tao cũng có một thằng trọc hay đến, nhưng nó chẳng biết nên vào hay nên ra. Rồi nó còn nôn oẹ đầy người tao ! <br>
+Nghe thấy vậy vi trùng sâu răng cũng phản ứng giận dữ: <br>
+- A, cái thằng này tao cũng quen nó</span><br>
+
+=== 17 story
+Sau một thời gian dài nghiên cưu, các nhà 
+khoa học Mỹ đã phát minh thành công một chiếc máy bắt trộm. Để kiếm 
+chứng khả năng bắt trộm của máy, các nhà khoa học đã lần lượt đem qua 
+từng nước để thử nghiệm. Đâu tiên họ thử nghiệm ở Mỹ, trong vòng 30 
+phút, máy bắt được 500 tên trộm. Tiếp theo họ đem qua Nhật Bản, trong 
+vòng 10 phút máy bắt được 6000 tên trộm. Cuối cùng họ đem qua nước Việt 
+Nam, trong vòng 5 phút chiếc máy đã bị trộm!<br>
+
+=== 18 story
+Trong một cuộc họp, phía Nga bảo dân VN mất 
+vệ sinh toàn * bậy ngoài đường, phía VN bảo: "Làm đ.. gì có chuyện 
+đấy!". Phía Nga nói thách: "Đêm nay bọn tao xách AK-47 đi quanh hồ Tây, 
+thấy thằng nào * bậy là xử luôn"! Phía VN OK. Sáng hôm sau VN thiệt 37 
+mạng. Ức chế quá, VN cử 2 đặc nhiệm sang Nga, vác colt đi quanh quảng 
+trường đỏ và làm như bọn Nga. 2 chú đặc nhiệm đi cả đêm, vừa mệt vừa rét
+ đến gần 2h sáng mới thấy 1 thằng tè đường, 2 chú mừng quá nã sạch đạn 
+vào hắn. Sáng hôm sau, báo chí nga đưa tin:"Đêm qua, đại sứ VN ở Nga bị 
+bọn khủng bố bắn chết khi đang làm nhiệm vụ."<br><br>
+
+=== 19 story
+Cả thế giới xôn xao.Hôm nay người Mĩ đưa 
+tin: Họ vừa đào xuống lòng đất 300m, phát hiện ra dây đồng. Mĩ liền 
+tuyên bố: 300 năm trước người Mĩ đã biết sử dụng điện đàm để liên lạc<br>
+<br>
+Hôm sau người Nhật liền đưa tin. Họ đã đào 
+xuống lòng đất 500M và phát hiện dây cáp quang, liền đưa tin: 500 năm 
+trước người Nhật đã biết sử dụng điện thoại bàn để liên lạc.<br>
+<br>
+Việt Nam ko vừa, hôm sau liền đưa tin. Họ đã
+ đào xuống lòng đất 1000M và ..không phát hiện ra gì cả, liền đưa tin: 
+1000 năm trước người Việt Nam đã biết sử dụng điện thoại di động<br>
+
+=== 20 story
+Việt Nam, Campuchia và Xomali đc lọt vào 
+chung kết xếp hạng cuộc thi ở dơ của thế giới. BTC dắt 3 VĐV đại diện 3 
+quốc gia đến 1 trang trại heo, trong đó có 1 chuồng heo chứa khoảng 20 
+con heo, 2 tháng chưa làm vệ sinh, mùi hôi và ruồi nhặng ô nhiễm quá 
+thể, chưa đi tới nơi mà nhiều người đã nôn ọe, ngất xỉu …<br>
+<br>
+BTC ra cách thức dự thi, mỗi người sẽ vào đó
+ sống với heo, heo ăn gì ăn nấy, uống gì uống nấy … ai càng chịu đựng đc
+ lâu thì sẽ thắng:<br>
+<br>
+Campuchia xung phong vào trc, 3 ngày chịu ko nổi lết ra… khán giả la ó huýt sáo…<br>
+<br>
+Xomali tiến thân, 1 tuần … bò ra … trong tràng pháo tay của khán giả …<br>
+<br>
+Việt nam vào …. mới 2 ngày …. heo chịu ko nổi, xổ chuồng chạy ra…<br>
+
+=== 21 story
+Có cuộc thi điều khiển voi giữa ba nước: Mỹ, Nga và Việt Nam.<br>
+<br>
+Mở đầu cuộc thi là làm sao để con voi đực 
+nhảy lên nhảy xuống. Nga gắn lò xo cho voi nhưng chỉ nhảy được một cái 
+rồi té. Mỹ mở nhạc hết cỡ cho con voi có hứng nhảy, nhưng qua hết 10 
+album nó chỉ vẫn nhấc được hai chân. Tới Việt Nam, nhẹ nhàng và ko tốn 
+kém, "đấm" vào chỗ ấy của con voi… thế là nó nhảy như điên.<br>
+<br>
+Vòng hai bắt đầu, phải làm sao cho con voi 
+lắc đầu. Mỹ và Nga cố cầm đầu con voi mà lắc nhưng con voi cũng ko lắc 
+đầu. Việt Nam lại nhẹ nhàng xử lý… – "Mày có muốn giống như hồi nảy nữa 
+không cưng?".<br>
+<br>
+Con voi lắc đầu như điên.<br>
+
+=== 22 story
+Cuộc thi vắt sữa bò thế giới vòng chung kết 
+gồm 3 nước: Việt Nam, Mỹ và Hà Lan. 3 cô gái cầm 3 cái xô vào 3 chuồng 
+bò và bắt đầu vắt sữa.<br>
+<br>
+Sau 2 giờ, cô gái người Mỹ bước ra với 6 xô sữa, khán giả vỗ tay rần rần.<br>
+<br>
+Sau 3 giờ nữa, cô gái Hà Lan bước ra với 15 xô sữa, khán giả hò reo cuồng nhiệt.<br>
+<br>
+Đến chiều vẫn chưa thấy cô gái của Việt Nam 
+ra, gần tối, cô ta mới bước ra, trên tay xách có 1 thùng sữa. Khán giả 
+la ó, chửi mắng, cô này hét lớn:<br>
+<br>
+- "Thằng nào dắt con bò đực vô đó, làm tao vắt từ sáng tới giờ được có 1 xô dzậy"<br>
+<br>
+Khán giả vỗ tay rần rần. Việt Nam vô địch!<br>
+
+=== 23 story
+Để điều tra tâm lý của các dân tộc trên thế 
+giới, người ta tổ chức mộtcuộc thi viết sách với chủ đề "Con voi". Dưới 
+đây là những tác phẩm gửitới ban giám khảo:<br>
+<br>
+Người Mỹ: Một cuốn sách có tên: "Làm thế nào để nuôi voi trong vườn nhà, vui mà lại có lãi?".<br>
+<br>
+Người Đức: 3 quyển sách dày như từ điển, to bằng nửa cái bàn với tựa đềin bằng chữ đen trên nền trắng: "Sơ khảo về voi – ba tập"<br>
+<br>
+Người Nga: Một cuốn sách dày, trên bìa có ghi chữ cổ : "Tổ tiên ta đã tìm ra voi như thế nào?".<br>
+<br>
+Người Pháp: một cuốn sách mỏng trang trí cầu
+ kỳ với nhiều hình tượngcách điệu ngoài bìa với tựa: "Voi và đời sống 
+tình dục của nó".<br>
+<br>
+Còn người Việt Nam? : "1001 món ăn làm từ voi".<br>
+
+=== 24 story
+Một ngày đẹp trời 3 người đàn ông đại diện 
+cho 3 nước Mĩ Pháp Việt Nam họp nhau lại, quyết định mở cuộc thi xem ai 
+là người đàn ông nhất hành tinh.<br>
+<br>
+Muốn thế mỗi người phải đi wa 3 cái phòng, 
+phòng 1 có 1000 lít rượu, phòng 2 có 1 con hổ hung dữ, phòng 3 có một … 
+cô gái trẻ, đẹp, xinh, dễ thương, đáng iu…Ai muốn giật giải phải uống 
+hết 1000 lít rượu, đánh chít con sư tử, và phải í í 100 lần với cô gái.<br>
+<br>
+Mĩ tự hào với sức khỏe vô địch lao vào phòng con hổ trước. 1 ngày sau người ta khuân xác anh vứt ra ngoài<br>
+<br>
+Pháp tự hào với sự lãng mạn và quyến rũ, vào phòng cô gái trẻ trước. Được 50 lần thì người ta khuân xác vứt ra ngoài<br>
+<br>
+Còn mỗi bố Việt nam, chặc lưỡi :Thôi làm 
+phát rượu đã tính gì tính sau.Uống hết 1000 lít rượu, bố lảo đảo sang 
+phòng con hổ.Con hổ gầm rú gào thét kinh hoàng suốt một ngày, sáng hôm 
+sau người ta vào mang xác con hổ vứt ra ngoài.Bấy giờ bố việt nam lảo 
+đảo bước ra, lè nhè :<br>
+<br>
+Hiz..hiz..say m... nó rồi, chiến 100 lần với con em xong rồi thằng nào chỉ dùm tao phòng con hổ đi?"<br>
+
+=== 25 story
+Một ông ra hiệu thuốc hỏi cô bán hàng:<br>
+- Cô có bao cao su màu đen ko?<br>
+- Có thưa ông, nhưng sao ông cần gấp vậy?<br>
+- Anh bạn thân nhất của tôi vừa qua đời, tôi muốn gửi đến vợ anh ấy lời chia buồn sâu sắc nhất!<br>
+
+=== 26 story
+Một ông già đi vào hiệu thuốc mua VIAGRA,<br>
+Mua xong ông bẻ ngay nửa viên thuốc và cho vào mồm.<br>
+Cô bán hàng: chết ông ơi sao ông lại uồng như thế<br>
+loại này phải uống cả viên mới có tác dụng ông ạ.<br>
+Ông già cáu tiết: cô thì biết cái gì. tao chỉ cần đi đái không bị ướt quần chứ có làm gì đâu<br>
+
+=== 27 story
+Một anh nông dân bị ho lâu ngày nhưng không đi khám bệnh, một hôm bị nôn
+ ra máu, sợ quá bền lên trạm y tế thôn để khám. Bác sĩ hỏi han tình hình
+ xong bèn phê vào sổ: "Lôn ra máu" và đề nghị chuyển lên tuyến xã.<br> <br>
+Bác sĩ xã tiếp nhận bệnh nhân, đọc sổ y bạ thấy thế liền tặc lưỡi: "Để 
+nặng thế này rồi mới khám, đúng là y tế thôn, viết mà còn sai". Ông hạ 
+bút phê thêm dấu huyền vào rồi đề nghị chuyển lên tỉnh.<br> <br>
+Bác sĩ tỉnh đọc bệnh án, hốt hoảng gọi: "Nặng quá rồi, đưa băngca đến 
+đây, chuyển vào khoa... sản ngay". Vào đến phòng, y tá trực bèn thò tay 
+vào khám, rồi cũng hốt hoảng: "Thai ra ngược rồi, tôi tóm được cái chân 
+rồi đây này"!!!<br>
+
+=== 28 story
+Một anh nông dân bị Rối loạn Tiêu Hóa đau bụng quá , người nhà đưa anh 
+ta ra Y Tế xã khám bệnh. BÁc sĩ sau khi khám phê vào Y bạ “ RLTH,chuyển 
+lên Bệnh viện tỉnh” người nha tức tốc đưa lên bệnh viện tỉnh để chữa 
+trị. Vao đến phòng khám, Cô y Tá xem Y Bạ xong ,thò tay vào dưới háng 
+bệnh nhân rồi la lên hốt hoảng “ Y Tế xã làm ăn thế à, bệnh nặng thế này
+ rồi mới chuyển lên Ruột Thòng Tới Háng rồi” <br>
+
+=== 29 story
+Hai con rắn độc đang bò. Một con quay lại hỏi con kia:<br>&nbsp;- Tụi mình là rắn
+ độc phải không?<br>&nbsp;- Đúng vậy, rất độc. <br>Con thứ nhất lại hỏi:<br>&nbsp;- Tụi mình có 
+đúng là rắn độc thiệt không?<br>&nbsp;- Thật vậy, chúng ta là rắn độc. Chúng ta 
+là loài rắn cực độc trên thế gian này. À mà sao mày hỏi hoài vậy?<br>&nbsp;- Tao 
+mới cắn phải lưỡi tao mày ạ.<br>
+
+=== 30 story
+Một người bước vào hiệu thuốc và hỏi mua một gói condom. Khi trả tiền xong, anh ta bắt đầu cười và đi ra.<br>
+Ngày hôm sau, cũng màn diễn đó, người kia bước ra và cười ngất. Người 
+bán thuốc nghĩ điều này thật kỳ quặc và yêu cầu người giúp việc của 
+mình, nếu người đàn ông kia trở lại thì phải đi theo anh ta.<br>
+Vẫn như vậy ngày hôm sau anh ta lại đến cửa hàng, lặp lại hành động như 
+trước. Người giúp việc có trách nhiệm đi theo. Nửa giờ sau, anh ta quay 
+lại.<br>
+- Anh đã đi theo hắn chứ?<br>
+- Vâng tôi đã đi theo.<br>
+- Và, nó đã đi đâu?<br>
+- Ðến thẳng nhà ... ông<br>
+
+=== 31 story
+Một người nông dân phải mang một con lợn, một cái đe, một cái xô và một 
+con gà ra chợ bán. Sau một hồi loay hoay, anh ta quyết định xách cái xô,
+ cho con lợn vào trong xô, đặt cái đe lên trên con lợn và tay kia cặp 
+nách con gà. Đang đi, anh ta gặp một cô gái xinh đẹp hỏi đường tới chợ.<br>
+- "Cứ đi theo tôi qua con đường mòn này là đến, tôi cũng đang đến đó đây", người nông dân mỉm cười nói.<br>
+- "Nhưng nếu tôi đi cùng anh qua con đường mòn, anh sẽ cưỡng hiếp tôi mất thôi".<br>
+- "Làm sao tôi cưỡng hiếp cô được, tôi đang mang một con lợn, một cái đe, một cái xô và một con gà trên tay".<br>
+Cô gái nhanh nhảu trả lời:<br>
+- "Thì anh cho con lợn xuống đất, úp cái xô vào rồi dằn đe lên. Còn con gà thì đưa tôi cầm hộ cho"<br> <br>
+
+=== 32 story
+Một cặp vợ chồng gà thủ thỉ với nhau.<br>
+- Con đực: Sao ở loài người, phụ nữ có vú mà gà mái thì không có nhỉ ?<br>
+- Gà mái: thì anh làm có tay mà em cần có ... cơ chứ !!!<br>
+
+=== 33 story
+Một chị ở nhà tập thể có chồng đi công tác xa nhà. “Nhớ” chồng quá mới 
+ra lan can cầu thang tụt cho đỡ “nhớ” , khi tụt xuống cuối thì bị mắc 
+vào cái đinh (không biết thằng bỏ mẹ nào đóng vào) thế là nó toác ra 
+phải khâu lại chứ chẳng chơi. Đến bác sĩ Phụ khoa bảo khâu lại, bác sĩ 
+hỏi:<br>
+- Thế bà muốn khâu nó nhỏ lại chừng nào?<br>
+Tôi không biết hay là ông cứ khâu nó nhỏ như bà nhà cũng được.<br>
+- Ồ thế thì bà phải về mà tụt cầu thang thêm vài lần nữa<br><br>
+
+=== 34 story
+Có một vị sư một lần lên xe buýt “chẳng may” ngồi cạnh một em chân đã 
+dài mà nhà lại nghèo. Sau một hồi trêu trọc nhà sư, cô gái hỏi: Bạch 
+thầy, giữa hai chân thầy có cái gì ạ. Nhà sư nghĩ mình đi tu thi chỉ 
+dùng có mỗi một chức năng (mono ấy mà) nên có cũng như chết rồi. Nghĩ 
+vậy nhà sư trả lời cô gái: “ giữa hai chân ta có một xác chết” Cô cười 
+bảo: “ Thế thì giữa hai chân em cũng có……” Nhà sư tò mò???? Có cái gì 
+cơ… Cô gái: Thế mà cũng hỏi, có cái quan tài chứ cái gì nữa.<br>
+
+=== 35 story
+Có chàng nọ đi mua găng tay để tặng cho bạn gái, anh ta nhờ em của cô ta
+ đi theo để cố vấn. Trong khi anh ta mua đôi găng tay thì em của cô bạn 
+gái cũng mua 1 cái quần lót. Khi gói hàng, cô bán hàng gói lộn găng tay 
+đưa cho cô em bạn gái, còn gói quần lót thì đưa cho anh ta.Không ngờ đến
+ sự lầm lẫn này, anh ta gởi gói quà kèm theo 1 lá thư đến cô bạn gái.<br>
+Sau đây là nội dung của lá thư:<br>
+Em yêu dấu!<br>
+"Vì thấy rằng khi đi chơi với anh không bao giờ em mặc nó, nên hôm nay anh tặng nó cho em đây.<br>
+Vì muốn chọn cái thích hợp với em nhất, nên anh đã nhờ em gái của em đi 
+theo mua, vì anh thấy em gái của em có mấy cái rất đẹp, và anh biết rõ 
+em gái em và em đều cùng 1 cỡ như nhau.<br>
+Cô bán hàng giới thiệu cho anh 1 cái kiểu mới, mặc vào rất ấm,có 
+phẹt-mơ-tuya để mở, nhưng khi thấy cô ta kéo phẹt-mơ-tuya thử, nó bị 
+vướng lông bên trong nên anh chọn loại không có phẹt-mơ-tuya.<br>
+Anh đã bắt em gái em mặc nó trước mặt anh, 1 phút sau cởi ra và đưa cho 
+anh hửi bên trong, khi thấy không có bị ẩm ướt và hôi anh mới quyết định
+ mua.<br>
+Anh hy vọng rằng lần gặp tới anh sẽ tận tay mặc nó cho em. Và sau khi 
+mặc em hãy chìa nó ra để anh hôn lên đó 1 nụ hôn nồng thắm".<br>
+
+=== 36 story
+<br>
+Có hai vợ chồng nhà nọ,chống thì điếc,vợ thì câm nói chuyện với nhau 
+toàn bằng ra hiệu.Bữa nọ,có đám cháy lớn ở làng bên,chị vợ chạy đi 
+xem.Khi trở về chồng hỏi :<br>
+- Cháy hử? Thế cháy nhà ai thế?<br>
+Chị vợ cầm ngang chiếc đũa,để ngón tay vào chính giữa.Chồng hiểu ý ngay :<br>
+- À ! Cháy nhà thằng Cân.Thế nó đi đâu mà củi lửa làm vậy?<br>
+Chị vợ giật lùi mấy bước.Anh chồng gật đàu :<br>
+-À,lên mạn ngược.Thế nó lên mạn ngược làm gì?<br>
+Chị vợ tốc váy lên chỉ vào chỗ ấy của mình rồi gí vào mũi chồng.Anh chồng gật gù :<br>
+- Hiểu rồi ! nó lên mạn ngược buôn mắm tôm.Khổ,thế cháy còn gì nữa không?<br>
+Chị vợ chổng mông,chìa đít ra,sẵn trong tay có nắm rơm bèn chùi đi chùi lại mấy lần.Chồng sửng sốt :<br>
+- Chết chửa ! Cháy sạch như chùi à<br>
+
+=== 37 story
+Có 1 bác người tàu ở Sài Gòn đi xe gắn máy zô đường cấm bị cảnh sát giao
+ thông thổi phạt. Về nhà bác bức xúc kể với mấy ông bạn hàng xóm: Pữa 
+lay, ngộ li xe pị tằng CS giao tông nó thủi, ngộ tấp vô, ló hỏi ngộ: - 
+Zái tò của ông lâu? Ngộ lói ngộ hỏng có lem zái theo, chỉ có lem cái cạc
+ thui, thế là ló pắt ngội về l... (đồn)... zồi ló chuyển ngộ từ 
+l...(đồn) nhỏ qua l...(đồn) lớn, tới cái l...(đồn) lớn nhứt ở ngay chung
+ tâm tành pố đó. Ối trời ơi, pữa lay là ngày lễ, l...(đồn) nhỏ còn đỡ 
+lông (đông), chớ l...(đồn) lớn hả, lông wá trời lông (đông)<br> <br>
+
+=== 38 story
+Ba người bạn, Mỹ; pháp và Việt, ngồi uống càphê ở một quán Cafê nọ, hết đề tài để nói, bỗng một anh hỏi :<br>
+- Theo mấy anh định nghĩa thì thế nào là một NGƯỜI BÌNH TĨNH ?<br>
+Anh Mỹ lên tiếng: Tôi đi làm về, bước vào phòng ngủ, thấy vợ tôi đang 
+làm tình với một người đàn ông lạ. Tôi rút súng ra. NGƯỜI BÌNH TĨNH là 
+tôi không bắn đôi gian phu dâm phụ đó.<br>
+Anh Pháp: Mais non, Tôi đi làm về, bước vào phòng ngủ, thấy vợ tôi đang 
+làm tình với một người đàn ông lạ. Tôi rút súng ra. NGƯỜI BÌNH TĨNH là 
+tôi không bắn đôi gian phu dâm phụ đó và nói, xin lỗi ông bà, ông bà cứ 
+tiếp tục.<br>
+Anh Việt: "Theo tôi thì: Tôi đi làm về, bước vào phòng ngủ, thấy vợ tôi 
+đang làm tình với một người đàn ông lạ. Tôi rút súng ra, tôi không bắn 
+đôi gian phu dâm phụ đó và nói, xin lổi ông bà, ông bà cứ tiếp tục. Mà 
+cái thằng đó còn tiếp tục được thì NÓ mới là NGƯỜI BÌNH TĨNH<br>
+
+=== 39 story
+Trời đã khuya, trên xa lộ vắng có một cô gái trẻ đẹp với mái tóc xõa dài
+ đang vẫy gọi taxi, đặc biệt là trên người cô ta không còn một mảnh vải 
+che thân. Sau khi lên taxi và đã đi được một đoạn đường dài, cô ta cảm 
+thấy bực mình vì gã tài xế cứ nhìn cô qua kính chiếu hậu mãi mà không 
+chịu nhìn đường lái xe. Cô gái hỏi với vẻ bực bội: - Bộ từ nhỏ đến lớn 
+anh chưa thấy phụ nữ khỏa thân hay sao mà anh nhìn tôi dữ vậy? Gã tài xế
+ bối rối trả lời: - À, cái đó thì tôi đã thấy nhiều, nhưng tôi đang tự 
+hỏi là không biết cô cất tiền ở đâu để trả.<br>
+
+=== 40 story
+Hai vợ chồng chuẩn bị đến dự vũ hội hóa trang thì cô vợ đau đầu dữ dội 
+nên anh chồng đành đi một mình. Người vợ uống thuốc rồi lên giường đánh 
+một giấc. Khi tỉnh dậy, thấy mình hoàn toàn mạnh khỏe, cô quyết định tới
+ dạ hội xem anh chồng cư xử thế nào khi được “xổng chuồng”.<br>
+Cô vợ nhanh chóng nhận ra chồng mình trong bộ đồ hóa trang cá sấu đem từ
+ nhà đi. Anh chàng đang lượn lờ giữa sàn nhảy, khiêu vũ với hết cô gái 
+này đến cô gái khác, vuốt ve cô nọ, hôn má cô kia...<br>
+Người vợ ngứa mắt, tiến tới gần chồng trong phục trang kín mít của một 
+con bướm sặc sỡ mà cô mất khá nhiều công sức để mua nó, làm những động 
+tác khêu gợi khiến anh chàng bỏ rơi những người bạn nhảy khác và quay ra
+ quấn lấy cô, làm đủ trò sàm sỡ. Được một lát, hai người kéo nhau ra 
+ngoài, chui vào một chiếc ôtô, để nguyên mặt nạ và họ @#$%^&amp;*(...<br>
+Trước giờ tháo mặt nạ lúc nửa đêm, cô vợ lẻn về nhà trước, cởi đồ hóa 
+trang và leo lên giường chờ chồng về, tưởng tượng ra đủ kiểu giải thích 
+mà anh chồng sẽ đưa ra cho những hành vi ở dạ hội.<br>
+Khi chồng về đến nhà, cô vợ ngồi dậy hỏi:<br>
+- Buổi dạ tiệc vui không anh?<br>
+- Ôi, toàn những thứ cũ rích ấy mà - Người chồng đáp - Em biết đấy, khi không có em, anh chẳng bao giờ cảm thấy vui vẻ cả.<br>
+- Thế anh có khiêu vũ không? - Người vợ hỏi tiếp với vẻ mặt sắp hết kiềm chế.<br>
+Anh chồng đáp:<br>
+- Anh thậm chí không nhảy lấy một bản nhạc nào. Khi tới đó, anh gặp mấy 
+đứa bạn cũ, thế là cả lũ kéo nhau vào một xó và chơi bài cả buổi tối. 
+Nhưng em biết không, thằng bạn được anh cho mượn bộ đồ hóa trang cá sấu 
+kể lại, nó nói đã có một buổi tối thú vị ra trò đấy...<br>
+
+=== 41 story
+Một người khai hoang đến thăm 1 trại thổ dân da đỏ để học cách trồng 
+trọt của dân bản xứ. Suốt cả ngày các trai tráng da đỏ làm việc đào 
+những dãy hố , cứ 1 hố nhỏ lại đến đến 1 hố to hơn 1 chút. Hố nhỏ họ bỏ 
+hạt giống, hố to họ bỏ cá vụn làm phân bón. Tối đến khách được mời ngủ 
+với 1 cô gái dễ thương của bộ lạc. Cứ mỗi lần anh ta ấn ... anh ta vào 
+da thit ấm áp của cô gái cô ta lại kêu Yahoo!!! Anh chàng thích thú với 
+cảm giác đó và làm đi làm lại trò đó nhiều lần trong đêm.<br>
+Sáng hôm sau anh ta trở lại cánh đồng, cứ mỗi khi anh ta bỏ 1 khúc cá 
+vào 1 hố nhỏ thì 1 chiến binh da đỏ lại làm anh giật mình bằng tiếng hét
+ Yahoo!!! Cười thích thú anh khai hoang hỏi : Chữ Yahoo nghĩa là gì vậy ?<br>
+Người da đỏ nói : Nhầm lỗ!!!<br>
+
+=== 42 story
+Có hai anh chàng chơi với nhau rất thân rủ nhau du lịch sang sa mạc châu
+ Phi chơi. Không may cả hai bị lạc vào hoang mạc, đi cả ngày không thấy 
+bóng ai. Tình cờ một bạn bị một con rắn cắn ngay vào "chỗ quý" của mình.<br>
+Anh chàng kia đang lúng túng không biết xử lý ra sao thì tình cờ nhìn 
+thấy một trạm điện thoại khẩn cấp đặt gần đó. Anh ta vội phôn ngay cho 
+ông bác sĩ nhờ cứu chữa.<br>
+- Bác sĩ ơi bạn tôi bị rắn cắn.<br>
+- Con rắn màu gì? người bác sĩ hỏi.<br>
+- Màu vàng có đốm, anh ta trả lời vị bác sĩ.<br>
+- Gay đấy. Nọc độc sẽ giết chết anh ta trong vòng 1 tiếng. Ðể cứu được anh ta anh chỉ còn một cách thôi.<br>
+- Cách gì? Xin bác sĩ mách cho, tôi sẽ sẵn sàng làm để giúp bạn tôi.<br>
+- Trước tiên anh phải lau sạch chỗ cắn, dùng miệng hút sạch máu độc ra và lấy dây thắt chỗ bị cắn lại.<br>
+Thấy bạn mình vừa bước ra khỏi buồng điện thoại, anh chàng bị rắn cắn vội hỏi:<br>
+- Bác sĩ bảo sao?<br>
+- Hết đường rồi. Cậu sẽ chết trong 1 giờ nữa.<br>
+
+=== 43 story
+Trong 1 chuyến xe trở về cố hương, có 1 vị Cha cố ngồi bên cạnh 1 thiếu 
+nữ yêu kiều. Có thể vô tình hoặc không, chỉ biết răng, sau khi Cha cố 
+đặt tay lên đùi người thiếu nữ thì cô ấy hỏi Cha cố rằng: - Cha có nhớ 
+rằng, trong kinh thánh, trang 98, dòng 13 từ dưới lên nói gì không? Giật
+ cả mình, Cha cố vội rụt tay lại và nói: - Xin lỗi, tôi đang học làm Cha
+ cố. Thực lòng, cha cố cũng chưa biết cái dòng ấy nói về điều gì. Khi về
+ đến nhà, mở kinh thánh thấy ghi rõ:" Con hãy cố lên! Còn chút xíu nữa 
+là **ng đến thiên đường rồi đấy!"<br>
+
+=== 44 story
+Nhân dịp mới ra viện về, cơ thể 70 tuổi của ông cụ tổ chức một cuộc họp mừng tai qua nạn khỏi.<br> <br>
+Tổng giám đốc não nói:<br> <br>
+- Ai có ý kiến gì cứ nói.<br> <br>
+Tim phát biểu:<br> <br>
+- Tôi đã làm việc liên tục 70 năm qua, nay tôi xin về hưu.<br> <br>
+- Không được, tim mà về hưu thì chết à? - Các bộ phận khác phản đối.<br> <br>
+Tim gan phèo phổi tranh cãi mãi cuối cùng không ai được về hưu hết.<br> <br>
+Bỗng ở phía dưới có tiếng nói yếu ớt vọng lên.<br> <br>
+- Tôi yếu quá rồi, tôi xin về hưu.<br> <br>
+Mọi người ngó nghiêng mãi không biết ai nói.<br> <br>
+Não đập bàn quát:<br> <br>
+- Gã nào nói thì đứng lên xem nào.<br> <br>
+Tiếng thều thào chuyển sang tiếng... rít đầy uất ức:<br> <br>
+- Tao mà đứng lên được tao đã không xin về hưu.
+				<br>
+
+=== 45 story
+Ở vùng nọ có mốt nuôi vẹt. Một phụ nữ phàn nàn với cha xứ: <br>- Thưa Cha, lũ vẹt cái nhà con chỉ biết nói mỗi một câu: "Hi, chúng em là dân chơi nè! Các anh có muốn vui vẻ không?". <br>-
+ Thật là tục tĩu! Ta sẽ giúp con việc này. Hai con vẹt Francis và Job 
+của ta suốt ngày cầu nguyện và đọc Kinh Thánh. Hãy mang vẹt của con đến 
+nhà ta. Chung một lồng với chúng, chắc chắn lũ vẹt của con sẽ được dạy 
+dỗ về sự lễ độ và tôn kính. <br>Người phụ nữ mang hai con vẹt cái của bà
+ ta đến nhà cha xứ. Thấy hai con vẹt đực đang cầm quyển kinh và lầm rầm 
+cầu nguyện, bà ta liền thả hai con vẹt cái của bà vào với chúng. Các ả 
+vẹt cái la lên: <br>- Hi, chúng em là dân chơi nè! Các anh có muốn vui vẻ không? <br>Yên lặng... Một con vẹt đực sững sờ buông rơi quyển Kinh, ngó qua bạn nó và thốt lên: <br>- Francis! Những lời cầu nguyện của chúng ta đã được ứng nhiệm rồi!<br>
+
+=== 46 story
+Một mục sư và một cao bồi chơi golf với nhau, mỗi lần đánh trượt, tay 
+cao bồi lại chửi thề. Ông mục sư tức lắm, mấy lần nhắc nhở mà hắn vẫn 
+quen miệng, cuối cùng ông quở hắn: <br>- Anh mà còn chửi thề nữa là Chúa trời sẽ giáng sét vào anh đấy! <br>Ở
+ gậy sau, tay cao bồi chưa dứt tiếng chửi thì một tiếng sét vang lên... 
+Mục sư lăn ra chết. Trên trời vọng xuống tiếng lẩm bẩm: <br>- Mẹ kiếp, lại đánh trượt rồi!<br>
+
+=== 47 story
+Một nhà băng bị cướp 220 
+nghìn đôla. Chủ nhà băng nói với phóng viên: - Anh cứ ghi là nhà băng bị
+ mất nửa triệu đô. Để xem thằng cha đó thanh minh với vợ hắn ta thế nào.<br>
+
+=== 48 story
+<div>Một cậu 
+bé bắt trộm vịt của hàng xóm, đang vặt lông thì thấy có người đi tới, 
+cậu ta vội quăng vịt xuống ao. Ông hàng xóm hỏi: - Cháu bắt trộm vịt của
+ ta phải không? </div>
+<div>- Dạ, đâu có.<br>
+</div>
+<div>- Thế tại sao có nhiều lông vịt ở đây? <br></div>
+<div>- Tại vì vịt của ông muốn đi tắm nên nhờ cháu trông hộ quần áo…</div><br>
+
+=== 49 story
+Một ông khách chiều nào cũng vào một cửa hàng ăn cùng một con cò và một con mèo. <br>Dù
+ ông ta uống gì và cho hai con kia ăn gì thì khi móc túi trả tiền, bao 
+giờ cũng vừa đủ, không thừa, thiếu một xu. Một hôm, chủ quán tò mò hỏi:<br>- Anh có mẹo gì đặc biệt hay sao mà không cần đếm vẫn biết trả đủ tiền? <br>- Chuyện dài và buồn lắm! <br>-
+ Cách đây mấy năm, tôi nhặt được một cái chai, mở nút ra thì có một vị 
+thần xuất hiện và cho tôi ba điều ước. Điều thứ nhất của tôi là luôn có 
+đủ tiền trả cho các món chi tiêu... <br>- Anh quả là sáng suốt! Thế còn hai điều kia? <br>- Thì đấy, tôi ước có bạn chân dài và môi ướt...<br>
+
+=== 50 story
+Jim nói với cô bồ: Bất cứ điều gì em muốn anh sẽ làm, nhưng còn chuyện cạo râu thì không bao giờ nhé.<br>Còn ở nhà thì anh ta bảo vợ:<br>- Anh để râu để chứng minh cho em thấy sự thủy chung của anh.<br>Một
+ hôm, cô bồ của Jim cảm thấy nghi ngờ rằng Jim là một người đã có vợ. Cô
+ ta nói: Em sẽ không yêu anh nữa nếu anh không chịu cạo râu đi.<br>Mặc
+ cho Jim năn nỉ hết lời, cô gái vẫn không đồng ý, cuối cùng Jim phải 
+nhượng bộ và cạo đi bộ râu của mình. Thế rồi tối đó, khi trở về nhà Jim 
+cảm thấy hối hận khi đã lừa dối người vợ chung thủy của mình và sợ sẽ 
+phải thú nhận sự thật. Jim nhẹ nhàng leo lên giường nằm kế bên vợ mình. 
+Cô vợ liền quay sang ôm mặt anh ta và thì thầm nói:<br>- Anh yêu, hôm nay không được đâu, gã chồng râu quai nón của em sẽ về nhà bất cứ lúc nào đấy!! <br>
+
+=== 51 story
+Một người đàn ông đến châu Phi để săn khỉ đột cùng với một hướng dẫn 
+viên. Một buổi sáng đẹp trời nọ, hướng dẫn viên đến gặp ông, mang theo 
+lưới, súng săn, và một con chó:<br>- Sáng nay chúng ta sẽ đi bắt một con
+ khỉ đột. Tôi sẽ giải thích cho ông về kỹ thuật săn khỉ đột. Việc đầu 
+tiên là chúng ta sẽ tìm một cây có khỉ. Tôi sẽ leo lên và rung cây. Con 
+khỉ sẽ bị rơi xuống đất và con chó (đã được huấn luyện để làm điều này) 
+sẽ nhào tới cắn vào hòn dái của con khỉ khiến nó bị tê liệt và ông chỉ 
+cần dùng lưới bắt khỉ.<br>- OK, nhưng còn cây súng để làm gì?<br>- Nếu tôi bị té thì ông hãy bắn chết con chó. <br>
+
+=== 52 story
+Hai vợ chồng ngồi ăn tối, vợ bảo: <br>- Anh có nhớ cách đây 9 tháng, anh nghỉ phép hai tuần để đi câu cá hồi không? <br>- Có, anh nhớ chứ. <br>- Vậy thì hôm nay, một con cá hồi đã gọi điện tới đây báo rằng, anh đã trở thành cá hồi bố. <br>
+
+=== 53 story
+Ngày xửa ngày xưa, 3 con quỷ hút máu gặp nhau vào một buổi đêm và cùng khoe khoang về thành tích hút máu của mình.<br>Con thứ nhất vỗ ngực:<br>- Hãy nhìn cái toà nhà kia. Tao có thể xử lý toàn bộ dân cư ở đó trong 10 phút.<br>Dứt lời, hắn bay tới ngôi nhà, 9 phút sau trở lại với cái mồm dính đầy máu với vẻ mặt thoả mãn. <br>Con thứ hai lên tiếng:<br>- Hãy nhìn ngôi làng kia. Tao chỉ cần 5 phút.<br>Nói rồi hắn bay đến ngôi làng, trở lại sau 5 phút, máu chảy ròng trên miệng.<br>Con thứ ba hét lên:<br>- Hãy xem thị trấn kia kìa. Chỉ 3 phút là xong.<br>Hắn bay thẳng đến thị trấn, 1 phút sau quay trở lại với chiếc mồm be bét máu.<br>Hai tên kia trố mắt ngạc nhiên hỏi:<br>- Làm sao mà mày có thể nhanh như vậy?<br>Con thứ ba chỉ về hướng đó và hỏi:<br>- Mày có nhìn thấy toà nhà kia không?<br>- Có - 2 tên cùng trả lời.<br>- Tao thì không.<br>
+
+=== 54 story
+Một phụ nữ suốt đời làm nghề dọn dẹp nhà vệ sinh. Về già, bà muốn lo chu
+ đáo cho phần mộ sau này của mình nên đặt làm một tấm bia. Ông thợ hỏi:<br>-Thế bà muốn tôi khắc gì trên đó?<br>Không cần suy nghĩ, bà trả lời:<br>-Ở trong đang có người. <br>
+
+=== 55 story
+Nửa đêm, vợ đánh thức chồng:<br>- Em lạnh!<br>Người chồng đắp thêm chăn cho vợ, một lát sau cô vợ lại nói:<br>- Em nóng!<br>Anh chồng bật quạt. Sốt ruột, cô vợ nói thẳng:<br>- Em muốn đàn ông cơ!<br>- Em yêu này! Vào lúc hai giờ sáng, anh biết tìm đâu ra đàn ông cho em?<br>
+
+=== 56 story
+Ông bố dẫn cậu con trai đi mua bò sữa ở chợ. Ông ngắm nghía từng con bò 
+thật kỹ, vuốt ve từng cái xoáy, vạch miệng xem răng, nắn hông, bóp mông,
+ vắt sữa nếm thử... Sờ mó nắn bóp chán chê từng con một, cuối cùng ông 
+cũng mua được một con.<br>Thấy cậu con trai có vẻ sốt ruột, ông bố giải thích:<br>-
+ Mua bò sữa hay mua gia súc nói chung cũng vậy, mình càng thăm khám, sờ 
+nắn kỹ lưỡng khắp mọi chỗ thì càng mua được con vật có chất lượng cao.<br>Hai bố con dắt con bò về trại. Người bố cột bò vào chuồng, còn cậu con trai tót ra ngoài đồng chơi.<br>Đột nhiên, cậu bé chạy về, thở hổn hển:<br>- Bố ơi! Ở đằng sau cối xay kia kìa, có một anh hình như cũng muốn mua chị con hay sao ấy...<br>
+
+=== 57 story
+Một hôm, mẹ bảo cô bé quàng khăn đỏ mang bánh đi biếu bà. Ngang qua cánh
+ rừng, cô bé quàng khăn đỏ bỗng thấy một con chó sói đang nấp trong bụi 
+rậm phía trước. Cô bèn chạy tới và kêu toáng lên:<br>- Này sói già độc ác, đừng hòng hãm hại ta !<br>Sói nghe vậy cúp đuôi chạy mất. Đi được một quãng nữa, cô bé lại thấy con sói lúc nãy nấp sau bụi cây, cô bèn kêu lên: <br>- Này sói già độc ác, đừng hòng hãm hại ta !<br>Sói
+ nghe động liền chạy mất. Đi một quãng nữa, cô bé lại thấy con sói nấp 
+sau bụi cây, cô cũng chạy tới, nhưng chưa kịp kêu lên thì sói già đã 
+nhảy xổ ra, la lớn: <br>- Này cô bé quàng khăn đỏ ! Mi vừa phải thôi nhé, có để yên cho ta ị không !!!<br>
+
+=== 58 story
+Đêm khuya, vợ bắt gặp chồng mình đứng mê say bên nôi đứa con trai mới sinh của họ, nét mặt anh ta thật rạng rỡ.<br>Xúc động trước cảnh đó, cô ôm vai chồng thủ thỉ:<br>&nbsp;- Anh yêu! Anh đang nghĩ gì vậy?<br>&nbsp;- Thật không thể tưởng tượng được, cái nôi đẹp thế này mà giá chỉ có 20 USD thôi ư?!<br>&nbsp;=]]<br>
+
+=== 59 story
+Chủ nhật đẹp trời, mục sư quyết định vào rừng đi săn. Qua khúc quanh nguy hiểm, ông va phải một con<br>
+gấu lớn và ngã lăn xuống sườn núi. Khẩu súng văng xa còn ông bị trẹo cả hai chân.<br>
+Con gấu hung tợn xồng xộc lao tới trong khi mục sư không thể chạy trốn.<br>&nbsp;"Lạy Chúa! - ông cầu nguyện<br>
+- Xin Người hãy tha lỗi cho con đã trốn buổi lễ chủ nhật để đi săn.<br>&nbsp;Giờ đây con chỉ xin Người một ân huệ duy nhất là hãy biến con gấu này thành một con chiên ngoan đạo. Chúa ơi! Con xin Người!..."<br>
+Phép mầu đã xảy ra. Ngay lập tức, con gấu quỳ gối bên cạnh ông mục sư, chắp đôi bàn chân trước đầy móng vuốt và bắt đầu cầu nguyện:<br>&nbsp;"Tạ ơn Chúa! Xin cảm ơn Người đã ban cho con bữa ăn ngon lành này!...".<br>
+<br>
+
+=== 60 story
+Thỏ con ngồi viết lách. Cáo hỏi: mày viết gì thế?<br>&nbsp;- Luận án TS: "Thỏ ăn thịt Cáo"<br>&nbsp;- Làm gì có chuyện lạ<br>
+thế.<br>&nbsp;- Đi theo tao sẽ biết.<br>&nbsp;Gặp Chó sói<br>&nbsp;- Mày viết gì thế?<br>&nbsp;- Luận án TS: "Thỏ ăn thịt Cáo"<br>&nbsp;- Làm gì có chuyện lạ thế.<br>&nbsp;- Đi theo tao sẽ biết<br>&nbsp;Thỏ đưa Cáo và sói vào động. Trong đó 1 con sư tử to đang nằm, xung quanh nhiều xương cáo và sói.<br>&nbsp;Kết luận: mày viết về cái gì không quan trọng, quan trọng ông thầy hướng dẫn mày là ai!<br>
+<br>
+
+=== 61 story
+Sở cảnh sát Los Angeles LAPD, Cục Điều tra Liên Bang Mỹ FBI và Cục tình báo CIA cùng thi tài xem ai<br>
+là giỏi nhất.<br>&nbsp;Tổng thống quyết định cho họ một bài thi: ông ta thả một con thỏ vào rừng và ra lệnh họ phải tìm cách bắt lại nó…<br>CIA vào cuộc. Họ cài thú vật vào rừng để lấy thông tin, tra hỏi các cây rừng và vi sinh làm nhân chứng.<br>Sau ba tháng lục xét, có tuyên bố con thỏ không hề tồn tại.<br>
+FBI vào cuộc. Sau hai tuần truy quét không tìm được, họ dốt cháy khu rừng, giết hết mọi sinh vật, kể cả thỏ và họ không thèm xin lỗi gì cả…<br>LAPD vào cuộc. Hai tiếng sau, họ ra khỏi khu rừng, theo sau một con gấu bị đánh bầm dập tả tơi.<br>&nbsp;Con gấu gào lên: “Được rồi! Tôi là thỏ, tôi là thỏ! Được chưa???”<br>
+
+=== 62 story
+Một vận động viên đua xe đạp chết vì bị thủng lốp xe khi đang trên đường đua.<br>Người thân và bạn bè của anh đã đề lên mộ tay đua này dòng chữ:<br>"Con người đáng thương này được sinh ra bởi một vết thủng của cao su và mất đi cũng bởi một vết thủng của cao su"<br>
+
+=== 63 story
+Có một cô gái nuôi được một con vẹt rất khôn, biết nói đủ chuyện.<br>Một hôm cô gái thấy con vẹt bẩn quá bèn mang nó vào nhà tắm và tắm cho nó.<br>Nhân tiện đã ướt đồ, cô gái cho con vẹt đứng rũ khô lông rồi tắm cho mình luôn.<br>Con vẹt nghiêng ngó một hồi rồi cứ lải nhải<br>"Thấy hết rồi nha ! Thấy hết rồi nha !".<br>Cô gái bực quá bèn xách con vẹt ra vặt hết lông trên đầu nó cho chừa cái tội nói bậy.<br>Vài hôm sau, sếp của cô gái nọ lại nhà chơi.<br>Con vẹt nghiêng ngó nhìn cái đầu hói của vị khách một lúc rồi rụt rè hỏi<br>"Bộ cũng thấy rồi hả ?"<br><br><br>
+
+=== 64 story
+Có cặp vợ chồng trẻ vừa qua tuần trăng mật thì người vợ đổ bệnh.<br>Bác sĩ kết luận: Vợ suy tim độ 4, kiêng chuyện abc…trong nửa năm để theo dõi!!!<br>Dù rất sợ… die, nhưng cứ đêm nằm cạnh nhau là 2 vợ chồng này lại thèm ko chịu nổi.<br>Phương án đưa ra: chồng nằm phòng khách tầng 1, vợ ở phòng ngủ tầng 2.<br>Vào một đêm mưa gió, đôi chim câu nọ *ng độ tại chiếu nghỉ cầu thang giữa tầng 1 và 2.<br>Và cuộc đối thoại đã diễn ra như sau:<br>&nbsp;- Em yêu đi đâu đấy?<br>&nbsp;- Em đi tự tử anh yêu ạ! Còn anh?<br>&nbsp;- Anh đi giết một người…<br>
+
+=== 65 story
+Vị trưởng khoa tại một trường đại học giảng về môn luân lý tính dục cho các nữ sinh viên:<br>- Trong những lúc bị cám dỗ, các cô hãy tự đặt cho mình một câu hỏi thôi: "Một giờ sung sướng có<br>đáng với cả một đời ô nhục không?"<br>- Một nữ sinh trẻ đẹp ngồi ở cuối lớp đứng lên hỏi:"Thưa thầy làm thế nào kéo dài được cả một giờ ạ?"<br>
+
+=== 66 story
+Đến Luân Đôn sinh sống, tiếng Anh của cô kém nên việc mua bán gặp khó khăn.<br>Một hôm cô mua đùi lợn mà ko biết làm sao để người bán biết, cô đành giở váy lên cao chỉ vào đùi mình và kêu "ụt ịt"<br>Thế là người ta hiểu và bán cho cô đùi lợn. Hôm khác, cô cần mua ức gà thì cô mở khuy áo khoanh tròn vùng ức của mình và kêu "cục tác".<br>Thế người bán hiểu và bán cho cô ức gà.<br>Kế tiếp cô muốn mua xúc xích cô lại dẫn chồng cô theo.........................?<br>Đừng nghĩ bậy nhé ! Chồng cô ta biết tiếng Anh mà ! =]]<br>
+
+=== 67 story
+Cô vợ nghi ngờ chồng mình lăng nhăng với cô giúp việc nên đã nghĩ ra một kế hoạch để bắt quả tang anh chồng ham của lạ.<br>Một hôm cô bí mật cho cô giúp việc nghỉ một ngày rồi tối đó vào phòng của cô giúp việc, tắt hết đèn đóm trong phòng và lên giường nằm.<br>Nửa đêm hôm đó có tiếng bước chân và một bóng người mở cửa bước vào phòng rồi leo lên giường của cô giúp việc.<br>Đợi đến lúc anh chàng làm xong cái việc không nói ra thì ai cũng biết, cô vợ bất ngờ vừa bật đèn lên vừa hỏi:<br>- Ngạc nhiên không?<br>- Ngạc... nhiên... quá! - Anh chàng lái xe cho gia chủ lắp bắp.<br><br><br>
+
+=== 68 story
+Hai chú đại bàng đang bay lượn trên bầu trời cao thì một chiếc phi cơ phản lực bay vèo qua.<br>Chúng nhìn theo hồi lâu, vẻ ghen tị.<br>Cuối cùng, một chú chim cất tiếng:<br>- Quái, sao con chim này bay nhanh<br>thế nhỉ?<br>Chú kia cướp lời, vẻ hiểu biết:<br>- Mày thử bị lửa đốt vào đít như nó xem, có khi còn bay nhanh hơn ấy chứ!<br><br><br>
+
+=== 69 story
+Buổi sáng thức dậy gà trống gáy:<br>"Nhà có gà mái không???"<br>Mái ta liền nhỏ nhẹ " Có có có có có..."<br>Dê nghe thấy liền khích " Deeeeeeee Deeeeeeee đi"<br>Mèo thấy vậy liền kêu lên " eo ơi eo ơi "<br>Chó tò mò quá cũng xí vào nhặng xị" đâu đâu đâu"<br>Lợn thì láo hơn, nó kêu " ịt ịt ịt ( tự hiểu ) "<br>Gà con nghe thấy vậy thì hoảng bèn kêu lên "khiếp khiếp", ngựa sướng quá cười "hí hí hí " rõ to làm ông chủ nhà thức dậy.<br>Trưa hôm đó cả nông trại được ăn thịt gà trống<br>
+
+=== 70 story
+Một cô gái 17 tuổi thông báo với cha mẹ mình rằng mình đã có chửa 2 tháng.<br>Người mẹ gầm rít lên hỏi:<br>"Thằng đểu nào đã làm mày như vậy hả?".<br>Cô gái nhấc điện thoại lên và nói chuyện trong vài phút. Nửa tiếng sau, một chiếc Ferrari mới toanh đỗ<br>xịch tại cửa nhà, một người đàn ông bảnh bao, chững chạc, với mái tóc hoa râm và bộ vét đắt tiền tiến<br>vào.<br>Ông ngồi xuống trước mặt bố mẹ cô gái và nói:<br>Xin chào ông bà. Con gái của ông bà đã cho tôi biết tin. Tuy tôi không thể cưới cô ấy được vì lý do cá nhân, nhưng tôi sẽ chịu trách nhiệm.<br>Nếu đứa trẻ là con gái, tôi sẽ để lại cho nó 3 cửa hàng, 2 ngôi nhà, một biệt thự ven biển và một tài khoản trị giá 1 triệu USD.<br>Nếu là con trai, tài sản thừa kế là 2 nhà máy và một tài khoản trị giá 1 triệu USD. Còn nếu sinh đôi, mỗi đứa một nhà máy và 500.000 USD trong tài khoản. Tuy nhiên, nếu có sảy ...<br>Lúc này, người bố, đã ngồi im lặng lắng nghe từ đầu tới giờ, liền vỗ vai người đàn ông và nói:<br>"Anh sẽ lại làm cho nó có chửa lần nữa".<br>
+
+=== 71 story
+Binh nhất hỏi chỉ huy:<br>- Thưa ông trung sĩ, cá sấu không thể bay được, đúng không ạ?<br>- Tất nhiên là như thế, vậy đứa nào nói với anh cái điều ngu ngốc kia?<br>- Ngài thiếu tá ạ.<br>- Vậy à, tôi quên mất đấy. Tất nhiên cá sấu bay được chứ. Nhưng nó bay rất thấp, thấp lắm lắm.<br>
+
+=== 72 story
+Một con trâu húc chết bà mẹ vợ của anh nông dân. Trong buổi tang lễ, hàng trăm người đến dự.<br>Bà hàng xóm thấy thế liền ghé tai anh nông dân, nói nhỏ:<br>&nbsp;- Bà cụ lúc sống ăn ở có phúc, thế nên bây giờ mới được nhiều người quý mến, đến tiễn đưa.<br>&nbsp;Anh nông dân lắc đầu:<br>&nbsp;- Không phải họ đến dự lễ tang đâu. Họ đến hỏi mua con trâu đấy!<br>
+
+=== 73 story
+Một người thợ chuyên sửa ống nước gõ cửa một căn nhà trong khu chung cư. Mở cửa đón anh là một<br>phụ nữ rất xinh đẹp trong bộ quần áo ngủ “không thể mát mẻ hơn được nữa”.<br>Nhìn thấy anh, cô ta từ tốn nói:<br>“Làm sao mà tôi có thể chắc chắn rằng anh không định giở trò gì ra với tôi, một phụ nữ yếu đuối, không có gì để tự vệ, trong khi biết chắc như đinh đóng cột rằng, hôm nào cũng vậy, chính xác như một cái đồng hồ, chồng của tôi chỉ về nhà vào lúc 7h tối, mà bây giờ mới có 3h?”.<br>
+
+=== 74 story
+Kiểm tra đầu giờ, Jonhny không thuộc bài, thầy giáo quá bực bèn phê vào sổ liên lạc mấy chữ: Đồ con khỉ!<br>Nhận lại sổ từ tay thầy, Jonhny phụng phịu:<br>- Thưa, thầy mới ký mà chưa cho điểm ạ!<br>
+
+=== 75 story
+Bà mẹ có năm cô con gái. Một hôm, chúng hỏi mẹ:<br>- Mẹ ơi! Chúng con có giống bố không?<br>- Cả năm đứa mày đều giống bố cả, giống như đúc!<br>- Thế tại sao năm chị em chúng con chẳng đứa nào giống đứa nào hả mẹ?<br>- Thế chúng mày tưởng bố chúng mày giống nhau hay sao?<br>
+
+=== 76 story
+Sau một thời gian dài tu luyện, ba cha cố được Đức Giám mục mời gặp và nói:<br>- Các cha đã có một thời gian tu luyện khá dài, đều tỏ ra là những người có đức độ, phẩm chất tốt, nay ta muốn các cha có một thử thách cuối cùng về sự chịu đựng cám dỗ tính dục trước khi được chính thức tấn phong. Giờ các cha hãy ra ngoài và khi ta gọi tên ai thì người đó vào.<br>Ba cha cố ngoan ngoãn vâng lời ra ngoài chờ. Đức Giám mục bắt đầu thử thách của mình đối với 3 cha cố:<br>- Cha Joseph!<br>Cha Joseph bước vào phòng và được yêu cầu cởi hết quần áo và đeo một chiếc chuông nhỏ vào cái của nợ. Một belly dancer bước ra và bắt đầu uốn lượn xung quanh cha.<br>- Ting a ling! - Chiếc chuông nhỏ rung lên và Đức Giám mục nói:<br>- Ta rất tiếc, cha đã không vượt qua được sự cám dỗ này, cha hãy đi tắm đi! Tiếp tục, cha Igor!<br>Cha Igor bước vào và tương tự, đeo chiếc chuông nhỏ vào chỗ ấy. Belly dancer bước ra và xoay vòng quanh cha, bắt đầu cởi chiếc áo ngực.<br>- Ting a ling!<br>- Ồ, cha Igor, ta rất tiếc, cha đã không vượt qua được sự thử thách này, cha hãy đi tắm đi!<br>Đến lượt cha David. Em belly dancer múa vòng quanh cha, cởi chiếc áo ngực, tụt nốt cả chiếc quần lót nhỏ xíu, thực hiện tất cả các màn trình diễn bốc lửa nhất. Không thấy tiếng chuông nào cả. Bấy giờ, Đức Giám mục mỉm cười nói:<br>- Cha David, xin chúc mừng cha, cha đã vượt qua được thử thách cuối cùng, cha sẽ được tấn phong. Giờ cha hãy đi tắm cùng cha Joseph và cha Igor đi.<br>- Ting a ling!<br>Đức Giám mục: ?????<br><br><br>
+
+=== 77 story
+Bốn sinh viên nọ đi chơi và dự định trở về vào chiều chủ nhật để học bài cho buổi thi sáng hôm sau. Do ham vui, trưa thứ hai họ mới về đến nơi và đành phải nói dối giáo sư rằng, xe bị nổ lốp trên đường nên họ đã bị trễ buổi thi, xin thầy cho thi lại.<br>Giáo sư ngẫm nghĩ một chút rồi đồng ý. Bốn anh chàng nhẹ nhõm ra về và tối hôm đó ra sức học thật khuya. Hôm sau, đến giờ thi giáo sư cho họ ngồi riêng mỗi người một phòng. Đề thi chỉ có 2 câu hỏi:<br>Câu 1:<br>Đi chơi đâu? (5 điểm).<br>Câu 2:<br>Bể lốp xe nào? (95 điểm).<br><br><br>
+
+=== 78 story
+Đôi vợ chồng nọ đưa nhau đến gặp nha sĩ, người chồng tỏ ý rất vội:<br>- Càng đơn giản càng tốt, thưa bác sĩ. Không cần phải gây mê hay tiêm thuốc giảm đau gì hết. Ông cứ nhổ phắt cái răng sâu ra là được.<br>- Giá mà bệnh nhân nào cũng chịu đau giỏi như anh - Nha sĩ thán phục - Nào, chỉ cho tôi chiếc răng sâu!<br>Lập tức, ông chồng quay sang vợ:<br>- Em yêu, cho bác sĩ xem cái răng sâu đi!<br><br><br>
+
+=== 79 story
+Một anh chàng vẻ mặt lo lắng, đến gặp bác sĩ.<br>- Thưa bác sĩ, vợ tôi ngoại tình. Mỗi lần tôi bắt được quả tang là cô ta lại bảo tôi hãy bình tĩnh và uống một tách cà phê. Xin ông hãy cho tôi một lời khuyên.<br>- Liệu tôi có thể khuyên anh điều gì đây? - bác sĩ hỏi.<br>- Tôi uống cà phê nhiều như vậy có hại cho sức khỏe lắm không?<br><br><br>
+
+=== 80 story
+Bernie được mời đến nhà một người bạn ăn tối. Trong bữa ăn, anh thấy người bạn luôn gọi vợ bằng những cái tên rất âu yếm như "Em yêu", "Tình yêu của anh", "Con bồ câu bé nhỏ"... Khi cô vợ đã vào bếp thu dọn, Bernie bảo bạn:<br>- Tình yêu của hai người thật đáng ngưỡng mộ! Sau bấy nhiêu năm kết hôn mà cậu vẫn còn gọi cô ấy bằng những cái tên đáng yêu như thế.<br>Người bạn ghé vào tai Bernie thì thầm:<br>- Nói thật với cậu, từ 3 năm nay mình đã quên mất tên của cô ấy rồi.<br>
+
+=== 81 story
+Sau khi chia tay chồng đang bị ngồi tù, người vợ tới gặp quản tù đề nghị ông ta giảm nhẹ công việc cho chồng.<br>- Bà yên tâm, tù nhân của chúng tôi chỉ phải làm công việc rất nhẹ nhàng là dán hộp thôi.<br>- Thế sao chồng tôi lại bảo đêm nào cũng phải đào hầm để làm lối đi???<br>
+
+=== 82 story
+Đứa con trai chạy về báo tin bố:<br>- Bố ơi! Nếu con làm lợi cho bố 100.000đ thì bố cho con bao nhiêu?<br>- Mười ngàn!<br>- ít quá!<br>- Thì hai chục ngàn vậy. Vậy trăm ngàn ấy đâu?<br>- Hôm trước bố nói nếu con thi đậu thì bố cho 100.000đ phải không?<br>- Đúng!<br>- Con rớt rồi!<br>
+
+=== 83 story
+Một cuộc thăm dò ý kiến do Liên Hợp Quốc tổ chức trên quy mô toàn cầu gần đây đưa ra câu hỏi sau: "Xin vui lòng cho biết ý kiến của bạn về tình hình thiếu thốn lương thực tại phần còn lại của thế giới!".<br>Cuộc khảo sát đã thất bại thảm hại.<br>Ở châu Phi, người ta không biết "thức ăn" là gì. Ở Tây Âu, dân chúng không có khái niệm về "thiếu thốn". Trong ngôn ngữ của dân Đông Âu không có từ "ý kiến". Người dân Nam Mỹ không hiểu "xin vui lòng" có ý nghĩa ra sao. Còn ở Mỹ, người ta chẳng biết "phần còn lại của thế giới" là cái gì cả.<br><br><br>
+
+=== 84 story
+Vị giáo sư luật học yêu cầu một sinh viên xuất sắc trả lời câu hỏi tình huống: "Nếu anh (chị) phải trao cho ai đó một trái cam, anh (chị) sẽ nói thế nào?".<br>Người sinh viên đáp:<br>- Em sẽ nói: "Mời ngài dùng trái cam này!"<br>Giáo sư giận dữ:<br>- Không thể như vậy được! Hãy nghĩ như một luật sư xem nào.<br>Sinh viên hắng giọng:<br>- Vậy thì, em sẽ nói với người đó: "Tôi, sau đây, trao và chuyển quyền sở hữu toàn bộ và duy nhất của tôi với tất cả các tài sản, quyền lợi, quyền hạn, nghĩa vụ, lợi ích của mình trong trái cam này cho ngài, cùng với toàn bộ cuống, vỏ, nước, cùi và hạt của nó, với tất cả các quyền hợp pháp cắn, cắt, ướp lạnh hoặc ăn nó, quyền được trao nó cho người khác với tất cả cuống vỏ, nước, cùi và hạt của nó. Tất cả những gì được đề cập trước và sau đây hoặc bất kỳ hành vi, hoặc những hành vi, phương tiện thuộc bất kỳ bản chất hoặc loại nào không tương hợp với tuyên bố này, trong bất kỳ hoàn cảnh nào, đều không có giá trị pháp lý..."<br><br><br>
+
+=== 85 story
+Hai nhà hàng xóm đều nuôi bò. Một nhà nuôi một con bò đực tên Teddy. Nhà còn lại nuôi một con bò cái tên Lisa. Một hôm bò đực Teddy và bò cái Lisa đang ăn cỏ ở hai bên hàng rào. Lisa bò cái nháy mắt với Teddy bò đực. Vui mừng quá, Teddy bò đực vội lấy đà phóng qua hàng rào để sang bên kia với Lisa bò cái.<br>Sau cú hạ cánh, Lisa bò cái chạy đến hỏi :<br>- Teddy bò đực, anh có sao không??<br>Teddy bò đực trả lời:<br>- Từ nay gọi anh là Teddy thôi nhé, cái hàng rào cao hơn anh tưởng. <br><br>
+
+=== 86 story
+Cô vợ gọi người đến sửa máy giặt. Vì phải đi làm cả ngày nên cô dặn người thợ, vốn là chỗ quen biết, nơi để chìa khóa để anh tự mở cửa vào.<br>"Tôi sẽ để chìa khóa dưới thảm chùi chân. Anh sửa máy xong để hóa đơn lên kệ bếp giúp tôi. À, anh đừng ngại con chó béc-giê. Nó sẽ không làm phiền anh đâu. Nhưng anh đừng nói bất cứ chuyện gì với con vẹt. Nhớ nhé, không nói với con vẹt!".<br>Hôm sau, người thợ tới và thấy một con chó rất to. Nhưng như bà chủ đã nói, con chó chỉ nằm xem anh ta làm việc. Còn con vẹt liên tục chửi rủa la hét khiến anh ta phát điên. Cuối cùng, không chịu được nữa, anh ta hét lên:<br>- Câm mồm đi, con vẹt ngu ngốc kia!<br>Con vẹt bèn nói:<br>- Xử nó đi, chó!<br>
+
+=== 87 story
+Một bác sĩ thú y đến 1 trang trại để thụ tinh nhân tạo cho lũ bò.<br>Bà lão chủ trại dẫn ông ta vào chuồng,chỉ vào con bò cái và bảo ông ta:<br>- Đấy là nó đấy. Còn đây là cái đinh treo,ông có thể treo quần của ông lên đó <br><br>
+
+=== 88 story
+Một con vịt lạch bạch đi vào quán bar, nó bước tớ người phục vụ và hỏi :"ớ đây có nho không??"<br>Người phục vụ trả lời không và con vịt bỏ đi.<br>Ngày hôm sao con vịt quay lại và hỏi :"ở đây có nho không?" Người phục vụ trả lời "không" và con vịt lại bỏ đi.<br>NGày tiếp theo con vịt lại trở lại và lần này nó tiếp tục hỏi :"Ở đây có nho không??"<br>Người phục vụ bèn nói :"Này vịt, hôm nay không có nho, hôm qua không có nho và ngày mai cũng không có nho luôn, nếu như mày quay lại đây và chỉ với một câu hỏi như thế thì tao sẽ lấy đinh để đóng chặt cái chân bẹt dí của mày xuống sàn, biết không hả???"<br>Con vịt bèn bỏ đi.<br>Và ngày hôm sao nữa con vịt lại quay lại, lần này nó hỏi người phục vụ :"Có đinh không??"<br>Người phục vụ trả lới không và nó nói: "Thế thì tốt, vậy hôm nay có nho không??<br>
+
+=== 89 story
+Một đoàn kịch Anh quốc nổi tiếng chuyên về các tác phẩm của Shakespeare sang lưu diễn bên Mỹ. Họ rất thành công ở New York, Philadelphia, Boston, Los Angeles. Bây giờ họ sắp diễn 3 buổi ở Texas, quê hương của những gã cao bồi thô lỗ và kém văn hóa.<br>Buổi thứ nhất, trước 2.000 gã cao bồi, họ diễn vở Othello. Đến cảnh gay cấn nhất: Othello bóp cổ Desdemona, từ dưới phòng xem, một gã cao bồi kêu lên:<br>- Hãy tranh thủ làm một cái đã rồi hãy bóp cổ!<br>Màn sân khấu lập tức hạ xuống. Trưởng đoàn kịch tức giận nói với vị cảnh sát trưởng đến xin lỗi:<br>- Chúng tôi không diễn nữa! Cái lũ chăn bò dốt nát này không hiểu được thiên tài Shakespeare!<br>- Thôi, tôi xin ông - cảnh sát trưởng van nài - Ông cứ cho diễn nốt hai buổi đi. Tuy thô lỗ nhưng họ vẫn có nhu cầu văn hóa. Tôi sẽ có mặt ở đây và xin hứa sẽ không để xảy ra vụ việc gì nữa.<br>Trưởng đoàn kịch xiêu lòng và tối hôm sau, 2.000 gã cao bồi lại đến xem, ngồi hàng ghế đầu là viên cảnh sát trưởng.<br>Vở diễn là Romeo và Juliet. Hồi một, mọi chuyện ổn cả. Rồi đến cảnh ban công, bằng giọng đầy tình cảm, Rome nói:<br>- Juliet... Liệu trên đời này có cái gì to lớn, sâu thẳm hơn tình yêu của chúng ta?<br>Vừa nghe câu đó, viên cảnh sát trưởng đứng phắt dậy, rút hai khẩu colt ra cầm lăm lăm trên tay và quay xuống phòng xem quát:<br>- Hễ ai nói "Cái đít tao", tôi bắn bỏ!<br>
+
+=== 90 story
+Một anh chồng đi công tác xa về chợt bắt gặp một gã Đàn ông mặc quần áo của mình, đi giày của mình, đang nằm trên giường với vợ mình. Anh chàng liền cầm dao xông đến, vợ anh ta van xin dừng tay để giải trình:<br>- Ông đây vốn là một người ăn mày đến nhà ta xin ăn, em cho ông ấy ăn, sau đó thấy trong tủ còn một ít quần áo của anh đã lâu không dùng đến em cho ông ấy một bộ, anh xem có được không ?<br>- Thế cũng được<br>- Em lại cho ông ấy một đôi giày dưới gậm giường Đã lâu anh không dùng đến, anh thấy có được không?<br>- Thế cũng được<br>- Và thế là ông ấy đi ra, ra đến cửa ông ấy mới hỏi còn cái gì chồng bà Đã lâu ngày không dùng nữa không ? Thế rồi ...<br>
+
+=== 91 story
+Công ty nọ tổ chức đợt khám sức khỏe định kỳ cho toàn thể nhân viên. Sau khi khám xong, một anh chàng ra về, vẻ cực kỳ thiểu não.<br>Thấy vậy, cô vợ hỏi:<br>- Bác sĩ bảo sao hả anh?<br>- Bác sĩ bảo anh không được "gần gũi" vợ trong hai tháng, còn John bạn anh thì không được hút thuốc trong ba tháng.<br>- Ừ, kiêng cữ như vậy cũng tốt, anh ạ!<br>Được một tuần, trước khi đi ngủ cô vợ thỏ thẻ:<br>- Anh à, sáng nay đi chợ em gặp anh John.<br>- Thì sao?<br>- Anh ấy đã... hút thuốc rồi.<br><br><br>
+
+=== 92 story
+Một chị đến công sở với một bên mặt thâm tím, sưng vù. Đồng nghiệp hỏi:<br>- Ai đánh cậu thế?<br>- Lão chồng tớ.<br>- Mình tưởng ông ấy đi công tác rồi.<br>- Thì tớ cũng tưởng thế...<br>
+
+=== 93 story
+Bà Smith mua được một con vẹt khôn ngoan với giá rất hời, nó được nuôi trong một quán bia ôm. Vừa được mang vào nhà, con vẹt đã mở miệng: "Nhà mới! Má mới!". Bà Smith nghe vậy thì có hơi ngạc nhiên.<br>Cô con gái của bà vừa đi học về. Con vẹt liền chí choé: "Nhà mới! Má mới! Gái mới!". Lần này bà Smith rất bực mình, nhưng chưa biết xử trí con vẹt thế nào.<br>Ngay lúc đó, ông Smith đi làm về. Vừa nhìn thấy ông, con vẹt đã reo lên: "Hello, John Smith!" <br><br>
+
+=== 94 story
+Anh chồng đi du lịch sang Pari. Một lần đang đi trên phố, anh ta đột nhiên nhổ một bãi nước bọt ra đường. Ngay lập tức anh ta bị một viên cảnh sát đến phạt 200 franc. Về nhà vợ hỏi:<br>- Anh thấy Pari thế nào? Tháp Eiffel ra sao?<br>- ...<br>- Các cô gái Pari chắc đẹp lắm nhỉ?<br>- ...<br>- Thế anh có lúc nào nhớ tới em không?<br>- Có một lần. Và chính điều đó làm anh mất tới 200 franc.<br>
+
+=== 95 story
+Nhà sắp có khách, bà vợ hách dịch hỏi ông chồng:<br>- Ông định mặc quần đùi để tiếp khách hay sao?<br>- Tôi muốn để mọi người đều biết, bà đã nuôi tôi thế nào! - ông chồng hậm hực.<br>- Nếu vậy - bà vợ nói - ông hãy cởi nốt cả quần đùi ra, cho họ biết là ông có đáng để nuôi không?<br>
+
+=== 96 story
+Một người đàn ông cùng vợ đến phòng khám:<br>- Thưa bác sĩ, hình như tôi bị liệt dương. Khi lên giường với vợ tôi không tài nào cương lên được.<br>- Anh ra ngoài đợi một lát, - bác sĩ phán. - Còn chị, cởi hết quần áo ra... Bây giờ yêu cầu chị lại đứng trước mặt tôi...Yêu cầu chị nằm sấp... yêu cầu chị nằm ngửa... yêu cầu chị chị dang rộng hai chân...Xong rồi, chị mặc quần áo vào đi và ra ngoài gọi chồng vào đây.<br>- Anh bình thường, không bệnh tật gì đâu. Tôi cũng không cương lên được, - bác sĩ kết luận.<br>
+
+=== 97 story
+Lớp học bài "An toàn trong lao động" cô giáo dẫn cả lớp đến tham quan công trường xây dựng. Sau bai giang... Không may tại công trường có một chú công nhân bị rơi từ trên cao xuống. Cô giáo họp cả lớp lại và hỏi :<br>- Các con cho cô biết tại sao chú công nhân lại bị rơi xuống đất?<br>HS1 : - Thưa cô tại chú công nhân không mang dây bảo hiểm ạ.<br>- Tốt lắm, rất có thể như thế, còn ai có ý kiến nào khác không ??<br>HS2: - Thưa cô tại thang của chú công nhân bị trượt.<br>&nbsp;- Tốt lắm, rất có thể như thế, còn ai có ý kiến nào khác không ??<br>HS3: - Thưa cô tại chú công nhân chửi em. -????<br>Chú công nhân chửi em thế nào ?<br>&nbsp;- ''Đ.M thằng kia đừng có rung''. <br><br>
+
+=== 98 story
+Anh chồng bị gọi nhập ngũ, trước giờ lên đường, anh ta gọi người bạn thân nhất đến và nói:<br>- Tôi giao cho anh chìa khóa quần của vợ tôi. Sau 5 năm, nếu tôi không trở về, anh có thể sử dụng.<br>Họ chia tay nhau, kẻ ở nhà, người ra quân cảng. Tàu sắp nhổ neo thì người bạn chạy ra bến, khoa chân múa tay lia lịa, anh chồng bắc tay làm loa, hỏi to:<br>- Có chuyện gì th...ế...ế?<br>Trên bờ gào lên:<br>- Đưa nhầm chìa khoá r...ồ...i...!!!<br>
+
+=== 99 story
+Trên một chuyến tàu vượt Đại Tây Dương, cô gái viết trong nhật ký của mình:<br>- Ngày thứ nhất: Biển đẹp, con tàu rất lớn và thuyền trưởng cực kỳ đẹp trai.<br>- Ngày thứ hai: Thuyền trưởng đã tỏ tình, dọa sẽ làm đắm con tàu nếu mình từ chối.<br>- Ngày thứ ba: Ăn tối với "mối đe dọa" con tàu.<br>- Ngày thứ tư: Suốt đêm qua, mình đã cứu con tàu cùng 1.300 hành khách<br>
+
+=== 100 story
+Jose và Miguel là những cao bồi Mexico. Họ cùng yêu một cô gái. Hai người quyết định đấu súng để chọn kẻ chiến thắng. Địa điểm quyết đấu sẽ là một vùng ngoại ô yên tĩnh. Khi ra bến tàu, Jose mua vé khứ hồi, thấy Miguel mua vé một chiều, hắn cười phá lên:<br>- Mày biết là sẽ không trở về à? Tao thì bao giờ cũng ăn tối ở nhà sau mỗi cuộc đấu súng!<br>- Tao không bao giờ mua vé khứ hồi, Miguel bình thản trả lời, vì luôn luôn về bằng vé của đối thủ.<br>
+
+=== 101 story
+Một con sâu hỏi mẹ: Mẹ ơi, bố đâu rồi?<br>- Bố đi câu với mấy ông kia rồi.<br>
+
+=== 102 story
+Con người sau khi chết sẽ tới thiên đường. Chúa tập hợp các linh hồn lại và nói: "Ta muốn những người đàn ông có mặt tại đây xếp thành 2 hàng". <br>"Hàng 1 gồm những người làm chủ gia đình khi còn sống và hàng 2 là những ông chồng để vợ làm chủ. Còn tất cả phụ nữ đi theo Thánh Peter".<br>Khi tất cả vào hàng lối, Chúa tỏ ra vô cùng tức giận khi nhìn thấy hàng đàn ông để vợ làm chủ dài tới 100 dặm, trong khi hàng đàn ông làm chủ gia đình chỉ có duy nhất một người.<br>"Các ngươi phải tự thấy xấu hổ đi. Ta tạo ra các ngươi theo hình mẫu của ta nhưng rồi các ngươi lại để vợ mình lấn lướt. Hãy nhìn người này đi, con trai của ta dám đứng lên và khiến ta tự hào. Hãy học tập cậu ấy! Nói cho họ nghe đi, con trai, con làm thế nào để có thể trở thành người duy nhất đứng ở hàng bên này?"- Chúa nói.<br>Người đàn ông đáp lại: "Con không biết gì đâu ạ, vợ con bảo con phải đứng đây".<br>
+
+=== 103 story
+Một phụ nữ ôm đứa con nhỏ bước lên xe buýt. Thấy đứa trẻ, lái xe hét lớn:<br>“Chu cha! Đây có lẽ là đứa trẻ xấu nhất mà tôi nhìn thấy”.<br>Người phụ nữ rất bực mình, liền đi thẳng đến cuối xe ngồi xuống và phân trần với hành khách ngồi cạnh:<br>“Cha lái xe thật thô lỗ, xúc phạm tôi...”.<br>Ông hành khách liền nói vẻ đồng tình<br>“Thật chẳng ra sao cả, chị đưa tôi ẵm hộ cái con khỉ này, lên mà mắng cho anh ta một trận”.<br>
+
+=== 104 story
+Trong hội thi Ðỉnh cao Khoa học Kỹ thuật Thế giới, các cường quốc trên thế giới đang đưa ra những bằng chứng để chứng tỏ mình có trình độ khoa học cao nhất:<br>Ðại diện của Nhật đứng lên phát biểu: "Chúng tôi vừa mới hoàn thiện một loại tàu vũ trụ mới không người lái, dùng để thám hiểm sao Hoả. Tính năng tác dụng của tàu này thì nhiều vô kể, nhưng nổi bật nhất là nó có khả năng bay sát bề mặt Sao hoả.."<br>Ban giám khảo nhao nhao phản đối: "Phét, làm sao có thể bay sát được. Bề mặt sao Hoả rất gồ ghề.."<br>Ðại diện của Nhật cắt lời: "Tất nhiên. Chúng tôi phải có một sai số khoảng 20cm"<br>Ðến lượt đại diện của Mỹ: "Chúng tôi cũng vừa chế tạo ra tàu ngầm loại mới, có thể lặn sâu và đi sát lòng biển.."<br>Ban giám khảo cũng không tin: "Làm sao đi sát được? Bề mặt của đáy biển cũng rất lồi lõm.."<br>"Phải, cũng như Nhật Bản, tàu của chúng tôi có sai số là 20cm"<br>Bỗng đại diện Việt Nam lên tiếng: "Nếu như vậy, nước tôi vừa phát kiến ra phương pháp đẻ bằng rốn.."<br>Cả ban giám khảo, đại diện Nhật, đại diện Mỹ đều phản đối: "Không thể có chuyện ấy được!!!"<br>Ðại diện Việt Nam bình thản nói : "Dĩ nhiên, chúng tôi cũng có tính tới sai số là 20cm.." <br><br>
+
+=== 105 poem
+Chưa đi chưa biết Đồ Sơn<br>Đi rồi mới biết chẳng hơn đồ nhà<br>Đồ nhà tuy xấu tuy già<br>Nhưng là đồ thật hơn là đồ “sơn”.<br>
+
+=== 106 poem
+Nhớ quê ra đứng đỉnh đèo<br>Bỗng đâu thấy một chú mèo gâu gâu.<br>Dừng chân đứng lại trên cầu<br>
+Bỗng đâu thấy một con trâu vàng vàng<br><br>
+
+=== 107 poem
+Hoan hộ đại tướng Võ Nguyên<br>Giáp ta thắng trận Ðiện Biên trở về<br>Hoan hô anh Nguyễn Đình Dề<br>Trước là Thổ Phỉ nay về với ta<br>Hoan hô anh Nguyên Văn Ba<br>Trước là thổ phỉ nay ta đã về.<br>
+
+=== 108 poem
+Ở trong hang đá đi ra<br>Vươn vai một cái rồi ta đi vào<br>
+
+=== 109 poem
+Chưa đi chưa biết Ðồ Sơn<br>Ði về mới biết chẳng hơn đồ nhà<br>Ðồ nhà tuy xấu tuy già<br>Nhưng là ðồ thật hơn là Ðồ Sơn<br>
+
+=== 110 poem
+Chưa đi chưa biết Sài Gòn<br>Đi rồi mới biết chẳng còn một xu<br>Về nhà mới biết mình ngu<br>Thằng lớn ăn ít thằng cu “ăn” nhiều.<br>
+
+=== 111 poem
+Bốn ông chung một đĩa lòng<br>lợn ngồi chễm chệ với thùng bia to<br>
+
+=== 112 poem
+Nếu hết sữa, ấy thì cho bú<br>Hết vú này đến vú bên kia<br>Sữa nhiều ta phải phân chia<br>Hôm này vú nọ, hôm kia vú này<br>
+
+=== 113 poem
+Chị em phụ nữ chơi cầu<br>Lông bay vùn vụt..qua đầu thanh niên<br><br>Chị em Phụ nữ thường lươi (lười)<br>Riêng em anh thấy là người cần... cu (cù).<br><br>Hôm nay học cả một buôi<br>Ăn một quả chuối gọi là tĩnh dương (tĩnh dưỡng)<br><br>Hôm qua em đến đồi Lê<br>Nin ngồi đợi mãi, đành về lại ky<br>Túc xá buồn, em xem Nhi<br>Cu-lin diễn để vơi đi nỗi buồn<br><br>Hôm qua học tập chính tri (chính trị)<br>Cán bộ ngồi ỳ, chẳng chịu phát biêu (phát biểu)<br>Cơm ăn chẳng được bao nhiêu<br>Đảng uỷ lại bắt phát biêu cả b`… (cả buổi<br><br><br>Quê Hương thi sĩ Phú Thò<br>Chè xanh , cọ biếc , mập to trái chuồi ( chuối)<br>Lòng còn nhớ mãi cái buôi ( buổi)<br>Đầu làm phân bắc, chăn nuồi đàn bo<br>Cu Ba lông mượt giống to<br>Cách màng văn hoá đất tô lại càng...<br>
+
+=== 114 poem
+Không vô không biết bút tre<br>vô rồi mới biết muốn tè ra ngay<br>Chưa ăn chưa biết cu đơ<br>Ăn rùi mới biết nó đờ cu ra<br>
+
+=== 115 poem
+Sáng trăng chiếu trải hai hàng<br>Bên anh "xập xám", bên nàng "tiến lên"!<br><br>Nhìn ông tui thấy ông già<br>Nhìn bà mới thấy bà già hơn ông!<br><br>Nhớ hôm bụi chuối sau hè<br>Giỡn chơi chút xíu ai dè... có con!<br><br>Trẻ em thường thích ở trần<br>Nhưng mà người lớn... muôn phần thích hơn!<br><br>Trên trời mây trắng như bông<br>Ở dưới cánh đồng... mông trắng như mây!<br><br>Đàn ông tập tạ thì đô<br>Đàn bà không tập vẫn “đô” như thường!<br>
+
+=== 116 poem
+Hôm qua lên núi hái chè<br>Gặp thằng phải gió nó đè em ra<br>Em lạy nhưng nó chẳng tha<br>Nó lại đút cái “mả cha” nó vào<br>Đút vào nó sướng làm sao<br>Hôm nay em lại lên cao hái hái chè.<br>
+
+=== 117 poem
+Bướm đồng động đến thì bay<br>Bướm nhà động đến lăn quay ra giường<br>Chim đồng bóp cái chết ngay<br>Chim nhà bóp cái càng ngày càng to.<br>
+
+=== 118 poem
+Hôm qua anh đến nhà em<br>
+Ra về mới nhớ để quên 5 ngàn<br>
+Anh quay trở lại vội vàng<br>
+Em còn ngồi đó...5 ngàn mất tiu<br>
+
+=== 119 poem
+<span>Nhìn  ông đã thấy ông già <br>
+Nhìn bà mới thấy bà già hơn ông. <br>
+Thằng nhỏ mặc quần hở mông <br>
+Vẫn hơn con nhỏ còn không mặc quần. <br>
+Trẻ em thường thích ở trần, <br>
+Nhưng mà người lớn có phần thích hơn.</span><br>
+
+=== 120 poem
+<span>Con cóc chẳng phải con gà <br>
+Quả ổi chẳng phải quả na quả dừa <br>
+Cái đục chẳng giống cái cưa <br>
+Mùa xuân không thể có mưa mùa hè <br>
+Đôi mắt không phải để nghe <br>
+Đôi dép không phải để che trên đầu <br>
+Đã nghèo thì không thể giàu <br>
+Ngồi trên đỉnh núi không thể câu cá mè <br>
+Mới đẻ sao biết đi xe <br>
+Điếc tai sao có thể nghe nói thầm <br>
+Đã đúng thì không thể nhầm <br>
+Cục than đang nóng không ai cầm vào </span><br><br><span>Chín giờ chẳng phải buổi chiều <br>
+Đêm thì chẳng thể có nhiều nắng đâu <br>
+Con gái chẳng thể có râu <br>
+Con trai chẳng thể trên đầu cài nơ <br>
+Đang thức thì chẳng thể mơ <br>
+Ngồi trên xe đạp chơi cờ làm sao <br>
+Đã lùn thì cẳng chẳng cao <br>
+Đã nặng một tạ làm sao mà gầy <br>
+Mặt em trứng cá mọc đầy <br>
+Thì làm sao nói "Em đây má hồng" </span><br><br>
+
+=== 121 poem
+<span>Trăm năm trong cõi người ta <br>
+Ai ai cũng phải hít ra thở vào <br>
+Trăm năm trong cõi người nào <br>
+Ai ai cũng phải hít vào thở ra <br>
+Xa xa như nước Cu-Ba <br>
+Người ta còn phải hít ra thở vào <br>
+Gần gần như cái nước Lào <br>
+Người ta cũng phải hít vào thở ra <br>
+Nói chung trong cõi người ta <br>
+Bắt buộc là phải thở ra hít vào ...</span><br>
+
+=== 122 poem
+<span>Rủ nhau lên núi đi <span>cầu<br>
+Nguyện</span> cho bè bạn vừa giàu vừa sang<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+Từ nay em đã có <span>kinh<br>
+Nghiệm</span> đi giảng dạy chương trình kế toan. (kế toán)</span><br>
+
+=== 123 poem
+<span>Em kia ngơ ngẩn cười ruồi<br>
+Thầm ao ước được một...buổi để chơi<br>
+<br>
+Vui thay cái phận đàn ông <br>
+Trời sinh ra lại có lông ở mồm</span><br>
+
+=== 124 poem
+<span>Chưa đi chưa biết Cửa Ông<br>
+Đi rồi mới thấy toàn mông với giò<br>
+Chưa đi chưa biết Cửa Lò<br>
+Đi rồi mới thấy toàn giò với mông.</span><br>
+
+=== 125 poem
+<span>Nghệ an nổi tiếng gió Lào<br>
+Trẻ già trai gái người nào cũng đen. </span><br>
+
+=== 126 poem
+<span>Mẹ tôi thì hơn tuổi tôi <br>
+Bà tôi hơn tuổi mẹ tôi rất nhiều <br>
+Ô kìa có một cánh diều <br>
+Nếu mà có gió thì diều sẽ bay</span><br>
+
+=== 127 poem
+<div>Giữa đường thấy cánh hoa rơi</div><div>Dừng chân dẫm nát không chơi hoa tàn.</div>
+
+=== 128 poem
+<span>Lâu rồi mình chẵng yêu ai.<br>
+Lâu rồi cũng chẳng có ai yêu mình <img src="http://tuoitrecuoi.com/phorum/images/smilies/yim_dancing.gif" alt=""> <br>
+</span><br>
+
+=== 129 poem
+<span>Không đi không biết Tam Đao (Tam Đảo)<br>
+Đi rồi chẳng biết chỗ nào để ngu (ngủ)<br>
+Một giường mà những ba cu ( 3 cụ)<br>
+Sáng ra không biết cái mu (cái mũ) chỗ nào</span><br>
+
+=== 130 poem
+Tiễn anh ra bến ô tô<br>
+Đêm về em khóc ... tồ tồ cả đêm<br>
+<br>
+Sông Hồng đỏ quạch phù sa<br>
+Đỏ thì đỏ thật, thua da bác Hồ<br>
+<br>
+Ta đi bầu cử tự do<br>
+Chọn người xứng đáng mà cho vào hòm<br>
+<br>
+Chị em ta uống co ca<br>
+Chui vào cửa miệng chui ra cửa m...<br>
+<br>
+Thi đua ta quyết thi đua<br>
+Thi đua ta quyết tiến lên hàng đầu<br>
+Hàng đầu rồi biết đi đâu<br>
+Đi đâu không biết, hàng đầu cứ đi<br>
+<br>
+Hoan hô đồng chí Phạm Tuân<br>
+Bay vào vũ trụ một tuần về ngay.<br><br>Chị em nô nức đặt vòng<br>
+Hoa mồ liệt sĩ tỏ lòng biết ơn<br>
+
+=== 131 poem
+Trời cho nhan sắc sơ sài&nbsp;<br>
+Để che giấu cái thiên tài bên trong&nbsp;<br>
+Bên ngoài nhìn thấy như không&nbsp;<br>
+<span>Bên trong thủ đoạn mênh mông ngất trời.<br></span><br>
+
+=== 132 poem
+Bắc thang lên hỏi ông giời.<br>
+Con thèm thịt chó ăn rồi có sao.<br>
+Ông giơì hai má ửng hồng.<br>
+Nhậu mà không rủ tội chồng gấp ba<br>
+
+=== 133 poem
+Xưa kia ta ở trên giời<br>
+Vì mê uống rượu bị đầy xuống đây<br>
+Xuống đây ta uống cho say<br>
+Xơ gan cổ chướng lại bay lên giời<br>
+
+=== 134 poem
+<span>Hôm nay đám cưới của em<br>
+Họ hàng hang hốc đến xem rộn ràng<br>
+Đáng nhẽ pháo nổ đùng đoàng<br>
+Nhưng vì cấm pháo, cả làng im re<br>
+Tám giờ có 1 chiếc xe<br>
+Cắm đầy hoa hoét le te đi vào<br>
+Trẻ con bu tới ào ào<br>
+Đứa thì sờ lốp, đứa vào bóp phanh<br>
+Mẹ em la ó thất thanh<br>
+“Tiên sư bố lũ trẻ ranh quê mùa ”<br>
+Bố em thấy thế nói đùa<br>
+Bà lên thành phố mới vừa mấy năm<br>
+Trang điểm thuê hết năm trăm<br>
+Đang từ đầu ngõ xăm xăm đi vào<br>
+Gặp ai cũng toét miệng chào<br>
+Thì ra éo biết đứa nào cô dâu<br>
+Chín giờ khách khứa đã bâu<br>
+Ồn ào náo nhiệt như trâu xổng chuồng<br>
+Cô dâu trang điểm trong buồng<br>
+Một lũ gái gú dựa tường đứng xem<br>
+Mười giờ đã thấy bem bem<br>
+Xe nhà chú rể màu kem, đi vào<br>
+Chú rể đáng mặt anh hào<br>
+Cao đúng mét rưỡi, đang chào bà con<br>
+Chủ hôn đứng dậy lon ton<br>
+Quát tháo inh ỏi như còn thanh niên<br>
+Hai họ chào hỏi liên miên<br>
+Cô dâu chú rể thì đần mặt ra<br>
+Mong sao đám cưới qua loa<br>
+Để đêm hí hí, thế là xong phim<br>
+Bao năm mỏi gối đi tìm<br>
+Giờ coi như đã chết chìm cùng nhau<br>
+Chủ hôn nói một lúc lâu<br>
+Bỗng nhiên Mic tịt ( đầu dây bị chờn)<br>
+Chả biết làm cách nào hơn<br>
+Chủ hôn ngồi xuống kệ con bà mày<br>
+Bây giờ đến đoạn trao tay<br>
+Chú rể rút nhẫn mặt mày buồn thiu<br>
+Khách khứa thì líu tìu tìu<br>
+Đứa bảo 2 chỉ, đứa thì một cây<br>
+Cô dâu hỏi nhỏ : vàng tây?<br>
+Chú rể quắc mắt : tây thế éo nào?<br>
+Nhẫn anh mua ở Hàng Đào<br>
+Em an tâm nhớn, Thôi, vào thắp hương.<br>
+Cả 2 đứng trước hương đường<br>
+Cô dâu tranh thủ soi gương, vuốt đầu<br>
+Chú rể nét mặt âu sầu<br>
+Cắm đầu xuống vái, rất lâu, rồi chuồn<br>
+Cô dâu cũng có vẻ buồn<br>
+Nắm tay bà mẹ, lệ tuôn ầm ầm<br>
+Chú rể đóng cửa đánh rầm<br>
+Cô dâu giật thót, đâm đầu vào xe<br>
+Đến chiều đám cưới vắng hoe<br>
+Cô dâu gọi điện : đã về đến nơi<br>
+Bố em thở hắt một hơi<br>
+Thế là cục nợ có nơi rước rồi</span><br>
+
+=== 135 poem
+<div>
+<div>
+<span>Rượu thấm vào tim sẽ ấm lòng?<br>
+Hay càng buốt lạnh giữa trời đông?<br>
+Hay là tất cả niềm đau khổ<br>
+Sẽ chực trào tuôn nhạt má hồng?</span>
+<br><br><span>Hãy rót cho tôi chén rượu đầy<br>
+… Tôi cần phải uống để còn say<br>
+Ðể tôi không phải là tôi nữa<br>
+Ðừng để cho tôi tỉnh mộng nầy</span><br><br><span>Tôi muốn quên đi kiếp làm người<br>
+Thân tàn ma dại, kẻ tàn hơi<br>
+Là tôi, ờ phải là tôi đó<br>
+Chán nản còn đây giữa đất trời</span><br><br><span>Chất rượu thấm dần trong trí não<br>
+Vô tình đập vỡ chén ly bôi<br>
+Quanh tôi trời đất cuồng điên quá<br>
+Gục xuống, tai nghe rợn tiếng cười</span><br><br><span>Cười xong rồi khóc một mình tôi<br>
+Chập chờn nữa tỉnh nửa như mê<br>
+Và trong thế giới vô hình ấy<br>
+Hồn bỗng bay xa chẳng muốn về</span>
+</div>
+</div>
+
+=== 136 poem
+<span><div>Này cô con gái nhà ai</div><div>Cớ sao dám hái hoa nhài nhà tôi</div><div>Hái rồi thì hãy ...lấy thôi</div><div>Còn chua hái được để tôi...hái dùm<br></div></span><br>
+
+=== 137 poem
+<div><span><div>Trước cổng nhà thờ, anh và em</div><div>Hai đứa hôn nhau, Chúa đứng xem.</div><div>Giật mình Chúa bảo: này hai đứa!</div><div>Hôn nhau như thế... Chúa cũng... thèm.</div></span></div><div></div><br>
+
+=== 138 poem
+<span><div>Lạy thượng đế bao giờ con hết khổ!</div><div>Tổ cha mày con khổ mãi nghe con</div></span><br>
+
+=== 139 poem
+<div>Hoc không yêu yếu dần rồi chết<br>Yêu không học không ngóc được lên</div><br>
+
+=== 140 poem
+<span><div>Học cho lắm cũng ăn mắm với cà</div><div>Học tà tà cũng ăn cà với mắm</div><div>Học cho lắm cũng đi tắm cởi truồng</div><div>Học luồn xuồn cũng cởi truồn đi tắm</div></span><br>
+
+=== 141 poem
+<span>Cam sành lột vỏ còn chua,<br>Thấy em còn nhỏ anh cua để dành.</span><br>
+
+=== 142 poem
+Nếu mai anh ngã xuống ao<br>
+Em mà nhìn thấy ....em lao xuống dìm<br><br>
+Ta về ta tắm ao ta<br>
+Nhỡ may chết&nbsp;đuối người nhà vớt lên.<br>
+
+=== 143 poem
+Đường về đêm tối canh thâu<br>
+Nhìn anh tôi tưởng con trâu đang cười<br>
+
+=== 144 story
+<div>Một người phụ nữ có chồng không khỏe đã nhiều tháng nay. Mỗi ngày cô ta đều ngồi bên chồng để săn sóc. Khi hơi khỏe lại, anh ta đề nghị cô vợ đến ngồi kế bên rồi nói:</div><div>
+- Em biết không? Em đã luôn ở bên anh những lúc tồi tệ nhất. Khi anh bị 
+bỏng, em đã ở bên để chăm sóc. Khi anh làm ăn thua lỗ, em cũng ở đó. Khi
+ anh ốm em cũng ở bên. Khi chúng ta mất nhà, em đã ủng hộ anh. Khi sức 
+khỏe của anh bắt đầu giảm sút, em cũng đã ở bên cạnh anh… Em biết anh 
+nghĩ sao không?</div><div>
+- Nghĩ sao anh yêu?</div><div>
+- Anh cho rằng em đã mang xui xẻo đến cho anh !</div>
+
+=== 145 story
+<div>Người chồng khi biết vợ có thai thì vô cùng vui mừng. Anh muốn cho tất 
+cả mọi người biết tin này nên lấy điện thoại của vợ nhắn tin: "Tôi đã có
+ thai" gửi đi cho tất cả mọi người trong danh bạ.</div><div>
+</div><div>
+Được một lúc thấy mẹ vợ trả lời: "Sao nói là chồng không sinh được, con lại quan hệ với thằng nào?".</div><div>
+Anh rể trả lời: "Cô tính xử lí thế nào?".</div><div>
+Tiếp theo là bạn thân nhắn: Tao đã khuyên mày bao nhiêu lần rồi bảo 
+đừng đi chơi bậy nữa mà mày không nghe tao, thế chồng&nbsp; mày biết chưa?</div><div>
+Tiếp theo một người bạn thân nhắn tin: "Chúng ta đã nửa năm không gặp nhau, cô đừng đổ lên đầu tôi".</div><div>
+Đồng nghiệp nhắn: "Không phải chứ? Mới 2 ngày mà".</div><div>
+Cấp trên trả lời: "Tôi cho cô 10 triệu, cô nghỉ ngơi một thời gian đi".</div><div>
+Khách hàng nhắn tin: "Được rồi, cô đừng hù dọa tôi, ngày mai cô tới nhà tôi, chúng ta sẽ kí hợp đồng".</div><div>
+Một người lạ nhắn: "Cô li dị, chúng ta sẽ giữ đứa bé".</div><div>
+Một người lạ khác nhắn: "Hôm đó còn có giám đốc, không phải cô tính nói là của tôi chứ?".</div><div>
+Và một người lạ khác nhắn: "Đừng đùa chứ, tôi đã phẫu thuật triệt sản.</div>
+
+=== 146 story
+<div>Cô giáo:    </div><div>
+- Các em chú ý, hãy nhìn cô và nói xem thích cái gì trên 
+người cô thì cô sẽ cho biết, lớn lên các em sẽ làm gì?</div><div>
+Cô bé Masha nói:</div><div>
+- Thưa cô, em thích mái tóc của cô.</div><div>
+- Ôi, Masha yêu quí, lớn lên em sẽ trở thành thợ làm đầu nổi tiếng.</div><div>
+Cậu bé Pêchia:</div><div>
+- Thưa cô, đôi mắt của cô rất đẹp.</div><div>
+- Cám ơn Pêchia, lớn lên em sẽ trở thành bác sỹ nhãn khoa. Thế còn Peter, nói gì đi chứ, đừng xịu mặt như vậy.</div><div>
+- Thưa cô, em còn biết nói gì bây giờ? Em đã hiểu, kiểu gì em 
+cũng sẽ chỉ là công nhân vắt sữa bò ở nông trại thôi …</div>
+
+=== 147 story
+<div>Nông trại xôn xao vì những lời bàn tán, khen ngợi:</div><div>Chị gà mái vừa đẻ 
+được một quả trứng nặng đến hơn 1 kg... </div><div>Các phóng viên từ khắp thế giới 
+đến thăm hỏi và lia lịa ghi chép để đăng tin giật gân này... </div><div>Một phóng 
+viên kéo gà trống ra và hỏi:</div><div>&nbsp;- Ông đánh giá gì về sự kiện trọng đại này?</div><div>&nbsp;- Miễn bình luận!</div><div>&nbsp;- Ông có dự định lặp lại kỳ tích này không?</div><div>&nbsp;- Không!</div><div>&nbsp;-
+ Vậy ông có dự định gì cho thời gian sắp tới?</div><div>&nbsp;- Thiến thằng đà điểu khốn
+ nạn!    </div>
+
+=== 148 story
+Một cô gái mặc đồ tắm hai mảnh xuống hồ. Do vận động quá mạnh, mảnh 
+dưới của cô tuột ra.<br>Hoảng hồn, cô gái vội vơ một tấm biển đặt cạnh hồ 
+che và định chạy vào trong.<br>Nhưng khi cô cầm tấm biển, mọi người đều 
+cười! Cô nhìn xuống tấm biển thì thấy dòng chữ:<br>"Trơn trợt, cấm đùa 
+giỡn!".<br>Cô vội thay tấm biển khác. Trớ trêu thay! Mọi người càng cười 
+lớn hơn.<br>Lần này, tấm biển ghi: "Khu vực dành riêng cho nam giới".<br>Mặt 
+đỏ ửng, cô đổi tấm biển lần nữa. Tới lúc này, mọi người nhìn cô bằng ánh
+ mắt kinh hãi.<br>Cô thấy ngạc nhiên nên nhìn vào tấm biển. Trên tấm biển 
+ghi:<br>"Nguy hiểm, độ sâu 1m8".!<div>
+</div>
+
+=== 149 story
+Lấy nhau được ít lâu, nàng mới biết thực ra chồng mình chẳng có tài cán gì.<br>Mọi việc trong nhà, nàng đều một thân gánh vác. Đánh vật với cuộc sống ở thị thành không xong, hai vợ chồng dọn về một làng chài ven biển tìm kế sinh nhai.<br>Chắc vì thiếu kinh nghiệm nên nàng không đánh cá được nhiều như người ta. Cực chẳng đã, nàng khóc lóc với chị hàng xóm:<br>- Chị ơi, có bí quyết gì không chỉ cho em với, nhà em chỉ ăn hại thôi, mình em mưa nắng kiếm ăn mà không đủ. Sức vóc em không thiếu nhưng mỗi tội không biết đánh cá chỗ nào cho được nhiều cả.<br>Chị hàng xóm chép miệng:<br>- Có gì đâu, cứ mỗi sáng dậy, tôi nhìn cái của nợ của lão chông, nó ngoẹo sang hướng nào thì đi đánh cá hướng ấy.<br>Nàng về nhà làm theo, quả nhiên đánh được nhiều cá, đời sống khấm khá dần lên. Được ít hôm, nàng lại chạy sang than thở:<br>- Chị ơi, nhưng có hôm cái của nợ ấy nó chỉ thẳng lên giời, em chẳng biết là nên đi theo hướng nào cả, hu hu, sao em khổ thế...<br>Chị hàng xóm cười khẩy:<br>- Phải gió nhà chị, hôm nào nó dựng đứng lên thế thì ở nhà chứ đi đánh cá làm gì nữa! Rõ là phước nhà chị mà không biết hưởng!<br>
+
+=== 150 story
+Một thằng bé giữa đêm khuya lần đến phòng bố mẹ. Nó thấy bố đang nằm trên mẹ bèn hỏi bố mẹ đang làm gì, bố nó trả lời: <br>"Bố mẹ làm một thằng em cho con".<br>Thằng bé vùng vằng nói nó không thích em trai. Ngày hôm sau lại như vậy. Lần này nó thấy mẹ đang nằm trên bố và được mẹ giải thích:<br>"Bố mẹ làm một em gái nhỏ cho con".<br>Thằng bé lại trả lời nó không thích em gái. Đến đêm hôm sau thì nó thấy bố đang "làm" mẹ từ phía sau, lần này nó không còn chịu đựng được nữa liền gào lên:<br>"Cả chó con cũng không thích đâu đấy nhé!"<br>
+
+=== 151 story
+Có 1 ông đang đi máy bay thì "mắc" quá. Chạy tới chạy lui nhưng toilet Nam đều có người dùng. Một nữ tiếp viên cảm thấy hơi ngại cho cha này. Nên cho cha vào nhà vệ sinh nữ trên máy bay kèm theo lời dặn dò " đừng nhấn nút bậy bạ nha anh "<br>Sai lầm tai hại của mấy cha là không bao giờ chịu nghe lời của phái nữ. Ông này sau khi làm việc xong liền nhấn nút WW(viết tắt của chữ Warm Water là nước ấm) thế rồi một làn nước ấm áp dễ chịu liền xịt vào chỗ cha vừa "bài tiết". ông này bèn nghĩ "đàn bà sao sướng thế..." bèn nhấn tiếp nút thứ 2 có chữ WA(viết tắt của chữ Warm Air nghĩa là Khí Ấm) thế rồi một làn khí ấm áp sấy khô cái lỗ đ.. của ông ta. Ông ta nghĩ " trời ạh, thế giới này còn có những chuyện thế đấy ah?". Rồi không ngăn được sự kíck động tò mò, ông ta nhán tiếp cái nút có chữ PP(viết tắt của chữ Powder Puff nghĩa là xịt bột thơm) thế rồi một làn bột nhẹ nhàng bắn ra liền làm thơm tho cái "chỗ đó" của ông ta. Cuối cùng, không ngăn được mình ông ta nhấn vào cái nút có chữ ATR.<br>Tỉnh dậy thấy nằm trong bệnh viện. "Vụ gì vây? Sao tui ở đây?" cha nội hét lên. "Tui nhớ là tui đang ở nhà vệ sinh nữ trên máy bay mà???". "Thì đúng vậy" cô y tá trả lời "Sau khi ông hưởng hết những hạnh phúc trong đó, ông đã vô phúc nhấn nhầm cái nút ATR(viết tắt chữ Automatic Tampon Remover" nghĩa là "Gắp Băng Vệ Sinh Tự Động") nên bây giờ cái ... của ông đang ở dưới cái gối kìa".<br>
+
+=== 152 story
+Chú tiểu lần đầu xuống núi tắm hơi, Khi đã cởi hết quần áo vào bồn tắm mới sực nhớ để quên xà bông nơi phòng chứa đồ. Thế là oẳn tù xì và 1 chú đi lấy xà bông.<br>Chú tiểu trần truồng đến phòng chứa đồ tình cờ thấy 2 ni cô trong chùa cũng đi tắm hơi sắp bước vào. Ngại quá chú giả làm bức tượng và cầm cục xà bông trên tay.<br>Một Nicô ra xem và sờ vào chổ "thằng nhỏ" làm chú tiểu rùng mình đánh rớt xà bông. Nicô nói:<br>"Thì ra bức tượng này dùng để đựng xà bông".<br>Nicô khác lại chạy tới nghịch thằng nhỏ một hồi rồi reo lên:<br>"Aaaaaaaa... Chị ơi chỗ này dùng để lấy sữa tắm nữa nè chị". <br><br>
+
+=== 153 story
+Có một cặp vợ chồng trẻ (người vợ là một tuyệt sắc) đi đánh gôn, xung quanh sân gôn là nhà của các tỷ phú giàu có. Trong một quả đánh lỗi, người vợ vô tình làm quả bóng bay đập vỡ cửa kính của ngôi nhà bề thể nhất và cổ kính nhất ở đó.Khi hai vợ chồng tới nhà đó để lấy bóng và xin lỗi chủ nhà thì thấy một người đàn ông ăn mặc lịch lãm và ngồi trên một chiếc ghế sang trọng, dưới chân ông ta là một cái bình bị vỡ và quả bóng gôn. Ông ta hỏi:<br>-Có phải hai ngươi đã làm vỡ chiếc bình này<br>hai vợ chồng thật thà nhận lỗi, ông ta nói tiếp:<br>-Ta là một vị thần cổ bị nhốt trong chiếc bình này và các ngươi đã giải phóng cho ta, theo luật lệ thần thánh cổ xưa ta sẽ ban cho người giải phóng ta 3 điều ước, nhưng các ngươi có hai người nên 1 điều ước cho người chồng, 1 điều ước cho người vợ và 1 điều ước cho chính bản thân ta.<br>Hai vợ chồng liền đồng ý, Người chồng đến trước mặt vị thần và ước:<br>-Con ước con có 100 tỷ đola và mỗi tháng lại có thêm 1 tỷ đola xuất hiên trong tài khoản<br>Vị thần đồng ý và yêu cầu người vợ nói lên điều ước của mình, người vợ nói:<br>-Con ước ở mỗi quốc gia trên thế giới con có 1 ngôi nhà to và cổ kính như ngôi nhà này.<br>Vị thần cũng đồng ý, sau đó vị thần quay mặt về phía người chồng và nói:<br>-Các ngươi sẽ được như ý, h tới ước muốn của ta. Ta đã 1000 năm nay không gần gũi với đàn bà, nếu nhà ngươi đồng ý để vợ ngươi chiều chuộng ta, điều ước của các ngừoi sẽ thành hiện thực<br>Người chồng nghĩ với 100 tỷ đola trong tài khoản và 1 ngôi nhà ở mỗi quốc gia thì để vợ chiều chuộng vị thần cũng không sao. Người chồng liền đồng ý, và thế là vj thần giắt tay người vợ vào phòng trong.<br>Sau cuộc mây mưa trên giường, vị thần hỏi người vợ:<br>-Chông em bao nhiêu tuổi rồi<br>Người vợ đáp:<br>-Thưa ngài, chồng em năm nay đã 46 tuổi, ngài có việc gì chăng<br>Thần trả lời:<br>-Ah, không. ta chỉ không tin được là ở tuổi 46 vẫn có người tin là thần thánh có thật trên đời<br>
+
+=== 154 story
+Có 4 bà mẹ có bệnh khoe con ngồi tán dóc với nhau<br>bà thứ nhất khoe:<br>-con trai tôi là linh mục, người xưng tội phải gọi nó là Cha<br>bà thứ hai tiếp ngay<br>-con trai tôi là hồng y giáo chủ, mọi người gọi nó là đức cha<br>bà thứ ba lập tức nói<br>-ko bằng con tôi, con tôi là giáo hoàng, mọi tín đồ và con chiên đều gọi nó là đức thánh cha<br>bà thứ tư nhìn ba bà còn lại với vẻ mặt xem thường và nói một cách chậm rãi:<br>-con tôi cao 1m9, cơ người thể hình, đẹp trai, nhà giàu, dùng quần áo đắt tiền, đi xe ferrari enzo. Bất cứ cô gái nào nhìn tháy nó đều nói "Ôi, Lạy chúa"<br><br><br>
+
+=== 155 story
+Anh kia đi đường mót đi cầu quá nên chạy vô một quán bar dùng đỡ phòng vệ sinh. Vì quá cấp bách nên sau khi đã ị xong, anh ta mới nhận ra là hết giấy. Nhưng trên tường có treo tấm biển ghi "Nếu Hết Giấy, Xin Dùng Ngón Tay Cái Chùi Trước Và Ðến Gặp Bartender!" Thấy kỳ kỳ nhưng hết cách vì trong toilet không có nước, anh ta đành dùng ngón tay cái chùi. Sau đó anh ta đến gặp bartender. Giấu ngón tay cái trong nắm tay, anh ta hỏi bartender:<br>- Bartender! Nhà cầu hết giấy rồi. Không biết anh giúp gì được cho tôi đây.<br>Bartender vẫn đứng pha rượu tỉnh bơ và nói:<br>- Ðể ngón cái lên quầy bar đi!<br>Anh này ngượng ngùng để ngón cái dơ bẩn lên quầy bar. Anh bartender nhanh như chớp bất ngờ cầm cái búa nện thiệt mạnh vào ngón tay cái anh ta. Phản ứng tự nhiên, anh ta đưa ngón tay đau vô miệng mút chùn chụt. <br><br>
+
+=== 156 story
+Trên chuyến xe buýt đông đúc có người đan ông cao to cất tiếng hỏi :<br>_ Làm ... làm ... ơn ... ơn ... cho hỏi ... hỏi ... mấy ... mấy ... giờ ... giờ ... ?..?...?<br>Nhưng trên xe không có tiếng ai trả lời cả . Khi xe buýt đến trạm dừng thì có tiếng trách móc một người đan ông thấp bé:<br>_ Sao cậu này có đồng hồ mà hồi nãy không trả lời dùm người ta, người đâu mà ích kỷ quá vậy !!!<br>Đến lúc này thì người đan ông thấp bé mới lắp bắp lên tiếng:<br>_ Tôi ... tôi ... tôi ... mà ... mà ... trả ... lời ... lời ... cho ... cho nó tưởng ... tưởng tôi ... tôi ... chọc ... nó ... nó ... nó ... đánh ... đánh .... tôi ... tôi ... sao ... sao.. <br><br>
+
+=== 157 story
+Cô gái nọ nổi tiếng là xinh đẹp, thân hình nảy nở rắn chắc, chân dài như người mẫu. Nàng làm bao nhiêu chàng trai si mê ngơ ngẩn. Nàng vẫn còn “nguyên vẹn”.<br>Một hôm, có buổi dạ hội cô gái xin phép mẹ đi dự. Trước khi đi mẹ dặn con gái:<br>- Con đã lớn rồi, nên học cách phòng ngừa những tên Sở Khanh đi.<br>- Làm thế nào để có thể phòng ngừa chuyện đó hả mẹ?<br>- Khi có đứa nào muốn đi xa hơn giới hạn cho phép với con, con hãy hỏi nó: “Chúng ta sẽ đặt tên con là gì?”. Đàn ông thường sợ chuyện đó lắm.<br>Thế là cô gái nọ hăm hở đến dạ hội, nàng hôm đó đẹp như một ngôi sao trên trời, sáng bừng lên với bộ váy dài thướt tha màu thiên thanh. Các chàng trai đều thi nhau đến mời nàng nhảy.<br>Chàng trai thứ nhất tiếp cận nàng công chúa của vũ hội là một công tử cực kỳ đẹp trai, sau khi đi gần hết điệu Valse, chàng trai kín đáo hôn nhẹ vào bờ vai nõn nà của cô gái. Cảm nhận thấy khác lạ, cô gái liền hỏi:<br>- Chúng ta sau này sẽ đặt tên con là gì?<br>Nghe đến đây, anh chàng bỗng tái mặt, đưa cô gái về chỗ ngồi và lủi ra xa. Kẻ thứ hai là một chủ doanh nghiệp nổi tiếng giàu có, bước nhảy của anh ta cực kỳ thành thục, vòng tay rắn chắc khỏe mạnh. Cô gái thấy tâm hồn xao xuyến. Bỗng nhiên cô cảm thấy bàn tay đáng nhẽ phải để hờ ở hông nàng đang di chuyển xuống dưới. Cô lại thì thầm vào tai anh chàng lắm tiền nhiều của:<br>- Chúng ta sau này sẽ đặt tên con là gì?<br>Bước nhảy của chàng thương gia dần dần rối loạn, mắt anh chàng bỗng mờ đi. Kết thúc điệu nhảy, anh chàng lủi nhanh vào đám đông, quên cả chào tạm biệt bạn nhảy.<br>Tin tưởng vào lời nói của mẹ lắm rồi, cô gái tự động đi tìm nạn nhân mới. Lần này là một anh chàng trông rất ngố, rõ là ở nông thôn mới ra nhập cuộc sống nơi thị thành. Chàng ngố nhảy không đẹp, thỉnh thoảng lại giẫm vào chân cô gái. Sau một hồi vất vả, chàng ngố thấy quá ngượng ngùng vì sự vụng về kém cỏi của mình mới ngỏ lời mời nàng ra ngoài đi dạo. Đến một chiếc ô tô, hắn đưa nàng vào trong. Cảm thấy đến đây là đủ, cô gái liền hỏi:<br>- Chúng ta sau này sẽ đặt tên con là gì?<br>Chàng ngố im lặng, đáp lại câu hỏi của nàng bằng một nụ hôn nồng cháy. Sau khi dứt nụ hôn, cô gái hổn hển:<br>- Chúng ta sau này sẽ đặt tên con là gì?<br>Hắn vẫn không trả lời nàng mà nhẹ nhàng lột quần áo nàng ra. Khi hắn xong các thủ tục khởi động, cô gái cố gắng gồng ngưởi hỏi lại lần cuối cùng:<br>- Ch….úng ta sau nà…y sẽ đặt t…ên c.c..c…on l…à..à g…g….ì….ì?<br>Chàng ngố lúc này mới nhẹ nhàng rút trong túi quần ra một bao OK và nói với nàng:<br>- Nếu nó thoát được ra khỏi cái này…… chúng mình sẽ đặt tên nó là David Copperfield.<br>
+
+=== 158 story
+Có 1 ông kia hay ngũ gật trong nhà thờ, mỗi lần ổng ngủ thì bà vợ lấy cây dù chọc vào người ông 1 cái<br>Hôm đó khi cha đạo giảng kinh, và hỏi giáo dân “Ai đã tạo dựng trời và đất trong 7 ngày” lúc đó ông này lại ngủ. Bà vợ thấy vậy nên chọc ông 1 cái, ỗng giật mình la lên “ôi chúa tôi”<br>Cha rất hài lòng và tiếp tục giảng, đến 1 lúc cha lại hỏi “ai đã chịu đóng đinh trên thập giá, và sống lại sau 7 ngày”<br>Bà vợ quay sang lại thấy ông ngủ, lại chọc thêm 1 phát, thế là ông la lên “ơi ;lạy chúa”<br>Cha tiếp tục giảng, đến 1 lúc nữa, cha lại hỏi “sau khi sinh đứa con thứ 3, Eva đã nói gì với Adam”<br>Bà vợ thấy ông cứ gật gật liên tục nên chọc ông 1 cái thật mạnh<br>Lần này ông la lên “Lần sau mà chọc cây gậy đó vào người tôi nữa là tôi sẽ bẽ gãy nó đấy”<br>
+
+=== 159 story
+Có 2 con bọ chét nói chuyện với nhau:<br>- Tao sống trên râu của thằng cơ trưởng được đi khắp nơi vui lắm, nhưng mỗi lần đáp xuống thì nó uống rượu nhiều không thể tưởng làm tao say mèm.<br>- Thì tao kêu mày chuyển nhà sang “râu” con tiếp viên sao mày kô nghe, chổ đó vừa ấm lại vừa thơm, thật là sướng.<br>- Thì tao cũng nghe lời mày đó. Tao vừa chuyển qua đó thì sáng hôm sau lại ở trên râu thằng cơ trưởng, vậy mới tức chớ<br>
+
+=== 160 story
+Trong giờ sinh vật, cô giáo hỏi học sinh:<br>- Tại sao con cá thờn bơn lại mỏng dẹt vậy?<br>Vova giơ tay:<br>- Thưa cô vì nó bị con cá voi hi*p!<br>Cô giáo không kìm chế nổi:<br>- Biến khỏi lớp học, và nếu không có phụ huynh thì đừng có quay lại lớp. Chúng ta tiếp tục buổi học. Thế còn ai biết, tại sao mắt của con tôm lại to và lồi ra thế không?<br>Vova đã ra tới cửa:<br>- Đơn giản là con tôm cũng có mặt ở cạnh đó và trông thấy tất cả<br>
+
+=== 161 story
+Một ông nông dân lái xe công nông chở con gái lớn ra tỉnh mua sắm. Ông mua cho cô gái một sợi dây chuyền vàng rất đẹp. Trên đường về hai bố con bị một toán cướp chặn đường cướp sạch cả xe lẫn đồ . Hai người thất thểu đi bộ tiếp. Ông bố nói:<br>- Đời không biết thế nào mà lần. Đang vui vẻ thế mà loắng cái đã mất hết cả. Tội nghiệp con bị chúng nó lấy mất cái dây chuyền đẹp.<br>Cô gái nhìn quanh, thò tay vào chỗ kín lấy ra sợi dây chuyền. Ông bố vừa mừng vừa ngạc nhiên. Ngẫm nghĩ một lúc ông nói:<br>- Chán quá, hôm nay mà mẹ con cũng đi cùng thì chúng ta bây giờ vẫn còn xe công nông để đi !<br>
+
+=== 162 story
+Cô bé mới lớn, hay thắc mắc đủ mọi chuyện trên đời. Một hôm ra bãi biển thấy một cậu bé trai cởi truồng, cô bé quay sang hỏi mẹ:<br>- Mẹ ơi thằng bé kia có cái gì kìa?<br>Mẹ cô trả lời cho qua chuyện:<br>- Đấy là cái còi.<br>Cô bèn tiến lại gần cậu bé và chăm chú quan sát, một lúc sau cô bé háo hức trở lại nói với mẹ:<br>- Mẹ ơi, đúng là cái còi thật. Nhưng lạ lắm cơ, khi con thổi nó lại kêu oai oái đằng mồm ấy.<br>
+
+=== 163 story
+Trong công viên, một đôi trai gái đang tâm sự.<br>Cô gái: Em tính đi giải phẫu nâng ngực? Ý anh sao?<br>Chàng trai: Em phải tôn trọng sự thật chứ, dù cho sự thật thế nào đi chăng nữa..<br>Một lát sau..<br>Cô gái: Anh thôi đi, sao cứ bóp méo sự thật mãi thế?<br>
+
+=== 164 story
+Chàng trai trẻ sắp sửa tới buổi hẹn hò đầu tiên trong đời. Vô cùng căng thẳng, anh chàng quyết định học hỏi kinh nghiệm từ bố.<br>- Bố ơi, lần đầu tiên hẹn hò với một cô gái, con nên nói những gì ạ?<br>- Con trai của bố, có 3 chủ đề có thể nói trong lần đầu hẹn hò, đó là: Đồ ăn, gia đình và triết học.<br>Cậu con trai ghi nhớ lời bố dạy rồi vội vã tới chỗ hẹn. Gặp nhau, chàng vẫn chẳng dám nói gì với cô gái cho tới khi nhìn thấy một quán ăn bên đường. Nhớ tới chủ đề đầu tiên, chàng phá tan bầu không khí trầm lặng:<br>- Em thích ăn bánh rán không?<br>- Không.<br>Nghĩ tiếp tới chủ đề gia đình, chàng hỏi tiếp:<br>- Em có anh trai không?<br>- Không.<br>Hai người chẳng nói gì với nhau nữa. Chàng trai quyết định dùng nốt chiêu bài cuối cùng, nói về triết học:<br>- Nếu mà em có anh trai, em thử hỏi xem anh ấy có thích ăn bánh rán không nhé!<br>
+
+=== 165 story
+Một vị khách tới thăm gia đình bé Timmy. Sau khi ăn xong. chủ nhà bê tới
+ một chiếc bánh kem rất to và nói rằng chính bé Timmy đã làm. Vị khách 
+nhìn chiếc bánh, lấy một miếng lớn ăn rồi bảo:<br>
+ - Bánh cháu làm trông thật đẹp, Timmy ạ. cháu giỏi lắm!. Làm thế nào mà cháu phủ kem lên bánh trông gọn và mịn được thế này?<br>
+ - Dễ lắm ạ, cháu liếm lên trên cái bánh - Cậu bé trả lời.<br>
+Vị khách xanh mặt rồi chỉ vào cái bánh mình vừa ăn:<br>
+ - Cháu liếm cả cái bánh à ?<br>
+ - Không ạ - Timmy đáp - Cháu liếm một lúc mỏi cả lưỡi cho nên cháu nhờ con Milu liếm tiếp ạ.<br>
+
+=== 166 story
+Năm 2010 có 1 đoàn tàu xuyên quốc gia đi qua tất cả các nước trên thế giới. Trên tàu có 1 ông giáo sư bảo rằng cứ đi qua đất nước nào ông ta ko cần nhìn cũng biết. Mọi người ko tin bèn bảo ông ta làm thử. Ông ta thò tay ra ngoài cửa sổ đoàn tàu:<br>“- Ở đây nóng quá! Chắc là California Mỹ rồi”.<br>Một lúc sau ông ta lại thò tay ra ngoài và bảo:<br>“- Chà! Lạnh thật! Đến Matxcova rồi!!”<br>Đúng 2h sau ông ta thò tay ra cửa sổ rồi rụt vào nói:<br>“- Mất cái đồng hồ đeo tay. Đúng đây là Việt Nam rồi !!”<br>
+
+=== 167 story
+Một phụ nữ tới chuyên gia về tâm thần bởi vì cô ta có một vài trục trặc về chuyện chăn gối. Chuyên gia hỏi cô ta nhiều câu nhưng không làm rõ được vấn đề. Cuối cùng ông ta hỏi:<br>- Cô có bao giờ nhìn mặt chồng cô lúc đang sinh hoạt chưa?<br>- Có, tôi đã nhìn một lần.<br>- Thế trông anh ta thế nào?<br>- Cực kỳ giận dữ.<br>Lúc này, nhà chuyên gia cảm thấy là đã hiểu vấn đề và hỏi:<br>- Chà, điều này thú vị đây, chúng ta cần làm rõ thêm. Bây giờ hãy nói cho tôi, cô nói rằng cô mới chỉ nhìn mặt chồng khi đang sinh hoạt duy nhất một lần, điều này là hơi không bình thường; thế tình huống đó xảy ra như thế nào?<br>- À, anh ta lúc đó đang nhìn qua cửa sổ về phía chúng tôi.<br><br>
+
+=== 168 story
+<div>Anh chàng vô địch môn đấm bốc vào một nhà hàng. Khi anh ta treo áo khoác lên, sau lưng áo lủng lẳng một mảnh bìa, ghi rõ:</div><div>- Chiếc áo này là của nhà vô địch môn đấm bốc, anh ta sẽ quay lại mặc nó ngay bây giờ!</div><div>Lúc ăn xong trở ra, anh ta không thấy chiếc áo nữa, chỉ còn lại một mẩu giấy với dòng chữ:</div><div>- Người lấy chiếc áo là nhà vô địch môn chạy 100 m, anh ta sẽ không quay trở lại đây nữa!</div>
+
+=== 169 story
+<div>Một quý bà đi viếng mộ chồng chạy xe quá tốc độ bị cảnh sát giao thông đuổi theo, ép vào một bìa rừng ở ngoại ô. Thấy bà ta tuy đã có tuổi nhưng vẫn còn xin đẹp nõn nà, tay cảnh sát bèn gạ gẫm đổi khoản tiền phạt thành một cuộc vui vẻ trong bụi cây.</div><div>Sau một thoáng nhìn đánh giá ngoại hình chàng cảnh sát, quý bà gật đầu đồng ý. Khi hai người xong cuộc đổi chác và chàng cảnh sát đứng lên sửa lại sắc phục, kẻ phạm tội lên tiếng:</div><div>- Anh ơi! Trước khi bị anh bắt vì chạy xe quá tốc độ, em đã vượt đèn đỏ 3 lần, chạy ngược đường một chiều, vượt xe khi lên dốc, cản đường của xe cứu thương, cứu hoả... Em xin được nộp phạt luôn cho tất cả những vi phạm đó!</div><div>Chàng cảnh sát nói với giọng đầy chia sẻ: "Chồng chị chết thảm quá".</div>
+
+=== 170 story
+<div>Một luật sư bào chữa cho một chàng mắc tội ăn trộm: "Thưa quan tòa, tôi nghĩ thân chủ của tôi không hề đột nhập vào căn nhà đó".</div><div>Luật sư tiếp lời: "Cửa sổ phòng khách mở và anh ta thọc tay phải vào lấy vài món đồ vặt vãnh. Cánh tay mắc tội ăn trộm chứ đâu phải anh ta. Tôi không hiểu sao ngài có thể trừng phạt cả một con người chỉ vì một lầm lỗi của một bộ phận riêng lẻ trên cơ thể anh ta".</div><div>Sau khi nghe lý luận, quan tòa trầm ngâm khá lâu rồi hóm hỉnh đáp: "Hay! Lý luận hay lắm! Xét theo lý lẽ đó, tôi tuyên án cánh tay của bị cáo một năm tù giam. Còn bị cáo có đi theo cánh tay hay không là tùy".</div><div>Nghe xong, bị cáo cười toe toét rồi tháo rời cánh tay giả ra và đặt lên bàn và nói: "Quý tòa muốn giam nó bao lâu cũng được. Tôi không có ý kiến".</div>
+
+=== 171 story
+<div>Một cô gái đến khám bác sĩ, trăn trở:</div><div>- Thưa ông, cứ sau mỗi tháng thì tôi lại có cảm giác thèm đàn ông kinh khủng.</div><div>- Đó là điều bình thường thôi. Nhưng thời gian "thèm" đó kéo dài bao lâu?</div><div>- Khoảng... 4 tuần.</div>
+
+=== 172 story
+<div>Một cậu bé vô tình làm đổ cái xe chở ngô. Người hàng xóm nghe thấy tiếng động liền bảo: "Này, Willis, không sao đâu. Sang đây ăn cơm với bác rồi lát nữa bác lật lại xe cho".</div><div>"Bác thật là tốt", Willis trả lời. "Nhưng mà cháu sợ bố cháu không thích".</div><div>"Vớ vẩn, sang đây", người hàng xóm cào cuột. "Thôi được", cậu bé nhận lời, "nhưng mà thể nào bố cháu cũng ghét".</div><div>Sau bữa cơm thân mật, Willis cám ơn người hàng xóm tốt bụng và nói: "Cháu cảm thấy thoải mái hơn rất nhiều rồi. Nhưng mà cháu biết bố cháu sẽ bực lắm".</div><div>"Đồ ngốc", người hàng xóm mỉm cười. "Thế bố cháu đang ở đâu?"</div><div>"Dưới cái xe ạ".</div>
+
+=== 173 story
+<div>Cô bạn hàng xóm sang chơi, bế và hôn em bé. Em bé khóc ré lên. Thấy vậy, bà mẹ dỗ:</div><div>- Kìa sao con khóc, ngoan nào...</div><div>- Con sợ...</div><div>- Con sợ gì nào?</div><div>- Hôm qua sang chơi, bố hôn cô ấy rồi bị tát đau lắm.</div>
+
+=== 174 story
+<div>Hai phụ nữ nói chuyện với nhau trên xe buýt. Một người phàn nàn:</div><div>- Thanh niên bây giờ ăn mặc nhố nhăng quá! Tóc tai dài thõng xoã xượi, quần cắt ống lua rua, phì phèo thuốc lá trên môi...</div><div>- Vâng! - người kia hưởng ứng - Đấy, trông cái cậu thanh niên kia kìa, nhố nhăng quá! Đàn ông mà chẳng có phong thái gì cả.</div><div>- Ồ! Nó là con gái tôi đấy! - bà kia phật ý.</div><div>- Bà là mẹ nó ư?</div><div>- Không, tôi là bố nó!</div>
+
+=== 175 story
+<div>Đi làm về, chồng thấy vợ ngân ngấn nước mắt:</div><div>- Anh yêu, em bực quá. Em đã nướng một chiếc bánh ga-tô nhưng con chó của chúng ta đã ăn mất rồi.</div><div>Chồng an ủi:</div><div>- Đừng buồn em yêu. Ngay bây giờ, anh sẽ đem nó đến chỗ ông bác sĩ thú ý.</div>
+
+=== 176 story
+<div>Thức dậy sau đêm cắm trại tập thể, hai phụ nữ nói chuyện với nhau:</div><div>- Đêm qua lộn xộn quá! Phải sờ trúng vết mổ ruột thừa, mình mới nhận ra ông xã!</div><div>- Ôi! Em cũng mất cả đêm để tìm cái sẹo lớn trên vai chồng em...</div><div>- Thấy rồi chứ?</div><div>- Vâng, cuối cùng thì cũng tìm thấy nó ở mông anh ấy!</div>
+
+=== 177 story
+<div>Một chàng trai sống ở sa mạc với một con lạc đà cái. Chàng thấy cô đơn nên rất hay “quấy rối” nàng lạc đà. Chỉ hiềm một nỗi, mỗi khi bị chàng chạm vào mông thì nó lại chạy lồng lên.</div><div>Một hôm, có cô gái xinh đẹp lạc đường trong sa mạc với một chiếc xe hỏng. Sau khi được chàng giúp sửa xe và chỉ đường, cô gái rất cảm kích.</div><div>Nàng tình tứ vuốt má chàng rồi nói:</div><div>- Anh đáng yêu quá, biết lấy gì để cám ơn anh. Thôi thì anh muốn gì em cũng chiều.</div><div>Không do dự, chàng chỉ ngay vào con lạc đà và nói:</div><div>- A! Thế thì cô giữ hộ tôi con quỷ cái kia cho nó đứng yên một lúc!</div>
+
+=== 178 story
+<div>Sau một thời gian dài phục vụ trong quân ngũ, một anh lính được nghỉ phép về thăm người yêu. Trong buổi tối đầu tiên gặp nhau, anh lính nói: "Em yêu, tối nay hai đứa mình đánh giáp lá cà nhé?".</div><div>Người yêu anh nhỏ nhẹ đáp: "Vâng ạ! Mình đánh giáp lá cà cho đến sáng nhé! Nhưng anh không được lùa đại quân vào thành đâu đấy".</div><div>Anh lính hỏi lại: "Làm sao vậy cưng?".</div><div>"Vì em chưa muốn có lính mới", cô gái trả lời người yêu với ánh mắt ngại ngùng.</div><div>Anh lính đáp: "Được rồi. Em đừng lo. Anh sẽ đưa quân vào thành và khi nào có pháo lệnh, anh sẽ lùa quân ra ngoài quan ải!".</div>
+
+=== 179 story
+<div>Tommy là một huấn luyện viên bơi lội tính tình vui vẻ cởi mở.</div><div>Một hôm, ông đang đi mua sắm trong cửa hàng bách hóa thì trong dòng người chen chúc bỗng có một phụ nữ nhận ra ông và cúi chào.</div><div>Huấn luyện viên khựng lại giây lát rồi đáp lễ: "Chà, thì ra là cô đấy! Cô mặc quần áo nên tôi không nhận ra!"</div>
+
+=== 180 story
+<div>Trên chuyến xe về quê, tre trai ngồi cạnh măng nữ. Xe đi qua chỗ tối, hành khách trong xe nghe tiếng người phụ nữ la toáng lên:</div><div>- Anh làm gì vậy?</div><div>- Tôi làm chủ tịch xã-người nam trả lời.</div><div>Xe lại tiếp tục lăn bánh. Đến một chỗ tối khác, người ta lại nghe tiếng người người phụ nữ nhưng lần này có vẻ dịu hơn:</div><div>- Anh làm gì mà làm mãi thế?</div><div>- Dân tín nhiệm thì anh làm, hết nhiệm kỳ anh nghỉ...</div>
+
+=== 181 story
+<div>Một cụ ông tuổi cuối thu mới sắm được một đôi giầy rất ưng ý. Vừa bước vào nhà, cụ liền khoe với cụ bà: - Này bà! Bà có nhận ra điều gì khác lạ trên người tôi không?</div><div>Cụ bà nhìn sơ rồi đáp:</div><div>- Tôi chẳng thấy gì khác lạ cả! Vẫn cái áo ông mặc từ tuần trước. Cái quần vẫn cáu bẩn như vậy!</div><div>Bực mình, cụ ông vào phòng cởi bỏ hết quần áo, đi ra hỏi bà vợ:</div><div>- Thế nào, bây giờ bà có thấy điều gì khác lạ trên người tôi chưa?</div><div>- Tôi chẳng thấy điều gì khác lạ cả! Vẫn là cái “kim đồng hồ” lúc nào cũng chỉ sáu giờ rưỡi! - Cụ bà thở dài.</div><div>Cụ ông hớn hở:</div><div>- Phải rồi! Nó chỉ sáu giờ rưỡi bởi vì nó đang nhìn xuống đôi giầy mới của tôi đây này!</div><div>Cụ bà ngẫm nghĩ rồi bỗng tươi tỉnh hẳn lên:</div><div>- Ừ nhỉ! Vậy ngày mai ông đi mua mũ mới đi!</div>
+
+=== 182 story
+<div>Một anh chàng tới quầy bar, ngập ngừng hỏi cô gái đang ngồi sẵn ở đó: - M...m... Cô có phiền không nếu tôi nói chuyện với cô một lát?</div><div>Cô này tự nhiên nói toáng lên:</div><div>- Không, tối nay tôi không ngủ với anh.</div><div>Mọi người quay ra nhìn họ. Anh chàng kia vừa xấu hổ vừa thất vọng, lẻn về bàn của mình. Sau vài phút, cô gái tới chỗ anh ta và nhẹ nhàng nói:</div><div>- Xin lỗi nếu tôi đã làm anh xấu hổ. Tôi là sinh viên tốt nghiệp khoa tâm lý và tôi đang nghiên cứu xem con người phản ứng ra sao trước các tình huống khó xử.</div><div>Lập tức, anh chàng quát to:</div><div>- Xéo, 200 USD thì quá là đắt!</div>
+
+=== 183 story
+<div>Trong giờ kiểm tra bài, cô giáo hỏi một học sinh:</div><div>- Em cho cô biết mỗi người trưởng thành có bao nhiêu chiếc răng?</div><div>Cậu bé ngập ngừng một lát rồi nhìn cô và đáp:</div><div>- Thưa cô mỗi người có 60 chiếc răng ạ.</div><div>Cô giáo há hốc miệng ngạc nhiên:</div><div>- Hả! Em nói sao? Bao nhiêu?</div><div>- Dạ, 32 ạ.</div><div>Lúc về chỗ ngồi, đứa bạn hỏi:</div><div>- Sao mày lại nói với cô là mỗi người có 60 cái răng?</div><div>- Tao phải nói vậy để cô ngạc nhiên mà há miệng ra để tao còn đếm chứ!</div>
+
+=== 184 story
+<div>- Hôm nay ở trường học gì thế con? - Ông bố hỏi con trai.</div><div>- Dạ thầy giáo bảo con tìm chủ ngữ và vị ngữ trong câu. Thật là khó!</div><div>- Hồi bố đi học, người ta cũng bắt bố tìm những thứ ấy! - Ông bố nói giọng an ủi - Thế mà đến bây giờ người ta vẫn chưa tìm ra!</div>
+
+=== 185 story
+<div>John đi học về, buồn bã nói với bố rằng, cậu bị điểm 0 môn toán.</div><div>- Tại sao? - Ông bố hỏi.</div><div>- Thầy giáo hỏi: 2x3 bằng bao nhiêu? Con nói: 6 ạ!</div><div>- Đúng quá!</div><div>- Sau đó thầy lại hỏi: 3x2 bằng bao nhiêu?</div><div>- Thì có khác quái gì đâu! - Ông bố nói.</div><div>- Thì con cũng nói giống như bố vậy.</div>
+
+=== 186 story
+<div>Một tay thợ săn, một người đi câu và một vị bộ trưởng Anh cùng chầu trời. Cả ba phải vượt qua một bãi lầy. Kẻ nào lúc ở dương thế dối trá nhiều đến đâu sẽ bị lún sâu đến đó.</div><div>Chẳng mấy chốc tay thợ săn đã bị lún tới ngực. Anh ta nhìn sang phía tay câu cá thì thấy tay này chỉ ngập đến mắt cá chân mặc dù trước đây đã nổi tiếng về sự dối trá. Tay thợ săn còn đang thắc mắc, định tìm cách khiếu nại thì tay câu cá đã kịp nói:</div><div>- Khẽ thôi, tớ đang đứng trên đầu lão bộ trưởng.</div>
+
+=== 187 story
+<div>Ở mục “Tìm bạn” trên báo:</div><div>“Đàn ông độc thân, có 4ha đất cực màu mỡ, muốn làm quen với phụ nữ có máy cày. Có thể tiến tới hôn nhân. Ưu tiên trả lời thư nào kèm ảnh máy cày”.</div>
+
+=== 188 story
+<div>Bà tiên nói với một cặp vợ chồng:</div><div>- Vì hai con sống gương mẫu suốt 30 năm qua, ta cho mỗi người một điều ước.</div><div>Người vợ liền nói:</div><div>- Con muốn được đi du lịch vòng quanh thế giới với chồng con.</div><div>Bà tiên nâng đũa thần lên và “bụp”, hai vé bay đã sẵn sàng trên tay người vợ.</div><div>Đến lượt, ông chồng nói:</div><div>- Con muốn có người vợ trẻ hơn con 30 tuổi.</div><div>Bà vợ tỏ vẻ bất bình. Nhưng một điều ước là một điều ước. Bà tiên lại ngoáy đũa và người chồng biến ngay thành một ông lão 90 tuổi.</div><div>Bài học từ câu chuyện trên:</div><div>Đàn ông cũng có người không ra gì, nhưng các bà tiên mãi mãi cũng chỉ là phụ nữ.</div>
+
+=== 189 story
+<div>Chuyện ở Mỹ. Một nông dân đứng trong vườn, tay nâng một con lợn con lên cho nó ăn táo trên cây. Thấy lạ, một người qua đường hỏi:</div><div>- Sao anh không rung cây cho táo rơi xuống? Như thế có đỡ tốn thời gian hơn không?</div><div>- Thời gian à... nhưng thời gian thì có ý nghĩa gì với một con lợn kia chứ?</div>
+
+=== 190 story
+<div>Một bác sĩ trẻ mới chuyển đến một thị trấn nhỏ thay việc cho vị bác sĩ già nghỉ hưu. Người tiền nhiệm gợi ý giúp bác sĩ trẻ làm quen với cộng đồng nhỏ này. Đầu tiên, họ đến nhà của một phụ nữ hay than vãn.</div><div>- Tôi đang bị đau dạ dày đây này - bà chủ nhà nói.</div><div>Bác sĩ già:</div><div>- Có thể là dư axit do bà ăn quá nhiều hoa quả lên men.</div><div>Khi quay ra, bác sĩ trẻ hỏi:</div><div>- Sao bác chưa khám mà định bệnh nhanh thế?</div><div>- Cần gì phải khám. Cậu có thấy tôi làm rơi ống nghe xuống sàn không? Lúc cúi nhặt, tôi thấy ít nhất 30 vỏ chuối trong thùng rác.</div><div>- Cháu sẽ học cách ấy ở nhà tiếp theo.</div><div>Ở nhà tiếp sau, bà chủ than phiền là gần đây thấy mệt mỏi nhiều.</div><div>- Có thể bà làm quá nhiều việc đạo cho nhà thờ đấy ạ - bác sĩ trẻ kết luận.</div><div>Khi họ ra về, vị bác sĩ già vui vẻ:</div><div>- Chẩn đoán của cậu hoàn toàn chính xác. Nhưng cậu đoán cách nào thế?</div><div>- Dạ, thì vẫn là cách của bác. Cháu cũng làm rơi ống nghe. Lúc cúi xuống nhặt, cháu thấy ông tu sĩ dưới gầm giường.</div>
+
+=== 191 story
+Một chú H đi du lịch bị lạc đường vào bản nọ. Đến một gia đình xin ngủ nhờ, chủ nhà nói:<br>- Được, vậy anh lên giường ngủ với bọn trẻ.<br>-Nhưng tôi không quen ngủ cùng người khác.<br>- Vậy anh lấy chăn xuống bếp ngủ tạm!<br>Sáng hôm sau, chú H ôm chăn lên trả và cảm ơn chủ nhà, đến cầu thang gặp hai cô gái xinh như hoa hậu bèn hỏi:<br>- Các cô là ai?<br>- Chúng tôi là con... chủ nhà. Còn anh là ai?<br>- Tôi ư? Tôi... là một con lừa kể từ đêm qua!<br>
+
+=== 192 story
+<div>Một cô gái tóc vàng đi du lịch châu Âu vào mùa tuyết rơi. Đến thành phố nọ, cô vào một khách sạn có tên Mùa Đông thuê phòng.</div><div>Trong lúc chờ làm thủ tục, cô nhìn thấy tấm bảng treo thông báo về độ dày của tuyết ở các khu vực lân cận như sau:</div><div>- Mousi: 15 cm, mềm.</div><div>- Kini: 20 cm, hơi cứng.</div><div>- London: 30 cm, rất cứng.</div><div>Cô hồ hởi ghé tai nhân viên đón khách:</div><div>- Này cô, ông London ở phòng nào nhỉ?</div>
+
+=== 193 story
+<div>Một nông dân mua được 1 chú gà trống rất hăng. Gà ta đạp hết gà mái rồi tới vịt mái khiến chúng đẻ liên tục, nông dân nọ rất hả hê. Một bữa, ông ta đi làm đồng về thấy gà trống đang nằm xụi lơ trên bãi cỏ sau nhà, bên trên là mấy con quạ đang chờ ăn xác. Người nông dân thương xót than thở:</div><div>&nbsp;- Ôi chú gà tội nghiệp! Sao mày vội bỏ tao mà đi sớm vậy?!</div><div>Gà trống hé mở mắt nói:</div><div>&nbsp;- Ông đi chỗ khác đi, kẻo lũ quạ mái bay hết mất bây giờ!</div>
+
+=== 194 story
+<div>Cặp tình nhân nọ yêu nhau đã lâu, tình cảm đã đến độ sâu đậm. Một hôm, cô gái đưa chàng trai về nhà mình và hai người qua đêm với nhau ở đó. Buổi sáng, khi thức dậy, chàng trai nhìn thấy bên giường có treo bức ảnh một người đàn ông rất tuấn tú. Đương nhiên, anh chàng cảm thấy lo ngại, bèn hỏi, giọng run rẩy:</div><div>&nbsp;- Ảnh ai đây? Chồng em à?</div><div>&nbsp;- Không!</div><div>Cô gái đáp.</div><div>&nbsp;- Hay là người yêu cũ của em?</div><div>&nbsp;- Cũng không phải nốt!</div><div>Cô gái khúc khích cười và nhéo tai chàng trai.</div><div>&nbsp;- Vậy chắc là bố em?</div><div>&nbsp;- Không!</div><div>&nbsp;- Thế đó là ai?</div><div>&nbsp;- Em. Em ngày xưa đấy!!!</div>
+
+=== 195 story
+Trung tâm y tế của bến cảng có một bác sĩ rất hay nói bậy. Các nữ y tá bàn nhau, mỗi khi ông ta nói bậy thì họ sẽ cùng nhau ra khỏi phòng. Một hôm, có một chiếc tàu mới cập bến, bác sĩ phải xuống tàu kiểm tra phòng dịch. Khi trở lên bến, ông kể chuyện oang oang:<br>- Sáng nay tớ khám bệnh cho cánh đàn ông trên tàu, người thì lùn, da vàng, mũi tẹt, chân tay nhỏ, chỉ được cái...<br>Mới nói đến đó, các nữ y tá đã chạy hết ra khỏi phòng. Ông ta ngạc nhiên gọi với theo:<br>- Các cô vội gì mà phải tranh nhau như vậy?! Họ còn ở đây một tuần cơ mà.<br>
+
+=== 196 story
+<div>Một người đàn ông đi gặp bác sĩ để kể về người vợ của mình. "Tôi cho rằng vợ tôi bị điếc, cô ấy chả nghe thấy tôi nói gì mà toàn khiến tôi phải nhắc lại".</div><div>Người bác sĩ trả lời: "Được rồi, bây giờ anh cứ về nhà. Tối nay đứng cách vợ 6 m và nói một điều gì đó. Nếu bà nhà không trả lời, đứng lại gần 2 m nữa và nhắc lại. Cứ tiếp tục như thế để xem mức độ ngễnh ngãng của bà ấy nặng đến mức nào".</div><div>Người chồng trở về nhà và thực hiện đúng theo chỉ dẫn. Ông đứng cách vợ 6 m khi bà đang thái thịt trong bếp và hỏi: "Cưng à, tối nay mình ăn gì vậy?". Ông không nghe thấy câu trả lời. Ông đứng gần lại 2 m nữa và hỏi lại. Vẫn không có câu trả lời. Ông đứng gần thêm 2 m. Vẫn chẳng thấy gì. Cuối cùng, ông tiến sát lại sau vợ và hỏi: "Em yêu, tối nay mình ăn gì?".</div><div>Cô vợ trả lời: "Đây là lần thứ 4 rồi nhá - thịt bò hầm!".</div>
+
+=== 197 story
+<div>Một phụ nữ đang vật lộn trong cơn trở dạ. Người chồng luống cuống không biết làm thế nào. Ông bác sĩ liền mách một loại thuốc mới có thể giúp chuyển 1/4 cơn đau sang người cha. Anh chồng thương vợ liền quyết định mua thử.</div><div>Chị vợ uống thuốc, sau mấy phút anh chồng vẫn chẳng thấy gì.</div><div>Anh nói: "Em đúng là trẻ con. Anh chẳng cảm thấy gì cả. Hãy uống viên nữa, anh có thể chịu được". Người vợ uống viên thứ hai. Anh chồng vẫn không sao. Anh ta bảo vợ uống tiếp viên nữa. Vẫn chẳng có gì thay đổi. Đến giờ, cô vợ đã bớt 3/4 cơn đau. Cô chỉ còn đau một ít trong khi người chồng vẫn chẳng cảm thấy gì. Tin rằng phụ nữ chỉ là những kẻ mít ướt, chồng nói: "Hãy uống nốt viên nữa. Nó chẳng làm anh sao cả. Hãy để anh gánh cả cơn đau". Cô vợ làm theo và giờ thì cả hai cùng cảm thấy thoải mái.</div><div>Vài tiếng sau, người vợ sinh được một bé trai kháu khỉnh. Hôm sau, khi đưa con trở về nhà, họ thấy một người đưa thư nằm chết ngay trước cửa.</div>
+
+=== 198 story
+<div>Một bác sĩ phụ khoa sau nhiều năm hành nghề cảm thấy chán ngấy công việc của mình và quyết định đến với một sự nghiệp mới. Ước mơ thuở bé của ông là trở thành kỹ sư. Vì vậy, ông ghi danh vào một trường kỹ thuật.</div><div>Sau 2 năm miệt mài, cuối cùng thì kỳ thi tốt nghiệp cũng tới. Đề thi yêu cầu thí sinh phải tháo rã hoàn toàn một cỗ máy rồi lắp lại mà nó vẫn hoạt động trơn tru như mới. Vị cựu bác sĩ hoàn thành bài thi và về nhà thấp thỏm chờ đợi kết quả.</div><div>Ngày nhận được phiếu báo điểm, ông bác sĩ nhảy ngược lên vì ngạc nhiên: bài thi của ông đạt tới 150% số điểm tối đa. Thắc mắc, ông gọi điện tới vị giám khảo để hỏi và được giải thích:</div><div>- Với việc lột trần cỗ máy một cách tỉ mỉ, anh xứng đáng được hưởng 50% số điểm tối đa. Tôi cho anh 50% số điểm nữa vì đã lắp nó lại một cách hoàn hảo. Còn 50% điểm thưởng là vì anh đã thực hiện tất cả các kỳ công đó qua cái lỗ thăm dầu.</div>
+
+=== 199 story
+<div>Một anh chàng tâm thần đã được điều trị khoảng một năm. Một hôm, bác sĩ đến kiểm tra xem anh ta khỏi bệnh chưa để cho về nhà. Bác sĩ hỏi:</div><div>- Này, nếu được về nhà thì anh sẽ làm gì?</div><div>- Cưới vợ ạ.</div><div>- Thế nếu anh cưới vợ thì trong đêm tân hôn, anh sẽ làm gì?</div><div>- Dạ, em sẽ đưa cô ấy vào phòng, bế lên giường.</div><div>- Sau đó thì...?</div><div>- Em sẽ cởi bỏ quần áo của cô ấy ra và ...</div><div>- Anh cứ nói tiếp đi, đừng ngại!</div><div>- Dạ, em sẽ mang đi giặt ạ.</div>
+
+=== 200 story
+<div>Để chữa bệnh phát phì, bác sĩ kê đơn cho Roby 6 viên thuốc, mỗi tối uống một viên. Đêm đầu, sau khi uống thuốc, Roby mơ thấy mình bị đắm tàu và giạt vào một đảo hoang, ở đấy có một cô gái da màu tuyệt đẹp. Anh rượt theo cô ta khắp đảo, nhưng không thể nào bắt kịp. Thức dậy, mồ hôi vã ra như tắm. Cuộc rượt đuổi lại diễn ra trong những đêm kế tiếp. Kết quả anh ta sụt 25 kg.</div><div>Bạn của Roby là Brow thấy vậy cũng đến chữa bệnh. Nhưng sau khi uống viên thuốc đầu tiên, Brow lại có một giấc mơ khác. Anh ta cũng lạc vào đảo hoang, nhưng không có cô gái da màu nào cả. Thay vào đó là một đám thổ dân hung dữ đuổi anh ta chạy trối chết. Rồi anh ta cũng sụt được 25 kg.</div><div>Brow hỏi bác sĩ tại sao Roby lại có giấc mơ nhiều hứng thú, chứ không đáng sợ như của mình, ông ta mỉm cười:</div><div>- Có gì đâu, Roby đến gặp tôi tại phòng mạch tư và trả bằng tiền mặt. Còn anh thì đến bệnh viện với thẻ bảo hiểm y tế.</div>
+
+=== 201 story
+<div>Một tổ chức từ thiện đến gặp ông luật sư giàu nhất thành phố và thuyết phục ông ta đóng góp cho quỹ của họ.</div><div>- Thu nhập của ông thuộc vào loại cao nhất thành phố. Vậy ông có thể quyên góp chút ít cho cộng đồng không ạ?</div><div>Tay thầy cãi hít một hơi dài và bắt đầu tấn công trả lại:</div><div>- Thứ nhất, tôi có người mẹ đang bệnh nặng, tiền thuốc thang tốn gấp nhiều lần thu nhập hằng năm của bà...</div><div>- Dạ... chúng tôi không biết.</div><div>- Thứ hai, tôi có người anh trai là một cựu chiến binh, bị mù và phải ngồi xe lăn.</div><div>- Xin lỗi...</div><div>- Chồng của em gái tôi đã qua đời trong một tai nạn giao thông, chẳng để lại cho nó và ba đứa con nhỏ dại đồng xu nào.</div><div>- Vâng, như vậy là ngài quá vất vả...</div><div>- Chứ sao! Đến họ mà cũng chẳng xơ múi được gì ở tôi nữa là các anh.</div>
+
+=== 202 story
+<div>Bác sĩ dặn bệnh nhân:</div><div>- Bà bị thiếu tanin và chất xơ nghiêm trọng, cần ăn thật nhiều quả màu xanh và phải ăn cả vỏ không được gọt bỏ.</div><div>- Tôi xin ghi nhận lời khuyên của ông.</div><div>Đến hẹn khám lại, bác sĩ hỏi:</div><div>- Cách ăn hoa quả như vậy có ảnh hưởng gì không?</div><div>- Thưa không! Đào, lê, táo, nho... đều ổn cả, chỉ có... quả dừa thì ăn hơi lâu.</div>
+
+=== 203 story
+<div>Một nữ nhà báo phỏng vấn bác nông dân nuôi bò: "Thưa bác, tại sao ngày càng xuất hiện nhiều bệnh bò điên?"&nbsp;</div><div>Bác nông dân giải thích:</div><div>- Để tui kể qui trình nuôi bò cho cô nghe, mỗi ngày bò sữa được vắt sữa một lần vào sáng sớm và mỗi năm nó được thụ tinh 1 lần để sinh bò con.</div><div>- Vậy thì sao hả bác? - Cô phóng viên hỏi.</div><div>Bác nông dân cau mày:</div><div>- Chưa hiểu hả? Cô cứ thử tưởng tượng người ta bóp ngực cô mỗi sáng, nhưng một năm cô mới được thụ tinh một lần xem cô có điên không?</div>
+
+=== 204 story
+<div>Một chú bé được bố mẹ đưa đi “tắm tiên”.</div><div>Đến bãi tắm, thấy một chị có bộ ngực đồ sộ, chú hỏi: – Sao của chị kia to vậy? Bà mẹ xấu hổ: – Con đừng nhìn, những người như vậy là những người rất đần. Chú bé lại chỉ vào của quí một ông hỏi: – Sao của chú kia to vậy?</div><div>Bà mẹ đỏ mặt: – Những người đó rất ngu, con đừng nhìn.</div><div>Một… lúc sau ko thấy chồng đâu, bà mẹ bảo chú bé đi tìm.</div><div>Chú đi một hồi rồi trở về nói với mẹ: – Con thấy bố đang nói chuyện với một cô rất đần, càng nói thì trông bố càng ngu!!</div>
+
+=== 205 story
+Một con voi đi ngang qua thấy một con lạc đà đang nằm phơi năng, nhìn thấy con lạc đà con voi mới cười lớn và nói:- Hô hô, con gì thế kia, buồn cười thế. Con gì mà ti mọc trên lưng thế? hô hô.Thấy con voi cười nhạo mình, con lạc đà tức lắm liền chửi lại con voi:<span>- Tao ti mọc trên lưng đấy, còn… hơn cái đồ mày.&nbsp; Chim mọc trên mặt!<br>Voi nghe thế thì ức lắm, đúng lúc đó có con rắn đi qua nghe được câu truyện giữa con voi và con lạc đà thì cũng lăn ra cười. Voi thấy thế liền chửi con rắn.<br>- Con chết tiệt kia, ai cũng có thể cười tao được. Trừ mày ra, cái đồ mặt mọc trên chim</span>
+
+=== 206 story
+Hai giọt sữa gặp nhau trong 1 bình sữa vào ngày đẹp trời nọ. Cái bình đang lắc lư theo điệu salsa, bachata làm cả hai đều ngất ngây và cùng uốn éo, giật lắc. “Oh salsaaaaaaaaaaa! Oh sexyyyyyyyyyy!” Sự đụng chạm ban đầu từ vô tình dần chuyển sang bản năng thúc giục.<br>Họ yêu nhau say đắm và quyết định cư…ới nhau. Một thời gian sau, giọt sữa cái mới đề nghị với giọt sữa đực 1 chuyện quan trọng: “Anh ơi, mình có con đi”.<br>Giọt sữa đực buồn rầu đáp: “Xin lỗi em, anh là sữa đã tiệt trùng rồiiiii”.<br>
+
+=== 207 story
+Một đại hiệp ngã xuống một cái giếng cạn. Dưới giếng, chàng ta tìm được một cuốn sách dạy 1 môn võ công bí truyền ghi là&nbsp;Uất Ức Thần Chưởng. Và chàng quyết định sẽ học theo.<br>Mở trang thứ nhất, chàng thấy có ghi: “Muốn luyện thành công môn võ công này, buộc phải tự thiến….”. Rùng mình một cái, chàng lấy hết can đảm, …rút kiếm ra……..xoẹt…..xoẹt. xong.<br>Làm phận sự của trang thứ nhất xong, chàng mở qua trang thứ hai, chỉ thấy 1 dòng chữ:<br>“KHÔNG THIẾN CŨNG KHÔNG SAO”<br>Đại hiệp tức quá, phọt máu mồm ra chết<br>“Uất Ức Thần Chưởng” quả là lợi hại<br>
+
+=== 208 story
+<div>Thày giáo đang say sưa với những công nghệ tiên tiến, chợt đến đoạn:</div><div>” Ngày nay, công nghệ tiên tiến cho phép người ta sản xuất ra những dây chuyền hoàn toàn tự động, ở đầu này ta đưa vào một con bò và đầu kia chiêc máy là một chiếc xúc xích hoàn hảo!”</div><div>Chợt một học sinh lên tiếng:</div><div>- Thưa thầy thế có thể chế tạo được ra ch…iếc máy làm ngược lại không ạ?</div><div>Thày giáo cáu lắm liền nói:</div><div>- năm nay anh bao nhiêu tuổi ?</div><div>-dạ , 18 ạ – anh Sv trả lời</div><div>Thầy giáo liền nói :</div><div>…- Vậy 18 năm trước có 1 cái máy như vậy đấy.!</div>
+
+=== 209 story
+<div>Một nam sinh nói với một nữ sinh:</div><div>- Có phải thầy hiệu trưởng là một người đáng trách?</div><div>- Này! Cậu có biết tớ là ai không hả?</div><div>- Không!</div><div>- Tớ là con gái của ông ấy đấy!</div><div>Nam sinh lại nói với nữ sinh:</div><div>- Thế cậu có biết tớ là ai không?</div><div>- Không biết!</div><div>- Cảm ơn Chúa!</div>
+
+=== 210 story
+<div>Chồng cãi nhau với vợ:</div><div>- Tôi đúng là thằng ngốc nên mới quyết định lấy cô!</div><div>- Phải, nhưng lúc đó tôi cũng quá si mê nên không nhận ra.</div>
+
+=== 211 story
+<div>Một người nói với bạn:</div><div>- Ước gì vợ tôi là tổng thống …</div><div>- Anh muốn vợ anh được nổi tiếng à?</div><div>- Không, tôi muốn 5 năm được thay 1 lần.</div>
+
+=== 212 story
+Một người tới phòng mạch:<br>- Thưa bác sĩ, tôi có tật ngáy rất to.<br>- Vợ ông phàn nàn phải không?<br>- Không, tôi chưa có vợ.<br>- Vậy thì có làm sao?<br>- Nhưng tôi đã bị đuổi việc ở 3 nơi rồi.<br>
+
+=== 213 story
+Bác sĩ nói với bệnh nhân:<br>- Từ hôm nay anh chỉ được ăn bánh mì không uống rượu, không hút thuốc, không giải trí gì hết.<br>- Tôi phải kiêng tới khi nào?<br>- Tới khi anh thanh toán hết tiền chữa bệnh cho tôi thì thôi.<br>
+
+=== 214 story
+Một bà sau khi cho tiền ông hành khất ở cuối nhà thờ liền hỏi:<br>“Sao ông ra nông nỗi này, vợ con ông đâu?”<br>“Thưa bà, vợ tôi chẳng may qua đời rồi ạ. Nếu vợ tôi còn thì tôi đâu đến nông nỗi này ạ”<br>Bà quay sang ông chồng:<br>“Thấy chưa, đàn bà là đảm đang lắm. Không có đàn bà là chỉ có nước đi ăn mày. Nhưng khi còn sống bà ấy làm gì hả ông?”<br>“Thưa nó đi ăn mày thay cho tôi ạ.”
+
+=== 215 story
+Cô gái mừng rỡ vẫy xe xin đi nhờ. Xe đỗ. Anh chàng lái xe vốn là một tay háo sắc, nhân thấy cô gái đang ở thế bí mới đồng ý cho đi nhờ xe với điều kiện cô phải cởi bỏ tất cả quần áo.<br>Sau khi suy nghĩ, cô gái đành đồng ý vì nếu ở lại ngoài đường một mình có khi còn nguy hiểm hơn! Đi được một đoạn, do không tập trung lái xe, anh chàng lái xe đâm sầm vào một gốc cây, cô gái bị hất ra ngoài, còn anh lái bị mắc kẹt trong xe, chỉ thò được cái chân ra ngoài. Lái xe bảo cô gái:<br>- Cô mau đi tìm người tới kéo giúp tôi ra mau.<br>Cô gái đáp:<br>- Nhưng tôi đang thế này làm sao đi được? Tại lúc nãy anh lại bắt tôi bỏ hết quần áo đấy.<br>Lái xe bảo:<br>- Thôi còn oán trách gì nữa. Thì cô lấy chiếc giày của tôi mà che tạm vậy.<br>Cô gái nghe lời, tháo chiếc giày ở chân anh lái xe che vào chỗ cần che rồi chạy đi tìm người tới giúp. Chạy được một đoạn dài, cô gặp một anh cảnh sát giao thông. Vừa thở hổn hển, cô vừa nói:<br>- Anh cảnh sát... nhờ anh... kéo giúp... anh lái xe ra với...<br>Anh cảnh sát nhìn vào chiếc giày cô đang giữ, tròn mắt ngạc nhiên:<br>- Sâu thế này thì kéo ra làm sao được nữa?
+
+=== 216 story
+Một chàng thợ săn mới vào nghề mời hàng xóm, người đang đau buồn&nbsp;vì mất chú mèo cưng, sang ăn mừng chuyến đi săn đầu tiên.<br>Sau khi cơm no rượu say, người hàng xóm nức nở khen ngon rồi hỏi:<br>- Món gì thế?<br>- Thịt thỏ – Chủ nhà đáp.<br>- Anh tìm đâu&nbsp;ra&nbsp;thỏ ở vùng này?<br>- Tối qua, tôi đang ở trong nhà thì có tiếng động ngoài cửa. Tôi mang súng bước&nbsp;ra, thấy một con thỏ giương mắt nhìn, tôi cho nó ngay một phát vào giữa trán. Nó chỉ kịp kêu… “meo” một tiếng.
+
+=== 217 story
+Một ông sếp khó chịu có đến ba cô thư ký. Một hôm ba cô thư ký trò chuyện với nhau về việc họ đã trêu ông ta như thế nào.<br>Cô thứ nhất: Một hôm tớ dùng băng dính dán hết các ngăn kéo của sếp lại.Thế là khi cần mở ngăn kéo, sếp bực tức quát um lên.<br>Cô thứ hai : Một lần lục trong ngăn kéo của sếp có mấy hộp bao cao su, tớ liền lấy kim chọc thủng tất cả, xong để lại nguyên trong ngăn kéo cho sếp&nbsp;<br>Cô thứ ba nghe đến đây mặt tái mét, không nói được gì và ngất xỉu.
+
+=== 218 story
+Bà mẹ rầy la cô con gái:<br>- Đêm qua sao mày tiếp thằng bạn trai khuya quá vậy?<br>- Xin lỗi má, chắc tụi con nói chuyện hơi ồn làm má ngủ không được?<br>- Đâu phải vậy. Chính tụi bay im phǎng phắc tao mới không ngủ nổi!
+
+=== 219 story
+Một người đàn ông và vợ anh ta đi du lịch về miền Tây và dừng lại ở một tấm<br>biển đề "Tiếng vọng".<br>Người vợ bảo:<br>- Thử xem!<br>- Anh nghĩ đó là điều ngốc nghếch, nhưng cũng thử một lần xem sao!<br>Người chồng nói rồi hét thật to:<br>- Vô lý!<br>Sau một phút, anh ta bảo:<br>- Thấy không, chẳng có gì xảy ra cả!<br>Người vợ bảo:<br>- Thử lần nữa xem!<br>Lần này anh ta lại hét:<br>- Tôi là người bảnh trai nhất trên đời!<br>Và sau đó là một tiếng dội lại: "Vô lý ...lý ...lý"
+
+=== 220 story
+Đã thành thói quen, cứ 6h sáng là ông nọ dắt chó đi dạo. Một hôm con chó chết. Tối ấy, ông nằm trằn trọc mãi trên giường, cuối cùng lay bà vợ:<br>- Sáng mai bà có dậy đi dạo với tôi không?
+
+=== 221 story
+<div>Ông chồng mệt mỏi quay về nhà dặn vợ: "Bất kì ai gọi đến em cũng đều nói anh không có nhà nhé!"</div><div>Chuông điện thoại reo vang, người vợ nhấc ống nghe lên, sau đó trả lời: "Chồng tôi có nhà!".</div><div>"Không phải đã dặn em rồi sao? Sao lại bảo anh có nhà hử?" Ông nọ càu nhàu.</div><div>"Đừng giận anh yêu! Cú điện đó đâu phải cho anh".</div><div><br></div>
+
+=== 222 story
+<div><div>Bệnh nhân sắp xuất viện tâm sự với cô y tá trẻ: "Anh yêu em nhiều lắm, và vì muốn được sống bên em nên anh chẳng muốn lành bệnh tí nào."</div><div>"Anh đừng lo ..."Cô y tá lắc đầu: "Bệnh của anh không khỏi ngay được đâu. anh phải biết là bác sĩ chữa anh vừa viết thư tình cho em cách đây không lâu. Mà hôm qua lúc anh và em hôn nhau thì ông ấy đã bắt gặp!".</div></div>
+
+=== 223 story
+<div>Một trạm cảnh sát ở Pari nhận được cú điện thoại. Người đàn ông đầu giây bên kia nói hối hả: "Cảnh sát đấy hở? Tôi muốn báo cho các ông biết: Trưa nay ở rừng Bu lông sẽ có một cuộc quyết đấu. Mong các ông cho người đến can ngăn."</div><div>"Chúng tôi biết rồi, thưa anh". Nhân viên trực ban nhã nhặn trả lời: "Đối thủ của anh đã báo cho chúng tôi trước nửa giờ rồi!"</div>
+
+=== 224 story
+<div>Thẩm phán hỏi:</div><div>- Anh chị có nhớ thời gian nào hai anh chị bắt dầu lủng củng không?<br></div><div>- Cách đây 10 nǎm, vào ngày 15/11.</div><div>- Làm sao anh có thể nhớ chính xác như vậy?</div><div>- Hừm... có gì mà không nhớ được, đó là ngày cưới của chúng tôi.</div>
+
+=== 225 story
+<span>Hai vợ chồng đi xem triển lãm mỹ thuật. Họ đến trước bức tranh có thiếu nữ khỏa thân được che đậy bởi vài chiếc lá, ông chồng cứ trố mắt ra mà ngắm không chịu rời. Bà vợ tức giận kéo tay ông ta lôi đi:<br>"Này, ông định chờ đến mùa thu lá rụng hết mới vừa lòng hay sao".</span><br>
+
+=== 226 story
+<div>Ông nọ than với bạn bè: "Cuộc hôn nhân của tôi giống như ao nước tù, chẳng có gì mới lạ."</div><div>Người bạn khuyên ông ta: "Sao anh không cặp một cô bồ cho thêm hương vị?"</div><div>"Nhưng bà ấy phát hiện thì sao?"</div><div>"Bây giờ đã là thập niên 90 rồi, cứ nói thẳng với bà ấy, đừng sợ!"</div><div>Thế là ông ta vội vã quay về bảo vợ: "Này mình, anh cho rằng nếu anh có vài cuộc phiêu lưu, quan hệ chúng ta sẽ thêm đầm ấm".</div><div>Người vợ lắc đầu: "Thôi bỏ đi tám, tôi cũng đã thử rồi, có hiệu quả gì đâu!"</div>
+
+=== 227 story
+Một tạp chí Mỹ tổ chức cuộc thi bình chọn người đàn ông ưu tú nhất. Iít lâu sau, ban biên tập nhận được bức thư viết: "Được biết quý tạp chí bình chọn người đàn ông ưu tú. Sau khi đã suy gẫm kỹ, tôi chỗ rằng có lẽ tôi là người lý tưởng nhất với những ưu điểm như sau: "Tôi không uống rượu, không hút thuốc, tuyệt dối trung thành với vợ, không hề nhìn ngắm người phụ nữ nào khác, không xem phim, cũng không xem kịch. Tối ngủ sớm, dậy cũng sớm. Mỗi ngày chủ nhật tôi đều muốn đến nhà thờ ... tiện đây cũng xin nói luôn còn một năm nữa là tôi được mãn hạn tù ..."<br>
+
+=== 228 story
+<div>Cô gái trẻ ngồi trước mặt thầy bói đang băn khoăn về vận mệnh mình.</div><div>Thầy bói: "Trên đùi cô mọc ba nốt ruồi đen."</div><div>Cô gái: "Đúng ạ!"</div><div>Thầy bói: "Đấy là dấu hiệu cho biết cô sẽ có ba người tình. Đùi phải cô còn xâm chữ K."</div><div>Cô gái: "Ơ, đó là kỷ niệm của anh bạn Klan đã đi nước ngoài."</div><div>Thầy bói: "Bụng cô còn có một vết sẹo."</div><div>Cô gái: "Vâng, đó là lần mổ ruột thừa cách đây hai năm. Thầy thánh thật! Sao thầy lại biết những việc ấy?"</div><div>Thầy bói điềm nhiên: "Lần sau cô đừng mặc váy ngắn thế ...!"</div>
+
+=== 229 story
+Các câu nói phét kinh điển<br>1. Internet: Chúng tôi hoàn toàn miễn phí<br>2. Viễn thông: Chúng tôi bị lỗ vốn<br>3. Cảnh sát: Chúng tôi vì nhân dân phục vụ<br>4. Công ty lên sàn chứng khoán: Chúng tôi không làm giả các báo cáo<br>5. Sếp: Tôi không bao giờ quên những cống hiến của anh<br>6. Nhân viên: Mai tôi nghỉ việc, không làm nữa<br>7. Tài xế xe khách: Nhà xe xuất phát đúng giờ<br>8. Dân buôn: Bán lỗ vốn, đại hạ giá<br>9. Ngôi sao điện ảnh: Chúng tôi chỉ làm bạn bè<br>10. Chính khách: Tôi không nhận một đồng nào<br>11. Con gái: Đây là lần đầu tiên<br>12. Con trai: Ngoan, không đau tí nào đâu<br>
+
+=== 230 story
+Cô giáo muốn dạy về đề tài “Chăn bông” bèn hỏi Tèo: "- Em cho cô biết vào mùa đông thì trên người mẹ em là gì?".<br>- Thưa cô, là... là... bố em... ạ!<br>Cô bị bất ngờ lúng túng không biết nên tiếp theo thế nào, nghĩ một lúc, hỏi:<br>- Vậy bên trên người bố em là gì?<br>- Không có gì ạ!<br>Cô vừa ngượng vừa bực mình bèn quát:<br>- Vậy cái chăn đâu?<br>- Nó nằm dưới nền nhà ạ!<br>
+
+=== 231 story
+Cô giáo đang đọc truyện "Ba chú heo con" cho các bé nghe đến đoạn một chú heo gặp bác nông dân và xin rơm:<br>- Bác ơi, cho cháu xin ít rơm nhé!<br>Cô giáo ngừng lại hỏi:<br>- Các con có biết bác nông dân nói gì không?<br>Tèo giơ tay:<br>- Thưa cô, bác ấy bảo: “Trời ơi! Một con heo biết nói!”.<br>
+
+=== 232 story
+Có 1 con chim đang bay thì đâm vào 1 người đang đi xe máy và bất tỉnh. Người đi xe máy thấy vậy rất thương con chim.liền mang nó về nhà,băng bó cho nó,đưa nó vao trong 1 chiếc lồng sắt và cho 1 chút thức ăn vào lông. Khi con chim tinh dậy thấy mình tự dưng bị nhốt trong lồng với 1 chút thức ăn thì rầu rĩ nói:
+- Hu hu.chắc vừa nãy mình đâm chết thằng đi xe máy kia lên bị vào tù rồi.
+

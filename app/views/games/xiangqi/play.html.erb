@@ -137,17 +137,15 @@ function reset() {
 function renderScreen() {
     console.log('renderScreen');
     var state = game.getState();
-    var Factory = React.createFactory(RightPanel);
-    var root = Factory(state);
-    React.render(root, $('.right-panel').get(0));
+    TruyenCuoi.mount('RightPanel', $('.right-panel').get(0), state);
 }
 
 $(function(){
 
     var settings = {
-        title: '<%= @title %>',
+        title: <%= raw json_escape(@title.to_json) %>,
         name: '<%= @room.game_name %>',
-        myName: '<%= current_user.email %>',
+        myName: <%= raw json_escape(current_user.email.to_json) %>,
         myNbr: <%= @room_user.join_token %>,
         ope: '<%= @ope %>',
         set: <%= @ope == "join" ? 2 : 1 %>,

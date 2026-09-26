@@ -9,7 +9,6 @@
 #  updated_at         :datetime         not null
 #
 
-class Admin < ActiveRecord::Base
-  #attr_accessible :email, :password
+class Admin < ApplicationRecord
   devise :database_authenticatable, :timeoutable
 end

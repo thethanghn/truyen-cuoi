@@ -1,0 +1,19 @@
+// Built by dart-sass (yarn build:css) into app/assets/builds/application.css.
+
+// Bootstrap 3 (bootstrap-sass). Glyphicon fonts are served by Propshaft from
+// node_modules/bootstrap-sass/assets/fonts (see config/initializers/assets.rb).
+$icon-font-path: "bootstrap/";
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Trix editor used on the admin post form.
+@import "trix/dist/trix";
+
+@import "custom";
+@import "blackjack";
+@import "xiangqi";
+@import "news";
+@import "posts";
+
+trix-toolbar .trix-button-group--file-tools {
+  display: none;
+}

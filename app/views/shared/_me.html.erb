@@ -329,9 +329,13 @@ function readWord(words) {
   }
 }
 
+var narratorImages = {
+  <%= (1..5).map { |i| "#{i}: #{asset_path("narrator#{i}.png").to_json}" }.join(",\n  ").html_safe %>
+};
+
 function swapTile(tile) {
   $('.img-circle').hide();
-  $('.nar-inner img').attr('src', '/assets/narrator' + tile +'.png').show();
+  $('.nar-inner img').attr('src', narratorImages[tile]).show();
 }
 
 

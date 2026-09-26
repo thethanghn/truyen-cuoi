@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Truyện Cười – ngẫu nhiên</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="container">
+    <div class="random-story" id="random-story">Loading…</div>
+    <p class="text-center">
+      <button type="button" class="btn btn-primary" id="another">Another one</button>
+      <a class="btn btn-link" href="./">All stories</a>
+    </p>
+  </div>
+
+  <script src="assets/stories.js"></script>
+  <script>
+    (function () {
+      var box = document.getElementById("random-story");
+      var stories = [];
+      var current = null;
+
+      function show() {
+        if (!stories.length) { box.textContent = "No story available"; return; }
+        var next;
+        do { next = stories[Math.floor(Math.random() * stories.length)]; }
+        while (stories.length > 1 && next === current);
+        current = next;
+        box.innerHTML = "";
+        box.appendChild(TruyenCuoi.renderStory(next));
+      }
+
+      TruyenCuoi.loadStories().then(function (list) { stories = list; show(); })
+        .catch(function () { box.textContent = "Couldn't load stories."; });
+      document.getElementById("another").addEventListener("click", show);
+    })();
+  </script>
+</body>
+</html>

@@ -1,25 +1,19 @@
-# == Schema Information
-#
-# Table name: rooms
-#
-#  id           :integer          not null, primary key
-#  title        :string
-#  password     :string
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  game_type    :string           not null
-#  game_name    :string
-#  status       :string           default("init"), not null
-#  winner_id    :integer
-#  photon_error :hstore
-#
+open_room:
+  title: Friendly match
+  game_type: mystery_xianqqi
+  game_name: 11111111-1111-1111-1111-111111111111
+  status: open
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+stale_room:
+  title: Abandoned
+  game_type: mystery_xianqqi
+  game_name: 22222222-2222-2222-2222-222222222222
+  status: init
+  created_at: <%= 2.hours.ago %>
 
-one:
-  title: MyString
-  password: MyString
-
-two:
-  title: MyString
-  password: MyString
+finished_room:
+  title: Done
+  game_type: mystery_xianqqi
+  game_name: 33333333-3333-3333-3333-333333333333
+  status: closed
+  created_at: <%= 2.hours.ago %>

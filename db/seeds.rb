@@ -1,11 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-admin = Admin.new
-admin.email = 'thethanghn@gmail.com'
-admin.encrypted_password = Admin.new(password: 'thethang85').encrypted_password
-admin.save
+# Creates the RailsAdmin login. Run with:
+#   ADMIN_EMAIL=you@example.com ADMIN_PASSWORD=... bin/rails db:seed
+email = ENV["ADMIN_EMAIL"]
+password = ENV["ADMIN_PASSWORD"]
+
+if email.present? && password.present?
+  admin = Admin.find_or_initialize_by(email: email)
+  admin.password = password
+  admin.save!
+  puts "Admin #{email} ready."
+else
+  puts "Skipping admin seed: set ADMIN_EMAIL and ADMIN_PASSWORD."
+end

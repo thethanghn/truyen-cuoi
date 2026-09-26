@@ -1,96 +1,60 @@
-TruyenCuoi::Application.configure do
+require "active_support/core_ext/integer/time"
+
+Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
-  config.cache_classes = true
+  config.enable_reloading = false
 
-  # Eager load code on boot. This eager loads most of Rails and
-  # your application in memory, allowing both thread web servers
-  # and those relying on copy on write to perform better.
-  # Rake tasks automatically ignore this option for performance.
+  # Eager load code on boot for better performance and memory savings (ignored by Rake tasks).
   config.eager_load = true
 
-  # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  # Full error reports are disabled.
+  config.consider_all_requests_local = false
+
+  # Turn on fragment caching in view templates.
   config.action_controller.perform_caching = true
 
-  # Enable Rack::Cache to put a simple HTTP cache in front of your application
-  # Add `rack-cache` to your Gemfile before enabling this.
-  # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
-  # config.action_dispatch.rack_cache = true
+  # Cache assets for far-future expiry since they are all digest stamped.
+  config.public_file_server.headers = { "cache-control" => "public, max-age=#{1.year.to_i}" }
 
-  # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = true
+  # Heroku terminates SSL at its router. Opt in with FORCE_SSL=true once every
+  # client (including the Photon webhooks) uses https.
+  config.assume_ssl = ENV["FORCE_SSL"] == "true"
+  config.force_ssl = ENV["FORCE_SSL"] == "true"
 
-  # Compress JavaScripts and CSS.
-  config.assets.js_compressor = :uglifier
-  # config.assets.css_compressor = :sass
+  # Log to STDOUT with the current request id as a default log tag.
+  config.log_tags = [ :request_id ]
+  config.logger   = ActiveSupport::TaggedLogging.logger(STDOUT)
 
-  # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true
+  # Change to "debug" to log everything (including potentially personally-identifiable information!).
+  config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
 
-  # Generate digests for assets URLs.
-  config.assets.digest = true
+  # Prevent health checks from clogging up the logs.
+  config.silence_healthcheck_path = "/up"
 
-  # Version of your assets, change this if you want to expire all your assets.
-  config.assets.version = '1.0'
+  # Don't log any deprecations.
+  config.active_support.report_deprecations = false
 
-  # Specifies the header that your server uses for sending files.
-  # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
-  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
-
-  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
-
-  # Set to :debug to see everything in the log.
-  config.log_level = :debug
-
-  # Prepend all log lines with the following tags.
-  # config.log_tags = [ :subdomain, :uuid ]
-
-  # Use a different logger for distributed setups.
-  # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
-  config.logger = Logger.new(STDOUT)
-
-  # Use a different cache store in production.
-  # config.cache_store = :mem_cache_store
-
-  # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  # config.action_controller.asset_host = "http://assets.example.com"
-
-  # Precompile additional assets.
-  # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-  # config.assets.precompile += %w( search.js )
-
-  # Ignore bad email addresses and do not raise email delivery errors.
-  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
-
-  # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
-  # the I18n.default_locale when a translation can not be found).
-  config.i18n.fallbacks = true
-
-  # Send deprecation notices to registered listeners.
-  config.active_support.deprecation = :notify
-
-  # Disable automatic flushing of the log to improve performance.
-  # config.autoflush_log = false
-
-  # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
-
+  # Mailer (Devise confirmation emails). Set HOST and SMTP_* in the Heroku config.
+  config.action_mailer.default_url_options = { host: ENV.fetch("HOST", "example.com"), protocol: "https" }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.mandrillapp.com',
-    port:                 587,
-    domain:               ENV['HOST'],
-    user_name:            ENV['MANDRILL_USERNAME'],
-    password:             ENV['MANDRILL_PASSWORD'],
-    authentication:       'login',
-    enable_starttls_auto: true 
+    address:              ENV.fetch("SMTP_ADDRESS", "smtp.mandrillapp.com"),
+    port:                 ENV.fetch("SMTP_PORT", 587).to_i,
+    domain:               ENV["HOST"],
+    user_name:            ENV["SMTP_USERNAME"] || ENV["MANDRILL_USERNAME"],
+    password:             ENV["SMTP_PASSWORD"] || ENV["MANDRILL_PASSWORD"],
+    authentication:       :login,
+    enable_starttls_auto: true
   }
-  config.action_mailer.default_url_options = { :host => ENV['HOST'] }
 
-  config.react.variant = :production
-  config.react.addons = true # defaults to false
+  # Enable locale fallbacks for I18n.
+  config.i18n.fallbacks = true
+
+  # Do not dump schema after migrations.
+  config.active_record.dump_schema_after_migration = false
+
+  # Only use :id for inspections in production.
+  config.active_record.attributes_for_inspect = [ :id ]
 end

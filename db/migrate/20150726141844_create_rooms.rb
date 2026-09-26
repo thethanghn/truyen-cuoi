@@ -1,4 +1,4 @@
-class CreateRooms < ActiveRecord::Migration
+class CreateRooms < ActiveRecord::Migration[4.2]
   def change
     create_table :rooms, force: true do |t|
       t.string :title

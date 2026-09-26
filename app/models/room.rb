@@ -16,14 +16,14 @@
 
 # status: init, open, closed
 
-class Room < ActiveRecord::Base
+class Room < ApplicationRecord
   has_many :room_users, dependent: :destroy
-  belongs_to :winner, class_name: 'User'
+  belongs_to :winner, class_name: "User", optional: true
 
-  scope :outdated, -> { where{created_at < DateTime.now - 30.minutes } }
+  scope :outdated, -> { where(created_at: ...30.minutes.ago) }
 
   def self.cleanup_rooms
-    self.where{((status == 'init') | (status == 'open')) & (created_at < DateTime.now - 30.minutes)}.all.destroy_all
+    outdated.where(status: %w[init open]).destroy_all
   end
 
   def decide(params)

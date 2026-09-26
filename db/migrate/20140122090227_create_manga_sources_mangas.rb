@@ -1,4 +1,4 @@
-class CreateMangaSourcesMangas < ActiveRecord::Migration
+class CreateMangaSourcesMangas < ActiveRecord::Migration[4.2]
   def change
     create_table :manga_sources_mangas do |t|
       t.integer :manga_source_id

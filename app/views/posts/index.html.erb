@@ -11,75 +11,32 @@
     <div class="clearfix"></div>
   </div>
 
-  <%= will_paginate $posts %>
+  <%= will_paginate @posts, renderer: BootstrapPaginationRenderer %>
 </div>
 
 <script type="text/javascript">
 $(function(){
-  <% if params[:read].nil? %>
-    $('.post').dblclick(function(){
-      handlePostSelect($(this));
-    });
-    $('.post').doubleTap(function(){
-      handlePostSelect($(this));
-    });
-  <% end %>
-
-  $('.wysihtml5').each(function(i, elem) {
-    $(elem).wysihtml5();
-  });
-  
-  $container = $('#masonry-container');
+  var $container = $('#masonry-container');
   $container.masonry({
     itemSelector: '.post',
     gutter: 5
   });
-  
-  
-  $container.infinitescroll({
-    debug: true,
-    navSelector  : 'ul.pagination',    // selector for the paged navigation 
-    nextSelector : 'ul.pagination a[rel="next"]',  // selector for the NEXT link (to page 2)
-    itemSelector : '#masonry-container .post',     // selector for all items you'll retrieve
-    loading: {
-        finishedMsg: 'No more pages to load.',
-        img: 'http://i.imgur.com/6RMhx.gif'
-      }
-    },
-    // trigger Masonry as a callback
-    function( newElements ) {
-      // hide new items while they are loading
-      var $newElems = $( newElements ).css({ opacity: 0 });
-      // ensure that images load before adding to masonry layout
-      $newElems.imagesLoaded(function(){
-        // show elems now they're ready
-        $newElems.animate({ opacity: 1 });
-        $container.masonry( 'appended', $newElems, true ); 
-      });
-    }
-  );
+
+  <% if params[:read].nil? %>
+    // Delegated so posts added by infinite loading get the handlers too.
+    $container.on('dblclick', '.post', function(){
+      handlePostSelect($(this));
+    });
+    var lastTap = { el: null, at: 0 };
+    $container.on('touchend', '.post', function(){
+      var now = Date.now();
+      if (lastTap.el === this && now - lastTap.at < 250) handlePostSelect($(this));
+      lastTap = { el: this, at: now };
+    });
+  <% end %>
+
+  TruyenCuoi.infinitePosts('#masonry-container');
 });
-
-(function($) {
-     $.fn.doubleTap = function(doubleTapCallback) {
-         return this.each(function(){
-			var elm = this;
-			var lastTap = 0;
-			$(elm).bind('vmousedown', function (e) {
-                                var now = (new Date()).valueOf();
-				var diff = (now - lastTap);
-                                lastTap = now ;
-                                if (diff < 250) {
-		                    if($.isFunction( doubleTapCallback ))
-		                    {
-		                       doubleTapCallback.call(elm);
-		                    }
-                                }      
-			});
-         });
-    }
-})(jQuery);
-
 
 function handlePostSelect(post) {
   $.get('<%= read_posts_url %>',{id: post.attr('id') }, function(response){

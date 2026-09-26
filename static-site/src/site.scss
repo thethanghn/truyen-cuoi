@@ -1,0 +1,86 @@
+// Source for assets/site.css. Rebuild with:
+//   npx sass --load-path=node_modules --no-source-map --quiet-deps static-site/src/site.scss static-site/assets/site.css
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
+
+$myfont: "Arial Black", Gadget, sans-serif;
+$blue: rgb(76, 102, 164);
+
+body { padding-bottom: 20px; }
+
+.navbar .brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 50px;
+}
+.topimg img {
+  width: 28px;
+  height: 28px;
+  border-radius: 3px;
+}
+#logo {
+  font-family: $myfont;
+  color: #333;
+  font-size: 1.1em;
+  &:hover { text-decoration: none; }
+}
+.topnote {
+  font-family: $myfont;
+  color: #999;
+  font-size: 0.9em;
+  cursor: help;
+}
+.navbar .nav-pills { margin-top: 8px; }
+
+.main { min-height: 600px; }
+
+#masonry-container {
+  background: #fff;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  .post {
+    width: 200px;
+    transition: opacity 0.4s;
+    @media screen and (orientation: landscape) { width: 19%; }
+    @media screen and (orientation: landscape) and (max-device-width: 720px) { width: 24%; }
+    @media screen and (orientation: portrait) { width: 49%; }
+    &.is-leaving { opacity: 0; }
+    .poem { color: $blue; }
+    .post-inner {
+      padding: 0 5px;
+      border-right: 1px dotted #000;
+    }
+    .divider {
+      margin: 0 auto;
+      font-weight: bold;
+      line-height: 2em;
+      text-align: center;
+      border-right: 1px dotted #000;
+    }
+    .note-id {
+      text-align: right;
+      font-family: $myfont;
+      font-size: 0.8em;
+      margin-top: -5px;
+    }
+  }
+}
+
+.infinite-status {
+  padding: 20px 0 40px;
+  clear: both;
+}
+
+.random-story {
+  max-width: 640px;
+  margin: 20px auto;
+  font-size: 1.15em;
+  .poem { color: $blue; }
+  .note-id { text-align: right; color: #999; font-family: $myfont; }
+}
+
+footer {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  color: #999;
+}

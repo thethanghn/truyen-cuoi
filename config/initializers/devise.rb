@@ -226,8 +226,15 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
-  config.secret_key = 'e5f54632c207252dfc3248ee0b9f8308aff7bf19823f4a2c4f68c961c
-2c8a0e261e6a37885043b5de21ca9ff8da48c36c0afc4755c528d7ac957cfebdf2f7f46'
+  # Devise defaults to Rails.application.secret_key_base. To keep outstanding
+  # confirmation / password-reset tokens valid, set DEVISE_SECRET_KEY to the
+  # value that used to be hard-coded here.
+  config.secret_key = ENV["DEVISE_SECRET_KEY"] if ENV["DEVISE_SECRET_KEY"].present?
+
+  # Status codes Rails 7+/Rack 3 expect for failed form submissions and redirects.
+  config.responder.error_status = :unprocessable_content
+  config.responder.redirect_status = :see_other
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

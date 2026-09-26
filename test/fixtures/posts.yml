@@ -1,24 +1,13 @@
-# == Schema Information
-#
-# Table name: posts
-#
-#  id         :integer          not null, primary key
-#  title      :string(255)
-#  body       :text
-#  published  :boolean
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  post_type  :string(255)      default("story")
-#
-
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
 one:
-  title: MyString
-  body: MyText
-  published: false
+  title: First joke
+  body: <p>Once upon a time...</p>
+  published: true
+  post_type: story
+  created_at: <%= 2.days.ago %>
 
 two:
-  title: MyString
-  body: MyText
+  title: A poem
+  body: <p>Roses are red</p>
   published: false
+  post_type: poem
+  created_at: <%= 1.day.ago %>
