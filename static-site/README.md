@@ -38,6 +38,22 @@ Netlify environment variables (Site configuration → Environment variables):
 | `XAI_IMAGE_QUALITY` | `low`, `medium` or `auto` (default) |
 | `XAI_IMAGE_MODEL` / `XAI_TEXT_MODEL` | defaults `grok-imagine-image-2.0` / `grok-4.7` |
 
+## Search engines
+
+Handled by edge functions (`netlify/edge-functions/`), so every address uses the site's
+primary domain (Netlify's primary domain, or `SITE_URL` if set in the environment variables):
+
+- `/sitemap.xml` – the home page and every `/story/<id>`, read from `stories.txt`.
+- `/robots.txt` – everything open except `/random`, the Read list and the AI images
+  (`/cartoons/`, `/og/`), so crawlers don't trigger drawings; link-preview bots
+  (Facebook, X, Telegram, Zalo…) may still fetch the story cards.
+- Story pages have the story text in the HTML, a canonical link, `CreativeWork`
+  structured data and links to the previous/next story. `/random` and `?read=1` are
+  `noindex`; unknown story numbers answer 404.
+
+After deploying, add the site to Google Search Console and Bing Webmaster Tools and submit
+`https://<your domain>/sitemap.xml`.
+
 ## Local preview
 
     cd static-site && npm install && npx netlify-cli dev     # site + cartoon function

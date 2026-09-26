@@ -41,6 +41,7 @@
       <button type="button" class="btn btn-primary" id="another">Another one</button>
       <a class="btn btn-link" href="/">All stories</a>
     </p>
+    <p class="text-center story-nav" id="story-nav"></p>
   </div>
 
   <script src="/assets/stories.js"></script>
@@ -70,7 +71,8 @@
         current = story;
         box.innerHTML = "";
         box.appendChild(TruyenCuoi.renderStory(story));
-        document.title = "Truyện Cười #" + story.id;
+        document.title = shareInfo().title;
+        updateNeighbours();
         note.textContent = "";
         updateShareLinks();
         TruyenCuoi.track("story_view", { story_id: String(story.id), story_type: story.type, source: "story_page" });
@@ -88,6 +90,17 @@
           return;
         }
         render(id ? byId[id] : pickRandom(), "replace");
+      }
+
+      // "← #184 · #186 →" links under the story (also written by the edge function,
+      // so search engines can walk from one story to the next).
+      var nav = document.getElementById("story-nav");
+      function updateNeighbours() {
+        var at = stories.indexOf(current);
+        var prev = stories[(at - 1 + stories.length) % stories.length];
+        var next = stories[(at + 1) % stories.length];
+        nav.innerHTML = '<a href="/story/' + prev.id + '" rel="prev">← #' + prev.id + '</a> · ' +
+          '<a href="/story/' + next.id + '" rel="next">#' + next.id + ' →</a>';
       }
 
       // Share links for the current story. Link previews (title, text, cartoon) come
