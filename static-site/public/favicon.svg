@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#DA251D"/>
+  <!-- speech bubble -->
+  <path d="M32 9c-13.3 0-24 8.9-24 20 0 6.4 3.6 12.1 9.2 15.8L15 55l11.2-6.3c1.9.4 3.8.6 5.8.6 13.3 0 24-8.9 24-20S45.3 9 32 9z" fill="#fff7e6"/>
+  <!-- laughing eyes -->
+  <path d="M20 26.5c1.6-3.2 5.4-3.2 7 0" fill="none" stroke="#2b2b2b" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M37 26.5c1.6-3.2 5.4-3.2 7 0" fill="none" stroke="#2b2b2b" stroke-width="3.2" stroke-linecap="round"/>
+  <!-- big open laugh -->
+  <path d="M19.5 32.5h25c0 7.4-5.6 12.5-12.5 12.5s-12.5-5.1-12.5-12.5z" fill="#2b2b2b"/>
+  <path d="M25 40.6c1.9-1.7 4.3-2.6 7-2.6s5.1.9 7 2.6c-1.9 1.9-4.3 3-7 3s-5.1-1.1-7-3z" fill="#e8715a"/>
+</svg>
