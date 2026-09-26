@@ -27,31 +27,65 @@
     }).then(parseStories);
   }
 
-  // While a cartoon is being drawn the server answers 503; keep trying with growing
-  // pauses (about 2 minutes in total), then give up quietly.
+  // Cartoons come from /cartoons/<id> (netlify/functions/cartoon.mjs):
+  //   200 -> the picture;  503 -> still being drawn, ask again soon;
+  //   404 -> this story has no picture (the AI refused, or today's budget is used up).
+  // We ask with fetch() so we can read that status: the card shows a soft placeholder
+  // while drawing and never a broken-image icon. Nothing is requested until the card
+  // is near the screen, so scrolling past doesn't trigger drawings.
   var RETRY_DELAYS = [4000, 6000, 8000, 10000, 15000, 20000, 30000, 30000];
+  var cartoonObserver = "IntersectionObserver" in window
+    ? new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          cartoonObserver.unobserve(entry.target);
+          entry.target._startCartoon();
+        });
+      }, { rootMargin: "600px 0px" })
+    : null;
 
   function cartoonFor(story) {
     var src = "cartoons/" + story.id;
-    var img = document.createElement("img");
-    img.className = "cartoon";
-    img.src = src;
-    img.alt = "";
-    img.width = 640;  // reserves the square space before it loads,
-    img.height = 640; // so the grid doesn't jump when the picture arrives
-    img.loading = "lazy";
-    img.decoding = "async";
+    var slot = document.createElement("div");
+    slot.className = "cartoon-slot is-loading";
+    slot.setAttribute("aria-hidden", "true");
 
-    var attempt = 0;
-    img.addEventListener("error", function () {
-      if (attempt >= RETRY_DELAYS.length) {
-        img.remove();
-        window.dispatchEvent(new CustomEvent("cartoon:removed"));
-        return;
-      }
-      setTimeout(function () { img.src = src + "?try=" + (attempt + 1); }, RETRY_DELAYS[attempt++]);
-    });
-    return img;
+    function give_up() {
+      slot.remove();
+      window.dispatchEvent(new CustomEvent("cartoon:changed"));
+    }
+
+    function attempt(n) {
+      fetch(src, { cache: "default" }).then(function (response) {
+        if (response.status === 503 && n < RETRY_DELAYS.length) {
+          setTimeout(function () { attempt(n + 1); }, RETRY_DELAYS[n]);
+          return;
+        }
+        if (!response.ok) { give_up(); return; }
+        return response.blob().then(function (blob) {
+          var img = document.createElement("img");
+          img.className = "cartoon";
+          img.alt = "";
+          img.width = 640;
+          img.height = 640;
+          img.onload = function () {
+            slot.classList.remove("is-loading");
+            window.dispatchEvent(new CustomEvent("cartoon:changed"));
+          };
+          img.onerror = give_up;
+          img.src = URL.createObjectURL(blob);
+          slot.appendChild(img);
+        });
+      }).catch(function () {
+        if (n < RETRY_DELAYS.length) setTimeout(function () { attempt(n + 1); }, RETRY_DELAYS[n]);
+        else give_up();
+      });
+    }
+
+    slot._startCartoon = function () { attempt(0); };
+    if (cartoonObserver) cartoonObserver.observe(slot);
+    else attempt(0);
+    return slot;
   }
 
   function renderStory(story, options) {

@@ -21,7 +21,11 @@ Every story gets an AI cartoon above its text, served from `/cartoons/<story id>
   means only one drawing happens at a time, however many people open the story together.
 - Each picture lives a random 3–7 days. After that the old one keeps showing while a new one
   is drawn in the background, so redraws are spread out instead of all at once.
-- `CARTOON_DAILY_LIMIT` caps drawings per day; failed drawings back off for 6 hours.
+- `CARTOON_DAILY_LIMIT` caps drawings per day. Failed drawings back off for 6 hours; if the AI
+  refuses a story (content policy) it isn't asked again for 30 days, and that card simply has
+  no picture. The page never shows a broken image: a soft placeholder while drawing, then the
+  picture, or nothing.
+- Pictures live in a site-wide Netlify Blobs store, so they survive redeploys.
 - `public/cartoons-static/` holds cartoons made earlier; they seed the store for free.
 
 Netlify environment variables (Site configuration → Environment variables):

@@ -77,8 +77,12 @@
   });
   var queue = [];
   var observer = null;
-  // A card whose cartoon couldn't be drawn shrinks; close the gap.
-  window.addEventListener("cartoon:removed", function () { masonry.layout(); });
+  // A cartoon appeared or was dropped (no picture for that story): re-pack the grid.
+  var relayoutTimer = null;
+  window.addEventListener("cartoon:changed", function () {
+    clearTimeout(relayoutTimer);
+    relayoutTimer = setTimeout(function () { masonry.layout(); }, 50);
+  });
   var firstBatch = true;
 
   function renderNextBatch() {

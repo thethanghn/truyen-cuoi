@@ -104,13 +104,37 @@ body { padding-bottom: 20px; }
   }
 }
 
+// Square space for a story's cartoon; a soft pulse while it is being drawn.
+.cartoon-slot {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  margin: 4px 0 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f3f1ec;
+
+  &.is-loading {
+    animation: cartoon-pulse 1.6s ease-in-out infinite;
+  }
+  &.is-loading::after {
+    content: "\270E"; // pencil
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #c9c2b3;
+  }
+}
 .cartoon {
   display: block;
   width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin: 4px 0 8px;
-  background: #f3f1ec;
+  height: 100%;
+  object-fit: cover;
+}
+@keyframes cartoon-pulse {
+  50% { background: #ebe6db; }
 }
 
 .infinite-status {

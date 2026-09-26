@@ -33,7 +33,8 @@ const DAY = 24 * 60 * 60 * 1000;
 const MIN_LIFE = Number(process.env.CARTOON_MIN_DAYS || 3) * DAY;
 const MAX_LIFE = Number(process.env.CARTOON_MAX_DAYS || 7) * DAY;
 const LOCK_MS = 2 * 60 * 1000;
-const FAILURE_BACKOFF = 6 * 60 * 60 * 1000;
+const FAILURE_BACKOFF = 6 * 60 * 60 * 1000;      // network errors, rate limits...
+const REFUSAL_BACKOFF = 30 * DAY;                // the AI declined to draw this story
 const SIZE = 640;
 
 const store = () => getStore("cartoons");
@@ -66,9 +67,17 @@ async function xai(path, body) {
     body: JSON.stringify(body),
   });
   const json = await response.json().catch(() => ({}));
-  if (!response.ok) throw new Error(json.error?.message || json.error || `xAI HTTP ${response.status}`);
+  if (!response.ok) {
+    const error = new Error(json.error?.message || json.error || `xAI HTTP ${response.status}`);
+    error.status = response.status;
+    throw error;
+  }
   return json;
 }
+
+// A refusal (content policy) won't change on retry, unlike timeouts or rate limits.
+const isRefusal = (error) =>
+  [400, 403, 422].includes(error.status) || /polic|moderat|safety|refus|inappropriate|not allowed/i.test(error.message);
 
 async function sceneFor(story) {
   if (overrides.stories?.[story.id]) return overrides.stories[story.id];
@@ -136,17 +145,20 @@ async function takeLock(id) {
 }
 const releaseLock = (id) => getStore("cartoon-locks").delete(id);
 
+const budgetKey = () => `budget-${new Date().toISOString().slice(0, 10)}`;
+const budgetUsed = async () => Number((await store().get(budgetKey(), { consistency: "strong" })) || 0);
+
 async function takeBudget() {
-  const key = `budget-${new Date().toISOString().slice(0, 10)}`;
-  const used = Number((await store().get(key, { consistency: "strong" })) || 0);
+  const used = await budgetUsed();
   if (used >= DAILY_LIMIT) return false;
-  await store().set(key, String(used + 1));
+  await store().set(budgetKey(), String(used + 1));
   return true;
 }
 
-async function recentlyFailed(id) {
+// Returns the active failure record ({ refused }) or null.
+async function recentFailure(id) {
   const failure = await store().getWithMetadata(`failed-${id}`, { consistency: "strong" });
-  return Boolean(failure && Date.now() < failure.metadata.until);
+  return failure && Date.now() < failure.metadata.until ? failure.metadata : null;
 }
 
 // Draw (or redraw) one story's cartoon. Safe to call from many visitors at once.
@@ -154,7 +166,7 @@ async function refresh(id, story) {
   if (!process.env.XAI_API_KEY) return;
   if (!(await takeLock(id))) return;
   try {
-    if (await recentlyFailed(id)) return;
+    if (await recentFailure(id)) return;
     if (!(await takeBudget())) {
       console.log(`cartoon ${id}: daily limit reached, skipping`);
       return;
@@ -164,8 +176,11 @@ async function refresh(id, story) {
     await store().delete(`failed-${id}`);
     console.log(`cartoon ${id}: drawn`);
   } catch (error) {
-    console.error(`cartoon ${id} failed:`, error.message);
-    await store().set(`failed-${id}`, error.message.slice(0, 500), { metadata: { until: Date.now() + FAILURE_BACKOFF } });
+    const refused = isRefusal(error);
+    console.error(`cartoon ${id} ${refused ? "refused" : "failed"}:`, error.message);
+    await store().set(`failed-${id}`, error.message.slice(0, 500), {
+      metadata: { refused, until: Date.now() + (refused ? REFUSAL_BACKOFF : FAILURE_BACKOFF) },
+    });
   } finally {
     await releaseLock(id);
   }
@@ -199,6 +214,14 @@ function imageResponse(bytes, type, seconds) {
   });
 }
 
+const noCartoon = (seconds) =>
+  new Response("No cartoon for this story", {
+    status: 404,
+    headers: seconds
+      ? { "Cache-Control": `public, max-age=${seconds}`, "Netlify-CDN-Cache-Control": `public, max-age=${seconds}, durable` }
+      : { "Cache-Control": "no-store" },
+  });
+
 const notYet = (seconds = 8) =>
   new Response("Drawing this cartoon, try again shortly.", {
     status: 503,
@@ -225,9 +248,10 @@ export default async (req, context) => {
   const seeded = await seedFromStatic(id, origin);
   if (seeded) return imageResponse(seeded, "image/webp", MIN_LIFE / 1000);
 
-  if (!process.env.XAI_API_KEY || (await recentlyFailed(id))) {
-    return new Response("No cartoon for this story", { status: 404, headers: { "Cache-Control": "no-store" } });
-  }
+  // No picture and none coming: tell the page right away so it shows the story without one.
+  const failure = await recentFailure(id);
+  if (failure?.refused) return noCartoon(24 * 60 * 60);   // same answer for a day
+  if (failure || !process.env.XAI_API_KEY || (await budgetUsed()) >= DAILY_LIMIT) return noCartoon(0);
 
   // First time: draw in the background and ask the browser to come back.
   context.waitUntil(refresh(id, story));
