@@ -228,13 +228,44 @@ const notYet = (seconds = 8) =>
     headers: { "Retry-After": String(seconds), "Cache-Control": "no-store" },
   });
 
+// /og/<id>.jpg – the 1200×630 link-preview card for a story (Facebook, Zalo, X...):
+// the site's branded template with the story's cartoon on the right. Falls back to
+// the general site image while the cartoon doesn't exist (and starts drawing it).
+async function socialCard(req, context, id, story, origin) {
+  const fallback = () => Response.redirect(new URL("/og-image.png", origin), 302);
+  const cached = await store().getWithMetadata(`image-${id}`, { type: "arrayBuffer", consistency: "strong" });
+  if (!cached) {
+    if (process.env.XAI_API_KEY && !(await recentFailure(id))) context.waitUntil(refresh(id, story));
+    return fallback();
+  }
+  try {
+    const template = Buffer.from(await (await fetch(new URL("/assets/og-template.png", origin))).arrayBuffer());
+    const radius = 14;
+    const mask = Buffer.from(`<svg width="600" height="600"><rect width="600" height="600" rx="${radius}" ry="${radius}"/></svg>`);
+    const cartoon = await sharp(Buffer.from(cached.data))
+      .resize(600, 600, { fit: "cover" })
+      .composite([{ input: mask, blend: "dest-in" }])
+      .png()
+      .toBuffer();
+    const card = await sharp(template).composite([{ input: cartoon, left: 585, top: 15 }]).jpeg({ quality: 85 }).toBuffer();
+    const left = Math.max(60 * 60, (cached.metadata.expiresAt - Date.now()) / 1000);
+    return imageResponse(card, "image/jpeg", left);
+  } catch (error) {
+    console.error(`og ${id} failed:`, error.message);
+    return fallback();
+  }
+}
+
 export default async (req, context) => {
-  const id = context.params.id;
+  const url = new URL(req.url);
+  const isCard = url.pathname.startsWith("/og/");
+  const id = String(context.params.id || "").replace(/\.jpe?g$/, "");
   if (!/^\d+$/.test(id)) return new Response("Not found", { status: 404 });
 
-  const origin = new URL(req.url).origin;
+  const origin = url.origin;
   const story = (await loadStories(origin)).get(id);
   if (!story) return new Response("Not found", { status: 404 });
+  if (isCard) return socialCard(req, context, id, story, origin);
 
   const cached = await store().getWithMetadata(`image-${id}`, { type: "arrayBuffer", consistency: "strong" });
   if (cached) {
@@ -259,5 +290,5 @@ export default async (req, context) => {
 };
 
 export const config = {
-  path: "/cartoons/:id",
+  path: ["/cartoons/:id", "/og/:id"],
 };

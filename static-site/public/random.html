@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Truyện Cười – ngẫu nhiên</title>
-  <link rel="icon" href="favicon.ico">
+  <title>Truyện Cười</title>
+  <link rel="icon" href="/favicon.ico">
   <meta name="description" content="Truyện cười và thơ vui, đọc ngẫu nhiên mỗi lần ghé thăm.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Truyện Cười">
@@ -17,37 +17,124 @@
   <meta property="og:locale" content="vi_VN">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://truyencuoi.netlify.app/og-image.png">
-  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
   <div class="container">
     <div class="random-story" id="random-story">Loading…</div>
-    <p class="text-center">
+    <div class="share-bar" id="share-bar" hidden>
+      <span class="share-label">Chia sẻ:</span>
+      <a class="share-btn share-facebook" data-network="facebook" target="_blank" rel="noopener">Facebook</a>
+      <a class="share-btn share-messenger" data-network="messenger" rel="noopener">Messenger</a>
+      <a class="share-btn share-x" data-network="x" target="_blank" rel="noopener">X</a>
+      <a class="share-btn share-telegram" data-network="telegram" target="_blank" rel="noopener">Telegram</a>
+      <button type="button" class="share-btn share-copy" id="copy-link">Sao chép link</button>
+      <button type="button" class="share-btn share-more" id="share-more" hidden>Khác…</button>
+    </div>
+    <p class="text-center text-muted share-note" id="share-note" aria-live="polite"></p>
+    <p class="text-center story-actions">
       <button type="button" class="btn btn-primary" id="another">Another one</button>
-      <a class="btn btn-link" href="./">All stories</a>
+      <a class="btn btn-link" href="/">All stories</a>
     </p>
   </div>
 
-  <script src="assets/stories.js"></script>
+  <script src="/assets/stories.js"></script>
   <script>
+    // One story at a time. The address is always /story/<id>, so it can be copied or
+    // shared and opens the same story for anyone; /random picks one at random.
     (function () {
       var box = document.getElementById("random-story");
+      var note = document.getElementById("share-note");
       var stories = [];
+      var byId = {};
       var current = null;
 
-      function show() {
-        if (!stories.length) { box.textContent = "No story available"; return; }
+      function idFromUrl() {
+        var match = /^\/story\/(\d+)/.exec(location.pathname);
+        return match ? Number(match[1]) : Number(new URLSearchParams(location.search).get("id")) || null;
+      }
+
+      function pickRandom() {
         var next;
         do { next = stories[Math.floor(Math.random() * stories.length)]; }
         while (stories.length > 1 && next === current);
-        current = next;
-        box.innerHTML = "";
-        box.appendChild(TruyenCuoi.renderStory(next));
+        return next;
       }
 
-      TruyenCuoi.loadStories().then(function (list) { stories = list; show(); })
-        .catch(function () { box.textContent = "Couldn't load stories."; });
-      document.getElementById("another").addEventListener("click", show);
+      function render(story, mode) {
+        current = story;
+        box.innerHTML = "";
+        box.appendChild(TruyenCuoi.renderStory(story));
+        document.title = "Truyện Cười #" + story.id;
+        note.textContent = "";
+        updateShareLinks();
+        var url = "/story/" + story.id;
+        if (mode === "push") history.pushState({ id: story.id }, "", url);
+        else if (location.pathname !== url) history.replaceState({ id: story.id }, "", url);
+        window.scrollTo(0, 0);
+      }
+
+      function showFromUrl() {
+        var id = idFromUrl();
+        if (id && !byId[id]) {
+          box.textContent = "Story #" + id + " doesn't exist. Here's another one:";
+          setTimeout(function () { render(pickRandom(), "replace"); }, 1500);
+          return;
+        }
+        render(id ? byId[id] : pickRandom(), "replace");
+      }
+
+      // Share links for the current story. Link previews (title, text, cartoon) come
+      // from netlify/edge-functions/story-meta.js, so every network shows this story.
+      var shareBar = document.getElementById("share-bar");
+      var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+      function shareInfo() {
+        return {
+          url: location.origin + "/story/" + current.id,
+          title: (current.type === "poem" ? "Thơ vui" : "Truyện cười") + " #" + current.id + " – Truyện Cười",
+        };
+      }
+
+      function updateShareLinks() {
+        var info = shareInfo();
+        var u = encodeURIComponent(info.url);
+        var t = encodeURIComponent(info.title);
+        var links = {
+          facebook: "https://www.facebook.com/sharer/sharer.php?u=" + u,
+          messenger: "fb-messenger://share/?link=" + u,
+          x: "https://twitter.com/intent/tweet?url=" + u + "&text=" + t,
+          telegram: "https://t.me/share/url?url=" + u + "&text=" + t,
+        };
+        shareBar.querySelectorAll("[data-network]").forEach(function (a) { a.href = links[a.dataset.network]; });
+        shareBar.querySelector(".share-messenger").hidden = !isMobile; // the app link only works on phones
+        document.getElementById("share-more").hidden = !navigator.share;
+        shareBar.hidden = false;
+      }
+
+      function copyLink() {
+        var url = shareInfo().url;
+        var done = function () { note.textContent = "Đã sao chép: " + url; };
+        if (navigator.clipboard) navigator.clipboard.writeText(url).then(done, function () { note.textContent = url; });
+        else note.textContent = url;
+      }
+
+      function shareMore() {
+        var info = shareInfo();
+        navigator.share({ title: info.title, url: info.url }).catch(function () {});
+      }
+
+      TruyenCuoi.loadStories().then(function (list) {
+        stories = list;
+        list.forEach(function (s) { byId[s.id] = s; });
+        if (!stories.length) { box.textContent = "No story available"; return; }
+        showFromUrl();
+      }).catch(function () { box.textContent = "Couldn't load stories."; });
+
+      document.getElementById("another").addEventListener("click", function () { render(pickRandom(), "push"); });
+      document.getElementById("copy-link").addEventListener("click", copyLink);
+      document.getElementById("share-more").addEventListener("click", shareMore);
+      window.addEventListener("popstate", function () { if (stories.length) showFromUrl(); });
     })();
   </script>
 </body>

@@ -21,7 +21,7 @@
   }
 
   function loadStories() {
-    return fetch("stories.txt", { cache: "no-cache" }).then(function (response) {
+    return fetch("/stories.txt", { cache: "no-cache" }).then(function (response) {
       if (!response.ok) throw new Error("HTTP " + response.status);
       return response.text();
     }).then(parseStories);
@@ -45,7 +45,7 @@
     : null;
 
   function cartoonFor(story) {
-    var src = "cartoons/" + story.id;
+    var src = "/cartoons/" + story.id;
     var slot = document.createElement("div");
     slot.className = "cartoon-slot is-loading";
     slot.setAttribute("aria-hidden", "true");
@@ -97,9 +97,14 @@
     body.className = "post-body";
     body.innerHTML = story.body; // bodies are the site's own HTML content
 
+    // The story number links to its own page, /story/<id>, for sharing.
     var number = document.createElement("div");
     number.className = "note-id";
-    number.textContent = story.id;
+    var link = document.createElement("a");
+    link.href = "/story/" + story.id;
+    link.title = "Link to this story";
+    link.textContent = story.id;
+    number.appendChild(link);
 
     // Every story has a cartoon at /cartoons/<id>, drawn on first view by a
     // Netlify Function (netlify/functions/cartoon.mjs) and shared by all visitors.

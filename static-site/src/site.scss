@@ -101,6 +101,7 @@ body { padding-bottom: 20px; }
       font-size: 0.8em;
       margin-top: -5px;
     }
+    .note-id a { color: inherit; }
   }
 }
 
@@ -148,6 +149,7 @@ body { padding-bottom: 20px; }
   font-size: 1.15em;
   .poem { color: $blue; }
   .note-id { text-align: right; color: #999; font-family: $myfont; }
+  .note-id a { color: inherit; }
 }
 
 footer {
@@ -155,3 +157,36 @@ footer {
   padding-top: 15px;
   color: #999;
 }
+
+.story-actions .btn { margin: 0 3px; }
+.share-note { font-size: 12px; min-height: 18px; word-break: break-all; }
+
+// Share buttons on /story/<id>
+.share-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin: 18px auto 6px;
+  max-width: 640px;
+  &[hidden] { display: none; }
+}
+.share-label { color: #777; font-size: 13px; margin-right: 2px; }
+.share-btn {
+  display: inline-block;
+  padding: 5px 12px;
+  border: 0;
+  border-radius: 16px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #fff;
+  cursor: pointer;
+  &:hover, &:focus { color: #fff; text-decoration: none; opacity: 0.88; }
+  &[hidden] { display: none; }
+}
+.share-facebook { background: #1877f2; }
+.share-messenger { background: #0a7cff; }
+.share-x { background: #111; }
+.share-telegram { background: #229ed9; }
+.share-copy, .share-more { background: #e9e6df; color: #333; &:hover, &:focus { color: #333; } }
