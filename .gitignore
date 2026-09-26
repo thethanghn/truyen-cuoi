@@ -23,3 +23,8 @@
 # Local database dumps and OS files
 *.dump
 .DS_Store
+
+# Static site (Netlify)
+/static-site/node_modules
+/static-site/.netlify
+/static-site/cartoon-originals

@@ -3,7 +3,7 @@
 # Usage: bin/export-stories [database]   (default: truyencuoi)
 set -euo pipefail
 DB="${1:-truyencuoi}"
-OUT="$(cd "$(dirname "$0")/.." && pwd)/static-site/stories.txt"
+OUT="$(cd "$(dirname "$0")/.." && pwd)/static-site/public/stories.txt"
 
 {
   echo '# Truyen Cuoi stories, exported from the Rails database.'

@@ -1,6 +1,5 @@
-# Netlify: deploy only the static site (the Rails app in the repo root is not used).
+# Used when Netlify's base directory is static-site (see the repo-root netlify.toml).
 [build]
-  base = "static-site"
   publish = "public"
   functions = "netlify/functions"
   command = ""

@@ -77,6 +77,8 @@
   });
   var queue = [];
   var observer = null;
+  // A card whose cartoon couldn't be drawn shrinks; close the gap.
+  window.addEventListener("cartoon:removed", function () { masonry.layout(); });
   var firstBatch = true;
 
   function renderNextBatch() {
