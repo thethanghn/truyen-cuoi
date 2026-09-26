@@ -115,5 +115,9 @@
     return inner;
   }
 
-  window.TruyenCuoi = { parseStories: parseStories, loadStories: loadStories, renderStory: renderStory };
+  var ns = (window.TruyenCuoi = window.TruyenCuoi || {});
+  ns.parseStories = parseStories;
+  ns.loadStories = loadStories;
+  ns.renderStory = renderStory;
+  ns.track = ns.track || function () {};
 })();

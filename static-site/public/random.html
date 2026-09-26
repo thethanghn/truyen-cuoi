@@ -18,6 +18,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://truyencuoi.netlify.app/og-image.png">
   <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/analytics.js"></script>
 </head>
 <body>
   <div class="container">
@@ -68,6 +69,7 @@
         document.title = "Truyện Cười #" + story.id;
         note.textContent = "";
         updateShareLinks();
+        TruyenCuoi.track("story_view", { story_id: String(story.id), story_type: story.type, source: "story_page" });
         var url = "/story/" + story.id;
         if (mode === "push") history.pushState({ id: story.id }, "", url);
         else if (location.pathname !== url) history.replaceState({ id: story.id }, "", url);
@@ -112,7 +114,15 @@
         shareBar.hidden = false;
       }
 
+      function trackShare(method) {
+        TruyenCuoi.track("share", { method: method, content_type: "story", item_id: String(current.id) });
+      }
+      shareBar.querySelectorAll("[data-network]").forEach(function (a) {
+        a.addEventListener("click", function () { trackShare(a.dataset.network); });
+      });
+
       function copyLink() {
+        trackShare("copy_link");
         var url = shareInfo().url;
         var done = function () { note.textContent = "Đã sao chép: " + url; };
         if (navigator.clipboard) navigator.clipboard.writeText(url).then(done, function () { note.textContent = url; });
@@ -120,6 +130,7 @@
       }
 
       function shareMore() {
+        trackShare("native");
         var info = shareInfo();
         navigator.share({ title: info.title, url: info.url }).catch(function () {});
       }

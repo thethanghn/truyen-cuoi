@@ -1,7 +1,12 @@
-// Gives every /story/<id> page its own link preview (Facebook, Zalo, Messenger,
-// X, Telegram...). Crawlers don't run JavaScript, so the title, description and
-// preview image have to be in the HTML itself: this takes the shared story page
-// (random.html) and fills in that story's details before it is sent.
+// Runs on the site's HTML pages before they are sent:
+//   - every /story/<id> page gets its own link preview (Facebook, Zalo, Messenger,
+//     X, Telegram...). Crawlers don't run JavaScript, so the title, description and
+//     preview image must be in the HTML itself;
+//   - absolute links in the preview tags follow whatever domain the site is served
+//     on (custom domain or *.netlify.app);
+//   - the Google Analytics ID from the GA_MEASUREMENT_ID environment variable is
+//     added for public/assets/analytics.js.
+const DEFAULT_ORIGIN = "https://truyencuoi.netlify.app";
 let storiesPromise = null;
 
 function loadStories(origin) {
@@ -52,41 +57,53 @@ function setMeta(html, attr, key, value) {
 
 export default async (request, context) => {
   const response = await context.next();
+  if (!(response.headers.get("content-type") || "").includes("text/html")) return response;
+
   const url = new URL(request.url);
-  const id = /^\/story\/(\d+)\/?$/.exec(url.pathname)?.[1];
-  if (!id || !(response.headers.get("content-type") || "").includes("text/html")) return response;
-
-  let story;
-  try {
-    story = (await loadStories(url.origin)).get(id);
-  } catch {
-    return response;
-  }
-  if (!story) return response;
-
-  const pageUrl = `${url.origin}/story/${id}`;
-  const title = `${story.type === "poem" ? "Thơ vui" : "Truyện cười"} #${id} – Truyện Cười`;
-  const description = excerpt(plainText(story.lines));
-  const image = `${url.origin}/og/${id}.jpg`;
-
   let html = await response.text();
-  html = html.replace(/<title>[^<]*<\/title>/, `<title>${escapeAttr(title)}</title>`);
-  html = setMeta(html, "name", "description", description);
-  html = setMeta(html, "property", "og:type", "article");
-  html = setMeta(html, "property", "og:title", title);
-  html = setMeta(html, "property", "og:description", description);
-  html = setMeta(html, "property", "og:url", pageUrl);
-  html = setMeta(html, "property", "og:image", image);
-  html = setMeta(html, "property", "og:image:width", "1200");
-  html = setMeta(html, "property", "og:image:height", "630");
-  html = setMeta(html, "name", "twitter:title", title);
-  html = setMeta(html, "name", "twitter:description", description);
-  html = setMeta(html, "name", "twitter:image", image);
-  html = html.replace("</head>", `  <link rel="canonical" href="${escapeAttr(pageUrl)}">\n</head>`);
+
+  // Preview tags use absolute URLs; point them at the domain being visited.
+  if (url.origin !== DEFAULT_ORIGIN) html = html.split(DEFAULT_ORIGIN).join(url.origin);
+
+  const gaId = globalThis.Netlify?.env.get("GA_MEASUREMENT_ID");
+  if (gaId && /^G-[A-Z0-9]+$/i.test(gaId)) {
+    html = html.replace("<head>", `<head>\n  <meta name="ga-measurement-id" content="${escapeAttr(gaId)}">`);
+  }
+
+  const id = /^\/story\/(\d+)\/?$/.exec(url.pathname)?.[1];
+  let story = null;
+  if (id) {
+    try {
+      story = (await loadStories(url.origin)).get(id);
+    } catch {
+      story = null;
+    }
+  }
+
+  if (story) {
+    const pageUrl = `${url.origin}/story/${id}`;
+    const title = `${story.type === "poem" ? "Thơ vui" : "Truyện cười"} #${id} – Truyện Cười`;
+    const description = excerpt(plainText(story.lines));
+    const image = `${url.origin}/og/${id}.jpg`;
+
+    html = html.replace(/<title>[^<]*<\/title>/, `<title>${escapeAttr(title)}</title>`);
+    html = setMeta(html, "name", "description", description);
+    html = setMeta(html, "property", "og:type", "article");
+    html = setMeta(html, "property", "og:title", title);
+    html = setMeta(html, "property", "og:description", description);
+    html = setMeta(html, "property", "og:url", pageUrl);
+    html = setMeta(html, "property", "og:image", image);
+    html = setMeta(html, "property", "og:image:width", "1200");
+    html = setMeta(html, "property", "og:image:height", "630");
+    html = setMeta(html, "name", "twitter:title", title);
+    html = setMeta(html, "name", "twitter:description", description);
+    html = setMeta(html, "name", "twitter:image", image);
+    html = html.replace("</head>", `  <link rel="canonical" href="${escapeAttr(pageUrl)}">\n</head>`);
+  }
 
   const headers = new Headers(response.headers);
   headers.delete("content-length");
   return new Response(html, { status: response.status, headers });
 };
 
-export const config = { path: "/story/*" };
+export const config = { path: ["/", "/index.html", "/random", "/random.html", "/story/*"] };

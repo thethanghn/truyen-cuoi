@@ -50,10 +50,33 @@
 
   function setStatus(text) { status.textContent = text; }
 
+  // Analytics: a story counts as viewed when at least half of its card has been
+  // on screen for a second (once per page load).
+  var viewed = {};
+  var viewTimers = {};
+  var viewObserver = "IntersectionObserver" in window ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      var post = entry.target;
+      var id = post.dataset.id;
+      if (entry.isIntersecting) {
+        viewTimers[id] = setTimeout(function () {
+          if (viewed[id]) return;
+          viewed[id] = true;
+          viewObserver.unobserve(post);
+          TruyenCuoi.track("story_view", { story_id: id, story_type: post.dataset.type, source: "wall" });
+        }, 1000);
+      } else {
+        clearTimeout(viewTimers[id]);
+      }
+    });
+  }, { threshold: 0.5 }) : null;
+
   function buildPost(story) {
     var post = document.createElement("div");
     post.className = "post";
     post.dataset.id = story.id;
+    post.dataset.type = story.type;
+    if (viewObserver) viewObserver.observe(post);
 
     var card = document.createElement("div");
     card.className = "post-card";
@@ -133,6 +156,7 @@
     if (post.classList.contains("is-leaving")) return;
     var id = Number(post.dataset.id);
     if (showRead) readIds.delete(id); else readIds.add(id);
+    TruyenCuoi.track(showRead ? "story_unhide" : "story_read", { story_id: String(id), story_type: post.dataset.type });
     saveReadIds();
 
     post.classList.add("is-leaving");
