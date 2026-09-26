@@ -7,11 +7,21 @@ $blue: rgb(76, 102, 164);
 
 body { padding-bottom: 20px; }
 
-.navbar .brand-wrap {
+.navbar {
+  min-height: 0;
+  margin-bottom: 10px;
+  > .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 46px;
+    &::before, &::after { display: none; } // bootstrap clearfix breaks flex spacing
+  }
+}
+.brand-wrap {
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-height: 50px;
+  gap: 10px;
 }
 .topimg img {
   width: 28px;
@@ -21,16 +31,38 @@ body { padding-bottom: 20px; }
 #logo {
   font-family: $myfont;
   color: #333;
-  font-size: 1.1em;
+  font-size: 1.05em;
   &:hover { text-decoration: none; }
 }
-.topnote {
-  font-family: $myfont;
-  color: #999;
-  font-size: 0.9em;
-  cursor: help;
+
+// Small text links pinned to the right of the header.
+.view-links {
+  display: flex;
+  gap: 14px;
+  font-size: 13px;
+  a {
+    color: #777;
+    padding: 2px 0;
+    border-bottom: 2px solid transparent;
+    &:hover { color: #333; text-decoration: none; }
+    &.active { color: #333; border-bottom-color: $blue; }
+  }
+  .read-count:not(:empty) {
+    display: inline-block;
+    min-width: 18px;
+    padding: 0 5px;
+    border-radius: 9px;
+    background: #eee;
+    font-size: 11px;
+    text-align: center;
+  }
 }
-.navbar .nav-pills { margin-top: 8px; }
+
+.hint {
+  font-size: 12px;
+  margin: 0 0 8px;
+  &:empty { display: none; }
+}
 
 .main { min-height: 600px; }
 
@@ -40,11 +72,17 @@ body { padding-bottom: 20px; }
   border-radius: 5px;
   .post {
     width: 200px;
-    transition: opacity 0.4s;
     @media screen and (orientation: landscape) { width: 19%; }
     @media screen and (orientation: landscape) and (max-device-width: 720px) { width: 24%; }
     @media screen and (orientation: portrait) { width: 49%; }
-    &.is-leaving { opacity: 0; }
+    .post-card {
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      transform-origin: center top;
+    }
+    &.is-leaving .post-card {
+      opacity: 0;
+      transform: scale(0.96);
+    }
     .poem { color: $blue; }
     .post-inner {
       padding: 0 5px;

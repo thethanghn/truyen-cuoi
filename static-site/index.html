@@ -13,17 +13,17 @@
       <div class="brand-wrap pull-left">
         <a class="topimg" href="./"><img src="assets/images/topimg.jpg" alt=""></a>
         <a id="logo" href="./">Nguyen The Thang</a>
-        <span class="topnote hidden-xs" title="Double click a story after reading to hide it. Scroll down for more.">{double click it}</span>
       </div>
-      <ul class="nav nav-pills navbar-right">
-        <li data-view="unread"><a href="./">Fun</a></li>
-        <li data-view="read"><a href="./?read=1">Read</a></li>
-        <li><a href="random.html">Random</a></li>
-      </ul>
+      <nav class="view-links">
+        <a data-view="unread" href="./" title="Stories you haven't read yet">Stories</a>
+        <a data-view="read" href="./?read=1" title="Stories you've hidden">Read <span class="read-count"></span></a>
+        <a href="random.html" title="Show one random story">Random</a>
+      </nav>
     </div>
   </nav>
 
   <div class="container main">
+    <p class="hint text-muted" id="hint"></p>
     <div id="masonry-container" class="clearfix"></div>
     <div class="infinite-status text-center text-muted">Loading stories…</div>
   </div>
