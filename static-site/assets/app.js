@@ -77,6 +77,7 @@
   });
   var queue = [];
   var observer = null;
+  var firstBatch = true;
 
   function renderNextBatch() {
     var batch = queue.splice(0, BATCH_SIZE);
@@ -86,7 +87,19 @@
     var fragment = document.createDocumentFragment();
     elements.forEach(function (el) { fragment.appendChild(el); });
     container.appendChild(fragment);
-    masonry.appended(elements);
+    if (firstBatch) {
+      // Show the first screen fully laid out straight away (no fade-in), so the
+      // page never looks half-built, e.g. in link-preview screenshots.
+      // layoutInstant: otherwise Masonry animates every story in from the
+      // top-left corner on the first render.
+      firstBatch = false;
+      masonry.reloadItems();
+      masonry.options.layoutInstant = true;
+      masonry.layout();
+      masonry.options.layoutInstant = undefined;
+    } else {
+      masonry.appended(elements);
+    }
     imagesLoaded(elements, function () { masonry.layout(); });
 
     updateStatus();
